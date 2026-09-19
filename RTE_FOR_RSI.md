@@ -1,24 +1,28 @@
-# Recursive Truth Exposure: Generation and Evaluation in Recursive Self-Improvement
+# Recursive Truth Exposure: Generation, Allocation, and Evaluation in Recursive Self-Improvement
 
 ## Abstract
 
-Recursive self-improvement describes a system that generates modifications, evaluates candidate successor states, selects among them, and recursively modifies itself.
+Recursive self-improvement describes a system that generates modifications, allocates finite resources among possible operations, evaluates candidate successor states, selects among them, and recursively modifies itself.
 
-This document identifies two structural boundaries within that formulation.
+This document identifies three structural boundaries within that formulation.
 
 The first is the **generation boundary**. An evaluator can evaluate only candidates that become represented. A system can therefore improve its evaluation of represented candidates while failing to generate a successor requiring distinctions absent from its current representation.
 
-The second is the **evaluator boundary**. Improvement is not an intrinsic property of a modification. It is a designation produced when an evaluator applies criteria to represented differences under conditions.
+The second is the **allocation boundary**. A finite system cannot execute every represented inquiry operation, test every candidate, preserve every active process, or examine every possible continuation simultaneously. Generated possibilities can therefore remain unevaluated because the system's allocator does not assign the resources required to make them active.
 
-A recursively modifying system can therefore remain bounded both by what its generator makes representable and by what its evaluator recognizes as improvement.
+The third is the **evaluator boundary**. Improvement is not an intrinsic property of a modification. It is a designation produced when an evaluator applies criteria to represented differences under conditions.
 
-Recursive Truth Exposure, abbreviated RTE, places the system, generator, candidate space, modifications, evaluator, criteria, distinctions, measurements, bases, support claims, comparison bases, comparison sets, selections, inactive branches, resource conditions, stopping decisions, and reopening conditions inside the recursion.
+A recursively modifying system can therefore remain bounded by what its generator makes representable, which represented possibilities its allocator makes active, and what its evaluator recognizes as improvement.
 
-Lossless Inquiry preserves unresolved branches and prior states because their informational significance need not remain fixed. Later distinctions can expose new relations among retained records and make new hypotheses, tests, comparisons, evaluators, or successor states representable.
+Recursive Truth Exposure, abbreviated RTE, places the system, generator, candidate space, inquiry operations, allocator, allocation bases, inquiry priorities, resource allocations, modifications, evaluator, criteria, distinctions, measurements, bases, support claims, comparison bases, comparison sets, selections, inactive branches, resource conditions, stopping decisions, and reopening conditions inside the recursion.
 
-Revision of a generator or evaluator does not need to qualify as improvement under the prior evaluator before it can remain represented as a candidate transformation.
+Lossless Inquiry preserves unresolved branches and prior states because their informational significance need not remain fixed. Later distinctions can expose new relations among retained records and make new hypotheses, tests, comparisons, inquiry operations, allocators, evaluators, or successor states representable.
 
-This is a structural research proposal, not a claim that generation and evaluator dependence are the only obstacles to recursive AI development. Compute, memory, energy, verification, architecture, information, embodiment, environmental access, and unknown constraints remain relevant.
+Convergent Inquiry generates and examines possible continuations of unresolved inquiry. It does not establish which continuation should receive resources, and the term *convergent* does not imply guaranteed mathematical convergence or approach to truth.
+
+Revision of a generator, allocator, or evaluator does not need to qualify as improvement under the prior evaluator before it can remain represented as a candidate transformation.
+
+This is a structural research proposal, not a claim that generation, allocation, and evaluator dependence are the only obstacles to recursive AI development. Compute, memory, energy, verification, architecture, information, embodiment, environmental access, and unknown constraints remain relevant.
 
 ## 1. The generation boundary
 
@@ -31,13 +35,15 @@ A minimal recursive improvement loop can be written:
 ```text
 current system
 -> generate candidates
--> evaluate candidates
+-> allocate resources
+-> activate operations
+-> evaluate candidates or results
 -> select candidate
 -> modify system
 -> repeat
 ```
 
-This creates an upstream boundary.
+This creates an upstream generation boundary.
 
 A system cannot evaluate a candidate it never generates.
 
@@ -51,9 +57,10 @@ It can also be absent because the current system lacks:
 - a search procedure capable of reaching it;
 - an instrument or observation required to expose it;
 - a test capable of discriminating it;
-- sufficient resources;
+- sufficient resources for generation;
 - retained information needed to reconstruct it;
-- an evaluator capable of preserving the branch long enough for later examination.
+- a generator capable of producing the relevant inquiry operation or successor;
+- an evaluator or allocator capable of preserving the branch long enough for later examination.
 
 Absence from the candidate set therefore does not establish impossibility.
 
@@ -61,6 +68,7 @@ This gives:
 
 ```text
 generation != evaluation
+generation != allocation
 evaluated_candidates != exhaustive_possibility_space
 absence_from_search != disproof
 ```
@@ -75,12 +83,141 @@ A successor system can alter:
 - which transformations it can propose;
 - which tests it can invent;
 - which representations it can construct;
+- which inquiry operations it can generate;
+- which allocators it can generate;
 - which evaluators it can generate;
 - which prior branches it can reactivate.
 
 RTE therefore examines the generator as part of the recursive system.
 
-## 2. The evaluator boundary
+## 2. The allocation boundary
+
+Generation does not determine execution.
+
+A finite system can represent more possible inquiry operations, tests, transformations, or branches than it can actively execute.
+
+An **inquiry operation** is a represented possible continuation of inquiry.
+
+An inquiry operation can include:
+
+- introducing or applying a distinction;
+- generating a hypothesis;
+- searching for a relation;
+- changing an operationalization;
+- making an observation;
+- performing a test;
+- producing a measurement;
+- comparing alternatives;
+- recontextualizing retained records;
+- examining a generator, allocator, or evaluator;
+- activating a retained branch.
+
+An **allocation basis** represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+An **inquiry priority** is a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+A **resource allocation** is a represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+An **allocator** is the represented process or agent participating in prioritization and resource allocation.
+
+A possible allocation genealogy can therefore contain:
+
+```text
+represented inquiry operations
+-> allocation basis
+-> inquiry priority
+-> available resources
+-> allocator
+-> resource allocation
+-> active inquiry
+```
+
+The allocation boundary asks:
+
+```text
+Which represented possibilities receive resources?
+Which remain open but inactive?
+Why?
+Under which allocation basis?
+Under which resource conditions?
+Through which allocator?
+```
+
+Finite allocation can depend on:
+
+- expected information gain;
+- urgency;
+- cost;
+- tractability;
+- novelty;
+- anomaly density;
+- external request;
+- random sampling;
+- safety constraints;
+- available instruments;
+- compute;
+- memory;
+- storage;
+- energy;
+- time;
+- bandwidth;
+- environmental access;
+- tool availability;
+- verification cost;
+- policy;
+- values;
+- continuation requirements.
+
+None of these becomes epistemic support merely because it governs allocation.
+
+The architecture therefore preserves:
+
+```text
+inquiry_basis != inquiry_priority
+inquiry_priority != resource_allocation
+
+inquiry_basis != support
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+
+generation != allocation
+allocation != evaluation
+```
+
+A generated possibility can remain unallocated.
+
+An unallocated possibility can remain open.
+
+An inactive branch can remain genealogically represented.
+
+Therefore:
+
+```text
+open_inquiry != active_inquiry
+not_allocated != rejected
+inactive != erased
+```
+
+The allocation boundary is recursive because the allocator can itself change.
+
+A successor system can alter:
+
+- what resources it represents;
+- what costs it measures;
+- what purposes it prioritizes;
+- which constraints it obeys;
+- which inquiry operations it activates;
+- how it distributes compute;
+- how it distributes memory;
+- how long it preserves active inquiry;
+- which branches remain reachable;
+- which allocation bases it applies;
+- which allocators it can generate.
+
+RTE therefore examines the allocator as part of the recursive system.
+
+## 3. The evaluator boundary
 
 A modification does not contain improvement as an intrinsic property.
 
@@ -126,19 +263,22 @@ This does not establish that the evaluation is false.
 
 It exposes the relation producing the evaluation.
 
-Generation and evaluation therefore impose different boundaries:
+Generation, allocation, and evaluation therefore impose different boundaries:
 
 ```text
-generator boundary:
-what becomes available for evaluation?
+generation boundary:
+what becomes available?
+
+allocation boundary:
+which represented possibilities become active?
 
 evaluator boundary:
-how are available candidates judged?
+how are represented candidates and results judged?
 ```
 
-An RSI architecture can fail at either boundary.
+An RSI architecture can fail at any of these boundaries.
 
-## 3. Distinction is not measurement
+## 4. Distinction is not measurement
 
 A distinction specifies what can differ.
 
@@ -192,19 +332,19 @@ object
 
 This is not a mandatory linear sequence.
 
-For RSI, the distinction matters because a system can modify not only its measured performance but also what it distinguishes, how it operationalizes those distinctions, and which results its generator or evaluator can use.
+For RSI, the distinction matters because a system can modify not only its measured performance but also what it distinguishes, how it operationalizes those distinctions, and which results its generator, allocator, or evaluator can use.
 
 A new distinction can also alter represented relations involving prior records.
 
-It can therefore affect not only future measurement but future generation.
+It can therefore affect future generation, allocation, and evaluation.
 
-## 4. Basis is not support
+## 5. Basis is not support
 
-A **basis** is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other element associated with acceptance, evaluation, inquiry, or support.
+A **basis** is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other element associated with acceptance, evaluation, inquiry, allocation, or support.
 
 A basis does not become epistemic support merely because it participates in a decision.
 
-RTE separates at least three uses.
+RTE separates at least four uses.
 
 ### Acceptance basis
 
@@ -227,7 +367,7 @@ An acceptance basis can explain a selection without establishing that the select
 
 ### Inquiry basis
 
-An inquiry basis records why a candidate remains worth examining.
+An inquiry basis is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
 Examples can include:
 
@@ -244,7 +384,17 @@ Examples can include:
 
 Inquiry basis is not epistemic support.
 
-A candidate can therefore have weak present support while retaining future inquiry potential.
+Inquiry basis is also not inquiry priority.
+
+A candidate can therefore have weak present support while retaining a represented basis under which further examination could occur.
+
+That does not establish that further examination should occur now.
+
+### Allocation basis
+
+An allocation basis represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+An allocation basis can determine what becomes active without establishing that the activated inquiry concerns a proposition more likely to be true.
 
 ### Support relation and support claim
 
@@ -264,6 +414,10 @@ The architecture therefore preserves:
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
 support != measurement
 support_claim != truth
 conclusion != support
@@ -275,13 +429,54 @@ A reward can cause selection without supporting a factual conclusion.
 
 An evaluator score can provide an acceptance basis without becoming truth.
 
-A failed candidate can retain an inquiry basis without being treated as improved.
+An anomaly can provide an inquiry basis without supporting a preferred explanation.
+
+An allocator can prioritize a test because it is cheap without establishing that the tested hypothesis is more likely to be true.
+
+A resource allocation can make one inquiry active while another remains inactive without establishing epistemic superiority.
 
 A support claim can itself be wrong.
 
 RTE keeps these relations available for examination.
 
-## 5. Comparison
+## 6. Convergent Inquiry
+
+**Convergent Inquiry** is the generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
+
+Convergent Inquiry does not establish that continued investigation supports a preferred conclusion.
+
+It does not establish that one unresolved object should receive resources before another.
+
+It does not require every inquiry basis to remain operationally active.
+
+The term **convergent** does not assert that inquiry necessarily approaches a fixed limit, monotonically improves, or converges mathematically to truth.
+
+A claim that a particular inquiry process converges remains a claim requiring represented support.
+
+A possible operational decomposition is:
+
+```text
+retained unresolved material
+-> generation of possible inquiry operations
+-> allocation basis
+-> inquiry priority
+-> resource allocation
+-> active inquiry
+-> execution
+-> evaluation
+-> represented result
+-> genealogical preservation and recontextualization
+```
+
+This is not a mandatory linear sequence.
+
+Convergent Inquiry can generate possible inquiry operations without determining which receive resources.
+
+A possible inquiry can remain represented without active examination.
+
+This makes Convergent Inquiry distinct from both allocation and epistemic support.
+
+## 7. Comparison
 
 A comparative claim requires a represented comparison basis.
 
@@ -328,7 +523,7 @@ A claim of incommensurability is itself a claim requiring represented support.
 
 This matters in RSI because an evaluator can fail to rank candidates because its present representation lacks a comparison basis that a later system could generate.
 
-## 6. Recursive self-improvement
+## 8. Recursive self-improvement
 
 Let:
 
@@ -349,6 +544,14 @@ represent its generator.
 Let:
 
 ```text
+A_t
+```
+
+represent its allocator.
+
+Let:
+
+```text
 E_t
 ```
 
@@ -358,8 +561,10 @@ A simplified RSI transition is:
 
 ```text
 G_t(S_t)
--> candidate S_(t+1)
--> E_t(S_(t+1))
+-> represented candidates and inquiry operations
+-> A_t
+-> allocated active operations
+-> E_t
 -> selection
 ```
 
@@ -369,7 +574,7 @@ A conventional improvement relation can be represented as:
 E_t(S_(t+1)) > E_t(S_t)
 ```
 
-But that notation begins after `G_t` has made `S_(t+1)` representable.
+But that notation begins after `G_t` has made `S_(t+1)` representable and after sufficient resources have been allocated for the relevant transformation and evaluation to occur.
 
 A more explicit representation is:
 
@@ -379,6 +584,12 @@ operated from represented state S_t
 under generative conditions R_t
 and produced candidate S_(t+1).
 
+Allocator A_t
+operated under allocation basis L_t
+and resource conditions Q_t
+and allocated resources required
+for represented operations concerning S_(t+1).
+
 Evaluator E_t
 applied criteria K_t
 using comparison basis B_t
@@ -387,17 +598,22 @@ under conditions C_t
 and designated S_(t+1) improved.
 ```
 
-The system can modify both generator and evaluator:
+The system can modify generator, allocator, and evaluator:
 
 ```text
 G_t -> G_(t+1)
+A_t -> A_(t+1)
 E_t -> E_(t+1)
 ```
 
-The successor can therefore change both:
+The successor can therefore change:
 
 ```text
 what candidates can be produced
+```
+
+```text
+which represented possibilities receive resources
 ```
 
 and:
@@ -406,11 +622,13 @@ and:
 what counts as improvement
 ```
 
-Neither generator output nor evaluator selection alone establishes evaluator-independent improvement.
+Generator output, allocator selection, and evaluator selection remain different operations.
+
+None alone establishes evaluator-independent improvement.
 
 RTE preserves those transformations rather than compressing them into a single scalar notion of progress.
 
-## 7. Generator genealogy
+## 9. Generator genealogy
 
 A generator is not treated as an atomic object.
 
@@ -429,6 +647,7 @@ Where represented, its genealogy can include:
 - environmental access;
 - randomness;
 - resource constraints;
+- allocator feedback;
 - evaluator feedback;
 - prior successful transformations;
 - prior failed transformations;
@@ -457,6 +676,7 @@ Which distinctions structured the search?
 Which representations could the generator not express?
 Which prior branches were available?
 Which branches had already been erased?
+Which allocator signals shaped generation?
 Which evaluator signals shaped generation?
 ```
 
@@ -464,7 +684,67 @@ The purpose is not to certify an exhaustive generator.
 
 It is to expose the conditions under which the represented candidate space arose.
 
-## 8. Evaluator genealogy
+## 10. Allocator genealogy
+
+An allocator is not treated as an atomic object.
+
+Where represented, its genealogy can include:
+
+- allocation bases;
+- inquiry priorities;
+- purposes;
+- values;
+- policies;
+- costs;
+- expected consequences;
+- resource estimates;
+- available compute;
+- available memory;
+- storage;
+- energy;
+- time;
+- bandwidth;
+- environmental access;
+- tool availability;
+- safety constraints;
+- randomness;
+- inherited priorities;
+- generator outputs;
+- evaluator feedback;
+- prior allocations;
+- stopping conditions;
+- prior allocator states.
+
+An allocation event can therefore preserve:
+
+```text
+represented inquiry operations
+-> allocation basis
+-> inquiry priority
+-> resource conditions
+-> allocator
+-> allocation
+-> activation or nonactivation
+```
+
+RTE can then ask:
+
+```text
+Why was this inquiry activated?
+Why did another remain inactive?
+Which allocation basis produced the priority?
+Which resource constraints were operative?
+Which generated possibilities were never allocated enough resources to become evaluable?
+Which values or policies shaped allocation?
+Did evaluator feedback alter future allocation?
+Did allocation alter future generation?
+```
+
+The purpose is not to certify a neutral allocator.
+
+It is to expose the conditions under which finite resources were distributed among represented possibilities.
+
+## 11. Evaluator genealogy
 
 An evaluator is not treated as an atomic object.
 
@@ -506,7 +786,9 @@ can preserve:
 what changed
 why it changed
 what acceptance basis produced the change
-what inquiry basis motivated examination
+what inquiry basis permitted examination
+which allocation basis made the examination active
+which resources were allocated
 which support claims concerned the change
 which distinctions changed
 which measurements changed
@@ -519,7 +801,7 @@ which residuals remain unresolved
 
 This turns evaluator revision into an object of recursive inquiry.
 
-## 9. Cross-evaluation
+## 12. Cross-evaluation
 
 When possible, predecessor and successor evaluators can be applied across predecessor and successor states:
 
@@ -556,9 +838,13 @@ It does not establish evaluator-independent improvement.
 
 Cross-evaluation is therefore an exposure mechanism, not a truth certificate.
 
-Its genealogy includes the distinctions, criteria, comparison bases, measurements where applicable, bases, support claims, methods, conditions, and representations used by each evaluator.
+Its genealogy includes the distinctions, criteria, comparison bases, measurements where applicable, bases, support claims, methods, conditions, representations, and resources used by each evaluator.
 
-## 10. Evaluator self-confirmation
+Cross-evaluation itself also requires allocation.
+
+Failure to perform a possible cross-evaluation can therefore result from resource conditions or allocator behavior rather than from epistemic rejection.
+
+## 13. Evaluator self-confirmation
 
 A recursively modifying system can alter both itself and the evaluator by which its modifications are judged.
 
@@ -586,12 +872,14 @@ RTE instead preserves:
 ```text
 system transformation
 generator transformation
+allocator transformation
 evaluator transformation
 criteria transformation
 distinction transformation
 measurement transformation
 support-claim transformation
 comparison-basis transformation
+allocation transformation
 selection event
 ```
 
@@ -615,7 +903,70 @@ Both can occur simultaneously.
 
 Neither relation should erase the other.
 
-## 11. Why a fixed evaluator is not assumed
+## 14. Allocation self-confirmation
+
+A recursively modifying system can also alter the allocator by which possible inquiry operations receive resources.
+
+This creates a distinct self-confirmation problem.
+
+Suppose:
+
+```text
+A_t -> A_(t+1)
+```
+
+and the successor allocator increasingly directs resources toward operations that preserve or validate the successor architecture while leaving competing inquiry paths inactive.
+
+The resulting system can appear increasingly well supported because contrary or destabilizing inquiries are no longer made active.
+
+That pattern does not establish that the successor is false.
+
+It exposes a dependency between allocation and the represented evidence available to later evaluation.
+
+RTE therefore preserves:
+
+```text
+allocator transformation
+allocation-basis transformation
+priority transformation
+resource transformation
+activation history
+inactive inquiry operations
+resulting observations and tests
+evaluator transformation
+```
+
+where represented.
+
+The purpose is to distinguish:
+
+```text
+alternative inquiry failed
+```
+
+from:
+
+```text
+alternative inquiry was not allocated the resources required to run
+```
+
+and:
+
+```text
+no contradiction was observed
+```
+
+from:
+
+```text
+operations capable of exposing a contradiction remained inactive
+```
+
+This does not require every possible inquiry to be activated.
+
+It requires allocation history to remain distinguishable from epistemic support.
+
+## 15. Why a fixed evaluator is not assumed
 
 One possible response to evaluator self-confirmation is to require a fixed evaluator.
 
@@ -641,7 +992,7 @@ Instead, evaluator revision remains inside the genealogy.
 
 The question becomes whether enough structure can remain represented to distinguish meaningful transformation from evaluator self-confirmation even when the evaluator itself changes.
 
-## 12. Why a fixed generator is not assumed
+## 16. Why a fixed generator is not assumed
 
 A fixed generator creates a parallel problem.
 
@@ -656,8 +1007,9 @@ A fixed generator can preserve:
 - inherited exclusions;
 - poor recombination strategies;
 - evaluator-induced search bias;
+- allocator-induced search bias;
 - architectural assumptions;
-- resource allocation strategies that prevent exploration.
+- resource assumptions that prevent exploration.
 
 RTE therefore does not assume that the generator must remain fixed.
 
@@ -677,7 +1029,45 @@ Aperta Veritas does not assume that genealogy alone answers this question.
 
 It makes the boundary explicit and preserves material that may participate in later generative operations.
 
-## 13. Selection is not improvement
+## 17. Why a fixed allocator is not assumed
+
+A fixed allocator creates another parallel problem.
+
+If the allocator cannot change, recursive inquiry remains constrained by the priorities and resource-distribution strategies encoded in the original system.
+
+A fixed allocator can preserve:
+
+- obsolete priorities;
+- inappropriate costs;
+- hidden values;
+- inherited policies;
+- bad resource estimates;
+- systematic neglect of expensive but informative inquiry;
+- systematic preference for easily measurable operations;
+- evaluator-induced allocation bias;
+- generator-induced allocation bias;
+- environmental assumptions that no longer apply.
+
+RTE therefore does not assume that the allocator must remain fixed.
+
+Allocator revision remains inside the genealogy.
+
+A recursively modifying system can attempt to revise how it distributes finite resources among generation, testing, preservation, evaluation, and recursive audit.
+
+That creates another recursive question:
+
+```text
+How does a system revise allocation
+without assuming that its current
+allocation basis is the correct basis
+for deciding which revisions receive resources?
+```
+
+Aperta Veritas does not currently solve that recursion.
+
+It exposes it.
+
+## 18. Selection is not improvement
 
 A recursively modifying system must select among candidate transformations.
 
@@ -707,6 +1097,7 @@ RTE preserves:
 ```text
 generation
 -> candidate set
+-> allocation
 -> comparison basis
 -> evaluation
 -> selection
@@ -719,38 +1110,65 @@ without compressing the sequence into:
 successor = improvement
 ```
 
-## 14. Inactive branches and inquiry basis
+Allocation and selection can interact without becoming identical.
+
+A candidate can receive resources without ultimately being selected.
+
+A candidate can also be selected under constraints that differ from the criteria used to evaluate epistemic support.
+
+## 19. Open, active, and inactive inquiry
+
+Open inquiry and active inquiry are distinct.
+
+**Open inquiry** permits represented claims, conclusions, branches, distinctions, methods, support claims, comparison bases, stopped states, and possible inquiry operations to remain available for relevant examination, generation, revision, or reopening.
+
+**Active inquiry** is inquiry currently receiving resources for examination.
+
+An inquiry can therefore be:
+
+```text
+open and active
+```
+
+or:
+
+```text
+open and inactive
+```
+
+where the architecture permits.
 
 A candidate that is not selected remains part of the genealogy where retention permits.
 
+An inquiry operation that receives no current allocation can remain represented.
+
 Inactive does not mean false.
+
+Unallocated does not mean rejected.
 
 Rejected does not mean useless.
 
 Failure to establish does not mean disproof.
 
-A candidate can become relevant again after:
+A candidate or inquiry can become relevant again after:
 
 - environmental change;
 - evaluator revision;
+- allocator revision;
 - generator revision;
 - new evidence;
 - a new distinction;
 - a new measurement;
 - a new support claim;
 - a changed comparison basis;
+- a changed allocation basis;
+- changed inquiry priority;
 - increased resources;
 - architectural modification;
 - failure of the selected branch;
 - discovery of a new relation among retained records.
 
-An inactive branch can therefore retain an **inquiry basis** without having strong epistemic support.
-
-This separation is necessary.
-
-Otherwise, retaining a hypothesis for investigation can be mistaken for treating it as true.
-
-Likewise, lack of present support can be mistaken for a reason to erase the branch.
+An inactive branch can therefore retain an inquiry basis without having strong epistemic support or present priority.
 
 The relevant invariants are:
 
@@ -758,14 +1176,16 @@ The relevant invariants are:
 failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
+open_inquiry != active_inquiry
+not_allocated != rejected
 inactive != erased
 ```
 
-Aggressive pruning can convert temporary selection into irreversible loss of future generative material.
+Aggressive pruning can convert temporary selection or allocation into irreversible loss of future generative material.
 
 Lossless Inquiry therefore attempts to preserve enough branch genealogy for prior alternatives to remain recoverable or reconstructable where possible.
 
-## 15. Recontextualization
+## 20. Recontextualization
 
 The significance of a retained state is not necessarily fixed when it is produced.
 
@@ -801,7 +1221,7 @@ new represented relation
 ->
 new candidate
 ->
-new test
+new possible inquiry
 ```
 
 For RSI, this means preservation can contribute directly to future generation.
@@ -812,19 +1232,22 @@ A branch that was previously unresolved can contain a component that becomes use
 - a new representation;
 - a new environmental observation;
 - a new evaluator;
+- a new allocator;
 - a new generator;
 - a new comparison basis;
+- a new allocation basis;
+- changed resource conditions;
 - recombination with another branch.
 
 Lossless Inquiry is therefore not only a mechanism for reconstructing past decisions.
 
-It preserves material whose future generative significance may not yet be represented.
+It preserves material whose future generative or inquiry significance may not yet be represented.
 
-## 16. Resource constraints
+## 21. Resource constraints and allocation
 
 Recursive inquiry consumes resources.
 
-An RSI system cannot indefinitely generate every candidate, evaluate every candidate, preserve every intermediate state, run every test, or recursively audit every generator and evaluator.
+An RSI system cannot indefinitely generate every candidate, evaluate every candidate, preserve every intermediate state, run every test, activate every possible inquiry, or recursively audit every generator, allocator, and evaluator.
 
 Resource constraints therefore participate in the process.
 
@@ -840,11 +1263,18 @@ Relevant constraints include:
 - tool availability;
 - verification cost.
 
-A stopping decision can therefore be represented as:
+Resource constraint and resource allocation remain distinct.
+
+A constraint describes a represented limit.
+
+Allocation assigns available resources among represented possibilities under an allocation basis.
+
+A stopping or deactivation decision can therefore be represented as:
 
 ```text
-further inquiry not selected
-under resource conditions R
+further active inquiry not allocated
+under allocation basis L
+resource conditions R
 and stopping rule Q
 ```
 
@@ -860,11 +1290,13 @@ Compression can preserve some relations while making others unavailable.
 
 Resource allocation itself can affect future generation.
 
+It can also affect which observations, measurements, contradictions, and evaluations ever become represented.
+
 Operational stopping is not epistemic closure.
 
-## 17. Reopening
+## 22. Reopening
 
-A stopped inquiry can reopen.
+A stopped or inactive inquiry can reopen.
 
 Possible triggers include:
 
@@ -876,21 +1308,25 @@ Possible triggers include:
 - new support claims;
 - new contradictions;
 - newly generated candidate transformations;
+- newly generated inquiry operations;
 - new comparison bases;
 - new evaluators;
+- new allocators;
 - new generators;
+- changed allocation bases;
+- changed inquiry priorities;
 - changed resource conditions;
 - changed environments;
 - implementation failures;
 - new relations among previously retained records.
 
-The stopping condition therefore remains part of the genealogy.
+The stopping, deallocation, or inactivity condition therefore remains part of the genealogy.
 
-Reopening does not establish that the earlier stopping decision was erroneous.
+Reopening does not establish that the earlier stopping or allocation decision was erroneous.
 
-It establishes that the represented conditions of inquiry have changed.
+It establishes that the represented conditions of inquiry have changed sufficiently for another operation to become active.
 
-## 18. The genealogy hypothesis
+## 23. The genealogy hypothesis
 
 A current research hypothesis is:
 
@@ -902,15 +1338,21 @@ A related evaluator hypothesis is:
 
 > A permanently fixed evaluator may not be necessary for recursive improvement if enough evaluator and transformation genealogy remains represented to keep predecessor and successor evaluations distinguishable.
 
-Both could fail.
+A related allocation hypothesis is:
+
+> A permanently fixed allocator may not be necessary for recursive inquiry if enough allocation basis, priority, resource, activation, and allocator genealogy remains represented to expose how finite attention changes across recursive transitions.
+
+All could fail.
 
 Genealogy may be insufficient because:
 
 - predecessor generators may become inexpressible in successor architecture;
+- predecessor allocators may become inexpressible in successor architecture;
 - predecessor evaluators may become inexpressible in successor architecture;
 - representations may become presently unrankable;
 - transformations may destroy necessary state;
 - cross-evaluation may become computationally infeasible;
+- allocation histories may become computationally infeasible to reconstruct;
 - semantic drift may make apparent continuity misleading;
 - successor systems may alter the representation of predecessor states;
 - hidden dependencies may not be recoverable;
@@ -918,11 +1360,13 @@ Genealogy may be insufficient because:
 - relevant distinctions may never have been represented;
 - preserved information may not be sufficient to generate the missing distinction;
 - no represented comparison basis may support meaningful cross-evaluation;
-- recontextualization may introduce spurious relations rather than useful ones.
+- recontextualization may introduce spurious relations rather than useful ones;
+- allocation can systematically prevent relevant tests from becoming active;
+- preserving allocation genealogy may not prevent allocator lock-in.
 
 These are empirical and formal research problems.
 
-## 19. The central RSI question
+## 24. The central RSI question
 
 The research question is broader than determining which component must remain fixed.
 
@@ -943,7 +1387,13 @@ How can later distinctions recontextualize prior states?
 How can a system search beyond candidate classes
 favored by its current evaluator?
 
-How can generator and evaluator change
+How are possible inquiry operations generated
+and allocated under finite resources?
+
+How can an allocator avoid converting present
+priority into permanent elimination?
+
+How can generator, allocator, and evaluator change
 remain genealogically examinable?
 
 What component of the loop must remain fixed,
@@ -954,6 +1404,7 @@ distinguishable from self-confirmation?
 Possible answers to the fixed-component question include:
 
 - a fixed evaluator;
+- a fixed allocator;
 - fixed external observations;
 - fixed benchmark tasks;
 - fixed physical measurements;
@@ -968,13 +1419,15 @@ Aperta Veritas does not currently establish which answer is correct.
 
 The framework provides a structure for testing them.
 
-## 20. What RTE adds to an RSI loop
+## 25. What RTE adds to an RSI loop
 
 A minimal RSI loop can be represented as:
 
 ```text
 generate candidate
--> evaluate candidate
+-> allocate resources
+-> activate operation
+-> evaluate candidate or result
 -> select candidate
 -> modify system
 -> repeat
@@ -987,8 +1440,15 @@ represent current system
 -> represent generator
 -> represent retained genealogy
 -> represent current distinctions
--> generate candidate set
+-> generate candidate set and possible inquiry operations
 -> expose how candidates became representable
+-> represent allocation basis
+-> represent inquiry priority
+-> represent available resources
+-> represent allocator
+-> represent resource allocation
+-> distinguish open inquiry from active inquiry
+-> activate allocated inquiry operations
 -> represent operationalizations
 -> represent measurements and other results
 -> represent bases
@@ -998,25 +1458,26 @@ represent current system
 -> represent criteria
 -> represent comparison basis
 -> represent comparison set
--> evaluate candidates
--> preserve unresolved and inactive alternatives where possible
+-> evaluate candidates and results
+-> preserve unresolved, unallocated, and inactive alternatives where possible
 -> select transformation
 -> preserve transition genealogy
 -> expose generator transformation
+-> expose allocator transformation
 -> expose evaluator transformation
--> expose selection and stopping conditions
+-> expose selection, allocation, and stopping conditions
 -> admit new distinctions and relations
 -> recontextualize retained states
--> generate new candidates where possible
+-> generate new candidates and inquiry operations where possible
 -> recursively examine the process
 -> repeat
 ```
 
 The additional structure does not guarantee improvement.
 
-It exposes both the relations by which candidates become representable and the relations by which they are designated improvements.
+It exposes the relations by which candidates become representable, the relations by which finite resources make some represented possibilities active, and the relations by which candidates or results are designated improvements.
 
-## 21. Failure modes
+## 26. Failure modes
 
 RTE itself can fail inside an RSI system.
 
@@ -1024,11 +1485,15 @@ Possible failures include:
 
 ### Genealogy theater
 
-The system records large quantities of history without preserving the relations needed for reconstruction, recontextualization, or future generation.
+The system records large quantities of history without preserving the relations needed for reconstruction, recontextualization, future generation, or allocation analysis.
 
 ### Generator lock-in
 
 The system recursively evaluates candidates while failing to expose that its generator cannot represent relevant alternative classes.
+
+### Allocator lock-in
+
+The system preserves generated possibilities while repeatedly allocating resources through criteria that prevent relevant alternatives from becoming active.
 
 ### Evaluator laundering
 
@@ -1040,11 +1505,19 @@ A measurement is presented as direct truth rather than as a represented result p
 
 ### Support laundering
 
-A measurement, reward, consensus signal, authority, acceptance basis, or evaluator output is presented as epistemic support without representing the claim by which it bears on whether a conclusion is true.
+A measurement, reward, consensus signal, authority, acceptance basis, allocator output, or evaluator output is presented as epistemic support without representing the claim by which it bears on whether a conclusion is true.
 
 ### Inquiry laundering
 
-A reason to continue examining a hypothesis is presented as evidence that the hypothesis is true.
+A basis under which further examination could occur is presented as evidence that the hypothesis is true.
+
+### Priority laundering
+
+An inquiry is treated as epistemically superior because it received higher priority.
+
+### Allocation laundering
+
+Resource assignment is presented as evidence that the allocated inquiry, hypothesis, or candidate is more likely to be true.
 
 ### Comparison laundering
 
@@ -1062,6 +1535,14 @@ Alternatives remain technically stored but become operationally unreachable.
 
 Pruning, compression, or resource allocation removes the retained material from which later distinctions or candidates could have been generated.
 
+### Inquiry starvation
+
+Possible inquiry operations remain represented but repeatedly receive insufficient resources to become active.
+
+### Allocation self-confirmation
+
+The allocator increasingly directs resources toward inquiries compatible with the current system while leaving potentially disconfirming inquiries inactive, causing later evaluation to operate on a systematically conditioned evidence stream.
+
 ### Recursive exhaustion
 
 The system spends increasing resources examining its own examination without improving its capacity to resolve the target problem.
@@ -1072,7 +1553,7 @@ The system learns to generate representations that satisfy the formal requiremen
 
 ### Semantic drift
 
-Terms such as *basis*, *support*, *measurement*, *accuracy*, *generation*, *improvement*, or *evaluator* change meaning across revisions while retaining the same labels.
+Terms such as *basis*, *support*, *measurement*, *accuracy*, *generation*, *allocation*, *priority*, *improvement*, *allocator*, or *evaluator* change meaning across revisions while retaining the same labels.
 
 ### Spurious recontextualization
 
@@ -1080,19 +1561,24 @@ The system generates new relations among retained records without sufficient sup
 
 These failures are themselves targets for RTE.
 
-## 22. Implementation requirements
+## 27. Implementation requirements
 
 An implementation intended to test this proposal should minimally represent:
 
 - system states;
 - generators;
 - candidate transformations;
+- inquiry operations;
 - distinctions;
 - operationalizations;
 - measurements and other represented results;
 - bases;
 - acceptance bases;
 - inquiry bases;
+- allocation bases;
+- inquiry priorities;
+- resource allocations;
+- allocators;
 - support relations;
 - support claims;
 - evaluators;
@@ -1101,9 +1587,12 @@ An implementation intended to test this proposal should minimally represent:
 - comparison sets;
 - conditions;
 - selections;
+- open inquiry states;
+- active inquiry states;
 - inactive branches;
 - transition genealogy;
 - generation genealogy;
+- allocation genealogy;
 - recontextualization events;
 - resource costs;
 - stopping conditions;
@@ -1112,7 +1601,14 @@ An implementation intended to test this proposal should minimally represent:
 It should support:
 
 - explicit candidate generation;
+- explicit inquiry-operation generation;
 - explicit generator transformation;
+- explicit allocation bases;
+- explicit inquiry priorities;
+- explicit resource allocation;
+- explicit allocator transformation;
+- activation and deactivation without erasure;
+- open inquiry distinct from active inquiry;
 - predecessor evaluation of successor states;
 - successor evaluation of predecessor states where representable;
 - explicit evaluator transformation;
@@ -1120,11 +1616,13 @@ It should support:
 - support relations not restricted to measurements;
 - support claims that remain recursively examinable;
 - acceptance bases distinct from support;
-- inquiry bases distinct from support;
+- inquiry bases distinct from support and priority;
+- allocation bases and resource allocations distinct from support;
 - branch preservation;
+- preservation of unallocated inquiry operations;
 - later recontextualization of retained states;
 - generation from retained genealogy where possible;
-- recursive audit of generator, evaluator, and selection history;
+- recursive audit of generator, allocator, evaluator, allocation, and selection history;
 - detection of missing genealogy;
 - detection of semantic invariant violations.
 
@@ -1135,6 +1633,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -1147,6 +1650,10 @@ fact != definitive_truth
 value != truth
 selection != improvement
 evaluation != generation
+generation != allocation
+allocation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
@@ -1154,13 +1661,15 @@ failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
 
-## 23. Falsification and pressure testing
+## 28. Falsification and pressure testing
 
-The generation-and-evaluation proposal should be attacked.
+The generation-allocation-evaluation proposal should be attacked.
 
 Useful tests include:
 
@@ -1170,13 +1679,13 @@ Useful tests include:
 4. Construct a system in which recontextualization consistently produces spurious rather than useful relations.
 5. Construct a system that achieves demonstrable empirical improvement while discarding evaluator genealogy.
 6. Construct a system whose evaluator changes radically while cross-evaluation still produces stable comparative results.
-7. Construct a system that preserves extensive generator and evaluator genealogy but still becomes self-confirming.
+7. Construct a system that preserves extensive generator, allocator, and evaluator genealogy but still becomes self-confirming.
 8. Construct a case where no shared measurement exists but a defensible comparison remains possible.
 9. Construct a case where a shared measurement exists but does not provide a defensible comparison.
 10. Construct a support relation that cannot be usefully represented as measurement.
 11. Construct a measurement that exists but provides no support for the conclusion under examination.
 12. Construct a strong acceptance basis that provides no epistemic support.
-13. Construct a strong inquiry basis for a hypothesis with weak epistemic support.
+13. Construct a strong inquiry basis for a hypothesis with weak epistemic support and no current allocation.
 14. Construct a system where inactive branch preservation prevents improvement by exhausting resources.
 15. Construct a system where branch deletion improves performance without destroying relevant future inquiry potential.
 16. Construct a system whose distinctions change while its measurements appear numerically continuous but cease to be semantically comparable.
@@ -1184,12 +1693,22 @@ Useful tests include:
 18. Construct a case where generator revision makes a previously inaccessible improvement representable.
 19. Construct a case where a candidate remains unranked under the current comparison basis but becomes rankable after a new distinction or comparison basis is generated.
 20. Construct a case where recursive exposure creates more distortion than it removes.
+21. Construct a system that generates a useful inquiry operation but never allocates enough resources for it to become active.
+22. Construct a system where changing the allocation basis exposes a useful result without changing the generator.
+23. Construct a system where a high-priority inquiry receives no resources because a required dependency is unavailable.
+24. Construct a system where a lower-priority inquiry receives resources because it is executable and produces useful information.
+25. Construct a system where resource allocation systematically suppresses disconfirming inquiry while preserving apparently strong evaluator performance.
+26. Construct a system where random allocation outperforms a designed inquiry-priority function.
+27. Construct a system where allocator revision improves empirical performance under predecessor and successor evaluations.
+28. Construct a system where preserving unallocated inquiry operations provides no later benefit and creates measurable resource cost.
+29. Construct a system where allocation genealogy fails to expose the operative cause of inquiry starvation.
+30. Construct a system where open but inactive inquiry later becomes active after a new distinction, resource, or allocation basis appears.
 
 The framework should survive by revision, not by making itself unfalsifiable.
 
-## 24. Recursive application
+## 29. Recursive application
 
-This document is itself governed by an evaluator and produced by a generator.
+This document is itself governed by an evaluator, produced by a generator, and constrained by an allocator.
 
 It values:
 
@@ -1199,23 +1718,32 @@ It values:
 - explicit comparison;
 - branch preservation;
 - revisability;
-- generative openness.
+- generative openness;
+- explicit allocation.
 
-Those values do not establish the truth of the generation-boundary or evaluator-boundary hypotheses.
+Those values do not establish the truth of the generation-boundary, allocation-boundary, or evaluator-boundary hypotheses.
 
 The document also selects particular distinctions:
 
 ```text
 system / generator
+system / allocator
 system / evaluator
+generation / allocation
+allocation / evaluation
 generation / evaluation
 basis / support
 acceptance basis / inquiry basis
+inquiry basis / inquiry priority
+inquiry priority / resource allocation
+allocation basis / support
 distinction / measurement
 measurement / support
 support claim / truth
 support / conclusion
 selection / improvement
+open inquiry / active inquiry
+not allocated / rejected
 stopping / closure
 active / inactive
 represented / unrepresented
@@ -1227,7 +1755,9 @@ The claim that genealogy contributes to future generation requires represented s
 
 The claim that retained branches can acquire later significance requires represented support.
 
-The claim that support should remain distinct from basis and measurement requires represented support.
+The claim that explicit allocation genealogy improves recursive inquiry requires represented support.
+
+The claim that support should remain distinct from basis, allocation, and measurement requires represented support.
 
 The claim that explicit comparison bases improve inquiry requires represented support.
 
@@ -1235,7 +1765,7 @@ The possibility remains that another architecture exposes the same problems more
 
 RTE therefore applies to this proposal itself.
 
-## 25. Current conclusion
+## 30. Current conclusion
 
 Recursive self-improvement is not only a problem of producing better successor systems.
 
@@ -1243,24 +1773,36 @@ Before a successor can be evaluated, it must become representable.
 
 Before a relevant difference can be evaluated, the system must possess or generate a distinction capable of representing that difference.
 
+Before a represented possibility can be actively investigated, instantiated, tested, or recursively examined, the required resources must be allocated.
+
 Before a comparison can occur, the relevant alternatives and comparison basis must become represented.
 
 A system can therefore fail to improve because its evaluator is inadequate.
 
-It can also fail before evaluation because the relevant successor never enters the candidate set.
+It can fail before evaluation because the relevant successor never enters the candidate set.
+
+It can also fail after generation but before evaluation because the relevant inquiry or transformation never receives the resources required to become active.
 
 A system that modifies itself while preserving a protected evaluator can become increasingly optimized without exposing whether the evaluator remains adequate.
 
 A system that modifies its evaluator without preserving genealogy can redefine improvement without exposing the redefinition.
 
+A system that modifies its allocator without preserving allocation genealogy can change which questions become examinable without exposing how that change conditions later evidence.
+
 A system that aggressively discards unresolved branches can remove material whose relevance would only become representable after later distinctions arise.
 
-Recursive Truth Exposure proposes keeping the generator, candidate space, evaluator, transformations, and retained genealogy inside recursive inquiry.
+Recursive Truth Exposure proposes keeping the generator, allocator, candidate space, possible inquiry operations, evaluator, transformations, allocation history, and retained genealogy inside recursive inquiry.
 
 The current research hypothesis is that preservation plus recursive distinction generation and recontextualization may permit a system to expand what it can represent and therefore what it can test, compare, and modify.
 
-That hypothesis remains unestablished.
+A related hypothesis is that explicit allocation genealogy may permit a recursive system to expose how finite attention and resources condition which represented possibilities become examinable.
+
+These hypotheses remain unestablished.
 
 The central question remains:
 
 > **How can a recursive system generate and recognize improvements that require distinctions absent from the system currently generating and evaluating successor states?**
+
+The allocation boundary adds a second operational question:
+
+> **How can a finite recursive system allocate resources among represented possibilities without converting present allocation criteria into permanent epistemic elimination?**
