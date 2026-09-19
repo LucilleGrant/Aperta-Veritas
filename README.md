@@ -127,13 +127,13 @@ RTE cannot certify possession of truth. Certification would close a representati
 ## Repository
 
 - [Whitepaper](WHITEPAPER.md)
-- [Operational system](docs/OPERATIONAL_SYSTEM.md)
-- [Whitepaper audit](docs/WHITEPAPER_AUDIT.md)
-- [Semantic foundations](docs/SEMANTIC_FOUNDATIONS.md)
-- [Core architecture](docs/CORE_ARCHITECTURE.md)
-- [Boundary Testing](docs/BOUNDARY_TESTING.md)
-- [Implications for AI epistemic alignment](docs/AI_ALIGNMENT.md)
-- [Worked example: the coin toss](examples/COIN_TOSS.md)
+- [Operational system](OPERATIONAL_SYSTEM.md)
+- [Whitepaper audit](WHITEPAPER_AUDIT.md)
+- [Semantic foundations](SEMANTIC_FOUNDATIONS.md)
+- [Core architecture](CORE_ARCHITECTURE.md)
+- [Boundary Testing](BOUNDARY_TESTING.md)
+- [Implications for AI epistemic alignment](AI_ALIGNMENT.md)
+- [Worked example: the coin toss](COIN_TOSS.md)
 - [Glossary](docs/GLOSSARY.md)
 - [Contributing](CONTRIBUTING.md)
 
