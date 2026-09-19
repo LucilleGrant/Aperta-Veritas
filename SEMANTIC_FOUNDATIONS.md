@@ -60,11 +60,13 @@ The distinction between a conclusion, the bases associated with it, and the supp
 
 ## Inquiry basis
 
-An **inquiry basis** represents why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+An **inquiry basis** is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
 Inquiry basis is not identical to epistemic support.
 
-A proposition can have weak or absent present support while retaining an inquiry basis. Unresolved observations, unexplained discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, or the possibility of a discriminating test can justify continued examination without establishing the proposition as true.
+Inquiry basis is also not identical to a priority judgment or an allocation of resources.
+
+A proposition can have weak or absent present support while retaining an inquiry basis. Unresolved observations, unexplained discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, or the possibility of a discriminating test can provide a basis for further examination without establishing the proposition as true.
 
 Likewise, strong present support for a conclusion does not establish that alternative inquiry should permanently stop.
 
@@ -74,15 +76,121 @@ Aperta Veritas therefore preserves:
 failure to establish != disproof
 failure to establish != basis for elimination
 current support != future inquiry potential
+inquiry_basis != inquiry_priority
 ```
 
-A hypothesis does not need to be treated as true in order to remain represented and examinable.
+A hypothesis does not need to be treated as true, prioritized, or actively investigated in order to remain represented and examinable.
 
-Failure to produce present support is an epistemic result. It is not by itself a stopping rule.
+Failure to produce present support is an epistemic result. It is not by itself a stopping rule, rejection, or resource-allocation decision.
 
-Inquiry can generate new distinctions, relations, hypotheses, operationalizations, observations, tests, measurements, comparison bases, and support claims. These can make previously unresolved alternatives newly testable or comparable.
+## Convergent Inquiry
 
-The inquiry basis itself remains open to Recursive Truth Exposure. Continued inquiry can consume resources, inherit values, privilege particular search spaces, or preserve unproductive branches. RTE therefore represents why inquiry continues, what resources it consumes, what alternatives receive or do not receive attention, and what stopping or reopening conditions are applied.
+**Convergent Inquiry** is the generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
+
+Convergent Inquiry does not establish that continued investigation is epistemic support for a preferred conclusion.
+
+It does not establish that an unresolved object should receive resources before another unresolved object.
+
+It does not require every represented inquiry basis to remain operationally active.
+
+The term **convergent** does not assert that inquiry necessarily approaches a fixed limit, monotonically improves, or converges mathematically to truth. Any claim that a particular inquiry process converges remains a claim requiring represented support.
+
+Convergent Inquiry can generate possible inquiry operations without determining which operations receive resources.
+
+This preserves the distinction:
+
+```text
+inquiry generation
+!=
+inquiry priority
+!=
+resource allocation
+```
+
+A possible inquiry can therefore remain represented even when it is not selected for active examination.
+
+## Inquiry priority and allocation
+
+An **inquiry priority** is a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+An **allocation basis** represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+Possible allocation bases can include expected information gain, urgency, cost, tractability, novelty, anomaly density, external request, random sampling, safety constraints, available instruments, available compute, or other represented criteria.
+
+No allocation basis becomes epistemic support merely because it determines what receives attention.
+
+An inquiry priority does not establish that the prioritized proposition is more likely to be true.
+
+A **resource allocation** is a represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+Resource allocation can differ from inquiry priority. A highly prioritized inquiry may remain inactive because required resources, methods, instruments, permissions, data, or dependencies are unavailable. A lower-priority inquiry may become active because it is presently executable.
+
+Aperta Veritas therefore preserves:
+
+```text
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
+resource_allocation != truth
+not_allocated != rejected
+```
+
+Finite resources therefore do not require unresolved branches to be erased.
+
+The allocator, allocation basis, priority relation, resource conditions, exclusions, and resulting allocation remain represented and open to Recursive Truth Exposure.
+
+Aperta Veritas does not assume a neutral allocation function. Resource allocation can inherit purposes, values, institutional constraints, incentives, search biases, evaluator choices, or other dependencies.
+
+Exposing those dependencies does not by itself determine a superior allocation rule.
+
+## Open and active inquiry
+
+An **open inquiry** permits relevant future examination or revision.
+
+An **active inquiry** is an inquiry currently receiving resources for examination.
+
+An inquiry can therefore be open while operationally inactive.
+
+```text
+open_inquiry != active_inquiry
+inactive != erased
+not_allocated != rejected
+```
+
+An unresolved branch can remain represented, retain an inquiry basis, receive no current resources, and later become active if conditions change.
+
+Operational stopping does not itself establish epistemic closure. Stopping conditions and reopening conditions remain represented.
+
+This separation allows finite inquiry systems to preserve unresolved possibilities without requiring unlimited active computation, observation, experimentation, or attention.
+
+## Inquiry generation and recontextualization
+
+Inquiry can generate new distinctions, relations, hypotheses, operationalizations, observations, tests, measurements, comparison bases, and support claims.
+
+Generation is distinct from evaluation. An inquiry system can evaluate only candidates that have become represented to it, while relevant possibilities can remain outside its represented candidate set.
+
+Retained genealogy can participate in later generation through **recontextualization**.
+
+A later distinction, observation, measurement, method, or relation can make new relations among retained records representable without requiring the earlier records to be erased or rewritten.
+
+A generalized structure is:
+
+```text
+retained state
++
+new distinction or relation
+->
+recontextualization
+->
+new represented relation
+->
+new possible inquiry
+```
+
+A newly represented relation does not automatically become epistemic support. It can instead create an inquiry basis, a possible test, a new comparison, a new hypothesis, or another candidate continuation of inquiry.
+
+This gives genealogical preservation an operational role: material that cannot presently resolve an inquiry can remain available for later distinctions that make new examination possible.
 
 ## Accuracy
 
@@ -166,9 +274,9 @@ Truth is not established by value.
 
 Calling a conclusion desirable does not establish that it is true, and calling it undesirable does not establish that it is false. A value report can itself be accurately represented when it preserves the evaluator, criterion, conditions, and judgment rather than compressing them into an intrinsic property of the object.
 
-Distinction, measurement, inquiry, comparison, and resource allocation also contain selections. A system selects what to distinguish, what to observe, which alternatives to compare, how distinctions are operationalized, which unresolved branches receive further examination, how resources are allocated, and when to stop.
+Distinction, measurement, inquiry, comparison, and resource allocation also contain selections. A system selects what to distinguish, what to observe, which alternatives to compare, how distinctions are operationalized, which possible inquiries receive active examination, how resources are allocated, and when to stop.
 
-RTE represents those selections and their operative values without reducing acceptance, inquiry, or represented support to value.
+RTE represents those selections, allocation bases, priorities, resource conditions, and operative values without reducing acceptance, inquiry, or represented support to value.
 
 ## Distinction, measurement, and relevance
 
@@ -201,6 +309,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support_claim != truth
 conclusion != support
 conclusion != acceptance_basis
@@ -211,12 +324,17 @@ belief != truth
 fact != definitive truth
 value != truth
 selection != improvement
+generation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 relational richness != accuracy
 best_supported != definitive_truth
 failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
@@ -234,6 +352,10 @@ RTE can be applied to:
 - basis;
 - acceptance;
 - inquiry basis;
+- inquiry generation;
+- inquiry priority;
+- allocation basis;
+- resource allocation;
 - support claims;
 - accuracy;
 - fact;
