@@ -274,13 +274,20 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 ## Documents
 
 - [`WHITEPAPER.md`](WHITEPAPER.md) — primary conceptual specification
-- [`RSI_RESEARCH_NOTE.md`](RSI_RESEARCH_NOTE.md) — application to recursive self-improvement
-- [`CORE_ARCHITECTURE.md`](CORE_ARCHITECTURE.md) — system architecture
 - [`SEMANTIC_FOUNDATIONS.md`](SEMANTIC_FOUNDATIONS.md) — semantic foundations
 - [`GLOSSARY.md`](GLOSSARY.md) — terminology
-- [`PROTOTYPE_SPEC.md`](PROTOTYPE_SPEC.md) — prototype specification
-- [`TESTS.md`](TESTS.md) — tests and evaluation
-
+- [`CORE_ARCHITECTURE.md`](CORE_ARCHITECTURE.md) — system architecture
+- [`OPERATIONAL_SYSTEM.md`](OPERATIONAL_SYSTEM.md) — operational RTE process
+- [`AI_ALIGNMENT.md`](AI_ALIGNMENT.md) — implications for AI epistemic alignment
+- [`BOUNDARY_TESTING.md`](BOUNDARY_TESTING.md) — boundary testing procedure
+- [`RSI_RESEARCH_NOTE.md`](RSI_RESEARCH_NOTE.md) — evaluator-boundary research in recursive self-improvement
+- [`COIN_TOSS.md`](COIN_TOSS.md) — worked example of measurement, classification, and representation boundaries
+- [`prototype/README.md`](prototype/README.md) — executable prototype overview
+- [`prototype/aperta_veritas.py`](prototype/aperta_veritas.py) — current executable inquiry ledger
+- [`prototype/test_aperta_veritas.py`](prototype/test_aperta_veritas.py) — executable semantic and structural tests
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution and revision protocol
+- [`CHANGELOG.md`](CHANGELOG.md) — conceptual, semantic, structural, and implementation genealogy
+- [`CITATION.cff`](CITATION.cff) — citation metadata
 ---
 
 ## Author
