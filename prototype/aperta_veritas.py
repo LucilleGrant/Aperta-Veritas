@@ -89,7 +89,7 @@ class Measurement:
 class Basis:
     """
     A represented element associated with acceptance, inquiry,
-    evaluation, or support.
+    allocation, evaluation, or support.
 
     Recording a basis does not classify it as epistemic support.
     """
@@ -132,7 +132,11 @@ class AcceptanceBasis:
 
 @dataclass(frozen=True)
 class InquiryBasis:
-    """Why a represented state remains available for examination."""
+    """
+    A represented basis under which further examination could occur.
+
+    Recording an inquiry basis does not assign priority or resources.
+    """
 
     inquiry_basis_id: str
     state_id: str
@@ -153,6 +157,233 @@ class InquiryBasis:
             )
         if not self.account.strip():
             raise ValueError("inquiry account must be explicit")
+
+
+@dataclass(frozen=True)
+class InquiryOperation:
+    """A represented possible continuation of inquiry."""
+
+    inquiry_operation_id: str
+    account: str
+    target_state_ids: tuple[str, ...]
+    inquiry_basis_ids: tuple[str, ...] = ()
+    operation: str = ""
+    requirements: tuple[str, ...] = ()
+    expected_outputs: tuple[str, ...] = ()
+    conditions: tuple[str, ...] = ()
+    dependencies: tuple[str, ...] = ()
+    provenance: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.account.strip():
+            raise ValueError(
+                "inquiry operation account must be explicit"
+            )
+        if not self.operation.strip():
+            raise ValueError(
+                "inquiry operation must be explicit"
+            )
+        if not self.target_state_ids:
+            raise ValueError(
+                "inquiry operation requires a represented target"
+            )
+
+
+@dataclass(frozen=True)
+class AllocationBasis:
+    """
+    Represented basis used in allocating resources among possible
+    inquiry operations.
+
+    Recording an allocation basis does not make it epistemic support.
+    """
+
+    allocation_basis_id: str
+    account: str
+    basis_ids: tuple[str, ...]
+    criteria: tuple[str, ...]
+    conditions: tuple[str, ...] = ()
+    constraints: tuple[str, ...] = ()
+    purposes: tuple[str, ...] = ()
+    provenance: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.account.strip():
+            raise ValueError(
+                "allocation basis account must be explicit"
+            )
+        if not self.basis_ids:
+            raise ValueError(
+                "allocation basis requires represented basis IDs"
+            )
+        if not self.criteria:
+            raise ValueError(
+                "allocation basis requires explicit criteria"
+            )
+
+
+@dataclass(frozen=True)
+class InquiryPriority:
+    """A represented ordering or preference among inquiry operations."""
+
+    inquiry_priority_id: str
+    inquiry_operation_ids: tuple[str, ...]
+    allocation_basis_id: str
+    ordered_operation_ids: tuple[str, ...]
+    account: str
+    conditions: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.inquiry_operation_ids:
+            raise ValueError(
+                "inquiry priority requires represented operations"
+            )
+        if not self.ordered_operation_ids:
+            raise ValueError(
+                "inquiry priority requires an explicit ordering"
+            )
+        if set(self.ordered_operation_ids) != set(
+            self.inquiry_operation_ids
+        ):
+            raise ValueError(
+                "priority ordering must contain exactly "
+                "the represented inquiry operations"
+            )
+        if len(self.ordered_operation_ids) != len(
+            set(self.ordered_operation_ids)
+        ):
+            raise ValueError(
+                "priority ordering cannot contain duplicates"
+            )
+        if not self.account.strip():
+            raise ValueError(
+                "inquiry priority account must be explicit"
+            )
+
+
+@dataclass(frozen=True)
+class Allocator:
+    """A represented process participating in resource allocation."""
+
+    allocator_id: str
+    declared_account: str
+    criteria: tuple[str, ...]
+    allocation_basis_ids: tuple[str, ...] = ()
+    resource_conditions: tuple[str, ...] = ()
+    constraints: tuple[str, ...] = ()
+    generator_feedback: tuple[str, ...] = ()
+    evaluator_feedback: tuple[str, ...] = ()
+    conditions: tuple[str, ...] = ()
+    exclusions: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.declared_account.strip():
+            raise ValueError("allocator account must be explicit")
+        if not self.criteria:
+            raise ValueError(
+                "allocator requires at least one represented criterion"
+            )
+
+
+@dataclass(frozen=True)
+class ResourceAllocation:
+    """
+    A represented assignment of resources to inquiry operations.
+
+    Allocation does not establish epistemic support or truth.
+    """
+
+    resource_allocation_id: str
+    allocator: Allocator
+    inquiry_operation_ids: tuple[str, ...]
+    allocation_basis_ids: tuple[str, ...]
+    inquiry_priority_id: str | None
+    assigned_resources: dict[str, dict[str, float]]
+    unallocated_operation_ids: tuple[str, ...] = ()
+    conditions: tuple[str, ...] = ()
+    dependencies: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.inquiry_operation_ids:
+            raise ValueError(
+                "resource allocation requires inquiry operations"
+            )
+        if not self.allocation_basis_ids:
+            raise ValueError(
+                "resource allocation requires an allocation basis"
+            )
+
+        represented = set(self.inquiry_operation_ids)
+        assigned = set(self.assigned_resources)
+        unallocated = set(self.unallocated_operation_ids)
+
+        if not assigned.issubset(represented):
+            raise ValueError(
+                "assigned resources refer to unknown inquiry operations"
+            )
+        if not unallocated.issubset(represented):
+            raise ValueError(
+                "unallocated operations must belong to allocation set"
+            )
+        if assigned & unallocated:
+            raise ValueError(
+                "an inquiry operation cannot be both allocated "
+                "and unallocated in the same event"
+            )
+        if assigned | unallocated != represented:
+            raise ValueError(
+                "allocation must explicitly account for every "
+                "represented inquiry operation"
+            )
+
+        for operation_resources in self.assigned_resources.values():
+            if not operation_resources:
+                raise ValueError(
+                    "allocated inquiry operation requires resources"
+                )
+            for resource, amount in operation_resources.items():
+                if not resource.strip():
+                    raise ValueError(
+                        "resource name must be explicit"
+                    )
+                if amount < 0:
+                    raise ValueError(
+                        "resource allocation cannot be negative"
+                    )
+
+
+@dataclass(frozen=True)
+class Activation:
+    """A represented activation or deactivation of inquiry operations."""
+
+    activation_id: str
+    inquiry_operation_ids: tuple[str, ...]
+    resource_allocation_id: str | None
+    active: bool
+    account: str
+    conditions: tuple[str, ...] = ()
+    stopping_conditions: tuple[str, ...] = ()
+    reopening_conditions: tuple[str, ...] = ()
+    residuals: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.inquiry_operation_ids:
+            raise ValueError(
+                "activation requires represented inquiry operations"
+            )
+        if not self.account.strip():
+            raise ValueError(
+                "activation account must be explicit"
+            )
+        if self.active and self.resource_allocation_id is None:
+            raise ValueError(
+                "activation requires a represented resource allocation"
+            )
 
 
 @dataclass(frozen=True)
@@ -183,6 +414,7 @@ class Generator:
     retrieval: tuple[str, ...] = ()
     tools: tuple[str, ...] = ()
     constraints: tuple[str, ...] = ()
+    allocator_feedback: tuple[str, ...] = ()
     evaluator_feedback: tuple[str, ...] = ()
     conditions: tuple[str, ...] = ()
     exclusions: tuple[str, ...] = ()
@@ -402,6 +634,8 @@ class Transition:
     transformation: str
     evaluator: Evaluator
     generation_id: str | None = None
+    resource_allocation_id: str | None = None
+    activation_ids: tuple[str, ...] = ()
     tests: tuple[str, ...] = ()
     inactive_state_ids: tuple[str, ...] = ()
     acceptance_basis_ids: tuple[str, ...] = ()
@@ -462,8 +696,7 @@ class InquiryLedger:
     """Append-only graph of represented inquiry genealogy."""
 
     def __init__(self) -> None:
-        self._records: list[dict[str, Any]] = {}
-        self._records = []
+        self._records: list[dict[str, Any]] = []
 
         self.states: dict[str, InquiryState] = {}
         self.transitions: dict[str, Transition] = {}
@@ -481,6 +714,19 @@ class InquiryLedger:
             str, AcceptanceBasis
         ] = {}
         self.inquiry_bases: dict[str, InquiryBasis] = {}
+        self.inquiry_operations: dict[
+            str, InquiryOperation
+        ] = {}
+        self.allocation_bases: dict[
+            str, AllocationBasis
+        ] = {}
+        self.inquiry_priorities: dict[
+            str, InquiryPriority
+        ] = {}
+        self.resource_allocations: dict[
+            str, ResourceAllocation
+        ] = {}
+        self.activations: dict[str, Activation] = {}
 
         self.support_relations: dict[
             str, SupportRelation
@@ -583,6 +829,73 @@ class InquiryLedger:
             if inquiry_basis_id not in self.inquiry_bases:
                 raise KeyError(
                     f"unknown inquiry basis: {inquiry_basis_id}"
+                )
+        return ids
+
+    def _require_inquiry_operations(
+        self,
+        inquiry_operation_ids: Iterable[str],
+    ) -> tuple[str, ...]:
+        ids = tuple(inquiry_operation_ids)
+        for inquiry_operation_id in ids:
+            if inquiry_operation_id not in self.inquiry_operations:
+                raise KeyError(
+                    "unknown inquiry operation: "
+                    f"{inquiry_operation_id}"
+                )
+        return ids
+
+    def _require_allocation_bases(
+        self,
+        allocation_basis_ids: Iterable[str],
+    ) -> tuple[str, ...]:
+        ids = tuple(allocation_basis_ids)
+        for allocation_basis_id in ids:
+            if allocation_basis_id not in self.allocation_bases:
+                raise KeyError(
+                    "unknown allocation basis: "
+                    f"{allocation_basis_id}"
+                )
+        return ids
+
+    def _require_inquiry_priorities(
+        self,
+        inquiry_priority_ids: Iterable[str],
+    ) -> tuple[str, ...]:
+        ids = tuple(inquiry_priority_ids)
+        for inquiry_priority_id in ids:
+            if inquiry_priority_id not in self.inquiry_priorities:
+                raise KeyError(
+                    "unknown inquiry priority: "
+                    f"{inquiry_priority_id}"
+                )
+        return ids
+
+    def _require_resource_allocations(
+        self,
+        resource_allocation_ids: Iterable[str],
+    ) -> tuple[str, ...]:
+        ids = tuple(resource_allocation_ids)
+        for resource_allocation_id in ids:
+            if (
+                resource_allocation_id
+                not in self.resource_allocations
+            ):
+                raise KeyError(
+                    "unknown resource allocation: "
+                    f"{resource_allocation_id}"
+                )
+        return ids
+
+    def _require_activations(
+        self,
+        activation_ids: Iterable[str],
+    ) -> tuple[str, ...]:
+        ids = tuple(activation_ids)
+        for activation_id in ids:
+            if activation_id not in self.activations:
+                raise KeyError(
+                    f"unknown activation: {activation_id}"
                 )
         return ids
 
@@ -828,6 +1141,301 @@ class InquiryLedger:
             asdict(inquiry_basis),
         )
         return inquiry_basis
+
+    def record_inquiry_operation(
+        self,
+        *,
+        account: str,
+        target_state_ids: Iterable[str],
+        operation: str,
+        inquiry_basis_ids: Iterable[str] = (),
+        requirements: Iterable[str] = (),
+        expected_outputs: Iterable[str] = (),
+        conditions: Iterable[str] = (),
+        dependencies: Iterable[str] = (),
+        provenance: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> InquiryOperation:
+        targets = self._require_states(target_state_ids)
+        represented_inquiry = self._require_inquiry_bases(
+            inquiry_basis_ids
+        )
+
+        for inquiry_basis_id in represented_inquiry:
+            inquiry_basis = self.inquiry_bases[inquiry_basis_id]
+            if inquiry_basis.state_id not in targets:
+                raise ValueError(
+                    "inquiry basis must concern a target state "
+                    "of the inquiry operation"
+                )
+
+        inquiry_operation = InquiryOperation(
+            inquiry_operation_id=_id("inquiry_operation"),
+            account=account,
+            target_state_ids=targets,
+            inquiry_basis_ids=represented_inquiry,
+            operation=operation,
+            requirements=tuple(requirements),
+            expected_outputs=tuple(expected_outputs),
+            conditions=tuple(conditions),
+            dependencies=tuple(dependencies),
+            provenance=tuple(provenance),
+            residuals=tuple(residuals),
+        )
+
+        self.inquiry_operations[
+            inquiry_operation.inquiry_operation_id
+        ] = inquiry_operation
+        self._append(
+            "inquiry_operation",
+            asdict(inquiry_operation),
+        )
+        return inquiry_operation
+
+    def record_allocation_basis(
+        self,
+        *,
+        account: str,
+        basis_ids: Iterable[str],
+        criteria: Iterable[str],
+        conditions: Iterable[str] = (),
+        constraints: Iterable[str] = (),
+        purposes: Iterable[str] = (),
+        provenance: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> AllocationBasis:
+        represented_bases = self._require_bases(basis_ids)
+
+        allocation_basis = AllocationBasis(
+            allocation_basis_id=_id("allocation_basis"),
+            account=account,
+            basis_ids=represented_bases,
+            criteria=tuple(criteria),
+            conditions=tuple(conditions),
+            constraints=tuple(constraints),
+            purposes=tuple(purposes),
+            provenance=tuple(provenance),
+            residuals=tuple(residuals),
+        )
+
+        self.allocation_bases[
+            allocation_basis.allocation_basis_id
+        ] = allocation_basis
+        self._append(
+            "allocation_basis",
+            asdict(allocation_basis),
+        )
+        return allocation_basis
+
+    def record_inquiry_priority(
+        self,
+        *,
+        inquiry_operation_ids: Iterable[str],
+        allocation_basis_id: str,
+        ordered_operation_ids: Iterable[str],
+        account: str,
+        conditions: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> InquiryPriority:
+        operations = self._require_inquiry_operations(
+            inquiry_operation_ids
+        )
+        self._require_allocation_bases((allocation_basis_id,))
+        ordered = self._require_inquiry_operations(
+            ordered_operation_ids
+        )
+
+        priority = InquiryPriority(
+            inquiry_priority_id=_id("inquiry_priority"),
+            inquiry_operation_ids=operations,
+            allocation_basis_id=allocation_basis_id,
+            ordered_operation_ids=ordered,
+            account=account,
+            conditions=tuple(conditions),
+            residuals=tuple(residuals),
+        )
+
+        self.inquiry_priorities[
+            priority.inquiry_priority_id
+        ] = priority
+        self._append(
+            "inquiry_priority",
+            asdict(priority),
+        )
+        return priority
+
+    def allocate_resources(
+        self,
+        *,
+        inquiry_operation_ids: Iterable[str],
+        allocator: Allocator,
+        allocation_basis_ids: Iterable[str],
+        assigned_resources: dict[str, dict[str, float]],
+        inquiry_priority_id: str | None = None,
+        unallocated_operation_ids: Iterable[str] = (),
+        conditions: Iterable[str] = (),
+        dependencies: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> ResourceAllocation:
+        operations = self._require_inquiry_operations(
+            inquiry_operation_ids
+        )
+        represented_bases = self._require_allocation_bases(
+            allocation_basis_ids
+        )
+
+        allocator_basis_ids = self._require_allocation_bases(
+            allocator.allocation_basis_ids
+        )
+        if (
+            allocator_basis_ids
+            and not set(allocator_basis_ids).issubset(
+                set(represented_bases)
+            )
+        ):
+            raise ValueError(
+                "allocator allocation bases must be represented "
+                "by the allocation event"
+            )
+
+        priority_id = inquiry_priority_id
+        if priority_id is not None:
+            self._require_inquiry_priorities((priority_id,))
+            priority = self.inquiry_priorities[priority_id]
+            if set(priority.inquiry_operation_ids) != set(operations):
+                raise ValueError(
+                    "inquiry priority must concern exactly "
+                    "the allocation operation set"
+                )
+            if priority.allocation_basis_id not in represented_bases:
+                raise ValueError(
+                    "priority allocation basis must be represented "
+                    "by the allocation event"
+                )
+
+        assigned = {
+            operation_id: dict(resources)
+            for operation_id, resources
+            in assigned_resources.items()
+        }
+        self._require_inquiry_operations(assigned.keys())
+
+        unallocated = self._require_inquiry_operations(
+            unallocated_operation_ids
+        )
+
+        allocation = ResourceAllocation(
+            resource_allocation_id=_id("resource_allocation"),
+            allocator=allocator,
+            inquiry_operation_ids=operations,
+            allocation_basis_ids=represented_bases,
+            inquiry_priority_id=priority_id,
+            assigned_resources=assigned,
+            unallocated_operation_ids=unallocated,
+            conditions=tuple(conditions),
+            dependencies=tuple(dependencies),
+            residuals=tuple(residuals),
+        )
+
+        self.resource_allocations[
+            allocation.resource_allocation_id
+        ] = allocation
+        self._append(
+            "resource_allocation",
+            asdict(allocation),
+        )
+        return allocation
+
+    def activate_inquiry(
+        self,
+        *,
+        inquiry_operation_ids: Iterable[str],
+        resource_allocation_id: str,
+        account: str,
+        conditions: Iterable[str] = (),
+        stopping_conditions: Iterable[str] = (),
+        reopening_conditions: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> Activation:
+        operations = self._require_inquiry_operations(
+            inquiry_operation_ids
+        )
+        self._require_resource_allocations(
+            (resource_allocation_id,)
+        )
+
+        allocation = self.resource_allocations[
+            resource_allocation_id
+        ]
+        allocated = set(allocation.assigned_resources)
+
+        if not set(operations).issubset(allocated):
+            raise ValueError(
+                "active inquiry operations must have represented "
+                "resource allocations"
+            )
+
+        activation = Activation(
+            activation_id=_id("activation"),
+            inquiry_operation_ids=operations,
+            resource_allocation_id=resource_allocation_id,
+            active=True,
+            account=account,
+            conditions=tuple(conditions),
+            stopping_conditions=tuple(stopping_conditions),
+            reopening_conditions=tuple(reopening_conditions),
+            residuals=tuple(residuals),
+        )
+
+        self.activations[
+            activation.activation_id
+        ] = activation
+        self._append(
+            "activation",
+            asdict(activation),
+        )
+        return activation
+
+    def deactivate_inquiry(
+        self,
+        *,
+        inquiry_operation_ids: Iterable[str],
+        account: str,
+        resource_allocation_id: str | None = None,
+        conditions: Iterable[str] = (),
+        stopping_conditions: Iterable[str] = (),
+        reopening_conditions: Iterable[str] = (),
+        residuals: Iterable[str] = (),
+    ) -> Activation:
+        operations = self._require_inquiry_operations(
+            inquiry_operation_ids
+        )
+
+        if resource_allocation_id is not None:
+            self._require_resource_allocations(
+                (resource_allocation_id,)
+            )
+
+        activation = Activation(
+            activation_id=_id("activation"),
+            inquiry_operation_ids=operations,
+            resource_allocation_id=resource_allocation_id,
+            active=False,
+            account=account,
+            conditions=tuple(conditions),
+            stopping_conditions=tuple(stopping_conditions),
+            reopening_conditions=tuple(reopening_conditions),
+            residuals=tuple(residuals),
+        )
+
+        self.activations[
+            activation.activation_id
+        ] = activation
+        self._append(
+            "activation",
+            asdict(activation),
+        )
+        return activation
 
     def record_support(
         self,
@@ -1108,6 +1716,8 @@ class InquiryLedger:
         transformation: str,
         evaluator: Evaluator,
         selected_state_ids: Iterable[str],
+        resource_allocation_id: str | None = None,
+        activation_ids: Iterable[str] = (),
         tests: Iterable[str] = (),
         acceptance_basis_ids: Iterable[str] = (),
         inquiry_basis_ids: Iterable[str] = (),
@@ -1149,6 +1759,27 @@ class InquiryLedger:
                 support_claim_ids
             )
         )
+
+        represented_activations = self._require_activations(
+            activation_ids
+        )
+
+        if resource_allocation_id is not None:
+            self._require_resource_allocations(
+                (resource_allocation_id,)
+            )
+
+        for activation_id in represented_activations:
+            activation = self.activations[activation_id]
+            if (
+                resource_allocation_id is not None
+                and activation.resource_allocation_id
+                not in (None, resource_allocation_id)
+            ):
+                raise ValueError(
+                    "transition activation must refer to the "
+                    "represented resource allocation"
+                )
 
         selected_set = set(selected)
         resulting: list[InquiryState] = []
@@ -1194,6 +1825,8 @@ class InquiryLedger:
             transformation=transformation,
             evaluator=evaluator,
             generation_id=generation_id,
+            resource_allocation_id=resource_allocation_id,
+            activation_ids=represented_activations,
             tests=tuple(tests),
             inactive_state_ids=tuple(inactive),
             acceptance_basis_ids=represented_acceptance,
@@ -1241,7 +1874,8 @@ class InquiryLedger:
         Compatibility operation.
 
         This preserves the earlier convenience API while explicitly
-        recording that candidate generation was supplied externally.
+        recording that candidate generation and allocation were supplied
+        externally and are not represented by this compatibility path.
         """
 
         parents = self._require_states(prior_state_ids)
@@ -1283,9 +1917,11 @@ class InquiryLedger:
             source_state_ids=parents,
             constraints=(
                 "candidate-generation process not represented",
+                "allocation process not represented",
             ),
             residuals=(
                 "generation genealogy incomplete",
+                "allocation genealogy incomplete",
             ),
         )
 
@@ -1296,10 +1932,11 @@ class InquiryLedger:
             operation="external candidate provision",
             known_exclusions=(
                 "candidate-generation process not represented",
+                "allocation process not represented",
             ),
             residuals=(
                 "compatibility path preserves generation "
-                "as an explicit unresolved boundary",
+                "and allocation as explicit unresolved boundaries",
             ),
         )
 
@@ -1315,7 +1952,10 @@ class InquiryLedger:
             evaluator=evaluator,
             selected_state_ids=selected_state_ids,
             tests=tests,
-            residuals=residuals,
+            residuals=(
+                *tuple(residuals),
+                "allocation not represented by compatibility path",
+            ),
             resource_cost=resource_cost,
             stopping_conditions=stopping_conditions,
             reopening_conditions=reopening_conditions,
@@ -1563,6 +2203,11 @@ class InquiryLedger:
         basis_ids: Iterable[str] = (),
         acceptance_basis_ids: Iterable[str] = (),
         inquiry_basis_ids: Iterable[str] = (),
+        inquiry_operation_ids: Iterable[str] = (),
+        allocation_basis_ids: Iterable[str] = (),
+        inquiry_priority_ids: Iterable[str] = (),
+        resource_allocation_ids: Iterable[str] = (),
+        activation_ids: Iterable[str] = (),
         support_ids: Iterable[str] = (),
         support_claim_ids: Iterable[str] = (),
         comparison_ids: Iterable[str] = (),
@@ -1589,6 +2234,29 @@ class InquiryLedger:
         )
         represented_inquiry = self._require_inquiry_bases(
             inquiry_basis_ids
+        )
+        represented_inquiry_operations = (
+            self._require_inquiry_operations(
+                inquiry_operation_ids
+            )
+        )
+        represented_allocation_bases = (
+            self._require_allocation_bases(
+                allocation_basis_ids
+            )
+        )
+        represented_priorities = (
+            self._require_inquiry_priorities(
+                inquiry_priority_ids
+            )
+        )
+        represented_allocations = (
+            self._require_resource_allocations(
+                resource_allocation_ids
+            )
+        )
+        represented_activations = self._require_activations(
+            activation_ids
         )
         represented_support = (
             self._require_support_relations(
@@ -1639,6 +2307,15 @@ class InquiryLedger:
             "basis_ids": represented_bases,
             "acceptance_basis_ids": represented_acceptance,
             "inquiry_basis_ids": represented_inquiry,
+            "inquiry_operation_ids": (
+                represented_inquiry_operations
+            ),
+            "allocation_basis_ids": (
+                represented_allocation_bases
+            ),
+            "inquiry_priority_ids": represented_priorities,
+            "resource_allocation_ids": represented_allocations,
+            "activation_ids": represented_activations,
             "support_ids": represented_support,
             "support_claim_ids": represented_support_claims,
             "comparison_ids": represented_comparisons,
@@ -1737,6 +2414,7 @@ def generator(
     retrieval: Iterable[str] = (),
     tools: Iterable[str] = (),
     constraints: Iterable[str] = (),
+    allocator_feedback: Iterable[str] = (),
     evaluator_feedback: Iterable[str] = (),
     conditions: Iterable[str] = (),
     exclusions: Iterable[str] = (),
@@ -1752,9 +2430,38 @@ def generator(
         retrieval=tuple(retrieval),
         tools=tuple(tools),
         constraints=tuple(constraints),
+        allocator_feedback=tuple(allocator_feedback),
         evaluator_feedback=tuple(evaluator_feedback),
         conditions=tuple(conditions),
         exclusions=tuple(exclusions),
         resource_limits=tuple(resource_limits),
+        residuals=tuple(residuals),
+    )
+
+
+def allocator(
+    declared_account: str,
+    *,
+    criteria: Iterable[str],
+    allocation_basis_ids: Iterable[str] = (),
+    resource_conditions: Iterable[str] = (),
+    constraints: Iterable[str] = (),
+    generator_feedback: Iterable[str] = (),
+    evaluator_feedback: Iterable[str] = (),
+    conditions: Iterable[str] = (),
+    exclusions: Iterable[str] = (),
+    residuals: Iterable[str] = (),
+) -> Allocator:
+    return Allocator(
+        allocator_id=_id("allocator"),
+        declared_account=declared_account,
+        criteria=tuple(criteria),
+        allocation_basis_ids=tuple(allocation_basis_ids),
+        resource_conditions=tuple(resource_conditions),
+        constraints=tuple(constraints),
+        generator_feedback=tuple(generator_feedback),
+        evaluator_feedback=tuple(evaluator_feedback),
+        conditions=tuple(conditions),
+        exclusions=tuple(exclusions),
         residuals=tuple(residuals),
     )
