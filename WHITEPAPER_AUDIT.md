@@ -291,7 +291,7 @@ Therefore:
 inquiry_basis != support
 ```
 
-An **inquiry basis** records why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+An **inquiry basis** is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
 Possible inquiry bases include:
 
@@ -834,8 +834,443 @@ It does not establish that candidate generation is complete, autonomous, creativ
 
 The prototype records represented generation processes. It does not yet constitute a general discovery engine.
 
-Autonomous allocation of inquiry resources and autonomous reactivation of inactive branches also remain unresolved.
+The prototype now represents allocation and activation explicitly, but autonomous allocation of inquiry resources and autonomous retrieval or reactivation of inactive branches remain unresolved.
+### Tenth exposure: inquiry basis compressed into priority
 
+Resource-aware examination exposed a latent selection operation in the earlier definition of inquiry basis.
+
+The earlier formulation stated that an inquiry basis records why something:
+
+```text
+remains a candidate for further examination
+```
+
+That language could compress two different questions:
+
+```text
+Under what represented basis could further examination occur?
+```
+
+and:
+
+```text
+Which possible inquiry should receive attention or resources?
+```
+
+The first concerns inquiry basis.
+
+The second concerns allocation.
+
+The corrected definition is:
+
+> **Inquiry basis:** a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
+
+Therefore:
+
+```text
+inquiry_basis != inquiry_priority
+```
+
+An inquiry basis does not establish that an inquiry operation should be preferred over another inquiry operation.
+
+It also does not establish that resources should be assigned to it.
+
+A represented inquiry can remain open without being operationally active.
+
+### Eleventh exposure: inquiry priority compressed into resource allocation
+
+Once inquiry basis was separated from priority, another distinction became necessary.
+
+A system can represent an ordering among possible inquiry operations without actually assigning resources to them.
+
+The framework therefore distinguishes:
+
+> **Inquiry priority:** a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+from:
+
+> **Resource allocation:** a represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+Therefore:
+
+```text
+inquiry_priority != resource_allocation
+```
+
+A high-priority inquiry operation can remain unallocated when required resources are unavailable.
+
+A lower-priority operation can receive resources under represented constraints that prevent allocation to a higher-priority operation.
+
+Priority and allocation therefore require their own genealogy.
+
+### Twelfth exposure: allocation compressed into epistemic support
+
+Attention and resource assignment can affect what observations, measurements, tests, and support claims later become available.
+
+That does not make allocation itself epistemic support.
+
+The framework therefore introduces:
+
+> **Allocation basis:** represented criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+and preserves:
+
+```text
+allocation_basis != support
+inquiry_priority != support
+resource_allocation != support
+```
+
+Possible allocation bases can include:
+
+- available compute;
+- available time;
+- cost;
+- expected information gain;
+- urgency;
+- tractability;
+- novelty;
+- anomaly density;
+- available instruments;
+- external requests;
+- random sampling;
+- safety constraints;
+- represented purposes or policies;
+- other represented resource conditions.
+
+These can govern attention or resource assignment without thereby establishing whether a conclusion is true.
+
+The fact that an inquiry received resources does not establish that its hypothesis has greater epistemic support.
+
+The fact that an inquiry did not receive resources does not establish that its hypothesis was rejected.
+
+### Thirteenth exposure: open inquiry compressed into active inquiry
+
+Finite resources prevent every represented inquiry possibility from remaining operationally active.
+
+That does not require inactive possibilities to be erased or epistemically closed.
+
+The framework therefore separates:
+
+```text
+open_inquiry != active_inquiry
+```
+
+Open inquiry permits relevant future examination or revision.
+
+Active inquiry is currently receiving resources for examination.
+
+An inquiry can therefore remain open while inactive.
+
+Likewise:
+
+```text
+not_allocated != rejected
+inactive != erased
+```
+
+A represented inquiry operation can receive no current resources while remaining genealogically available for later allocation, recontextualization, testing, or revision.
+
+Deactivation can preserve stopping conditions and reopening conditions.
+
+Operational stopping therefore remains distinct from epistemic closure.
+
+### Fourteenth exposure: allocation hidden inside inquiry
+
+The earlier generation correction separated:
+
+```text
+generation != evaluation
+```
+
+but finite inquiry also contains an allocation operation between possible continuation and active examination.
+
+A more explicit inquiry architecture is:
+
+```text
+retained represented state
+-> inquiry basis
+-> possible inquiry generation
+-> possible inquiry operations
+-> allocation basis
+-> inquiry priority where applicable
+-> resource allocation
+-> activation
+-> active inquiry
+-> represented result
+-> evaluation
+-> new represented state
+```
+
+This is not a mandatory linear pipeline.
+
+It identifies operations that can otherwise become compressed into one another.
+
+The resulting invariants include:
+
+```text
+generation != allocation
+allocation != evaluation
+generation != evaluation
+
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
+```
+
+Convergent Inquiry can generate possible continuations without itself establishing which continuation should receive resources.
+
+The current definition is:
+
+> **Convergent Inquiry** is the generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
+
+"Convergent" does not establish mathematical convergence, monotonic improvement, a fixed limit, or guaranteed approach to truth.
+
+Convergent Inquiry does not eliminate allocation dependence.
+
+It exposes it.
+
+### Allocator exposure
+
+Finite inquiry requires some process by which resources are assigned among represented possibilities.
+
+The framework represents that dependency as an **allocator**.
+
+An allocator can contain represented:
+
+- criteria;
+- allocation bases;
+- resource conditions;
+- constraints;
+- purposes;
+- dependencies;
+- generator feedback;
+- evaluator feedback;
+- exclusions;
+- residuals.
+
+The existence of an allocator does not establish that the allocator is neutral, complete, optimal, or truth-directed.
+
+Just as an evaluator can condition which represented candidate is selected, an allocator can condition which represented inquiry operation becomes active.
+
+Just as an evaluator cannot evaluate a candidate that never becomes representable to it, an allocator cannot allocate resources to a possible inquiry operation that never becomes representable to it.
+
+Allocation can therefore constrain later evidence before evaluation occurs.
+
+That does not establish that every failure of inquiry results from allocation.
+
+It identifies another represented dependency that remains open to Recursive Truth Exposure.
+
+### Convergent Inquiry correction
+
+The original motivation for Convergent Inquiry concerned the continuation of unresolved inquiry beyond what a current test had established.
+
+The allocation correction prevents that motivation from becoming a hidden claim that every unresolved object deserves active investigation.
+
+The relevant separations are:
+
+```text
+unexplained != preferred_explanation_supported
+failure_to_establish != disproof
+failure_to_establish != elimination
+
+inquiry_basis != inquiry_priority
+inquiry_priority != resource_allocation
+
+open_inquiry != active_inquiry
+not_allocated != rejected
+```
+
+An unresolved observation can remain represented.
+
+Possible continuations can be generated.
+
+Some can receive resources.
+
+Others can remain inactive.
+
+None of those operations by themselves establish the truth of a preferred explanation.
+
+This preserves continued inquiry without converting curiosity, attention, priority, or resource expenditure into epistemic support.
+
+### Allocation and recursive self-improvement
+
+The same structural separation can be applied to recursive self-improvement.
+
+A simplified inquiry cycle is:
+
+```text
+state
+-> generate possible inquiries
+-> allocate
+-> execute inquiry
+-> evaluate result
+-> new state
+```
+
+A simplified recursive-improvement cycle is:
+
+```text
+state
+-> generate possible successors
+-> select or allocate among represented possibilities
+-> instantiate successor
+-> evaluate
+-> new state
+```
+
+These diagrams do not establish that inquiry allocation and successor selection are identical operations.
+
+They expose a shared structural problem.
+
+A bounded generator can prevent alternatives from becoming representable.
+
+A fixed allocator can suppress represented possibilities before they receive resources.
+
+A fixed evaluator can reject or fail to recognize possibilities after they become evaluable.
+
+Erasure can prevent later distinctions from recontextualizing prior states.
+
+The research problem therefore extends beyond evaluator dependence.
+
+Recursive systems can be conditioned by:
+
+```text
+generation
++
+allocation
++
+evaluation
++
+retention
+```
+
+and by the represented relations among them.
+
+### Updated semantic invariants
+
+The current 0.3.1 architecture additionally preserves:
+
+```text
+inquiry_basis != inquiry_priority
+inquiry_priority != resource_allocation
+
+allocation_basis != support
+inquiry_priority != support
+resource_allocation != support
+
+open_inquiry != active_inquiry
+not_allocated != rejected
+inactive != erased
+
+generation != allocation
+allocation != evaluation
+generation != evaluation
+
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
+```
+
+These additions do not replace the earlier invariants recorded above.
+
+They extend the current architecture after further recursive examination.
+
+They remain represented claims subject to the same Recursive Truth Exposure as the rest of the framework.
+
+### Allocation implementation exposure
+
+The executable prototype has now been extended to represent the allocation layer explicitly.
+
+The implementation now includes:
+
+- inquiry operations;
+- allocation bases;
+- inquiry priorities;
+- allocators;
+- resource allocations;
+- explicitly unallocated inquiry operations;
+- activation events;
+- deactivation events;
+- stopping conditions;
+- reopening conditions;
+- allocation genealogy within recursive audit.
+
+The executable separation is designed so that:
+
+- recording an inquiry basis does not create inquiry priority;
+- recording an inquiry operation does not create priority or resource allocation;
+- recording an allocation basis does not create epistemic support;
+- recording inquiry priority does not allocate resources;
+- allocating resources does not create epistemic support;
+- an unallocated inquiry operation remains represented;
+- nonallocation does not create a rejection record;
+- open inquiry can remain inactive;
+- activation requires represented allocation;
+- only represented allocated operations can be activated through the allocation interface;
+- activation does not automatically create epistemic support or evaluation;
+- deactivation does not erase the inquiry operation;
+- deactivation can preserve reopening conditions;
+- priority ordering remains tied to its represented operation set;
+- allocation remains tied to its represented allocation basis and allocator;
+- recursive audit can expose allocation genealogy.
+
+The prototype still does not contain a neutral autonomous allocator.
+
+It represents allocation decisions and their genealogy.
+
+This is a narrower claim.
+
+### Allocation test exposure
+
+The semantic test suite has been extended to pressure the allocation separations adversarially.
+
+The new tests examine:
+
+- inquiry basis without priority or allocation;
+- inquiry operation without priority or allocation;
+- allocation basis without support;
+- inquiry priority without resource allocation;
+- resource allocation without support;
+- preservation of unallocated operations;
+- open inquiry without active inquiry;
+- activation under represented allocation;
+- rejection of activation for unallocated operations;
+- activation without automatic support or evaluation;
+- deactivation without erasure;
+- reopening conditions after deactivation;
+- exact priority-operation correspondence;
+- consistency between represented priority and allocation operation sets;
+- continued separation of generation, support, comparison, recontextualization, allocation, and evaluation;
+- continued tamper evidence across recorded genealogy.
+
+Passing these tests would demonstrate only the implemented behaviors exercised by the suite.
+
+It would not establish that the allocator is neutral, optimal, complete, autonomous, or truth-directed.
+
+It would not establish that every possible inquiry operation was generated.
+
+It would not establish that the represented allocation basis is the uniquely correct basis for allocating finite resources.
+
+### Current allocation residuals
+
+The allocation correction exposes additional unresolved questions:
+
+- Allocation criteria can reproduce evaluator dependencies before evidence is generated.
+- Expected information gain depends on represented models and expectations that can themselves exclude relevant possibilities.
+- Urgency, cost, tractability, novelty, anomaly density, safety, and other allocation criteria can conflict without a neutral rule for resolving them.
+- Random allocation avoids some deterministic priority commitments while introducing its own represented procedure and resource consequences.
+- An allocator can systematically starve an inquiry branch without rejecting it.
+- Genealogical retention alone does not guarantee that an inactive branch will ever be retrieved or reactivated.
+- Retrieval is itself resource-consuming and may require allocation.
+- Allocation feedback can alter future generation, producing recursive coupling between generator and allocator.
+- Evaluation feedback can alter future allocation, producing recursive coupling between evaluator and allocator.
+- Allocation history can condition the evidence later available to comparison without itself becoming epistemic support.
+- Resource representation can be incomplete or misleading.
+- Activation boundaries can hide external resource assignments not represented by the ledger.
+- A system can preserve an inquiry operation genealogically while making its practical reactivation vanishingly unlikely.
+- The distinction between successor selection and inquiry resource allocation requires continued pressure testing in recursive self-improvement models.
+- Autonomous allocation of inquiry resources remains unresolved.
+- Autonomous retrieval and reactivation of inactive branches remain unresolved.
+- Finite storage, retrieval, privacy, compute, and attention remain constraints on genealogical losslessness.
 ### Files revised during the 0.3.1 correction sequence
 
 The correction has propagated through the repository architecture, including:
