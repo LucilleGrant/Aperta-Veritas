@@ -28,7 +28,8 @@ An inquiry state contains:
 - **observation:** represented contact with the object;
 - **datum:** information retained from an observation, source, instrument, or prior representation;
 - **provenance:** the origin and transformation history of each datum and representation;
-- **distinction:** measurement of a spectrum of possibility that produces a represented difference or relation;
+- **distinction:** a specification of a variable, category, relation, boundary, or other basis by which possibilities can differ;
+- **measurement:** a represented result produced relative to one or more distinctions, methods, and conditions;
 - **claim:** a representation presented as accurate or true under stated or unstated conditions;
 - **conclusion:** a current synthesis of represented data, relations, inferences, methods, measurements, and conditions;
 - **support:** the represented basis by which a conclusion is treated as true relative to alternatives under specified measurements and conditions;
@@ -37,13 +38,13 @@ An inquiry state contains:
 - **belief:** a representation accepted as true by an agent or system;
 - **confidence:** the degree of certainty assigned to a claim, belief, or conclusion;
 - **value:** a represented relation of worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or desired state relative to an evaluator;
-- **evaluator:** the distinctions, measurements, values, criteria, and selection operations producing a judgment or transition;
+- **evaluator:** the distinctions selected or applied, measurements produced or considered, values, criteria, and selection operations producing a judgment or transition;
 - **model:** a connected set of representations used to describe, explain, predict, compare, or act;
 - **boundary:** a limit on observation, testing, representation, comparison, revision, scope, action, or resource use;
 - **game:** the evaluator, value labels, dependencies, resource conditions, selections, exclusions, incentives, and protected states shaping transitions in an agent or system;
 - **test:** an operation that places a claim or model in contact with observation, contradiction, consequence, comparison, or a competing representation;
 - **residual:** a represented limit, uncertainty, exclusion, conflict, incomplete operation, or unresolved branch connected to the current genealogy;
-- **genealogy:** the preserved relations among inputs, transformations, tests, branches, measurements, support states, conclusions, and revisions;
+- **genealogy:** the preserved relations among inputs, distinctions, transformations, tests, branches, measurements, support states, conclusions, and revisions;
 - **status:** a description of the current relation between a representation and completed operations;
 - **stopping condition:** the represented condition under which active inquiry stops;
 - **reopening condition:** a represented condition under which inquiry can resume.
@@ -57,6 +58,7 @@ Status does not assign intrinsic worth, definitive truth, absolute accuracy, or 
 The operational system preserves the following distinctions:
 
 ```text
+distinction != measurement
 conclusion != support
 confidence != support
 confidence != accuracy
