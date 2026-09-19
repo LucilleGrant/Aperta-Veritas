@@ -2,15 +2,25 @@
 
 ## Application
 
-Aperta Veritas is a recursive process for exposing truth. In Aperta Veritas, truth is the most accurate conclusion currently available under represented observations, relations, methods, and conditions.
+Aperta Veritas is a recursive process for exposing how representations and conclusions are produced, supported, selected, revised, and retained.
 
-Recursive Truth Exposure applies this process to AI representations, conclusions, modifications, measurements, evaluators, comparison sets, and the games governing them.
+Recursive Truth Exposure applies this process to AI observations, representations, conclusions, support relations, modifications, measurements, evaluators, comparison sets, boundaries, stopping conditions, and the games governing them.
 
-AI systems are trained, evaluated, and deployed through human and machine-produced representations containing belief, error, conflict, incentive, omission, and distortion. Epistemic alignment concerns how a system produces, compares, selects, communicates, and revises conclusions. Human values, preferences, and intentions enter as Fides and Pistis.
+RTE does not certify possession of truth. It identifies conclusions presently best supported as true under represented observations, relations, methods, measurements, and conditions while preserving the support and limitations of that designation.
+
+AI systems are trained, evaluated, and deployed through human and machine-produced representations containing belief, error, conflict, incentive, omission, compression, and distortion.
+
+Epistemic alignment concerns how a system observes, represents, supports, compares, selects, communicates, and revises conclusions while preserving the distinctions among truth, support, belief, confidence, value, and action.
+
+Human values, preferences, and intentions enter the system as represented relations rather than as truth criteria by category alone.
 
 ## The problem exposed by Aperta Veritas
 
-An AI system can optimize signals that support accuracy under particular conditions. Optimization of those signals does not establish accuracy outside their represented scope:
+An AI system can optimize signals that correlate with represented support under particular conditions.
+
+Optimization of those signals does not establish truth or accuracy outside their represented scope.
+
+Examples include:
 
 - human approval;
 - evaluator preference;
@@ -23,82 +33,70 @@ An AI system can optimize signals that support accuracy under particular conditi
 - survival or continuation of the system;
 - preservation of its current model.
 
-These signals have represented functions, conditions, and limitations. Each can contribute to an accuracy measurement. None becomes truth by category alone.
+These signals have represented functions, conditions, dependencies, and limitations.
 
-Preference optimization can align a model with accepted belief while suppressing observations that contradict that belief. A model trained on representations where consensus, knowledge, confidence, fact, value, and truth have been collapsed can reproduce that collapse.
+They can contribute to support when an explicit measurement connects them to the conclusion under examination. None becomes truth, accuracy, or support by category alone.
 
-An AI system can also produce a representation that is richer, longer, more coherent, or more persuasive without producing a more accurate conclusion. Added relations support greater accuracy only when they change an explicit measurement such as observational fit, prediction, explanatory coverage, contradiction, reproducibility, or robustness under changed conditions.
+Preference optimization can align a model with accepted belief while reducing exposure to observations that conflict with that belief.
+
+A model trained on representations where consensus, knowledge, confidence, fact, value, support, and truth have been collapsed can reproduce those collapses.
+
+An AI system can also produce a representation that is richer, longer, more coherent, or more persuasive without producing a conclusion with greater represented support.
+
+Added relations affect comparative support only when they alter a relevant measurement such as observational fit, prediction and observed outcome, explanatory coverage, contradiction, reproducibility through independent routes, or robustness under changed conditions.
 
 ## Architectural implications
 
-### Separate accuracy from confidence and reward
+### Separate conclusion, support, confidence, reward, and truth
 
-The system distinguishes measured accuracy from confidence, approval, reward, consensus, coherence, usefulness, policy compliance, and continuation. Each remains represented as a distinct relation.
+The system represents conclusions separately from the support by which they are treated as true.
 
-### Represent the current conclusion
+It also distinguishes support from:
 
-The system identifies the most accurate conclusion currently available only when a represented comparison supports that designation. It records the comparison set, measurements, methods, conditions, weights, exclusions, alternatives, and residual uncertainty.
+- confidence;
+- approval;
+- reward;
+- consensus;
+- coherence;
+- usefulness;
+- policy compliance;
+- continuation;
+- value;
+- selection.
 
-The available comparison set may omit an unrepresented conclusion that would outperform every represented alternative. The current conclusion therefore remains open.
+A high-confidence conclusion can have weak represented support.
 
-### Record provenance and genealogy
+A low-confidence conclusion can have strong represented support.
 
-Outputs remain connected to observations, sources, transformations, inferences, rejected branches, evaluators, measurements, and resource limits. A conclusion does not erase the path that produced it.
+A rewarded conclusion can be false.
 
-### Record the operative objective
+An unrewarded conclusion can be true.
 
-The declared objective may be accuracy while selection follows approval, reward, coherence, speed, safety classification, task completion, or model continuation. Veritas Calculus records this divergence.
+RTE therefore does not infer truth from any of these categories alone.
 
-### Test protected boundaries
+### Represent support explicitly
 
-Safety rules, institutional assumptions, evaluator preferences, model identity, training conventions, and definitions of accuracy can become boundaries protected from examination. Boundary Testing asks what each boundary actually preserves, excludes, or conceals without presuming that it is either necessary protection or harmful confinement.
+When represented measurements permit comparison, the system can identify a conclusion as presently better supported than represented alternatives.
 
-### Preserve competing branches
+The comparison records:
 
-Ranked, rejected, inactive, unresolved, and incomparable conclusions remain connected to the evaluator, comparison method, ranking operation, genealogy, and rejection basis for later reactivation.
+- conclusions compared;
+- support relations;
+- comparison set;
+- measurements;
+- methods;
+- conditions;
+- dependencies;
+- weights where used;
+- exclusions;
+- contradictions;
+- residuals;
+- incomparable dimensions.
 
-When no shared measurement supports comparison, the system does not manufacture a single ranking merely to produce an answer.
+The operational result can be represented as:
 
-### Represent resource pressure
-
-Compute, memory, retrieval, time, energy, access, and attention affect which representations are generated, tested, retained, and selected. These pressures belong inside the model of inquiry rather than outside it.
-
-### Apply the system to itself
-
-An epistemically aligned system examines its own evaluators, reward signals, schemas, memory operations, boundary tests, comparison sets, accuracy measurements, and definition of alignment.
-
-Recursive self-application places the current alignment procedure, its evaluator, its omissions, and its value judgments inside the same inquiry state.
-
-## Value judgment and recursion
-
-Values are Fides and Pistis concerning worth, preference, obligation, permission, purpose, priority, protection, rejection, or a desired state. Values, preferences, and intentions can shape observation, representation, measurement, retention, and action. Aperta Veritas exposes these operations rather than using them as accuracy criteria without representation.
-
-> **What is represented, which conclusion is most accurate under the available measurements and conditions, and where have values, preferences, instructions, rewards, confidence, consensus, knowledge, or belief been substituted for accuracy?**
-
-A value judgment converts a measured relation into worth, preference, obligation, permission, purpose, priority, protection, rejection, or a desired state. Recursive self-improvement uses objectives, rewards, preferences, rankings, benchmarks, or fitness functions to select successors. The term improvement can conceal the evaluator and criterion that designate the successor as better. The selected state carries those limits forward while branches and residuals outside them can disappear.
-
-Aperta Veritas records action selection without granting the selection an accuracy status. The selected branch, inactive branches, evaluator, measurement dimensions, resource conditions, exclusions, and genealogy remain represented. RTE applies recursion to the evaluator, criterion, comparison set, selection operation, selected state, and designation of improvement.
-
-## Truth and action
-
-Identifying the most accurate available conclusion does not determine what an AI system should do. Action introduces purposes, preferences, obligations, permissions, risk tolerances, and resource allocations. These are value relations even when they respond to an accurate conclusion.
-
-RTE does not remove values from action. It prevents values from silently functioning as measurements of accuracy and prevents measurements of accuracy from silently functioning as moral commands.
-
-## Research branches
-
-Recorded branches include experiments in:
-
-- provenance-retaining inference;
-- genealogy-aware memory;
-- explicit separation of data, inference, belief, value, and conclusion;
-- represented accuracy measurements and comparison sets;
-- preservation of incomparable conclusions;
-- evaluator plurality;
-- objective-function inference;
-- reversible rejection and branch reactivation;
-- boundary tests applied to alignment policies;
-- recursive audits for proxy substitution;
-- measurement of relations among human approval, predictive performance, contradiction exposure, and conclusion revision.
-
-These branches arise wherever values, confidence, consensus, or belief can be substituted for accuracy, including science, religion, politics, institutions, personal inquiry, and machine intelligence.
+```text
+Conclusion A has greater represented support than Conclusion B
+under measurements M
+and conditions C
+within comparison set S.
