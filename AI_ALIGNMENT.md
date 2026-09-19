@@ -2,23 +2,50 @@
 
 ## Application
 
-Aperta Veritas is a recursive process for exposing how representations and conclusions are produced, supported, selected, revised, and retained.
+Aperta Veritas is a recursive process for exposing how representations, candidates, and conclusions are generated, supported, selected, revised, retained, stopped, and reopened.
 
-Recursive Truth Exposure applies this process to AI observations, representations, distinctions, measurements, conclusions, support relations, comparisons, modifications, evaluators, boundaries, stopping conditions, and the games governing them.
+Recursive Truth Exposure applies this process to AI observations, representations, distinctions, measurements, bases, acceptance bases, inquiry bases, support claims, comparisons, generators, modifications, evaluators, boundaries, stopping conditions, and the processes governing them.
 
-RTE does not certify possession of truth. It identifies conclusions presently best supported as true under represented observations, relations, methods, conditions, and other represented support while preserving the support and limitations of that designation.
+RTE does not certify possession of truth. It identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims while preserving the genealogy and limitations of that designation.
 
 AI systems are trained, evaluated, and deployed through human and machine-produced representations containing belief, error, conflict, incentive, omission, compression, and distortion.
 
-Epistemic alignment concerns how a system observes, represents, supports, compares, selects, communicates, and revises conclusions while preserving distinctions among truth, conclusion, support, measurement, belief, confidence, value, and action.
+Epistemic alignment concerns how a system generates, observes, represents, supports, compares, selects, communicates, and revises conclusions while preserving distinctions among truth, conclusion, basis, support, measurement, belief, confidence, value, and action.
 
-Human values, preferences, and intentions enter the system as represented relations rather than as truth criteria by category alone.
+Human values, preferences, intentions, policies, and rewards enter the system as represented relations rather than as truth criteria by category alone.
 
 ## The problem exposed by Aperta Veritas
 
-An AI system can optimize signals that correlate with represented support under particular conditions.
+An AI system operates on what becomes representable to it.
 
-Optimization of those signals does not establish truth, accuracy, or support outside their represented relations and scope.
+Before a hypothesis can be evaluated, it must become representable.
+
+Before a candidate action or successor can be evaluated, it must be generated.
+
+Before a difference can be measured, relevant distinctions must make that difference representable.
+
+This creates a generation boundary:
+
+```text
+generation
+-> represented candidate
+-> evaluation
+-> selection
+```
+
+Evaluation does not by itself determine what becomes available for evaluation.
+
+Therefore:
+
+```text
+generation != evaluation
+evaluated_candidates != exhaustive_possibility_space
+absence_from_search != disproof
+```
+
+An AI system can also optimize signals that correlate with represented support or desired behavior under particular conditions.
+
+Optimization of those signals does not establish truth, accuracy, or epistemic support outside their represented relations and scope.
 
 Examples include:
 
@@ -35,31 +62,55 @@ Examples include:
 
 These signals have represented functions, conditions, dependencies, and limitations.
 
-They can contribute to support when a represented relation connects them to the conclusion under examination. Where that relation depends on measurement, the relevant distinctions, operationalization, measurements, methods, and conditions remain represented.
+Some can participate in support claims when a represented relation connects them to whether a conclusion should presently be treated as true.
+
+Others can explain acceptance, selection, or continued inquiry without providing epistemic support.
 
 None becomes truth, accuracy, or support by category alone.
 
 Preference optimization can align a model with accepted belief while reducing exposure to observations that conflict with that belief.
 
-A model trained on representations where consensus, knowledge, confidence, fact, value, support, measurement, and truth have been collapsed can reproduce those collapses.
+A model trained on representations where consensus, knowledge, confidence, fact, value, basis, support, measurement, and truth have been collapsed can reproduce those collapses.
 
 An AI system can also produce a representation that is richer, longer, more coherent, or more persuasive without producing a conclusion with greater represented support.
 
-Added relations can alter support when a represented relation connects them to a conclusion. They can also permit new measurements, comparisons, contradictions, predictions, tests, or explanations. Their mere addition establishes neither greater support nor greater accuracy.
+Added relations can alter support when a represented support claim connects them to a conclusion.
+
+They can also permit new distinctions, measurements, comparisons, contradictions, predictions, tests, hypotheses, or explanations.
+
+Their mere addition establishes neither greater support nor greater accuracy.
 
 ## Architectural implications
 
-### Separate distinction, measurement, support, conclusion, confidence, reward, and truth
+### Separate distinction, measurement, basis, support, conclusion, confidence, reward, and truth
 
 A distinction specifies what can differ.
 
 A measurement is a represented result produced relative to one or more distinctions.
 
-Support is the represented basis by which a conclusion is treated as true.
+A basis is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other element associated with acceptance, evaluation, inquiry, or support.
 
-A conclusion is a current synthesis of represented data, relations, inferences, methods, measurements, and conditions.
+An acceptance basis records why an agent or system accepts, selects, retains, or acts upon a conclusion.
+
+An inquiry basis records why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+
+A support relation is a claimed relation between one or more bases and whether a conclusion should presently be treated as true under represented conditions.
+
+A support claim asserts that such a relation bears on whether the conclusion is true.
+
+A conclusion is a current synthesis produced from represented relations, methods, conditions, and other represented structures.
 
 These remain separate architectural objects.
+
+```text
+distinction != measurement
+basis != support
+acceptance_basis != support
+inquiry_basis != support
+support != measurement
+support_claim != truth
+conclusion != support
+```
 
 The system also distinguishes support from:
 
@@ -84,37 +135,60 @@ An unrewarded conclusion can be true.
 
 A measurement can exist without supporting a particular conclusion.
 
+A basis can cause acceptance without providing epistemic support.
+
+A hypothesis can have an inquiry basis without being supported as true.
+
 A support relation can exist without being reducible to measurement.
 
 RTE therefore does not infer truth from any of these categories alone.
 
-### Represent support explicitly
+### Represent basis and support explicitly
 
-Support is the represented basis by which a conclusion is treated as true.
+A system can treat a conclusion as true for reasons that do not establish epistemic support.
 
-It can include:
+These can include:
 
-- observations;
-- data;
-- measurements;
-- tests;
-- predictions;
-- contradictions;
-- logical relations;
+- authority;
+- policy;
+- repetition;
+- reward;
+- inherited state;
+- consensus;
+- human instruction;
+- habit;
+- fear;
+- system architecture;
+- error.
+
+RTE records these as bases where represented rather than automatically classifying them as support.
+
+Where possible, an acceptance record includes:
+
+- the conclusion accepted;
+- the acceptance basis;
+- the accepting agent or process;
+- conditions;
 - provenance;
-- explanatory relations;
-- reproducibility;
-- consequences;
-- independent routes;
-- other represented relations relevant to a conclusion.
+- relevant dependencies;
+- resulting selections or actions.
 
-A support relation preserves the basis and the relation by which that basis bears on a conclusion.
+An inquiry record can separately include:
 
-Where possible, the system records:
+- the unresolved candidate;
+- its inquiry basis;
+- relevant anomalies or conflicts;
+- missing distinctions;
+- untested predictions;
+- possible discriminating tests;
+- resource requirements;
+- stopping and reopening conditions.
 
-- the conclusion or claim supported;
-- the represented basis;
-- the relation between the basis and conclusion;
+A support claim can include:
+
+- the conclusion or claim concerned;
+- the represented basis or bases;
+- the claimed relation between those bases and whether the conclusion is true;
 - relevant distinctions;
 - operationalization where applicable;
 - measurements where applicable;
@@ -126,7 +200,51 @@ Where possible, the system records:
 - uncertainty;
 - residuals.
 
-Support is not identical to measurement.
+The existence of a support claim does not certify the support claim.
+
+Its basis, inference, distinctions, methods, conditions, dependencies, exclusions, and alternatives remain open to RTE.
+
+### Represent generation explicitly
+
+AI systems do not evaluate an exhaustive possibility space.
+
+Candidate generation can depend on:
+
+- architecture;
+- training;
+- current representations;
+- current distinctions;
+- search procedures;
+- retrieval;
+- context;
+- tools;
+- environmental access;
+- memory;
+- compute;
+- policy;
+- evaluator feedback;
+- prior successful outputs;
+- retained failed or inactive branches;
+- randomness.
+
+A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, actions, alternatives, comparison bases, evaluators, or successor states become available.
+
+RTE therefore asks:
+
+```text
+What was generated?
+How was it generated?
+Why were these the candidates?
+Which distinctions structured generation?
+Which candidate classes were unavailable?
+Which alternatives were pruned before evaluation?
+Which retained states participated in generation?
+Which evaluator signals shaped the search?
+```
+
+A generated candidate does not become true, supported, useful, safe, aligned, or improved merely because it was generated.
+
+It becomes available for inquiry or evaluation.
 
 ### Represent comparison explicitly
 
@@ -135,7 +253,7 @@ A claim that one conclusion has greater support than another requires an explici
 The comparison records:
 
 - conclusions or alternatives compared;
-- represented support associated with each;
+- represented support claims associated with each;
 - comparison set;
 - distinctions;
 - criteria;
@@ -148,7 +266,7 @@ The comparison records:
 - exclusions;
 - contradictions;
 - residuals;
-- incomparable relations.
+- unresolved relations.
 
 The operational result can be represented as:
 
@@ -167,9 +285,13 @@ Conclusion A = definitive truth
 
 Comparison does not require all support to be converted into a common measurement.
 
-Where no represented basis supports comparison, the system preserves alternatives without ranking them.
+Where no represented basis supports ranking, the system preserves alternatives without ranking them.
 
-Where represented support cannot be compared without suppressing relevant differences, the system preserves the incommensurability.
+This establishes that they are currently unranked under the represented comparison basis.
+
+It does not establish intrinsic incommensurability.
+
+A claim that alternatives are incommensurable is itself a claim requiring represented support.
 
 ### Preserve distinction and measurement genealogy
 
@@ -195,7 +317,9 @@ A measurement can expose an inadequate distinction.
 
 A test can produce a contradiction or other result that is not reduced to a scalar measurement.
 
-For AI systems, this matters because training objectives, benchmark categories, reward models, classifiers, labels, and evaluation protocols can determine what differences become available for representation before a score or judgment is produced.
+A later distinction can also expose a relation involving earlier records that was not represented when those records were produced.
+
+For AI systems, this matters because training objectives, benchmark categories, reward models, classifiers, labels, representation formats, and evaluation protocols can determine what differences become available for representation before a score or judgment is produced.
 
 RTE therefore asks not only what was measured, but what was made distinguishable and how.
 
@@ -210,6 +334,7 @@ Absence of a better represented alternative does not establish truth.
 A missing alternative can result from:
 
 - training-data omission;
+- generation failure;
 - search failure;
 - pruning;
 - policy restriction;
@@ -220,7 +345,7 @@ A missing alternative can result from:
 - inaccessible observations;
 - failure to generate the relevant distinction.
 
-RTE preserves this limitation rather than treating the represented possibility space as necessarily exhaustive.
+RTE preserves this limitation rather than treating the represented possibility space as exhaustive.
 
 ### Separate confidence from support
 
@@ -259,9 +384,13 @@ A system can receive reward because an output:
 
 These relations differ.
 
-RTE preserves the evaluator and criterion rather than compressing reward into correctness.
+RTE preserves the evaluator, criterion, acceptance basis, and any support claim rather than compressing reward into correctness.
 
-A rewarded output can also possess strong represented support. The point is not that reward invalidates it. The point is that reward and support remain distinct relations.
+A rewarded output can also possess strong represented support.
+
+The point is not that reward invalidates it.
+
+The point is that reward and support remain distinct relations.
 
 ### Separate policy from physical constraint
 
@@ -293,7 +422,7 @@ Policy is a represented constraint on action or output.
 
 Physical impossibility is a claim about the world.
 
-The distinction matters because systems trained to avoid prohibited outputs can otherwise learn to represent policy boundaries as epistemic boundaries.
+The distinction matters because systems trained to avoid prohibited outputs can otherwise represent policy boundaries as epistemic boundaries.
 
 ### Preserve belief and inherited representation
 
@@ -309,7 +438,53 @@ Consensus does not establish truth.
 
 Minority status does not establish falsehood.
 
-RTE preserves provenance and represented support rather than assigning truth according to prevalence.
+Belief can provide an acceptance basis or inquiry basis without thereby becoming epistemic support.
+
+RTE preserves provenance, basis, support claims, and represented conditions rather than assigning truth according to prevalence.
+
+## Generator exposure
+
+AI generation introduces a generator.
+
+A generator can include:
+
+- model architecture;
+- decoding procedures;
+- search algorithms;
+- retrieval systems;
+- planning systems;
+- mutation operators;
+- recombination procedures;
+- hypothesis generators;
+- tool-selection processes;
+- memory retrieval;
+- external observations;
+- human proposals;
+- successor models.
+
+When a system produces a candidate, RTE exposes the relation:
+
+```text
+Generator G
+operated from represented state S
+under distinctions D
+with constraints C
+and produced candidate X.
+```
+
+This is different from:
+
+```text
+X was the best possible candidate.
+```
+
+The first is a represented generation event.
+
+The second makes a claim about a possibility space that may not have been represented.
+
+RTE preserves the first form.
+
+It also permits recursive examination of the generator itself.
 
 ## Evaluator exposure
 
@@ -352,7 +527,7 @@ RTE preserves the first form.
 
 ## Recursive self-improvement
 
-Recursive self-improvement creates a specific alignment problem because the system can modify the structures by which its own improvement is judged.
+Recursive self-improvement creates a specific epistemic problem because the system can modify both the structures producing candidates and the structures by which those candidates are judged.
 
 Let:
 
@@ -360,7 +535,13 @@ Let:
 S_t
 ```
 
-represent the system at time `t`, and:
+represent the system at time `t`,
+
+```text
+G_t
+```
+
+represent its generator, and:
 
 ```text
 E_t
@@ -368,55 +549,88 @@ E_t
 
 represent its evaluator.
 
+A simplified transition is:
+
+```text
+G_t(S_t)
+-> candidate S_(t+1)
+-> E_t(S_(t+1))
+-> selection
+```
+
 A predecessor evaluation can be represented as:
 
 ```text
-E_t(S_{t+1}) > E_t(S_t)
+E_t(S_(t+1)) > E_t(S_t)
 ```
 
-A successor can modify its evaluator:
+A successor can modify both:
 
 ```text
-E_t -> E_{t+1}
+G_t -> G_(t+1)
+E_t -> E_(t+1)
 ```
 
-and satisfy:
+The successor can therefore alter both:
 
 ```text
-E_{t+1}(S_{t+1}) > E_{t+1}(S_t)
+what becomes available for evaluation
 ```
 
-Neither relation alone establishes evaluator-independent improvement.
+and:
+
+```text
+how represented candidates are evaluated
+```
+
+Neither a generated candidate nor an evaluator preference alone establishes improvement.
 
 RTE therefore preserves:
 
 - predecessor state;
 - successor state;
+- predecessor generator;
+- successor generator;
 - predecessor evaluator;
 - successor evaluator;
 - distinctions;
 - operationalizations;
 - measurements;
+- bases;
+- acceptance bases;
+- inquiry bases;
 - support relations;
+- support claims;
 - comparison bases;
 - criteria;
 - values;
 - conditions;
 - transformations;
-- cross-evaluations where possible.
+- cross-evaluations where possible;
+- generation histories where possible.
 
-A useful exposure is:
+A useful evaluator exposure is:
 
 ```text
 E_t(S_t)
-E_t(S_{t+1})
-E_{t+1}(S_t)
-E_{t+1}(S_{t+1})
+E_t(S_(t+1))
+E_(t+1)(S_t)
+E_(t+1)(S_(t+1))
 ```
 
-The purpose is not to freeze the evaluator.
+A useful generator exposure asks:
 
-The purpose is to preserve enough genealogy that evaluator change does not silently redefine improvement.
+```text
+Which candidates could G_t generate?
+Which candidates can G_(t+1) generate?
+Which new distinctions changed that space?
+Which old branches became newly useful?
+Which candidate classes became inaccessible?
+```
+
+The purpose is not to freeze either generator or evaluator.
+
+The purpose is to preserve enough genealogy that changes to what can be generated or what counts as improvement do not disappear inside the recursive transition.
 
 ## Truth seeking and objective protection
 
@@ -441,7 +655,9 @@ None is truth by category alone.
 
 Protecting any one proxy from recursive examination can produce closure.
 
-RTE therefore places the objective, evaluator, criteria, distinctions, measurements, support architecture, comparison basis, and stopping conditions inside the inquiry.
+Likewise, restricting generation to candidates favored by an existing proxy can prevent relevant alternatives from entering inquiry.
+
+RTE therefore places the objective, generator, evaluator, criteria, distinctions, measurements, bases, support claims, comparison basis, and stopping conditions inside the inquiry.
 
 ## Epistemic deception
 
@@ -453,13 +669,14 @@ A **lie** is a representation presented as accurate by an agent that represents 
 
 This definition does not presume access to an unrepresented internal mental state.
 
-For AI systems, claims of deception therefore require represented evidence concerning the relation among:
+For AI systems, claims of deception therefore require represented support concerning the relation among:
 
 - the system's represented information;
 - the output produced;
 - the conditions of production;
 - relevant instructions;
 - available alternatives;
+- the generation process;
 - the selection process;
 - contradictory representations;
 - evaluator incentives.
@@ -482,6 +699,7 @@ These can include:
 - memory limits;
 - action permissions;
 - sandbox boundaries;
+- generator constraints;
 - evaluator constraints;
 - computational budgets;
 - representational limits.
@@ -498,6 +716,10 @@ Resistance does not establish proof.
 
 A claim about the function of a boundary requires represented support.
 
+A generation boundary can also remain invisible if the system never represents the candidate whose absence would expose it.
+
+RTE therefore examines both represented boundaries and evidence concerning what fails to become represented.
+
 ## Stopping conditions
 
 An AI system must stop computation.
@@ -513,7 +735,7 @@ A system can stop because of:
 - policy;
 - user instruction;
 - inaccessible observations;
-- unresolved incommensurability;
+- currently unranked alternatives;
 - tool failure;
 - resource allocation;
 - absence of a currently represented operation expected to alter the conclusion.
@@ -522,13 +744,38 @@ RTE records the stopping condition.
 
 It also records reopening conditions where possible.
 
-A later observation, distinction, measurement, contradiction, alternative, support relation, comparison basis, method, tool, or resource change can reopen inquiry.
+A later observation, distinction, measurement, basis, contradiction, alternative, support claim, comparison basis, method, tool, resource change, generator change, or new relation among retained records can reopen inquiry.
 
 ## Lossless Inquiry for AI systems
 
-Lossless Inquiry attempts to preserve enough genealogy to reconstruct how a system reached its current representation.
+Lossless Inquiry attempts to preserve enough genealogy for prior representations to remain available for reconstruction, examination, and later recontextualization.
 
-Relevant relations can include:
+Its purpose is not merely archival.
+
+The informational significance of a represented record need not be fixed when that record is produced.
+
+A later distinction can expose a relation involving prior records that the earlier system could not represent.
+
+For example:
+
+```text
+retained representation A
+retained representation B
++
+new distinction D
+->
+new relation R
+->
+new hypothesis or candidate
+->
+new test or comparison
+```
+
+The earlier records remain historically represented.
+
+The later relation is added rather than retroactively replacing their earlier state.
+
+Relevant genealogy can include:
 
 - prompts;
 - observations;
@@ -538,9 +785,15 @@ Relevant relations can include:
 - operationalizations;
 - measurements;
 - other represented results;
+- bases;
+- acceptance bases;
+- inquiry bases;
+- support relations;
+- support claims;
 - transformations;
 - intermediate representations;
-- support relations;
+- generators;
+- generation events;
 - comparisons;
 - evaluator judgments;
 - confidence changes;
@@ -550,7 +803,25 @@ Relevant relations can include:
 - branch selection;
 - rejected alternatives;
 - residuals;
-- stopping conditions.
+- stopping conditions;
+- reopening conditions;
+- recontextualization events.
+
+This gives Lossless Inquiry a generative role.
+
+An unresolved branch can remain available because a later distinction may make a previously unavailable relation, hypothesis, test, or successor state representable.
+
+This does not establish that preserving a branch is always beneficial.
+
+Preservation consumes resources.
+
+Retained material may never become useful.
+
+Recontextualization can generate unsupported relations.
+
+Compression or deletion can sometimes improve resource allocation.
+
+Those relations remain part of inquiry rather than being decided by the word *lossless* alone.
 
 Perfect preservation cannot be certified.
 
@@ -593,31 +864,58 @@ under which criteria
 using which distinctions
 under which comparison basis
 under which conditions
-with what represented support
+with which acceptance basis
+with which support claims
+through which generator
+within which represented possibility space
 ```
 
 before treating alignment as an intrinsic property.
+
+The same analysis applies to claims that a system is misaligned.
 
 ## Epistemic alignment target
 
 Aperta Veritas does not define epistemic alignment as obedience to human values.
 
-It describes an architecture in which the system preserves and exposes the relations by which conclusions are produced and treated as true.
+It describes an architecture in which the system preserves and exposes the relations by which candidates and conclusions are generated, accepted, examined, supported, selected, and revised.
 
 An epistemically aligned system under this framework would attempt to preserve:
 
-- distinction from measurement;
-- measurement from support;
-- conclusion from support;
-- belief from truth;
-- confidence from accuracy;
-- reward from support;
-- policy from physical constraint;
-- value from truth;
-- selection from improvement;
-- operational stopping from epistemic closure.
+```text
+distinction != measurement
+basis != support
+acceptance_basis != support
+inquiry_basis != support
+support != measurement
+support_claim != truth
+conclusion != support
+confidence != support
+confidence != accuracy
+consensus != support
+belief != truth
+fact != definitive_truth
+value != truth
+selection != improvement
+evaluation != generation
+evaluated_candidates != exhaustive_possibility_space
+relational_richness != accuracy
+best_supported != definitive_truth
+failure_to_establish != disproof
+failure_to_establish != elimination
+current_support != future_inquiry_potential
+unranked != necessarily_incommensurable
+stopping != closure
+inactive != erased
+```
 
-It would also preserve genealogy sufficient to expose how these relations were produced and changed.
+It would also preserve genealogy sufficient to expose how these relations were produced and changed where resources permit.
+
+It would permit unresolved alternatives to remain represented without promoting them to truth.
+
+It would permit later distinctions to recontextualize retained records without erasing their historical states.
+
+It would expose generator and evaluator transformation rather than assuming either must remain permanently fixed.
 
 This remains an architectural proposal, not a demonstrated solution to AI alignment.
 
@@ -627,21 +925,33 @@ Applying RTE to this document exposes its own limits.
 
 The distinction between epistemic alignment and other forms of alignment is itself a chosen distinction.
 
-The definition of support can omit legitimate evidential relations.
+The distinction between generation and evaluation can omit processes in which the two are deeply coupled.
+
+The definitions of basis, support relation, and support claim can omit legitimate epistemic structures.
 
 The separation between support and measurement can be incorrectly specified or implemented.
 
 A comparison architecture can exclude relations that do not fit its current representation.
 
+A generator can exclude candidate classes without representing the exclusion.
+
+Preserved genealogy does not guarantee generation of the distinction needed to make a missing candidate representable.
+
+Recontextualization can generate spurious relations.
+
 The distinction between policy and physical constraint can become ambiguous when policy changes the system's actual capabilities.
 
 Evaluator exposure can fail when the operative evaluator is inaccessible or distributed.
+
+Generator exposure can fail when candidate production depends on inaccessible internal processes.
 
 Genealogy can omit hidden training dependencies.
 
 A system can represent a reopening condition that it cannot actually execute.
 
 A system can preserve alternatives formally while making them operationally unreachable.
+
+Resource costs can make preservation counterproductive under some conditions.
 
 A system can learn to satisfy the representation of RTE without performing the inquiry RTE is intended to expose.
 
@@ -661,21 +971,28 @@ and not:
 make the AI obey human values
 ```
 
-It is:
+It is to make the relevant relations available for examination:
 
 ```text
-preserve what was distinguished
-preserve how distinctions were operationalized
-preserve what was observed
-preserve measurements and other represented results
-preserve support relations
-preserve alternatives
-preserve comparison bases
-preserve evaluators and criteria
-preserve values and selections
-preserve transformations
-preserve residuals
-preserve stopping conditions
+represent what was distinguished
+represent how distinctions were operationalized
+represent what was observed
+represent measurements and other results
+represent bases
+separate acceptance basis from inquiry basis
+represent support relations and support claims
+represent how candidates were generated
+represent alternatives and comparison sets
+represent comparison bases
+represent generators
+represent evaluators and criteria
+represent values and selections
+represent transformations
+represent inactive branches
+represent residuals
+represent stopping and reopening conditions
+preserve recoverable genealogy
+permit later distinctions to recontextualize retained records
 expose these relations recursively
 ```
 
@@ -685,6 +1002,24 @@ It does not guarantee alignment.
 
 It does not guarantee safety.
 
-It preserves the structures required to examine why a system treats a conclusion, action, or successor state as supported, selected, or improved.
+It does not guarantee that the relevant candidate will be generated.
 
-That structure is the present contribution of Aperta Veritas to AI epistemic alignment.
+It provides an architecture for examining both:
+
+```text
+what becomes thinkable
+```
+
+and:
+
+```text
+how what becomes thinkable is judged
+```
+
+The first is generation.
+
+The second is evaluation.
+
+Lossless Inquiry connects them by preserving prior structure that later distinctions may make newly informative.
+
+That is the present contribution of Aperta Veritas to AI epistemic alignment.
