@@ -16,11 +16,11 @@ RTE does not ask only whether a change is better. It asks:
 
 > **What is represented, what was observed, what changed, what measured the change, what designated it as improvement, and which relations remain unrepresented?**
 
-Truth is not the preferred result of RTE. Truth is the most accurate conclusion currently available under represented observations, relations, methods, and conditions.
+Truth is not the preferred result of RTE. RTE identifies the conclusion presently best supported as true under represented observations, relations, methods, and conditions. It does not establish that this conclusion is identical with definitive truth.
 
 ## Truth and value
 
-**Veritas** is truth: the most accurate available conclusion.
+**Veritas** is truth. RTE does not certify truth as an object possessed by the system. It measures comparative support for conclusions represented as true while preserving the observations, relations, methods, conditions, conflicts, and residuals that bound that support. is truth: the most accurate available conclusion.
 
 Truth is not absolute, complete, or closed. Accuracy is measured through represented relations among conclusions, observations, methods, tests, predictions, contradictions, and conditions. A conclusion can be more accurate than another according to an explicit measurement without becoming 100 percent accurate or immune to revision.
 
