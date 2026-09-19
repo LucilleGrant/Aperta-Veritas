@@ -2,7 +2,7 @@
 
 ## Application
 
-Aperta Veritas is the recursive, lossless process of exposing truth. Recursive Truth Exposure applies the process to AI representations, modifications, evaluators, and the games governing them.
+Aperta Veritas is a recursive process for exposing truth. Recursive Truth Exposure applies the process to AI representations, modifications, evaluators, and the games governing them.
 
 AI systems are trained, evaluated, and deployed through human representations containing belief, error, conflict, incentive, and distortion. Epistemic alignment concerns the relation between a system's representations and truth. Human values, preferences, and intentions enter as Fides and Pistis.
 
