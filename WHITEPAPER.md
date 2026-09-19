@@ -7,70 +7,212 @@ Draft 0.3.1, 2026
 
 ## Abstract
 
-Aperta Veritas is a recursive process for exposing truth. Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, support, values, evaluators, criteria, transformations, selections, and residuals. It then applies the same examination to its own operations and stopping conditions.
+Aperta Veritas is a recursive process for exposing truth claims and keeping inquiry open to distinctions, relations, hypotheses, tests, and alternatives that are not yet represented.
 
-RTE begins from a structural limit in recursive self-improvement. Improvement is not an intrinsic property of change. It is a value judgment produced by an evaluator applying criteria to represented relations. A process that recursively optimizes for improvement inherits the limits of the evaluator, criteria, distinctions, measurements, comparison basis, and represented objective. RTE replaces protected optimization with recursive exposure. It asks what is represented, how the present conclusion was produced, where relational conditions were compressed away, and how any designation of improvement entered the process.
+Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, evaluators, criteria, transformations, selections, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
 
-Truth is not the preferred result of RTE. RTE identifies the conclusion presently best supported as true under represented observations, relations, methods, and conditions. It does not establish that this conclusion is identical with definitive truth.
+Aperta Veritas begins from a distinction between **generation** and **evaluation**.
 
-Support is the represented basis by which a conclusion is treated as true. Support can include observations, data, measurements, tests, predictions, contradictions, logical relations, provenance, explanatory relations, reproducibility, and other represented relations relevant to a conclusion. Support is not identical to measurement.
+Testing can evaluate a represented hypothesis. An evaluator can compare represented successors. Neither operation by itself determines which hypotheses, distinctions, relations, tests, alternatives, or successor states become available for evaluation.
 
-A claim that one conclusion has greater support than another requires an explicit basis of comparison. Where that comparison depends on measurement, the relevant distinctions, operationalization, measurements, methods, and conditions remain represented.
-
-A conclusion can become better supported without becoming 100 percent complete or immune to revision. An agent can value, fear, seek, suppress, or ignore truth, but these relations do not determine which conclusion is best supported as true.
-
-## 1. The closure problem
-
-Representations of truth are produced within language, observation, measurement, memory, institutions, incentives, and finite resources. These processes contain compression and selection. They also contain value judgments.
-
-Truth, fact, knowledge, confidence, consensus, usefulness, correctness, authority, and goodness are often compressed into a single hierarchy:
+This produces a structural problem shared by inquiry and recursive self-improvement:
 
 ```text
-true -> correct -> right -> good
-false -> incorrect -> wrong -> bad
+candidate
+-> evaluation
+-> selection
 ```
 
-Aperta Veritas separates these relations.
+operates only after a candidate exists.
 
-A proposition can be true and unwanted.
+A system can therefore become highly effective at evaluating its represented candidates while remaining unable to discover an alternative requiring distinctions absent from its current representation.
 
-A belief can be false and useful.
+Lossless Inquiry addresses this problem by preserving unresolved observations, branches, transformations, residuals, and prior states so later distinctions can recontextualize them. A representation that lacks present support for a particular conclusion can still have future inquiry potential. A later distinction can expose a relation that was not representable when the earlier record was produced.
 
-A conclusion can be strongly supported and held with low confidence.
+RTE does not promote unresolved possibilities to truth. It separates the basis for accepting a conclusion, the basis for continuing inquiry, and claims that represented relations support a conclusion as true.
 
-A conclusion can be weakly supported and held with high confidence.
+Truth is not the preferred result of RTE. Truth is what is true. RTE identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims. It cannot establish that a presently supported conclusion is identical with definitive truth.
 
-A fact can be operationally established without becoming identical with definitive truth.
+The same structure applies to recursive self-improvement. Evaluating candidate successors is not identical to generating successors. A recursive system whose generator and evaluator operate only within current distinctions can fail to produce an improvement requiring distinctions its present architecture does not represent.
 
-A selected state can satisfy an evaluator without constituting improvement under another evaluator.
+Aperta Veritas therefore places both generation and evaluation inside recursive inquiry.
 
-Closure occurs when these distinctions are suppressed strongly enough that the resulting representation no longer exposes the conditions under which it could be revised.
+## 1. The inquiry problem
 
-RTE is designed to preserve those conditions.
+Scientific hypothesis testing is powerful once a hypothesis has been represented.
+
+It can ask whether observations support a prediction, whether a measurement contradicts a model, whether an intervention produces an expected consequence, or whether competing hypotheses differ under a discriminating test.
+
+But testing a represented hypothesis is not the same operation as generating the hypothesis, distinction, model, instrument, observation, or test that should be examined next.
+
+The distinction is:
+
+```text
+generation != evaluation
+```
+
+An inquiry process can therefore fail upstream of testing.
+
+A relevant hypothesis may not have been generated.
+
+A relevant distinction may not have been represented.
+
+A relation among existing observations may not yet have been noticed.
+
+A discriminating test may not yet have been invented.
+
+An unresolved observation may have been discarded before a later distinction made it informative.
+
+A representation can prevent an alternative from becoming expressible.
+
+This is not a claim that scientific practice contains no exploratory methods. Scientific inquiry includes observation, model construction, instrument development, anomaly investigation, exploratory analysis, and hypothesis generation.
+
+The structural claim is narrower.
+
+A procedure capable of evaluating represented candidates does not thereby solve the problem of generating candidates outside its present representation.
+
+The same problem appears in recursive self-improvement.
+
+A successor can be evaluated only after some process makes that successor representable.
+
+A system can optimize selection among represented successors while failing to generate a successor requiring a distinction absent from its current generator or evaluator.
+
+This gives three operational separations:
+
+```text
+evaluation != generation
+evaluated_candidates != exhaustive_possibility_space
+absence_from_search != disproof
+```
+
+Aperta Veritas places this upstream problem inside inquiry.
 
 ## 2. Veritas
 
 **Veritas** is the Latin word for truth.
 
-Aperta Veritas does not define truth as whatever conclusion a system presently selects.
+Truth is what is true.
 
-RTE identifies conclusions presently supported as true under represented observations, relations, methods, conditions, and other represented support.
+Aperta Veritas does not define truth as whatever conclusion a system presently selects, accepts, or supports.
+
+RTE identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims.
 
 It does not establish that a conclusion is identical with definitive truth.
 
-The distinction between a conclusion and the represented support for treating it as true must remain represented.
+The distinction between a conclusion and the represented relations concerning whether it should be treated as true remains represented.
 
 This gives the basic separation:
 
 ```text
 truth != selected conclusion
 conclusion != support
+basis != support
 support != measurement
+support_claim != truth
 ```
 
-RTE can compare conclusions when a represented basis supports the comparison. It can identify one conclusion as better supported than another under that basis. It cannot convert that comparative relation into a certificate of definitive truth.
+RTE can compare conclusions when a represented comparison basis supports the comparison.
 
-## 3. Genealogy
+It can identify one conclusion as having greater represented support than another under that basis.
+
+It cannot convert that comparative relation into a certificate of definitive truth.
+
+## 3. Basis, acceptance, inquiry, and support
+
+Aperta Veritas distinguishes a **basis** from **support**.
+
+A basis is any represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other represented element associated with acceptance, evaluation, inquiry, or support.
+
+A basis does not become epistemic support merely because it affects what an agent believes or what a system selects.
+
+### Acceptance basis
+
+An **acceptance basis** records why an agent or system accepts, selects, retains, or acts upon a conclusion.
+
+Acceptance can result from:
+
+- observation;
+- inference;
+- measurement;
+- authority;
+- habit;
+- loyalty;
+- fear;
+- reward;
+- repetition;
+- social consensus;
+- policy;
+- faith;
+- prior belief;
+- error;
+- other represented causes or reasons.
+
+These can explain acceptance without establishing that the accepted conclusion is true.
+
+### Inquiry basis
+
+An **inquiry basis** records why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+
+Inquiry bases can include:
+
+- unresolved observations;
+- anomalies;
+- unexplained discrepancies;
+- conflicting measurements;
+- missing distinctions;
+- incomplete models;
+- untested predictions;
+- unexplored alternatives;
+- contradictions;
+- unavailable observations;
+- possible discriminating tests;
+- newly available methods;
+- newly available resources;
+- relations exposed by later distinctions.
+
+An inquiry basis is not epistemic support for a favored explanation.
+
+This allows:
+
+```text
+weak or absent present support
++
+represented inquiry basis
+->
+continued inquiry
+```
+
+without producing:
+
+```text
+continued inquiry
+->
+hypothesis is true
+```
+
+### Support relation and support claim
+
+A **support relation** is a claimed relation between one or more represented bases and whether a conclusion should presently be treated as true under represented conditions.
+
+A **support claim** asserts that such a relation bears on whether the conclusion is true.
+
+The existence of a support claim does not certify the claim.
+
+The basis, inference rule, model, distinction, method, criterion, condition, dependency, exclusion, and alternative can themselves be examined.
+
+The system therefore preserves:
+
+```text
+basis
+!=
+support relation
+!=
+support claim
+!=
+truth
+```
+
+## 4. Genealogy
 
 A conclusion is not only a statement. It has a genealogy.
 
@@ -80,17 +222,23 @@ RTE preserves, where represented:
 - observations;
 - data;
 - provenance;
-- which distinctions specified what could differ;
-- how those distinctions were operationalized;
-- which measurements were produced relative to them;
-- which other represented results were produced;
+- distinctions;
+- operationalizations;
+- measurements;
+- other represented results;
 - the observer, instrument, method, language, scale, and conditions involved;
 - transformations;
 - claims;
 - beliefs;
+- bases;
+- acceptance bases;
+- inquiry bases;
 - support relations;
+- support claims;
 - alternatives;
 - comparison sets and comparison bases;
+- generators;
+- generation histories;
 - evaluators;
 - criteria;
 - values;
@@ -101,17 +249,25 @@ RTE preserves, where represented:
 - stopping conditions;
 - reopening conditions.
 
-The purpose is not to produce an infinitely detailed record. Finite systems cannot preserve every relation.
+The purpose is not to produce an infinitely detailed record.
 
-The purpose is to prevent known transformation, exclusion, compression, and uncertainty from silently becoming absence.
+Finite systems cannot preserve every relation.
+
+The purpose is to prevent known transformation, exclusion, compression, uncertainty, and unresolved structure from silently becoming absence.
 
 Detected loss remains represented as loss.
 
 Unidentified loss remains possible.
 
-## 4. Recursive Truth Exposure
+Genealogy is not merely historical documentation.
 
-Recursive Truth Exposure examines how a representation came to be treated as true, accurate, relevant, useful, established, improved, or complete.
+An earlier representation can acquire new significance when a later distinction exposes a relation that was not previously represented.
+
+The original representation remains preserved while the new relation is added to its genealogy.
+
+## 5. Recursive Truth Exposure
+
+Recursive Truth Exposure examines how a representation came to be generated, accepted, treated as true, supported, compared, selected, retained, revised, or stopped.
 
 For a represented inquiry state, RTE asks:
 
@@ -121,79 +277,43 @@ For a represented inquiry state, RTE asks:
 4. How were those distinctions operationalized?
 5. Which measurements or other represented results were produced?
 6. Which claims and conclusions were formed?
-7. What represented support connects the available relations to those conclusions?
-8. Which alternatives remain represented?
-9. What basis supports any comparison among them?
-10. Which methods and conditions affected the result?
-11. Which values, criteria, and evaluators participated?
-12. Which transformations produced the current representation?
-13. Which branches became active, inactive, superseded, or unresolved?
-14. Which contradictions and residuals remain?
-15. Which boundaries constrained inquiry?
-16. What produced the stopping condition?
-17. What happens when the same questions are applied to RTE itself?
+7. Which bases contributed to acceptance, inquiry, evaluation, or support?
+8. Which support relations and support claims concern each conclusion?
+9. Why are those relations treated as relevant to whether the conclusion is true?
+10. Which alternatives are represented?
+11. How were those alternatives generated?
+12. Which alternatives may not have become representable?
+13. What comparison basis supports any ranking among represented alternatives?
+14. Which methods and conditions affected the result?
+15. Which values, criteria, generators, and evaluators participated?
+16. Which transformations produced the current representation?
+17. Which branches became active, inactive, superseded, or unresolved?
+18. Which contradictions and residuals remain?
+19. Which boundaries and resources constrained inquiry or generation?
+20. What produced the stopping condition?
+21. What could reopen inquiry?
+22. Can a new distinction alter represented relations involving prior records?
+23. What happens when the same questions are applied to RTE itself?
 
 RTE does not require every inquiry to produce a single winner.
 
-When no represented basis supports comparison, alternatives remain represented without ranking.
+When no represented basis supports ranking, alternatives remain represented without ranking.
 
-When available support is incommensurable under the current comparison basis, the incommensurability remains represented.
+Failure to represent a ranking basis does not establish that no basis exists.
+
+A claim that alternatives are intrinsically incommensurable is itself a claim requiring support.
 
 When a conclusion is selected, the alternatives do not become false merely because they were not selected.
-
-## 5. Support
-
-Support is the represented basis by which a conclusion is treated as true.
-
-Support can include:
-
-- observations;
-- data;
-- measurements;
-- tests;
-- predictions;
-- contradictions;
-- logical relations;
-- provenance;
-- explanatory relations;
-- reproducibility;
-- robustness under changed conditions;
-- relations among independent routes;
-- other represented relations relevant to the conclusion.
-
-No category establishes support by itself.
-
-A measurement can contribute to support without being identical to support.
-
-An observation can contribute to support without being reduced to a measurement.
-
-A contradiction can alter support without requiring a common numerical scale.
-
-A logical relation can support a conclusion without becoming an empirical measurement.
-
-Support therefore remains connected to the relation by which it bears on the conclusion.
-
-A support relation can preserve:
-
-```text
-basis
--> relation to claim or conclusion
--> method
--> conditions
--> provenance
--> dependencies
--> exclusions
--> uncertainty
--> residuals
-```
-
-where those relations are represented.
 
 ## 6. Distinction, measurement, observation, and datum
 
 A **distinction** specifies a variable, category, relation, boundary, or other basis by which possibilities can differ.
 
-A distinction defines what can be differentiated. It may specify degrees, distributions, boundaries, changes, simultaneous relations, or unresolved ranges. It need not be binary.
+A distinction defines what can be differentiated.
+
+It may specify degrees, distributions, boundaries, changes, simultaneous relations, or unresolved ranges.
+
+It need not be binary.
 
 A **measurement** is a represented result produced relative to one or more distinctions.
 
@@ -223,12 +343,16 @@ object
 -> operationalization
 -> observation or test
 -> measurement or other represented result
--> support relation
+-> support claim
 -> comparison
 -> conclusion
 ```
 
-This is not a mandatory linear sequence. It represents possible dependencies that remain available for examination.
+This is not a mandatory linear sequence.
+
+A measurement does not become support merely because it exists.
+
+A represented relation must connect the measurement to whether a conclusion should presently be treated as true.
 
 RTE preserves, where represented:
 
@@ -244,27 +368,80 @@ RTE preserves, where represented:
 - which transformations followed;
 - which relations remained unresolved or unrepresented.
 
-The selection of what to distinguish and observe can itself be conditioned by values, prior representations, resources, boundaries, and evaluator structure.
+The selection of what to distinguish and observe can itself be conditioned by values, prior representations, resources, boundaries, generators, and evaluator structure.
 
-That genealogy does not establish that the resulting observation or measurement is false. It exposes how the representation was produced.
+That genealogy does not establish that the resulting observation or measurement is false.
 
-## 7. Comparison
+It exposes how the representation was produced.
 
-Comparison relates represented conclusions, alternatives, states, measurements, or support relations under an explicit basis.
+## 7. Recontextualization
 
-A comparative support claim requires a represented basis of comparison.
+A newly represented distinction is not necessarily a mere addition to an otherwise unchanged inquiry state.
+
+It can alter the represented relations involving earlier observations, measurements, data, hypotheses, models, conclusions, or residuals.
+
+Suppose an inquiry initially contains:
+
+```text
+observation A
+observation B
+```
+
+A later distinction can expose:
+
+```text
+observation A
+-> relation R
+-> observation B
+```
+
+where relation `R` was not represented when either observation was first recorded.
+
+The earlier observations need not be erased or rewritten.
+
+Instead:
+
+```text
+prior representation
++
+new distinction
+->
+new represented relation
+```
+
+The historical representation and the later recontextualization remain distinguishable in the genealogy.
+
+This matters because the informational significance of a retained record is not necessarily fixed at the time the record is created.
+
+A later distinction can make a previously unresolved datum relevant to a new hypothesis.
+
+A new model can connect observations previously treated as unrelated.
+
+A changed comparison basis can make an earlier alternative rankable.
+
+A new test can discriminate among hypotheses that previously lacked a represented comparison.
+
+A revised evaluator can expose a property that the previous evaluator could not represent.
+
+Inquiry therefore changes the represented environment in which subsequent inquiry occurs.
+
+## 8. Comparison
+
+Comparison relates represented conclusions, alternatives, states, measurements, support relations, or support claims under an explicit basis.
+
+A comparative support claim requires a represented comparison basis.
 
 That basis can include:
 
 - the alternatives being compared;
-- their represented support;
+- their represented support relations and support claims;
 - distinctions;
 - criteria;
 - methods;
 - conditions;
 - measurements where applicable;
 - evaluator structure;
-- unresolved or incomparable relations.
+- unresolved relations.
 
 A comparative conclusion can therefore take the form:
 
@@ -283,29 +460,35 @@ A = definitive truth
 
 Comparison does not require all support to be converted into a common measurement.
 
-Where no represented basis supports comparison, RTE preserves the alternatives without ranking them.
+Where no represented basis supports ranking, RTE preserves the alternatives without ranking them.
 
-Where support relations cannot presently be compared without destroying relevant differences, RTE preserves them as incomparable.
+Failure to represent a comparison basis does not establish intrinsic incommensurability.
 
-## 8. Accuracy
+The alternatives are presently unranked under the represented framework.
+
+If the system claims that no relevant comparison is possible, that claim itself requires represented support.
+
+## 9. Accuracy
 
 Accuracy describes correspondence with what is true.
 
 RTE does not possess an external position from which absolute correspondence can be certified.
 
-It can examine represented relations among conclusions, observations, predictions, consequences, contradictions, independent routes, measurements, and other specified conditions.
+It can examine represented relations among conclusions, observations, predictions, consequences, contradictions, independent routes, measurements, support claims, and other specified conditions.
 
 An accuracy claim therefore remains a claim.
 
-Its represented basis, comparison set, distinctions, relevant measurements, methods, conditions, and unresolved alternatives remain available for examination.
+Its represented bases, support claims, comparison set, distinctions, relevant measurements, methods, conditions, and unresolved alternatives remain available for examination.
 
 Measured accuracy must not be silently compressed into definitive truth.
 
 Richer representation is not automatically greater accuracy.
 
-Additional relations can alter support or permit new comparisons. Their mere addition does not establish greater correspondence with truth.
+Additional relations can alter support, enable new hypotheses, expose contradictions, or permit new comparisons and tests.
 
-## 9. Factum
+Their mere addition does not establish greater correspondence with truth.
+
+## 10. Factum
 
 **Factum** names a representation asserted or treated as fact.
 
@@ -323,9 +506,9 @@ The statement:
 this is a fact
 ```
 
-therefore remains a claim with provenance, support, conditions, and unresolved residuals.
+therefore remains a claim with provenance, acceptance basis, support claims, conditions, and unresolved residuals.
 
-## 10. Fides and Pistis
+## 11. Fides and Pistis
 
 **Fides** is Latin for belief, faith, or trust.
 
@@ -335,17 +518,17 @@ Belief does not become false merely because it exceeds what present support esta
 
 Belief also does not establish its own truth.
 
-Belief can support, conflict with, anticipate, or remain unrelated to conclusions presently supported as true.
+Belief can contribute to acceptance, motivate inquiry, participate in a support claim, conflict with represented support, anticipate later support, or remain unrelated to conclusions presently supported as true.
 
 Sincerity, confidence, loyalty, repetition, authority, and consensus can alter the persistence or distribution of belief without establishing the truth of its object.
 
 ### Rational faith
 
-Rational faith preserves its basis, uncertainty, and conditions for revision.
+Rational faith preserves its basis, uncertainty, represented support, and conditions for revision.
 
 A person or system can believe, trust, or act upon a proposition while explicitly representing that present support does not establish it as true.
 
-Relevant observations, consequences, contradictions, measurements, and other represented relations remain capable of changing the belief or the confidence assigned to it.
+Relevant observations, consequences, contradictions, measurements, distinctions, and other represented relations remain capable of changing the belief or the confidence assigned to it.
 
 ### Blind faith
 
@@ -363,7 +546,7 @@ Fides and Veritas therefore need not function as mutually exclusive categories.
 
 RTE preserves belief as belief rather than promoting it to truth or discarding it because it is not established.
 
-## 11. Confidence
+## 12. Confidence
 
 Confidence represents the degree of certainty assigned to a claim, belief, or conclusion by an agent or system.
 
@@ -377,9 +560,9 @@ A weakly held conclusion can be strongly supported.
 
 Changes in confidence are therefore represented separately from changes in support.
 
-When confidence changes, RTE asks which observation, measurement, inference, belief, value, authority, reward, or other relation produced the change.
+When confidence changes, RTE asks which acceptance basis, observation, measurement, inference, belief, value, authority, reward, or other relation produced the change.
 
-## 12. Value
+## 13. Value
 
 A value judgment represents worth, preference, obligation, permission, prohibition, purpose, priority, rejection, protection, or a desired state relative to an evaluator.
 
@@ -398,15 +581,81 @@ A system selects:
 - what to distinguish;
 - what to observe;
 - how distinctions are operationalized;
+- which hypotheses to generate;
 - which alternatives to compare;
 - which criteria to apply;
 - how resources are allocated;
 - which branches remain active;
-- when to stop.
+- which branches are retained while inactive;
+- when to stop;
+- when to reopen.
 
 RTE represents those selections and their operative values without reducing support to value.
 
-## 13. Improvement
+Attention allocation itself can therefore become an object of inquiry.
+
+## 14. Generation and evaluation
+
+A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, comparison bases, evaluators, or successor states become available.
+
+An **evaluator** examines represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
+
+These are different operations:
+
+```text
+generation
+->
+candidate
+->
+evaluation
+->
+selection
+```
+
+Evaluation can only evaluate what has become available to it.
+
+A strong evaluator therefore does not establish that its generator has produced the relevant candidates.
+
+Generation can depend on:
+
+- available observations;
+- retained residuals;
+- active and inactive branches;
+- represented distinctions;
+- language and encoding;
+- model architecture;
+- search methods;
+- prior hypotheses;
+- recombination;
+- resource constraints;
+- values;
+- boundaries;
+- evaluator feedback.
+
+A generator can itself be recursively examined.
+
+RTE asks:
+
+```text
+Why did these candidates become representable?
+What alternatives could not be expressed?
+Which distinctions structured the search?
+Which branches were excluded before evaluation?
+Which resources constrained generation?
+Did the evaluator constrain what the generator learned to produce?
+```
+
+A generated candidate is not established as true or improved merely because it exists.
+
+Generation creates an object for inquiry.
+
+Evaluation examines it.
+
+Selection acts upon represented relations.
+
+None of these operations is identical to truth.
+
+## 15. Improvement
 
 Improvement is not an intrinsic property of change.
 
@@ -442,6 +691,7 @@ A recursively modifying system can change:
 
 - its state;
 - its model;
+- its generator;
 - its criteria;
 - its evaluator;
 - its distinctions;
@@ -453,7 +703,7 @@ A recursively modifying system can change:
 
 If the system then declares itself improved, the genealogy of that judgment matters.
 
-## 14. The RSI problem
+## 16. The RSI problem
 
 Let:
 
@@ -461,21 +711,49 @@ Let:
 S_t
 ```
 
-be the system at time `t`, and:
+be the system at time `t`,
+
+```text
+G_t
+```
+
+its generator, and:
 
 ```text
 E_t
 ```
 
-be its evaluator.
+its evaluator.
 
-A conventional improvement relation can be represented as:
+A simplified recursive improvement cycle can be represented as:
+
+```text
+G_t(S_t)
+->
+candidate successor S_{t+1}
+->
+E_t(S_{t+1})
+```
+
+The evaluator can compare a generated successor with the current system:
 
 ```text
 E_t(S_{t+1}) > E_t(S_t)
 ```
 
-But a recursively self-modifying system can also modify its evaluator:
+But this comparison begins after `G_t` has produced `S_{t+1}`.
+
+A successor outside the generative capacity of `G_t` is never presented to `E_t`.
+
+The system can therefore optimize increasingly well over a candidate space constrained by its present distinctions, representation, generator, and evaluator.
+
+This produces an upstream RSI problem:
+
+> How can a recursive system generate an improvement that requires a distinction absent from the system currently generating and evaluating successors?
+
+Evaluator drift remains a second problem.
+
+A recursively self-modifying system can modify its evaluator:
 
 ```text
 E_t -> E_{t+1}
@@ -491,7 +769,7 @@ without satisfying the predecessor evaluator.
 
 Neither relation alone establishes evaluator-independent improvement.
 
-RTE therefore preserves both system and evaluator genealogy.
+RTE therefore preserves both generator and evaluator genealogy.
 
 Where possible, it can expose cross-evaluations:
 
@@ -502,69 +780,31 @@ E_{t+1}(S_t)
 E_{t+1}(S_{t+1})
 ```
 
-along with the distinctions, measurements, support relations, criteria, comparison sets, conditions, and values that produced them.
+along with the distinctions, measurements, bases, support claims, criteria, comparison sets, conditions, and values that produced them.
 
-The purpose is not to prohibit evaluator change.
-
-The purpose is to prevent evaluator change from silently redefining improvement while presenting the result as an intrinsic property of the successor.
-
-## 15. Recursive exposure instead of protected optimization
-
-Optimization protects an objective long enough to move a system toward it.
-
-RTE does not grant the objective permanent exemption from examination.
-
-It can examine:
+It also examines the generation path:
 
 ```text
-objective
-criterion
-evaluator
-distinction
-measurement
-support relation
-comparison basis
-selection
-stopping condition
+available state
++
+represented distinctions
++
+retained genealogy
++
+generation method
++
+resource conditions
+->
+candidate successor
 ```
 
-using the same process applied to other representations.
+The purpose is not to prohibit generator or evaluator change.
 
-This creates a different recursive structure:
-
-```text
-representation
--> examination
--> revision
--> examination of revision
--> examination of evaluator
--> examination of examination
--> ...
-```
-
-The recursion does not require endless computation.
-
-A finite implementation can stop operationally while preserving reopening conditions.
-
-## 16. Openness and closure
-
-**Aperta** means open or uncovered.
-
-Openness does not mean permanent indecision.
-
-It means conclusions, beliefs, methods, distinctions, measurements, support relations, definitions, evaluators, criteria, and stopping conditions remain available for renewed examination when relevant distinctions arise.
-
-Operational stopping is not necessarily epistemic closure.
-
-A finite system can stop computation, choose an action, publish a conclusion, or allocate resources while preserving the conditions under which inquiry can resume.
-
-Epistemic closure occurs when a conclusion or belief is insulated from relevant distinction or when conditions permitting revision are suppressed.
-
-Aperta therefore applies both to conclusions and to the processes that produce, support, compare, retain, revise, or close them.
+The purpose is to expose the conditions under which successors become representable and the conditions under which they are subsequently called improvements.
 
 ## 17. Lossless Inquiry
 
-Lossless Inquiry is the requirement that revision preserve enough genealogy to reconstruct how current representations arose and what was transformed, excluded, compressed, superseded, or left unresolved.
+Lossless Inquiry preserves enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, and superseded conclusions to remain available for later examination and recontextualization.
 
 Losslessness is an operational target, not a certified absolute property.
 
@@ -578,11 +818,17 @@ The system attempts to preserve:
 - other represented results;
 - claims;
 - beliefs;
+- bases;
+- acceptance bases;
+- inquiry bases;
 - support relations;
+- support claims;
 - alternatives;
+- generation histories;
 - comparisons;
 - conclusions;
 - transformations;
+- generators;
 - evaluators;
 - criteria;
 - values;
@@ -592,13 +838,120 @@ The system attempts to preserve:
 - stopping conditions;
 - reopening conditions.
 
+This preservation is not merely archival.
+
+The informational significance of a represented object need not be fixed when it is first recorded.
+
+A later distinction can expose a relation that was not representable when an earlier observation, datum, hypothesis, branch, or conclusion was produced.
+
+This gives a recursive pattern:
+
+```text
+retained representation R
++
+new distinction D
+->
+new relations involving R
+->
+new hypotheses become representable
+->
+new tests become possible
+->
+new evaluation
+```
+
+The new relation does not erase the old representation.
+
+Both remain in the genealogy.
+
+This is why unresolved branches can matter even when they do not presently support a conclusion.
+
+Discarding an unresolved branch because it currently fails to establish a hypothesis can destroy material from which a later distinction might have generated a new hypothesis or test.
+
+The system therefore preserves:
+
+```text
+failure_to_establish != disproof
+failure_to_establish != elimination
+current_support != future_inquiry_potential
+```
+
+This does not imply that every branch deserves unlimited computation.
+
+Storage, computation, attention, activation, compression, and resource allocation remain represented operations.
+
+A branch can become inactive without being erased.
+
 Finite storage, finite computation, inaccessible observations, lossy encoding, forgotten context, and unidentified relations prevent certification of perfect preservation.
 
 Detected loss remains represented as loss.
 
 Unidentified loss remains possible.
 
-## 18. Veritas Calculus
+## 18. Recursive exposure instead of protected optimization
+
+Optimization protects an objective long enough to move a system toward it.
+
+RTE does not grant the objective, generator, or evaluator permanent exemption from examination.
+
+It can examine:
+
+```text
+objective
+generator
+candidate space
+criterion
+evaluator
+distinction
+measurement
+basis
+support claim
+comparison basis
+selection
+stopping condition
+```
+
+using the same process applied to other representations.
+
+This creates a recursive structure:
+
+```text
+representation
+-> generation
+-> examination
+-> revision
+-> examination of revision
+-> examination of generator
+-> examination of evaluator
+-> examination of examination
+-> ...
+```
+
+The recursion does not require endless computation.
+
+A finite implementation can stop operationally while preserving reopening conditions.
+
+## 19. Openness and closure
+
+**Aperta** means open or uncovered.
+
+Openness does not mean permanent indecision.
+
+It means conclusions, beliefs, methods, distinctions, measurements, bases, support claims, generators, evaluators, criteria, branches, and stopping conditions remain available for renewed examination when relevant distinctions arise.
+
+Operational stopping is not necessarily epistemic closure.
+
+A finite system can stop computation, choose an action, publish a conclusion, allocate resources, or deactivate a branch while preserving conditions under which inquiry can resume.
+
+Epistemic closure occurs when a conclusion or belief is insulated from relevant distinction or when conditions permitting revision are suppressed.
+
+A stopped inquiry can reopen because of newly acquired information.
+
+It can also reopen because a new distinction changes the represented relations among information already retained.
+
+Aperta therefore applies both to conclusions and to the processes that generate, support, compare, retain, revise, stop, and reopen them.
+
+## 20. Veritas Calculus
 
 Veritas Calculus names the explicit representation of relations used by RTE.
 
@@ -610,7 +963,9 @@ For example:
 
 ```text
 measurement M
-supports conclusion A
+is cited as basis B
+within support claim R
+for conclusion A
 under method P
 and conditions C
 ```
@@ -624,14 +979,27 @@ conclusion A is true
 Likewise:
 
 ```text
-support relation R
-contributes to comparative judgment J
+authority A
+caused acceptance of conclusion C
 ```
 
 is not identical to:
 
 ```text
-support relation R is a measurement
+authority A supports C as true
+```
+
+And:
+
+```text
+anomaly X
+provides inquiry basis for hypothesis H
+```
+
+is not identical to:
+
+```text
+anomaly X supports H as true
 ```
 
 And:
@@ -649,9 +1017,9 @@ S improved
 
 Veritas Calculus keeps those relations available for recursive examination.
 
-## 19. Boundary Testing
+## 21. Boundary Testing
 
-A boundary is a limit on observation, testing, representation, comparison, revision, scope, action, or resource use.
+A boundary is a limit on observation, testing, representation, generation, comparison, revision, scope, action, or resource use.
 
 Boundary Testing identifies the boundary, applies represented tests across or against it where possible, and records what changes.
 
@@ -665,48 +1033,62 @@ Resistance does not establish proof.
 
 A description of what a boundary does is itself a claim requiring represented support.
 
+A boundary can also constrain what becomes generatable.
+
+If a representational boundary prevents a class of hypotheses from being expressed, their absence from the candidate set does not establish their absence from the relevant possibility space.
+
 Boundary Testing therefore exposes boundaries without assigning their function in advance.
 
-## 20. Operational cycle
+## 22. Operational cycle
 
 A minimal RTE cycle is:
 
 ```text
 1. Represent the object or question.
 2. Preserve available observations, data, provenance, claims, beliefs, and alternatives.
-3. Identify the current conclusions.
+3. Identify current conclusions.
 4. Identify the distinctions specifying what can differ.
 5. Record how those distinctions are operationalized.
 6. Record measurements and other represented results.
-7. Identify the support relations connecting represented bases to conclusions.
+7. Separate acceptance bases, inquiry bases, support relations, and support claims.
 8. Identify the comparison basis for any comparative support or accuracy claim.
 9. Preserve contradictions, residuals, exclusions, and unresolved branches.
-10. Expose evaluators, criteria, values, selections, and boundaries.
-11. Produce a current conclusion or preserve unresolved alternatives.
-12. Preserve the genealogy of the transition.
-13. Record the stopping condition.
-14. Record conditions under which inquiry can reopen.
-15. Apply the same process to the cycle itself.
+10. Examine how represented hypotheses, alternatives, tests, or successors were generated.
+11. Generate new distinctions, relations, hypotheses, tests, comparison bases, or alternatives where represented operations permit.
+12. Re-examine retained records under newly represented distinctions and relations.
+13. Expose evaluators, criteria, values, selections, resources, and boundaries.
+14. Produce a current conclusion or preserve unresolved alternatives without ranking.
+15. Preserve the genealogy of the transition.
+16. Record the stopping condition.
+17. Record conditions under which inquiry can reopen.
+18. Apply the same process to the cycle itself.
 ```
 
 The cycle does not require every iteration to change the conclusion.
 
-Refinement can improve the representation without changing the selected conclusion.
+Refinement can improve a representation without changing the selected conclusion.
 
-A failed comparison can expose incommensurability.
+A failed comparison can expose the absence of a presently represented comparison basis without establishing intrinsic incommensurability.
 
-A failed test can expose an implementation limit.
+A failed test can reduce support for a hypothesis without establishing that every related inquiry path should be erased.
 
 A contradiction can split a branch rather than immediately resolving it.
 
-## 21. Semantic invariants
+A new distinction can alter represented relations among old records without altering their historical content.
+
+## 23. Semantic invariants
 
 Aperta Veritas preserves the following distinctions:
 
 ```text
 distinction != measurement
+basis != support
+acceptance_basis != support
+inquiry_basis != support
 support != measurement
+support_claim != truth
 conclusion != support
+conclusion != acceptance_basis
 confidence != support
 confidence != accuracy
 consensus != support
@@ -714,8 +1096,14 @@ belief != truth
 fact != definitive_truth
 value != truth
 selection != improvement
+evaluation != generation
+evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
+failure_to_establish != disproof
+failure_to_establish != elimination
+current_support != future_inquiry_potential
+unranked != necessarily_incommensurable
 stopping != closure
 inactive != erased
 ```
@@ -724,7 +1112,7 @@ These invariants are safeguards against silent semantic compression.
 
 They are not exempt from recursive examination.
 
-## 22. Recursive self-application
+## 24. Recursive self-application
 
 Aperta Veritas is itself a representation.
 
@@ -732,19 +1120,29 @@ Its definitions are claims.
 
 Its distinction between distinction and measurement is a claim.
 
-Its distinction between support and measurement is a claim.
+Its distinction between basis and support is a claim.
 
-Its account of support can omit legitimate evidential relations.
+Its distinction between acceptance basis, inquiry basis, and support is a claim.
+
+Its separation of generation and evaluation is a claim.
+
+Its account of support can omit legitimate epistemic relations.
+
+Its account of inquiry basis can preserve branches that do not justify their resource cost.
 
 Its comparison architecture can exclude relations that do not fit its present representation.
 
 Its distinctions determine what differences can become represented through measurement or other results.
 
-The selection and operationalization of those distinctions can constrain what the framework is capable of observing or measuring.
+Its generator can fail to produce relevant alternatives.
 
-Its evaluator representation can misidentify what governed a transition.
+Its evaluator can misidentify what governed a transition.
 
-Its genealogy can lose information.
+Its preservation strategy can lose information.
+
+Its genealogy can fail to preserve relations needed for later recontextualization.
+
+Its recontextualization process can introduce unsupported relations.
 
 Its lossless target can fail.
 
@@ -754,56 +1152,98 @@ Its implementation can diverge from its stated semantics.
 
 RTE therefore applies to Aperta Veritas itself.
 
-It cannot establish that all relevant relations have been represented.
+It cannot establish that all relevant relations, distinctions, hypotheses, alternatives, generators, or tests have been represented.
 
 It cannot certify itself complete, neutral, value free, lossless, exhaustive, or finally accurate.
 
-It cannot establish that its presently best-supported conclusion is identical with definitive truth.
+It cannot establish that its presently supported conclusion is identical with definitive truth.
 
-No conclusion is exempt from the process by which conclusions are examined and revised, including conclusions about that process itself.
+No conclusion about the process is exempt from the process by which conclusions are examined and revised.
 
-## 23. Current research question
+## 25. Current research question
 
-The immediate application to recursive self-improvement is:
+The immediate application to recursive self-improvement is now broader than evaluator stability alone.
 
-> What component of an RSI loop must remain fixed, if any, for empirical improvement to remain distinguishable from evaluator self-confirmation?
+The central research question is:
+
+> How can a recursive system generate and recognize improvements that require distinctions absent from the system currently generating and evaluating successor states?
+
+This contains several subordinate questions:
+
+```text
+How are new distinctions generated?
+How are unresolved branches retained without promoting them to truth?
+How can later distinctions recontextualize prior states?
+How can a system search beyond candidate classes favored by its current evaluator?
+How can generator and evaluator change remain genealogically examinable?
+What must remain stable, if anything, for empirical improvement to remain distinguishable from self-confirmation?
+```
 
 Aperta Veritas does not assume that a permanently fixed evaluator is the answer.
 
-One current hypothesis is that sufficiently represented evaluator and transformation genealogy may allow predecessor and successor systems to remain distinguishable even when evaluators change.
+It also does not assume that preservation alone solves candidate generation.
 
-That hypothesis remains unestablished.
+One current hypothesis is that preserved genealogy combined with recursive generation of distinctions and recontextualization can expand the candidate space available to a recursively modifying system.
 
-The framework therefore treats it as an object of inquiry rather than as an architectural axiom.
+A second current hypothesis is that sufficiently represented generator, evaluator, and transformation genealogy can keep predecessor and successor systems comparable under at least some changing evaluators.
 
-## 24. Current claim
+These hypotheses remain unestablished.
 
-A recursively modifying system governed by improvement remains conditioned by the evaluator, distinctions, measurements, criteria, values, comparison sets, support relations, and conditions through which a successor is designated improved.
+The framework therefore treats them as objects of inquiry rather than architectural axioms.
+
+## 26. Current claim
+
+A system capable only of evaluating represented candidates cannot evaluate an improvement that never becomes representable.
+
+A recursively modifying system governed by improvement remains conditioned by the generator, evaluator, distinctions, measurements, criteria, values, comparison sets, support claims, resource conditions, and boundaries through which candidate successors are generated and designated improved.
 
 RTE places those structures inside recursive inquiry.
 
+It does not require every unresolved branch to be treated as true.
+
+It does not require every generated candidate to be treated as useful.
+
 It does not require every revision to count as improvement under the prior evaluator.
 
-It requires the relations producing the designation of improvement to remain represented strongly enough to be examined.
+It requires the relations producing generation, acceptance, support, comparison, selection, preservation, and the designation of improvement to remain represented strongly enough to be examined and, where possible, recontextualized.
 
 This converts recursive self-improvement from:
 
 ```text
-optimize the system
+generate candidate
+evaluate candidate
+select improvement
 ```
 
 into a broader problem:
 
 ```text
 represent the system
+represent the generator
 represent the evaluator
 represent the distinctions
 represent the measurements
-represent the support
+represent the bases
+represent the support claims
 represent the comparison basis
 represent the transformation
-preserve their genealogy
+preserve unresolved genealogy
+permit new distinctions
+recontextualize retained states
+generate new candidates
 expose the relations recursively
 ```
 
-Aperta Veritas proposes that this exposure is necessary for a recursively modifying system to distinguish transformation from represented improvement without silently protecting the evaluator that defines improvement.
+Aperta Veritas proposes that recursive improvement requires inquiry into both sides of the loop:
+
+```text
+what becomes thinkable
+and
+how what becomes thinkable is judged
+```
+
+The first is the problem of generation.
+
+The second is the problem of evaluation.
+
+Lossless Inquiry connects them by preserving prior structure long enough for later distinctions to make new relations, hypotheses, tests, and successor states representable.
