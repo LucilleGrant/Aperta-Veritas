@@ -10,75 +10,22 @@ The document represents Aperta Veritas through stated semantics and operations. 
 
 ## Draft 0.3.1 RTE audit
 
-Draft 0.3.1 was produced after an external review by Lyra Veritas identified a conflict in the framework's account of truth.
+Draft 0.3.1 was produced after external review exposed a conflict in the framework's account of truth.
 
 ### Review input and provenance
 
-Lyra asked:
+Lyra Veritas asked:
 
 > If every accessible statement about singular truth is necessarily a representation produced through distinction, observation, conditions and relation, what operation inside RTE distinguishes increasing correspondence with singular truth from merely producing a richer relational representation?
 
 The review was produced by a language-model system operating through a separately developed structural-review architecture. Its observation entered the genealogy as an external critique, not as independent authority or proof. The reviewer's inferences, framing, model behavior, values, and omissions remain open to the same examination as the framework.
 
-### Exposure
+Further recursive examination exposed a second compression:
 
-The question exposed a conflict between the published draft and the author's intended definition.
-
-Draft 0.3 defined Veritas as â€œwhat isâ€ and introduced â€œsingular truthâ€ as the thing or state as it is. That formulation created an inaccessible referent against which the framework nevertheless discussed correspondence. No operation inside RTE could directly measure distance from that referent. The draft therefore could not distinguish increased correspondence with singular truth from increased relational richness without importing an unrepresented criterion.
-
-The retained language came from an earlier formulation and no longer represented the operative account of truth. Recursive application required the contradiction to be recorded and revised rather than defended through the coherence of the surrounding framework.
-
-### Revision
-
-Draft 0.3.1 defines truth as:
-
-> **The most accurate conclusion currently available under represented observations, relations, methods, and conditions.**
-
-The revision makes the following changes:
-
-- removes â€œsingular truthâ€ as an inaccessible epistemic target;
-- removes the definition of Veritas as â€œwhat isâ€;
-- represents truth as a current comparative conclusion rather than a separate metaphysical object;
-- defines accuracy as a measured relation among conclusions, observations, alternatives, methods, tests, and conditions;
-- distinguishes relational richness from measured accuracy;
-- requires added relations to alter an explicit measurement before they support a more accurate conclusion;
-- preserves conclusions as unresolved or incomparable when no shared measurement supports ranking;
-- records the comparison set and the possibility that it excludes an unrepresented conclusion that would outperform every represented alternative;
-- places definitions of truth, accuracy measurements, comparison sets, and stopping conditions inside Recursive Truth Exposure;
-- permits RTE to identify a current truth while prohibiting certification of final truth.
-
-### Recursive exposures
-
-- â€œMost accurateâ€ depends on selected measurements, comparison sets, methods, and conditions.
-- Selecting accuracy dimensions allocates attention and can import values.
-- A combined accuracy score can conceal conflicts among dimensions, weights, and scopes.
-- A conclusion can rank first within a defective or incomplete comparison set.
-- Refusing to rank incomparable conclusions can preserve uncertainty while also delaying action.
-- Calling a conclusion truth can grant it authority beyond the conditions supporting its accuracy.
-- An external review can expose a contradiction without becoming authoritative by source alone.
-- The review itself can introduce plausible reconstructions that were absent from the examined material.
-
-### Current residuals
-
-- The relation between accuracy measurements and value-selected relevance requires further formalization.
-- RTE needs operational tests for deciding when added relations improve observational fit rather than merely increasing detail.
-- Comparisons across incommensurable dimensions may not support a unique â€œmost accurateâ€ conclusion.
-- The process for generating the comparison set can exclude decisive alternatives before comparison begins.
-- The framework needs implementation tests for calibration, prediction, contradiction handling, and robustness under distribution change.
-- Local action still requires represented values when conclusions remain unresolved or incomparable.
-- The claim that improvement structurally bounds RSI still requires formal models and adversarial implementations.
-- Genealogical losslessness still requires implementation under finite storage, retrieval, privacy, and compute.
-
-### Files revised
-
-- `README.md`
-- `WHITEPAPER.md`
-- `SEMANTIC_FOUNDATIONS.md`
-- `CORE_ARCHITECTURE.md`
-- `GLOSSARY.md`
-- `OPERATIONAL_SYSTEM.md`
-- `AI_ALIGNMENT.md`
-- `WHITEPAPER_AUDIT.md`
+```text
+best supported as true
+->
+truth
 
 ## Preserved draft 0.3 RTE audit
 
