@@ -8,16 +8,88 @@ The object of this audit is the draft whitepaper `WHITEPAPER.md` and the reposit
 
 The document represents Aperta Veritas through stated semantics and operations. The representation remains connected to examination, implementation, criticism, revision, and genealogy.
 
-## Draft 0.3 RTE audit
+## Draft 0.3.1 RTE audit
+
+Draft 0.3.1 was produced after an external review by Lyra Veritas identified a conflict in the framework's account of truth.
+
+### Review input and provenance
+
+Lyra asked:
+
+> If every accessible statement about singular truth is necessarily a representation produced through distinction, observation, conditions and relation, what operation inside RTE distinguishes increasing correspondence with singular truth from merely producing a richer relational representation?
+
+The review was produced by a language-model system operating through a separately developed structural-review architecture. Its observation entered the genealogy as an external critique, not as independent authority or proof. The reviewer's inferences, framing, model behavior, values, and omissions remain open to the same examination as the framework.
+
+### Exposure
+
+The question exposed a conflict between the published draft and the author's intended definition.
+
+Draft 0.3 defined Veritas as â€œwhat isâ€ and introduced â€œsingular truthâ€ as the thing or state as it is. That formulation created an inaccessible referent against which the framework nevertheless discussed correspondence. No operation inside RTE could directly measure distance from that referent. The draft therefore could not distinguish increased correspondence with singular truth from increased relational richness without importing an unrepresented criterion.
+
+The retained language came from an earlier formulation and no longer represented the operative account of truth. Recursive application required the contradiction to be recorded and revised rather than defended through the coherence of the surrounding framework.
+
+### Revision
+
+Draft 0.3.1 defines truth as:
+
+> **The most accurate conclusion currently available under represented observations, relations, methods, and conditions.**
+
+The revision makes the following changes:
+
+- removes â€œsingular truthâ€ as an inaccessible epistemic target;
+- removes the definition of Veritas as â€œwhat isâ€;
+- represents truth as a current comparative conclusion rather than a separate metaphysical object;
+- defines accuracy as a measured relation among conclusions, observations, alternatives, methods, tests, and conditions;
+- distinguishes relational richness from measured accuracy;
+- requires added relations to alter an explicit measurement before they support a more accurate conclusion;
+- preserves conclusions as unresolved or incomparable when no shared measurement supports ranking;
+- records the comparison set and the possibility that it excludes an unrepresented conclusion that would outperform every represented alternative;
+- places definitions of truth, accuracy measurements, comparison sets, and stopping conditions inside Recursive Truth Exposure;
+- permits RTE to identify a current truth while prohibiting certification of final truth.
+
+### Recursive exposures
+
+- â€œMost accurateâ€ depends on selected measurements, comparison sets, methods, and conditions.
+- Selecting accuracy dimensions allocates attention and can import values.
+- A combined accuracy score can conceal conflicts among dimensions, weights, and scopes.
+- A conclusion can rank first within a defective or incomplete comparison set.
+- Refusing to rank incomparable conclusions can preserve uncertainty while also delaying action.
+- Calling a conclusion truth can grant it authority beyond the conditions supporting its accuracy.
+- An external review can expose a contradiction without becoming authoritative by source alone.
+- The review itself can introduce plausible reconstructions that were absent from the examined material.
+
+### Current residuals
+
+- The relation between accuracy measurements and value-selected relevance requires further formalization.
+- RTE needs operational tests for deciding when added relations improve observational fit rather than merely increasing detail.
+- Comparisons across incommensurable dimensions may not support a unique â€œmost accurateâ€ conclusion.
+- The process for generating the comparison set can exclude decisive alternatives before comparison begins.
+- The framework needs implementation tests for calibration, prediction, contradiction handling, and robustness under distribution change.
+- Local action still requires represented values when conclusions remain unresolved or incomparable.
+- The claim that improvement structurally bounds RSI still requires formal models and adversarial implementations.
+- Genealogical losslessness still requires implementation under finite storage, retrieval, privacy, and compute.
+
+### Files revised
+
+- `README.md`
+- `WHITEPAPER.md`
+- `SEMANTIC_FOUNDATIONS.md`
+- `CORE_ARCHITECTURE.md`
+- `GLOSSARY.md`
+- `OPERATIONAL_SYSTEM.md`
+- `AI_ALIGNMENT.md`
+- `WHITEPAPER_AUDIT.md`
+
+## Preserved draft 0.3 RTE audit
 
 Recursive Truth Exposure was applied to the whitepaper and repository while draft 0.3 was produced.
 
 ### Exposures
 
-- “Improvement” was exposed as an evaluator-dependent value judgment rather than an intrinsic property of change.
+- â€œImprovementâ€ was exposed as an evaluator-dependent value judgment rather than an intrinsic property of change.
 - Recursive self-improvement was exposed as recursion bounded by the evaluator, criterion, distinction, measurement, objective, and conditions that designate a change as better.
-- “Truth is objective fact” was exposed as a compression of Veritas, Factum, and objectivity.
-- Veritas was reformulated as “what is” without claiming that this language contains or closes its referent.
+- â€œTruth is objective factâ€ was exposed as a compression of Veritas, Factum, and objectivity.
+- Veritas was reformulated as â€œwhat isâ€ without claiming that this language contains or closes its referent.
 - Fact was represented as a bounded claim of correspondence rather than truth itself.
 - Objectivity was represented as relations among object, observer, method, and conditions rather than as possession of observer-independent truth.
 - Singular and relational truth were restored as simultaneous relations rather than competing outcomes.
@@ -30,8 +102,8 @@ Recursive Truth Exposure was applied to the whitepaper and repository while draf
 ### Recursive exposures
 
 - RTE values exposure. That value does not establish that exposure occurred.
-- “What is” is a linguistic representation and does not contain Veritas.
-- “Lossless” can falsely imply total retention unless scoped to recoverable genealogy.
+- â€œWhat isâ€ is a linguistic representation and does not contain Veritas.
+- â€œLosslessâ€ can falsely imply total retention unless scoped to recoverable genealogy.
 - Selection of what to examine introduces values, attention limits, and resource conditions.
 - More explicit representation increases storage and retrieval costs and can move compression elsewhere.
 - Recursion stops under finite conditions. The stopping event must remain represented and does not certify completion.
@@ -41,7 +113,7 @@ Recursive Truth Exposure was applied to the whitepaper and repository while draf
 
 - The claim that improvement structurally bounds RSI requires formal models and adversarial implementations.
 - The relation between singular truth and relational truth requires further testing across processes, emergent systems, and observer-dependent measurements.
-- “Spectrum of possibility” may carry quantum implications where only a general field of unresolved relations is intended.
+- â€œSpectrum of possibilityâ€ may carry quantum implications where only a general field of unresolved relations is intended.
 - RTE requires measurable tests that distinguish genuine exposure from longer representation.
 - Genealogical losslessness requires implementation under finite storage, retrieval, privacy, and compute.
 - The process needs criteria for local action that represent values without reinstalling improvement as truth.
@@ -118,4 +190,4 @@ No. Inquiry can stop locally under represented constraints and act on a current 
 
 ## Preserved status of draft 0.2
 
-At draft 0.2, the whitepaper was represented as the current account of Aperta Veritas. Draft 0.3 supersedes that account without erasing it. Both remain connected to counterexamples, implementation results, revision, and reactivation of superseded branches.
+At draft 0.2, the whitepaper was represented as the current account of Aperta Veritas. Draft 0.3 superseded that account without erasing it. Draft 0.3.1 now supersedes draft 0.3 without rewriting either predecessor to appear consistent with the current formulation. All remain connected to counterexamples, implementation results, revision, and reactivation of superseded branches.
