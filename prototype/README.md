@@ -186,38 +186,31 @@ This does not establish that unrecorded information was preserved.
 
 ## Current implementation status
 
-The existing Python prototype predates the complete distinction-measurement and support-measurement corrections.
+The Python prototype has been revised to implement the current distinction, measurement, support, and comparison architecture.
 
-Its previously verified baseline contains 24 passing tests.
+The implementation now:
 
-That baseline demonstrates several earlier architectural properties, including:
+- represents distinctions independently from measurements;
+- represents operationalization as part of a distinction where applicable;
+- requires measurements to reference represented distinctions;
+- permits measurements to remain represented without automatically becoming support;
+- permits support without requiring a measurement;
+- requires support relations to state an explicit represented basis;
+- represents measurements referenced by support separately from the support relation itself;
+- requires comparisons to state an explicit represented comparison basis;
+- permits comparison without a shared measurement;
+- preserves alternatives as incomparable when no represented ranking is supplied;
+- keeps conclusions, support relations, measurements, distinctions, and comparisons separate through ledger genealogy;
+- exposes distinctions, measurements, support relations, comparisons, and comparison bases during recursive audit;
+- preserves stopping and reopening conditions separately;
+- preserves active and inactive branches;
+- maintains a tamper-evident hash chain over recorded genealogy.
 
-- append-only state representation;
-- conclusion-support separation;
-- explicit support records;
-- explicit comparisons;
-- evaluator attribution;
-- active and inactive branches;
-- stopping without closure;
-- recursive audit records;
-- tamper-evident genealogy.
+The revised semantic test suite passes GitHub Actions.
 
-The 24-test baseline does **not** by itself demonstrate compliance with the current executable contract.
+Passing tests demonstrate the implemented behaviors exercised by the suite. They do not establish truth, completeness, exhaustive representation, losslessness, neutrality, exhaustive possibility generation, or correctness outside the tested conditions.
 
-The implementation must now be examined for whether it:
-
-1. represents distinctions independently from measurements;
-2. represents operationalization where applicable;
-3. permits support without requiring a measurement;
-4. permits measurements that do not automatically become support;
-5. represents an explicit comparison basis;
-6. permits defensible comparison without a shared measurement;
-7. preserves absence of ranking when no represented comparison basis supports one;
-8. preserves incommensurability where applicable;
-9. keeps conclusion, support, measurement, and distinction separate through genealogy;
-10. exposes these relations during recursive audit.
-
-These are implementation requirements, not claims that the current prototype already satisfies them.
+The earlier 24-test baseline belongs to the genealogy of the preceding implementation and is not the current test status.
 
 ## Known limitation
 
@@ -225,4 +218,4 @@ Endogenous generation and reactivation of inactive branches are not yet implemen
 
 The ledger can preserve represented alternatives, but preservation does not establish exhaustive generation of the possibility space.
 
-The next implementation revision should modify the prototype and its tests only after checking the existing code against the contract above.
+The executable prototype remains a bounded research implementation of the current architecture, not a demonstration of general recursive self-improvement.
