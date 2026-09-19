@@ -4,7 +4,11 @@ import unittest
 from dataclasses import FrozenInstanceError
 from pathlib import Path
 
-from aperta_veritas import InquiryLedger, evaluator
+from aperta_veritas import (
+    InquiryLedger,
+    evaluator,
+    generator,
+)
 
 
 class InquiryLedgerTests(unittest.TestCase):
@@ -72,8 +76,12 @@ class InquiryLedgerTests(unittest.TestCase):
             ),
             selected_indexes=(0,),
             tests=("attempt edge landing",),
-            stopping_conditions=("current test sequence complete",),
-            reopening_conditions=("observe an excluded state",),
+            stopping_conditions=(
+                "current test sequence complete",
+            ),
+            reopening_conditions=(
+                "observe an excluded state",
+            ),
         )
 
     def branch_states(self):
@@ -83,6 +91,52 @@ class InquiryLedgerTests(unittest.TestCase):
             for state_id in edge.resulting_state_ids
         ]
         return edge, states
+
+    def basis(self, description, kind="observation"):
+        return self.ledger.record_basis(
+            description=description,
+            kind=kind,
+        )
+
+    def support_claim(
+        self,
+        state,
+        *,
+        description="represented observation",
+        relation="supports",
+        claim="The represented basis bears on the conclusion.",
+        score=None,
+        measurement_ids=(),
+        distinction_ids=(),
+        observations=(),
+        logical_relations=(),
+        residuals=(),
+    ):
+        basis = self.basis(description)
+
+        support = self.ledger.record_support(
+            conclusion_state_id=state.state_id,
+            relation=relation,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The represented basis is claimed to bear "
+                "on whether the conclusion should be treated as true."
+            ),
+            measurement_ids=measurement_ids,
+            distinction_ids=distinction_ids,
+            observations=observations,
+            logical_relations=logical_relations,
+            residuals=residuals,
+            score=score,
+        )
+
+        claim_record = self.ledger.record_support_claim(
+            conclusion_state_id=state.state_id,
+            support_relation_ids=(support.support_id,),
+            claim=claim,
+        )
+
+        return basis, support, claim_record
 
     def test_selection_preserves_inactive_branch_and_evaluator(self):
         edge = self.branch()
@@ -108,6 +162,28 @@ class InquiryLedgerTests(unittest.TestCase):
             inactive.residuals,
         )
 
+    def test_compatibility_transition_records_generation_boundary(self):
+        edge = self.branch()
+
+        self.assertIsNotNone(edge.generation_id)
+        self.assertIn(
+            edge.generation_id,
+            self.ledger.generations,
+        )
+
+        generation_event = self.ledger.generations[
+            edge.generation_id
+        ]
+
+        self.assertIn(
+            "candidate-generation process not represented",
+            generation_event.known_exclusions,
+        )
+        self.assertEqual(
+            generation_event.generator.operations,
+            ("external candidate provision",),
+        )
+
     def test_transition_requires_attributed_criteria(self):
         with self.assertRaises(ValueError):
             self.ledger.transition(
@@ -131,7 +207,8 @@ class InquiryLedgerTests(unittest.TestCase):
         distinction = self.ledger.record_distinction(
             name="physical resting state",
             specification=(
-                "Distinguish stable face, edge, and unresolved motion."
+                "Distinguish stable face, edge, "
+                "and unresolved motion."
             ),
             operationalization=(
                 "inspect the coin after motion ceases",
@@ -189,8 +266,14 @@ class InquiryLedgerTests(unittest.TestCase):
             len(self.ledger.support_relations),
             0,
         )
+        self.assertEqual(
+            len(self.ledger.support_claims),
+            0,
+        )
 
-    def test_state_can_reference_distinction_and_measurement_separately(self):
+    def test_state_can_reference_distinction_and_measurement_separately(
+        self,
+    ):
         measurement = self.ledger.record_measurement(
             result="reported tails",
             distinction_ids=(
@@ -216,15 +299,124 @@ class InquiryLedgerTests(unittest.TestCase):
             state.measurement_ids,
         )
 
+    def test_basis_does_not_automatically_create_support(self):
+        basis = self.basis(
+            "The operator accepts the protocol because "
+            "an authority requires it.",
+            kind="authority",
+        )
+
+        self.assertIn(basis.basis_id, self.ledger.bases)
+        self.assertEqual(
+            len(self.ledger.support_relations),
+            0,
+        )
+        self.assertEqual(
+            len(self.ledger.support_claims),
+            0,
+        )
+
+    def test_acceptance_basis_does_not_create_support(self):
+        basis = self.basis(
+            "Institutional policy requires this representation.",
+            kind="policy",
+        )
+
+        acceptance = self.ledger.record_acceptance_basis(
+            state_id=self.origin.state_id,
+            basis_ids=(basis.basis_id,),
+            account="The state is accepted because policy requires it.",
+        )
+
+        self.assertIn(
+            acceptance.acceptance_id,
+            self.ledger.acceptance_bases,
+        )
+        self.assertEqual(
+            len(self.ledger.support_relations),
+            0,
+        )
+        self.assertEqual(
+            len(self.ledger.support_claims),
+            0,
+        )
+
+    def test_inquiry_basis_does_not_create_support(self):
+        basis = self.basis(
+            "An unexplained edge case remains.",
+            kind="anomaly",
+        )
+
+        inquiry = self.ledger.record_inquiry_basis(
+            state_id=self.origin.state_id,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The unresolved observation warrants "
+                "continued examination."
+            ),
+            possible_tests=("attempt stable edge landings",),
+        )
+
+        self.assertIn(
+            inquiry.inquiry_basis_id,
+            self.ledger.inquiry_bases,
+        )
+        self.assertEqual(
+            len(self.ledger.support_relations),
+            0,
+        )
+        self.assertEqual(
+            len(self.ledger.support_claims),
+            0,
+        )
+
+    def test_same_basis_can_participate_in_different_relations(self):
+        basis = self.basis(
+            "A protocol authority issued the rule.",
+            kind="authority",
+        )
+
+        acceptance = self.ledger.record_acceptance_basis(
+            state_id=self.origin.state_id,
+            basis_ids=(basis.basis_id,),
+            account="The operator accepts the rule.",
+        )
+
+        support = self.ledger.record_support(
+            conclusion_state_id=self.origin.state_id,
+            relation="unresolved",
+            basis_ids=(basis.basis_id,),
+            account=(
+                "Whether authority bears on the truth of the "
+                "physical claim remains unresolved."
+            ),
+        )
+
+        self.assertEqual(
+            acceptance.basis_ids,
+            support.basis_ids,
+        )
+        self.assertNotEqual(
+            acceptance.acceptance_id,
+            support.support_id,
+        )
+
     def test_support_can_exist_without_measurement(self):
         _, states = self.branch_states()
+
+        basis = self.basis(
+            "Logical relation between protocol definition "
+            "and permitted report labels.",
+            kind="logical relation",
+        )
 
         support = self.ledger.record_support(
             conclusion_state_id=states[0].state_id,
             relation="supports",
-            basis=(
-                "logical relation between protocol definition "
-                "and permitted report labels",
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The protocol definition is claimed to support "
+                "the conclusion about permitted labels."
             ),
             logical_relations=(
                 "protocol permits only heads or tails labels",
@@ -246,13 +438,24 @@ class InquiryLedgerTests(unittest.TestCase):
             distinction_ids=(
                 self.outcome_distinction.distinction_id,
             ),
-            method=("compare reports with protocol categories",),
+            method=(
+                "compare reports with protocol categories",
+            ),
+        )
+
+        basis = self.basis(
+            "Observed protocol consistency.",
+            kind="observation",
         )
 
         support = self.ledger.record_support(
             conclusion_state_id=self.origin.state_id,
             relation="supports",
-            basis=("observed protocol consistency",),
+            basis_ids=(basis.basis_id,),
+            account=(
+                "Observed consistency is claimed to support "
+                "the bounded protocol conclusion."
+            ),
             distinction_ids=(
                 self.outcome_distinction.distinction_id,
             ),
@@ -269,41 +472,59 @@ class InquiryLedgerTests(unittest.TestCase):
             support.support_id,
         )
 
-    def test_support_requires_explicit_basis_not_measurement(self):
+    def test_support_requires_represented_basis(self):
         with self.assertRaises(ValueError):
             self.ledger.record_support(
                 conclusion_state_id=self.origin.state_id,
                 relation="supports",
-                basis=(),
+                basis_ids=(),
+                account="No represented basis was supplied.",
             )
 
-    def test_support_is_separate_from_conclusion(self):
-        _, states = self.branch_states()
-        conclusion = states[0]
+    def test_support_rejects_unknown_basis(self):
+        with self.assertRaises(KeyError):
+            self.ledger.record_support(
+                conclusion_state_id=self.origin.state_id,
+                relation="supports",
+                basis_ids=("missing_basis",),
+                account="Unknown basis should not be accepted.",
+            )
 
-        support = self.ledger.record_support(
-            conclusion_state_id=conclusion.state_id,
-            relation="supports",
-            basis=("protocol definition",),
-            conditions=("protocol reporting rules",),
-            observations=(
-                "heads recorded as heads",
-                "tails recorded as tails",
-            ),
+    def test_support_claim_is_separate_from_support_relation(self):
+        _, states = self.branch_states()
+
+        _, support, claim = self.support_claim(
+            states[0],
+            description="protocol definition",
         )
 
-        self.assertEqual(
-            support.conclusion_state_id,
-            conclusion.state_id,
+        self.assertIn(
+            support.support_id,
+            claim.support_relation_ids,
         )
         self.assertNotEqual(
             support.support_id,
-            conclusion.state_id,
+            claim.support_claim_id,
         )
-        self.assertNotIn(
-            "support",
-            conclusion.__dataclass_fields__,
+        self.assertFalse(hasattr(claim, "truth"))
+
+    def test_support_claim_rejects_relation_for_other_conclusion(self):
+        _, states = self.branch_states()
+
+        _, support, _ = self.support_claim(
+            states[0],
+            description="protocol definition",
         )
+
+        with self.assertRaises(ValueError):
+            self.ledger.record_support_claim(
+                conclusion_state_id=states[1].state_id,
+                support_relation_ids=(support.support_id,),
+                claim=(
+                    "A relation concerning another conclusion "
+                    "must not be silently reassigned."
+                ),
+            )
 
     def test_belief_is_separate_from_support(self):
         belief = self.ledger.record_belief(
@@ -322,10 +543,19 @@ class InquiryLedgerTests(unittest.TestCase):
             beliefs=(belief.belief_id,),
         )
 
+        basis = self.basis(
+            "Ordinary observed outcomes.",
+            kind="observation",
+        )
+
         support = self.ledger.record_support(
             conclusion_state_id=state.state_id,
             relation="supports",
-            basis=("ordinary observed outcomes",),
+            basis_ids=(basis.basis_id,),
+            account=(
+                "Ordinary observations are claimed to support "
+                "the proposition under represented conditions."
+            ),
             observations=("heads", "tails"),
             residuals=("edge case unresolved",),
         )
@@ -353,6 +583,10 @@ class InquiryLedgerTests(unittest.TestCase):
 
         self.assertEqual(
             len(self.ledger.support_relations),
+            0,
+        )
+        self.assertEqual(
+            len(self.ledger.support_claims),
             0,
         )
         self.assertEqual(belief.confidence, 1.0)
@@ -389,6 +623,234 @@ class InquiryLedgerTests(unittest.TestCase):
         self.assertFalse(hasattr(belief, "truth"))
         self.assertFalse(hasattr(belief, "falsehood"))
 
+    def test_explicit_generation_is_distinct_from_evaluation(self):
+        candidate_generator = generator(
+            "Generate protocol and physical interpretations.",
+            operations=("branch represented interpretations",),
+            distinction_ids=(
+                self.outcome_distinction.distinction_id,
+            ),
+            source_state_ids=(self.origin.state_id,),
+        )
+
+        generation_event = self.ledger.generate(
+            source_state_ids=(self.origin.state_id,),
+            candidates=(
+                {
+                    "object": "protocol",
+                    "representation": "Recorded output is binary.",
+                    "status": "tested",
+                },
+                {
+                    "object": "physical toss",
+                    "representation": (
+                        "Physical outcomes may exceed labels."
+                    ),
+                    "status": "unresolved",
+                },
+            ),
+            generator=candidate_generator,
+            operation="generate alternative interpretations",
+            distinction_ids=(
+                self.outcome_distinction.distinction_id,
+            ),
+        )
+
+        self.assertEqual(
+            len(generation_event.generated_state_ids),
+            2,
+        )
+        self.assertEqual(len(self.ledger.transitions), 0)
+
+        for state_id in generation_event.generated_state_ids:
+            self.assertFalse(
+                self.ledger.states[state_id].active
+            )
+
+    def test_generation_requires_source_state(self):
+        candidate_generator = generator(
+            "Generate a candidate.",
+            operations=("generate",),
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.generate(
+                source_state_ids=(),
+                candidates=(
+                    {
+                        "object": "candidate",
+                        "representation": "A candidate.",
+                    },
+                ),
+                generator=candidate_generator,
+                operation="generate",
+            )
+
+    def test_generation_requires_candidate(self):
+        candidate_generator = generator(
+            "Generate candidates.",
+            operations=("generate",),
+            source_state_ids=(self.origin.state_id,),
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.generate(
+                source_state_ids=(self.origin.state_id,),
+                candidates=(),
+                generator=candidate_generator,
+                operation="generate",
+            )
+
+    def test_generation_can_preserve_possible_unrepresented_alternatives(
+        self,
+    ):
+        candidate_generator = generator(
+            "Generate known interpretations.",
+            operations=("generate represented alternatives",),
+            source_state_ids=(self.origin.state_id,),
+            constraints=("current vocabulary",),
+        )
+
+        generation_event = self.ledger.generate(
+            source_state_ids=(self.origin.state_id,),
+            candidates=(
+                {
+                    "object": "protocol",
+                    "representation": "Recorded output is binary.",
+                },
+            ),
+            generator=candidate_generator,
+            operation="generate represented alternative",
+            known_exclusions=("unmodeled physical states",),
+            unrepresented_alternatives_possible=True,
+        )
+
+        self.assertTrue(
+            generation_event.unrepresented_alternatives_possible
+        )
+        self.assertIn(
+            "unmodeled physical states",
+            generation_event.known_exclusions,
+        )
+
+    def test_generated_selection_preserves_unselected_candidate(self):
+        candidate_generator = generator(
+            "Generate two interpretations.",
+            operations=("branch interpretations",),
+            source_state_ids=(self.origin.state_id,),
+        )
+
+        generation_event = self.ledger.generate(
+            source_state_ids=(self.origin.state_id,),
+            candidates=(
+                {
+                    "object": "protocol",
+                    "representation": "Recorded output is binary.",
+                    "status": "tested",
+                },
+                {
+                    "object": "physical toss",
+                    "representation": (
+                        "Physical outcomes may exceed labels."
+                    ),
+                    "status": "unresolved",
+                },
+            ),
+            generator=candidate_generator,
+            operation="generate alternatives",
+        )
+
+        selected = generation_event.generated_state_ids[0]
+
+        transition = self.ledger.transition_generated(
+            generation_id=generation_event.generation_id,
+            operation="select represented candidate",
+            transformation="evaluate generated alternatives",
+            evaluator=self.selector,
+            selected_state_ids=(selected,),
+        )
+
+        self.assertEqual(
+            transition.generation_id,
+            generation_event.generation_id,
+        )
+        self.assertEqual(
+            len(transition.inactive_state_ids),
+            1,
+        )
+
+        inactive = self.ledger.states[
+            transition.inactive_state_ids[0]
+        ]
+        self.assertFalse(inactive.active)
+
+    def test_selection_rejects_state_outside_generation(self):
+        candidate_generator = generator(
+            "Generate one candidate.",
+            operations=("generate",),
+            source_state_ids=(self.origin.state_id,),
+        )
+
+        generation_event = self.ledger.generate(
+            source_state_ids=(self.origin.state_id,),
+            candidates=(
+                {
+                    "object": "candidate",
+                    "representation": "Generated candidate.",
+                },
+            ),
+            generator=candidate_generator,
+            operation="generate",
+        )
+
+        external = self.ledger.encounter(
+            object="external",
+            representation="Not generated by this event.",
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.transition_generated(
+                generation_id=generation_event.generation_id,
+                operation="select",
+                transformation="evaluate",
+                evaluator=self.selector,
+                selected_state_ids=(external.state_id,),
+            )
+
+    def test_inquiry_basis_can_preserve_inactive_branch(self):
+        edge = self.branch()
+        inactive = self.ledger.states[
+            edge.inactive_state_ids[0]
+        ]
+
+        basis = self.basis(
+            "Excluded-state frequency remains unknown.",
+            kind="unresolved question",
+        )
+
+        inquiry = self.ledger.record_inquiry_basis(
+            state_id=inactive.state_id,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The inactive branch remains worth examining "
+                "because an unresolved observation remains."
+            ),
+            possible_tests=("repeat physical tosses",),
+            reopening_conditions=(
+                "new observation distinguishes excluded states",
+            ),
+        )
+
+        self.assertFalse(inactive.active)
+        self.assertIn(
+            inquiry.inquiry_basis_id,
+            self.ledger.inquiry_bases,
+        )
+        self.assertEqual(
+            len(self.ledger.support_relations),
+            0,
+        )
+
     def test_comparison_requires_explicit_basis(self):
         _, states = self.branch_states()
 
@@ -398,27 +860,27 @@ class InquiryLedgerTests(unittest.TestCase):
                     states[0].state_id,
                     states[1].state_id,
                 ),
-                support_ids=(),
+                support_claim_ids=(),
                 basis=(),
             )
 
     def test_comparison_does_not_require_measurement(self):
         _, states = self.branch_states()
 
-        first_support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("protocol definition",),
+        _, _, first_claim = self.support_claim(
+            states[0],
+            description="protocol definition",
             logical_relations=(
                 "binary output follows from protocol rule",
             ),
         )
 
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("observed edge case",),
-            observations=("coin temporarily rested on edge",),
+        _, _, second_claim = self.support_claim(
+            states[1],
+            description="observed edge case",
+            observations=(
+                "coin temporarily rested on edge",
+            ),
         )
 
         comparison = self.ledger.compare(
@@ -426,12 +888,13 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(
-                first_support.support_id,
-                second_support.support_id,
+            support_claim_ids=(
+                first_claim.support_claim_id,
+                second_claim.support_claim_id,
             ),
             basis=(
-                "scope of each conclusion relative to represented evidence",
+                "scope of each conclusion relative "
+                "to represented support",
             ),
             criteria=("represented explanatory scope",),
             conditions=("current observations only",),
@@ -443,17 +906,15 @@ class InquiryLedgerTests(unittest.TestCase):
     def test_comparison_preserves_comparison_set(self):
         _, states = self.branch_states()
 
-        first_support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("protocol fit",),
+        _, _, first_claim = self.support_claim(
+            states[0],
+            description="protocol fit",
             score=0.9,
         )
 
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("physical coverage",),
+        _, _, second_claim = self.support_claim(
+            states[1],
+            description="physical coverage",
             score=0.7,
         )
 
@@ -462,9 +923,9 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(
-                first_support.support_id,
-                second_support.support_id,
+            support_claim_ids=(
+                first_claim.support_claim_id,
+                second_claim.support_claim_id,
             ),
             basis=("represented test coverage",),
             conditions=("current observations only",),
@@ -488,19 +949,19 @@ class InquiryLedgerTests(unittest.TestCase):
             comparison.unrepresented_alternatives_possible
         )
 
-    def test_incommensurability_can_be_preserved_without_ranking(self):
+    def test_unranked_does_not_assert_intrinsic_incommensurability(
+        self,
+    ):
         _, states = self.branch_states()
 
-        first_support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("protocol definition",),
+        _, _, first_claim = self.support_claim(
+            states[0],
+            description="protocol definition",
         )
 
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("physical observation",),
+        _, _, second_claim = self.support_claim(
+            states[1],
+            description="physical observation",
         )
 
         comparison = self.ledger.compare(
@@ -508,21 +969,20 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(
-                first_support.support_id,
-                second_support.support_id,
+            support_claim_ids=(
+                first_claim.support_claim_id,
+                second_claim.support_claim_id,
             ),
             basis=(
-                "different scopes currently lack a represented "
-                "basis for ranking",
+                "Current represented relations do not "
+                "support a ranking."
             ),
-            incomparable_state_ids=(
+            unranked_state_ids=(
                 states[0].state_id,
                 states[1].state_id,
             ),
             unresolved_relations=(
-                "protocol completeness and physical completeness "
-                "are not presently commensurated",
+                "A future comparison basis may alter ranking.",
             ),
         )
 
@@ -531,27 +991,47 @@ class InquiryLedgerTests(unittest.TestCase):
             (),
         )
         self.assertEqual(
-            set(comparison.incomparable_state_ids),
+            set(comparison.unranked_state_ids),
             {
                 states[0].state_id,
                 states[1].state_id,
             },
         )
+        self.assertFalse(
+            hasattr(comparison, "incomparable_state_ids")
+        )
+
+    def test_comparison_rejects_external_unranked_state(self):
+        _, states = self.branch_states()
+
+        external = self.ledger.encounter(
+            object="external alternative",
+            representation="Another possibility.",
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.compare(
+                conclusion_state_ids=(
+                    states[0].state_id,
+                    states[1].state_id,
+                ),
+                support_claim_ids=(),
+                basis=("represented comparison",),
+                unranked_state_ids=(external.state_id,),
+            )
 
     def test_best_supported_is_not_truth_certificate(self):
         _, states = self.branch_states()
 
-        first_support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("bounded protocol test",),
+        _, _, first_claim = self.support_claim(
+            states[0],
+            description="bounded protocol test",
             score=1.0,
         )
 
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("partial physical observations",),
+        _, _, second_claim = self.support_claim(
+            states[1],
+            description="partial physical observations",
             score=0.5,
         )
 
@@ -560,9 +1040,9 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(
-                first_support.support_id,
-                second_support.support_id,
+            support_claim_ids=(
+                first_claim.support_claim_id,
+                second_claim.support_claim_id,
             ),
             basis=("bounded represented support scores",),
             best_supported_state_ids=(
@@ -582,10 +1062,9 @@ class InquiryLedgerTests(unittest.TestCase):
     def test_perfect_score_does_not_create_truth_field(self):
         _, states = self.branch_states()
 
-        support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("bounded test",),
+        _, support, claim = self.support_claim(
+            states[0],
+            description="bounded test",
             score=1.0,
         )
 
@@ -594,6 +1073,7 @@ class InquiryLedgerTests(unittest.TestCase):
         self.assertFalse(
             hasattr(support, "definitive_truth")
         )
+        self.assertFalse(hasattr(claim, "truth"))
 
     def test_comparison_rejects_external_best_supported_state(self):
         _, states = self.branch_states()
@@ -603,35 +1083,20 @@ class InquiryLedgerTests(unittest.TestCase):
             representation="Another possibility.",
         )
 
-        first_support = self.ledger.record_support(
-            conclusion_state_id=states[0].state_id,
-            relation="supports",
-            basis=("represented test",),
-        )
-
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("represented test",),
-        )
-
         with self.assertRaises(ValueError):
             self.ledger.compare(
                 conclusion_state_ids=(
                     states[0].state_id,
                     states[1].state_id,
                 ),
-                support_ids=(
-                    first_support.support_id,
-                    second_support.support_id,
-                ),
+                support_claim_ids=(),
                 basis=("represented test relation",),
                 best_supported_state_ids=(
                     external.state_id,
                 ),
             )
 
-    def test_comparison_rejects_support_for_external_conclusion(self):
+    def test_comparison_rejects_claim_for_external_conclusion(self):
         _, states = self.branch_states()
 
         external = self.ledger.encounter(
@@ -639,10 +1104,9 @@ class InquiryLedgerTests(unittest.TestCase):
             representation="Another possibility.",
         )
 
-        external_support = self.ledger.record_support(
-            conclusion_state_id=external.state_id,
-            relation="supports",
-            basis=("external test",),
+        _, _, external_claim = self.support_claim(
+            external,
+            description="external test",
         )
 
         with self.assertRaises(ValueError):
@@ -651,13 +1115,136 @@ class InquiryLedgerTests(unittest.TestCase):
                     states[0].state_id,
                     states[1].state_id,
                 ),
-                support_ids=(
-                    external_support.support_id,
+                support_claim_ids=(
+                    external_claim.support_claim_id,
                 ),
                 basis=("represented comparison",),
             )
 
-    def test_recursive_audit_exposes_corrected_architecture(self):
+    def test_recontextualization_preserves_prior_states(self):
+        _, states = self.branch_states()
+
+        new_distinction = self.ledger.record_distinction(
+            name="report versus physical state",
+            specification=(
+                "Distinguish protocol output from "
+                "physical configuration."
+            ),
+        )
+
+        before = {
+            state.state_id: state
+            for state in states
+        }
+
+        event = self.ledger.recontextualize(
+            prior_state_ids=tuple(before),
+            distinction_ids=(new_distinction.distinction_id,),
+            relation=(
+                "The protocol and physical claims concern "
+                "different represented relations."
+            ),
+        )
+
+        self.assertIn(
+            event.recontextualization_id,
+            self.ledger.recontextualizations,
+        )
+
+        for state_id, original_state in before.items():
+            self.assertIs(
+                self.ledger.states[state_id],
+                original_state,
+            )
+
+    def test_recontextualization_can_create_new_state(self):
+        _, states = self.branch_states()
+
+        new_distinction = self.ledger.record_distinction(
+            name="projection relation",
+            specification=(
+                "Distinguish an object's represented projection "
+                "from a claim about the whole object."
+            ),
+        )
+
+        event = self.ledger.recontextualize(
+            prior_state_ids=(
+                states[0].state_id,
+                states[1].state_id,
+            ),
+            distinction_ids=(new_distinction.distinction_id,),
+            relation=(
+                "Earlier representations can be related "
+                "under the new distinction."
+            ),
+            resulting_state={
+                "object": "recontextualized toss model",
+                "representation": (
+                    "Protocol output and physical outcome "
+                    "are distinct represented relations."
+                ),
+                "status": "untested",
+            },
+        )
+
+        self.assertIsNotNone(event.resulting_state_id)
+        self.assertIn(
+            event.resulting_state_id,
+            self.ledger.states,
+        )
+
+        result = self.ledger.states[
+            event.resulting_state_id
+        ]
+
+        self.assertEqual(
+            set(result.parent_state_ids),
+            {
+                states[0].state_id,
+                states[1].state_id,
+            },
+        )
+
+    def test_recontextualization_does_not_create_support(self):
+        _, states = self.branch_states()
+
+        new_distinction = self.ledger.record_distinction(
+            name="new relational distinction",
+            specification=(
+                "A later distinction exposes a possible relation."
+            ),
+        )
+
+        self.ledger.recontextualize(
+            prior_state_ids=(
+                states[0].state_id,
+                states[1].state_id,
+            ),
+            distinction_ids=(new_distinction.distinction_id,),
+            relation="A newly representable relation.",
+        )
+
+        self.assertEqual(
+            len(self.ledger.support_relations),
+            0,
+        )
+        self.assertEqual(
+            len(self.ledger.support_claims),
+            0,
+        )
+
+    def test_recontextualization_requires_new_represented_distinction(
+        self,
+    ):
+        with self.assertRaises(KeyError):
+            self.ledger.recontextualize(
+                prior_state_ids=(self.origin.state_id,),
+                distinction_ids=("missing_distinction",),
+                relation="An unsupported relation.",
+            )
+
+    def test_recursive_audit_exposes_generative_architecture(self):
         edge, states = self.branch_states()
 
         measurement = self.ledger.record_measurement(
@@ -667,14 +1254,41 @@ class InquiryLedgerTests(unittest.TestCase):
             ),
         )
 
+        basis = self.basis(
+            "Protocol observation.",
+            kind="observation",
+        )
+
         support = self.ledger.record_support(
             conclusion_state_id=states[0].state_id,
             relation="supports",
-            basis=("protocol observation",),
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The observation is claimed to support "
+                "the bounded protocol conclusion."
+            ),
             distinction_ids=(
                 self.outcome_distinction.distinction_id,
             ),
             measurement_ids=(measurement.measurement_id,),
+        )
+
+        support_claim = self.ledger.record_support_claim(
+            conclusion_state_id=states[0].state_id,
+            support_relation_ids=(support.support_id,),
+            claim=(
+                "The protocol observation bears on the "
+                "bounded protocol conclusion."
+            ),
+        )
+
+        inquiry_basis_record = self.ledger.record_inquiry_basis(
+            state_id=states[1].state_id,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The physical branch remains open "
+                "for further examination."
+            ),
         )
 
         comparison = self.ledger.compare(
@@ -682,7 +1296,9 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(support.support_id,),
+            support_claim_ids=(
+                support_claim.support_claim_id,
+            ),
             basis=("protocol scope versus physical scope",),
             unresolved_relations=(
                 "physical possibility space incomplete",
@@ -706,8 +1322,16 @@ class InquiryLedgerTests(unittest.TestCase):
                 self.outcome_distinction.distinction_id,
             ),
             measurement_ids=(measurement.measurement_id,),
+            basis_ids=(basis.basis_id,),
+            inquiry_basis_ids=(
+                inquiry_basis_record.inquiry_basis_id,
+            ),
             support_ids=(support.support_id,),
+            support_claim_ids=(
+                support_claim.support_claim_id,
+            ),
             comparison_ids=(comparison.comparison_id,),
+            generation_ids=(edge.generation_id,),
             comparison_basis=(
                 "audit represented genealogy",
             ),
@@ -729,12 +1353,28 @@ class InquiryLedgerTests(unittest.TestCase):
             audit["measurement_ids"],
         )
         self.assertIn(
+            basis.basis_id,
+            audit["basis_ids"],
+        )
+        self.assertIn(
+            inquiry_basis_record.inquiry_basis_id,
+            audit["inquiry_basis_ids"],
+        )
+        self.assertIn(
             support.support_id,
             audit["support_ids"],
         )
         self.assertIn(
+            support_claim.support_claim_id,
+            audit["support_claim_ids"],
+        )
+        self.assertIn(
             comparison.comparison_id,
             audit["comparison_ids"],
+        )
+        self.assertIn(
+            edge.generation_id,
+            audit["generation_ids"],
         )
         self.assertTrue(audit["comparison_basis"])
         self.assertEqual(
@@ -784,15 +1424,33 @@ class InquiryLedgerTests(unittest.TestCase):
         with self.assertRaises(FrozenInstanceError):
             measurement.result = "tails"
 
+    def test_bases_are_immutable(self):
+        basis = self.basis("Observation.")
+
+        with self.assertRaises(FrozenInstanceError):
+            basis.description = "changed"
+
     def test_support_relations_are_immutable(self):
+        basis = self.basis("Observation.")
+
         support = self.ledger.record_support(
             conclusion_state_id=self.origin.state_id,
             relation="supports",
-            basis=("observation",),
+            basis_ids=(basis.basis_id,),
+            account="Observation is claimed to support conclusion.",
         )
 
         with self.assertRaises(FrozenInstanceError):
             support.relation = "contradicts"
+
+    def test_support_claims_are_immutable(self):
+        _, _, claim = self.support_claim(
+            self.origin,
+            description="observation",
+        )
+
+        with self.assertRaises(FrozenInstanceError):
+            claim.claim = "changed"
 
     def test_beliefs_are_immutable(self):
         belief = self.ledger.record_belief(
@@ -802,6 +1460,28 @@ class InquiryLedgerTests(unittest.TestCase):
 
         with self.assertRaises(FrozenInstanceError):
             belief.confidence = 1.0
+
+    def test_generation_records_are_immutable(self):
+        candidate_generator = generator(
+            "Generate candidate.",
+            operations=("generate",),
+            source_state_ids=(self.origin.state_id,),
+        )
+
+        generation_event = self.ledger.generate(
+            source_state_ids=(self.origin.state_id,),
+            candidates=(
+                {
+                    "object": "candidate",
+                    "representation": "Candidate representation.",
+                },
+            ),
+            generator=candidate_generator,
+            operation="generate",
+        )
+
+        with self.assertRaises(FrozenInstanceError):
+            generation_event.operation = "changed"
 
     def test_hash_chain_detects_mutation(self):
         self.branch()
@@ -814,57 +1494,64 @@ class InquiryLedgerTests(unittest.TestCase):
 
         self.assertFalse(self.ledger.verify())
 
-    def test_hash_chain_covers_distinction_records(self):
+    def test_hash_chain_covers_generation_records(self):
+        edge = self.branch()
+
         self.assertTrue(self.ledger.verify())
 
         for record in self.ledger._records:
             if (
-                record["kind"] == "distinction"
-                and record["payload"]["distinction_id"]
-                == self.outcome_distinction.distinction_id
+                record["kind"] == "generation"
+                and record["payload"]["generation_id"]
+                == edge.generation_id
             ):
-                record["payload"]["specification"] = "altered"
+                record["payload"]["operation"] = "altered"
                 break
 
         self.assertFalse(self.ledger.verify())
 
-    def test_hash_chain_covers_measurement_records(self):
-        measurement = self.ledger.record_measurement(
-            result="heads",
-            distinction_ids=(
-                self.outcome_distinction.distinction_id,
-            ),
+    def test_hash_chain_covers_support_claim_records(self):
+        _, _, claim = self.support_claim(
+            self.origin,
+            description="observation",
         )
 
         self.assertTrue(self.ledger.verify())
 
         for record in self.ledger._records:
             if (
-                record["kind"] == "measurement"
-                and record["payload"]["measurement_id"]
-                == measurement.measurement_id
+                record["kind"] == "support_claim"
+                and record["payload"]["support_claim_id"]
+                == claim.support_claim_id
             ):
-                record["payload"]["result"] = "altered"
+                record["payload"]["claim"] = "altered"
                 break
 
         self.assertFalse(self.ledger.verify())
 
-    def test_hash_chain_covers_support_records(self):
-        support = self.ledger.record_support(
-            conclusion_state_id=self.origin.state_id,
-            relation="supports",
-            basis=("observation",),
+    def test_hash_chain_covers_recontextualization_records(self):
+        distinction = self.ledger.record_distinction(
+            name="later distinction",
+            specification="Expose a later relation.",
+        )
+
+        event = self.ledger.recontextualize(
+            prior_state_ids=(self.origin.state_id,),
+            distinction_ids=(distinction.distinction_id,),
+            relation="A later relation.",
         )
 
         self.assertTrue(self.ledger.verify())
 
         for record in self.ledger._records:
             if (
-                record["kind"] == "support"
-                and record["payload"]["support_id"]
-                == support.support_id
+                record["kind"] == "recontextualization"
+                and record["payload"][
+                    "recontextualization_id"
+                ]
+                == event.recontextualization_id
             ):
-                record["payload"]["relation"] = "contradicts"
+                record["payload"]["relation"] = "altered"
                 break
 
         self.assertFalse(self.ledger.verify())
@@ -892,7 +1579,7 @@ class InquiryLedgerTests(unittest.TestCase):
             "transition",
         )
 
-    def test_jsonl_export_includes_corrected_semantic_records(self):
+    def test_jsonl_export_includes_generative_semantic_records(self):
         _, states = self.branch_states()
 
         measurement = self.ledger.record_measurement(
@@ -902,17 +1589,53 @@ class InquiryLedgerTests(unittest.TestCase):
             ),
         )
 
-        first_support = self.ledger.record_support(
+        basis = self.basis(
+            "Protocol fit.",
+            kind="observation",
+        )
+
+        support = self.ledger.record_support(
             conclusion_state_id=states[0].state_id,
             relation="supports",
-            basis=("protocol fit",),
+            basis_ids=(basis.basis_id,),
+            account=(
+                "Protocol fit is claimed to support "
+                "the bounded conclusion."
+            ),
             measurement_ids=(measurement.measurement_id,),
         )
 
-        second_support = self.ledger.record_support(
-            conclusion_state_id=states[1].state_id,
-            relation="supports",
-            basis=("physical observation",),
+        claim = self.ledger.record_support_claim(
+            conclusion_state_id=states[0].state_id,
+            support_relation_ids=(support.support_id,),
+            claim="Protocol fit bears on the bounded conclusion.",
+        )
+
+        inquiry_basis_record = self.ledger.record_inquiry_basis(
+            state_id=states[1].state_id,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "The unresolved physical branch remains "
+                "available for inquiry."
+            ),
+        )
+
+        distinction = self.ledger.record_distinction(
+            name="scope relation",
+            specification=(
+                "Distinguish protocol scope from physical scope."
+            ),
+        )
+
+        self.ledger.recontextualize(
+            prior_state_ids=(
+                states[0].state_id,
+                states[1].state_id,
+            ),
+            distinction_ids=(distinction.distinction_id,),
+            relation=(
+                "The retained branches concern different scopes."
+            ),
         )
 
         self.ledger.compare(
@@ -920,13 +1643,11 @@ class InquiryLedgerTests(unittest.TestCase):
                 states[0].state_id,
                 states[1].state_id,
             ),
-            support_ids=(
-                first_support.support_id,
-                second_support.support_id,
-            ),
+            support_claim_ids=(claim.support_claim_id,),
             basis=("represented scope comparison",),
-            best_supported_state_ids=(
+            unranked_state_ids=(
                 states[0].state_id,
+                states[1].state_id,
             ),
         )
 
@@ -945,7 +1666,12 @@ class InquiryLedgerTests(unittest.TestCase):
 
         self.assertIn("distinction", kinds)
         self.assertIn("measurement", kinds)
-        self.assertIn("support", kinds)
+        self.assertIn("basis", kinds)
+        self.assertIn("inquiry_basis", kinds)
+        self.assertIn("support_relation", kinds)
+        self.assertIn("support_claim", kinds)
+        self.assertIn("generation", kinds)
+        self.assertIn("recontextualization", kinds)
         self.assertIn("comparison", kinds)
 
 
