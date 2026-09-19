@@ -108,9 +108,11 @@ A datum is not certified as accurate merely by being represented or retained.
 
 ## Distinction
 
-Measurement of a spectrum of possibility that produces a represented difference or relation.
+The specification of a variable, category, relation, boundary, or other basis by which possibilities can differ.
 
-A distinction can represent a degree, distribution, boundary, change, simultaneous relations, or unresolved range. It need not be binary.
+A distinction defines what can be differentiated. It may specify degrees, distributions, boundaries, changes, simultaneous relations, or unresolved ranges. It need not be binary.
+
+A distinction does not itself determine the result of applying that distinction to an object or process. That result is a measurement.
 
 ## Factum
 
@@ -148,6 +150,14 @@ The designation records availability rather than certified accuracy or truth.
 
 Knowledge can contain accurate conclusions, inaccurate conclusions, beliefs, contradictions, fabrications, transformations, inactive branches, and unresolved alternatives.
 
+## Measurement
+
+A represented result produced relative to one or more distinctions.
+
+A measurement depends on what distinctions are applied, how they are operationalized, the object or process examined, the method of application, and the conditions under which the result is produced.
+
+Measurements may be quantitative, qualitative, categorical, relational, comparative, bounded, or unresolved. Different distinctions can produce different measurements of the same object without those measurements necessarily conflicting.
+
 ## Lie
 
 A representation presented as accurate by an agent that represents it as inaccurate.
@@ -172,7 +182,7 @@ It does not certify final or definitive truth.
 
 ## Observation
 
-The performance or registration of distinction.
+The performance or registration of one or more distinctions producing represented measurements or data.
 
 Observation is an interaction that can reveal, select, constitute, or alter represented relations. Aperta Veritas does not determine its function by category in advance.
 
