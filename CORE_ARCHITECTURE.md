@@ -1,8 +1,8 @@
 # Core Architecture
 
-Aperta Veritas is organized around Recursive Truth Exposure (RTE): the recursive examination of representations, their support, their genealogy, the selections that produced them, and the conditions under which they remain open to revision.
+Aperta Veritas is organized around Recursive Truth Exposure (RTE): the recursive examination of representations, their bases, support claims, genealogy, selections, inquiry paths, and the conditions under which they remain open to revision.
 
-The architecture preserves distinctions among truth, conclusions, support, accuracy, confidence, belief, value, selection, distinction, measurement, and closure rather than compressing them into a single epistemic state.
+The architecture preserves distinctions among truth, conclusions, bases, support, acceptance, inquiry, accuracy, confidence, belief, value, selection, distinction, measurement, generation, evaluation, and closure rather than compressing them into a single epistemic state.
 
 ## Veritas
 
@@ -10,33 +10,46 @@ The architecture preserves distinctions among truth, conclusions, support, accur
 
 Veritas names truth, not the conclusion currently selected by RTE.
 
-RTE identifies conclusions presently best supported as true under represented observations, relations, methods, measurements, and conditions. It does not establish that those conclusions are identical with definitive truth.
+RTE identifies conclusions presently supported as true under represented observations, relations, methods, measurements, conditions, and support claims. It does not establish that those conclusions are identical with definitive truth.
 
-A conclusion and the represented support for treating that conclusion as true remain distinct objects within the architecture.
+A conclusion, the basis for accepting that conclusion, and the represented support claims concerning that conclusion remain distinct objects within the architecture.
 
-Belief, consensus, authority, usefulness, confidence, feeling, fact, objectivity, complexity, and relational richness do not establish truth by category alone.
+Belief, consensus, authority, usefulness, confidence, feeling, fact, objectivity, complexity, relational richness, acceptance, and persistence do not establish truth by category alone.
 
-## Conclusion and support
+## Conclusion, basis, and support
 
-A **conclusion** is a current synthesis of represented data, relations, inferences, methods, measurements, and conditions.
+A **conclusion** is a current synthesis of represented data, relations, inferences, methods, measurements, support claims, and conditions.
 
-**Support** is the represented basis by which a conclusion is treated as true.
+A **basis** is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other represented element associated with acceptance, evaluation, inquiry, or support.
 
-Support can include observations, data, measurements, tests, predictions, contradictions, logical relations, provenance, explanatory relations, reproducibility, and other represented relations relevant to a conclusion.
+A basis does not become epistemic support merely because it contributes to a conclusion being accepted.
 
-Support is not identical to measurement.
+An **acceptance basis** represents why an agent or system accepts, selects, retains, or acts upon a conclusion.
 
-The architecture therefore does not store only:
+Authority, habit, loyalty, fear, reward, repetition, social consensus, policy, faith, or error can contribute to acceptance without thereby supporting the truth of the accepted conclusion.
+
+A **support relation** represents a claimed relation between one or more bases and whether a conclusion should presently be treated as true under represented conditions.
+
+A **support claim** asserts that such a relation bears on whether the conclusion is true.
+
+Support claims can involve observations, data, measurements, tests, predictions, contradictions, logical relations, provenance, explanatory relations, reproducibility, consequences, independent routes, and other represented relations.
+
+The existence of a support claim does not certify that the claimed relation actually supports truth. The relation, its basis, inference rules, models, distinctions, methods, criteria, conditions, dependencies, exclusions, and alternatives remain open to RTE.
+
+Support is therefore not identical to basis, acceptance, confidence, consensus, authority, or measurement.
+
+The architecture does not store only:
 
 ```text
 claim
 -> conclusion
 ```
 
-It preserves a larger relation:
+It preserves a larger set of relations:
 
 ```text
 claim
+-> bases
 -> observations
 -> distinctions
 -> measurements and other represented results
@@ -45,15 +58,60 @@ claim
 -> alternatives
 -> contradictions
 -> residuals
--> represented support
+-> support relations and support claims
+-> acceptance
 -> conclusion
 ```
 
 This is not a required linear sequence. Different inquiry paths can produce different relations among these objects.
 
-A claim that one conclusion has greater support than another requires an explicit basis of comparison. Where that comparison depends on measurement, the relevant distinctions, operationalization, measurements, methods, and conditions remain represented.
+RTE can therefore ask separately:
 
-Where no represented basis supports comparison, alternatives remain represented without ranking.
+```text
+Why was this conclusion accepted?
+
+What basis was cited?
+
+What relation is claimed between that basis and the conclusion?
+
+Why is that relation treated as relevant to whether the conclusion is true?
+
+Under what conditions does that relation hold?
+
+What observations, alternatives, contradictions, or dependencies could alter it?
+```
+
+A claim that one conclusion has greater support than another requires an explicit comparison basis. Where that comparison depends on measurement, the relevant distinctions, operationalization, measurements, methods, and conditions remain represented.
+
+Where no represented comparison basis supports ranking, alternatives remain represented without ranking.
+
+Failure to represent a comparison basis does not establish that no such basis exists.
+
+## Inquiry basis
+
+An **inquiry basis** represents why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+
+Inquiry basis is not identical to epistemic support.
+
+A proposition can have weak or absent present support while retaining an inquiry basis.
+
+Unresolved observations, unexplained discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, or the possibility of a discriminating test can provide a represented basis for continued examination without establishing the proposition as true.
+
+Likewise, strong present support for a conclusion does not establish that alternative inquiry should permanently stop.
+
+The architecture therefore preserves:
+
+```text
+failure_to_establish != disproof
+failure_to_establish != elimination
+current_support != future_inquiry_potential
+```
+
+A hypothesis does not need to be treated as true in order to remain represented and examinable.
+
+Failure to produce present support is an epistemic result. It is not by itself a stopping rule.
+
+Inquiry basis is itself represented and examinable. Continued inquiry consumes resources, can inherit values, can privilege particular search spaces, and can preserve unproductive branches. RTE therefore represents why inquiry continues, what resources it consumes, what alternatives receive or do not receive attention, and what stopping or reopening conditions are applied.
 
 ## Distinction and measurement
 
@@ -69,6 +127,8 @@ Measurements can be quantitative, qualitative, categorical, relational, comparat
 
 Different distinctions can produce different measurements of the same object without those measurements necessarily conflicting.
 
+A measurement does not become support merely because it exists. Its claimed relation to a conclusion remains separately represented.
+
 The architecture preserves, where represented:
 
 - who or what specified the distinction;
@@ -80,9 +140,11 @@ The architecture preserves, where represented:
 - the measurement produced;
 - other represented results produced;
 - relations retained or compressed;
-- later changes to the distinction, operationalization, or measurement.
+- later changes to the distinction, operationalization, measurement, or relations involving them.
 
 This allows the distinction itself to be examined independently from the result produced relative to it.
+
+It also allows later distinctions to alter represented relations involving earlier records without erasing those records.
 
 ## Observation and datum
 
@@ -96,9 +158,15 @@ A retained datum can omit relations present in the observation. An observation c
 
 The architecture therefore preserves provenance rather than treating data as context-free input.
 
+An observation or datum does not have permanently fixed significance merely because it has been recorded.
+
+A later distinction, observation, measurement, model, relation, or condition can change how an earlier datum relates to other represented objects.
+
+The earlier datum remains represented while its relations can be revised.
+
 ## Comparison
 
-Comparison relates represented conclusions, alternatives, states, measurements, or support relations under an explicit basis.
+Comparison relates represented conclusions, alternatives, states, measurements, support relations, or support claims under an explicit basis.
 
 A comparison basis can include:
 
@@ -107,10 +175,10 @@ A comparison basis can include:
 - criteria;
 - methods;
 - conditions;
-- represented support relations;
+- represented support relations and support claims;
 - measurements where applicable;
 - evaluator structure;
-- unresolved or incomparable relations.
+- unresolved relations.
 
 A comparative support claim can therefore be represented as:
 
@@ -129,7 +197,13 @@ A = definitive truth
 
 Comparison does not require every support relation to be converted into a common measurement.
 
-When available support cannot be compared under a represented basis, the architecture preserves the alternatives as incomparable rather than manufacturing a ranking.
+When represented relations do not presently support a ranking under the represented comparison basis, the architecture preserves the alternatives without manufacturing a ranking.
+
+This does not establish that the alternatives are intrinsically incommensurable.
+
+They are presently unranked, or not presently commensurable, under the represented framework and comparison basis.
+
+A claim that alternatives are incommensurable is itself a conclusion requiring represented support.
 
 ## Accuracy
 
@@ -137,13 +211,41 @@ Accuracy describes correspondence with what is true.
 
 RTE cannot certify absolute correspondence from an external position.
 
-The architecture therefore represents accuracy claims with their support, comparison basis, relevant distinctions and measurements, methods, conditions, alternatives, and residuals.
+The architecture therefore represents accuracy claims with their bases, support claims, comparison basis, relevant distinctions and measurements, methods, conditions, alternatives, and residuals.
 
 Measurement can contribute to an accuracy claim without being identical to accuracy.
 
 Greater represented support can justify treating one conclusion as better supported as true than another under a represented comparison basis. It does not establish identity between that conclusion and definitive truth.
 
 Richer representation is not automatically greater accuracy.
+
+## Generation and evaluation
+
+Generation and evaluation are distinct operations.
+
+**Generation** produces or makes available candidate distinctions, hypotheses, relations, models, tests, alternatives, representations, methods, comparison bases, evaluators, or successor states.
+
+**Evaluation** examines represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, constraints, or evaluators.
+
+Evaluation can operate only on candidates that have become representable to the evaluating system.
+
+Successful evaluation therefore does not establish that the candidate set was exhaustive or that better candidates were not absent from the represented search space.
+
+The architecture preserves:
+
+```text
+evaluation != generation
+evaluated_candidates != exhaustive_possibility_space
+absence_from_search != disproof
+```
+
+This distinction applies to inquiry as well as recursive improvement.
+
+A system can be effective at testing a represented hypothesis while remaining ineffective at generating the distinction or hypothesis needed for further discovery.
+
+A system can likewise be effective at selecting among represented successor states while failing to generate a successor that changes the distinctions, evaluator, or search process under which successors become representable.
+
+Generation itself is not exempt from RTE. The architecture examines what produced candidates, what search space was available, what distinctions structured that space, what was excluded, what resources constrained generation, and which candidate classes may never have become represented.
 
 ## Recursive Truth Exposure
 
@@ -155,22 +257,28 @@ RTE recursively examines the architecture by asking:
 4. How were those distinctions operationalized?
 5. Which measurements or other results were produced?
 6. Which claims and conclusions were formed?
-7. What represented support connects those results to the conclusions?
-8. Which alternatives remain represented?
-9. What basis supports any comparison among them?
-10. Which contradictions or residuals remain?
-11. Which methods and conditions affected the result?
-12. Which evaluator, criteria, values, or selections participated?
-13. Which branches were activated, deactivated, superseded, or retained?
-14. Which boundaries constrained the inquiry?
-15. What produced the stopping condition?
-16. What changes when these questions are applied to RTE itself?
+7. What bases contributed to their acceptance, evaluation, inquiry, or support?
+8. Which support relations and support claims connect represented bases to conclusions?
+9. Why are those relations treated as relevant to whether the conclusions are true?
+10. Which alternatives remain represented?
+11. What generated the represented alternatives?
+12. Which alternatives may not have become representable?
+13. What basis supports any comparison among represented alternatives?
+14. Which contradictions or residuals remain?
+15. Which methods and conditions affected the result?
+16. Which evaluator, criteria, values, or selections participated?
+17. Which branches were activated, deactivated, superseded, retained, or reopened?
+18. Which boundaries constrained inquiry or generation?
+19. What produced the stopping condition?
+20. What could reopen the inquiry?
+21. What changes when a new distinction is applied to earlier represented states?
+22. What changes when these questions are applied to RTE itself?
 
 RTE does not require every operation to resolve uncertainty or produce a ranking.
 
-Its output can remain unresolved, conditional, incomparable, or branched.
+Its output can remain unresolved, conditional, unranked, or branched.
 
-## Genealogy
+## Genealogy and recontextualization
 
 The architecture preserves genealogy connecting representations to the operations that produced them.
 
@@ -184,10 +292,12 @@ inputs
 -> measurements and other represented results
 -> transformations
 -> claims
--> support relations
+-> bases
+-> support relations and support claims
 -> comparisons
 -> conclusions
 -> revisions
+-> reopening
 ```
 
 The arrows represent genealogy, not a mandatory linear pipeline.
@@ -204,6 +314,28 @@ Detected information loss is represented as loss rather than silently converted 
 
 Unidentified loss remains possible.
 
+Genealogical preservation is not merely archival.
+
+A newly represented distinction, observation, measurement, relation, model, condition, or comparison basis can alter the represented relations among earlier records.
+
+The earlier records need not become false or be overwritten. Their significance within the represented relational structure can change.
+
+The architecture therefore permits:
+
+```text
+prior representation R
++
+new distinction D
+->
+new relations involving R
+->
+new hypotheses, comparisons, or tests become representable
+```
+
+A new representation is therefore not necessarily a mere addition to an unchanged state.
+
+Inquiry changes the represented environment in which subsequent inquiry occurs.
+
 ## Evaluator
 
 An evaluator contains or applies the structures by which representations are compared, selected, ranked, retained, rejected, or acted upon.
@@ -213,8 +345,11 @@ These can include:
 - distinctions;
 - operationalizations;
 - measurements;
+- bases;
 - support relations;
+- support claims;
 - comparison sets;
+- comparison bases;
 - criteria;
 - values;
 - constraints;
@@ -225,7 +360,7 @@ An evaluator does not establish truth by performing selection.
 
 Selection records what the system did.
 
-Improvement is a further claim requiring a represented basis.
+Improvement is a further claim requiring a represented basis and support claim.
 
 The architecture therefore preserves:
 
@@ -233,21 +368,25 @@ The architecture therefore preserves:
 selection != improvement
 ```
 
-and asks which evaluator, criteria, values, distinctions, support relations, measurements, and conditions produced the selection.
+and asks which evaluator, criteria, values, distinctions, bases, support claims, measurements, comparison basis, and conditions produced the selection.
+
+An evaluator also does not establish that the candidates presented to it exhaust the relevant possibility space.
+
+The architecture therefore examines both the evaluator and the process that generated what the evaluator was permitted to evaluate.
 
 ## Value
 
-Values can affect which distinctions are selected, which observations are pursued, which alternatives are compared, how resources are allocated, what criteria are used, and when inquiry stops.
+Values can affect which distinctions are selected, which observations are pursued, which alternatives are generated or compared, which unresolved branches receive further inquiry, how resources are allocated, what criteria are used, and when inquiry stops.
 
 This does not establish that a resulting observation, measurement, or conclusion is false.
 
 It establishes that the genealogy of inquiry includes selection.
 
-RTE therefore represents value without reducing truth or support to value.
+RTE therefore represents value without reducing truth, acceptance, inquiry basis, or support to value.
 
 ## Belief and confidence
 
-Belief is represented separately from truth and support.
+Belief is represented separately from truth, acceptance, and support.
 
 Confidence is represented separately from accuracy and support.
 
@@ -265,6 +404,8 @@ low confidence + strong support
 
 without forcing these states into one epistemic category.
 
+Belief can also provide an acceptance basis or inquiry basis without thereby becoming epistemic support.
+
 Rational faith preserves its basis, uncertainty, and conditions for revision.
 
 Blind faith insulates belief from relevant distinction or suppresses discrepancy between represented support and assigned confidence.
@@ -273,7 +414,7 @@ Neither category establishes whether the proposition itself is true.
 
 ## Lossless Inquiry
 
-Lossless Inquiry is the architectural requirement that revision preserve enough genealogy to reconstruct how current representations arose and what was transformed, excluded, compressed, superseded, or left unresolved.
+Lossless Inquiry is the architectural requirement that inquiry preserve enough genealogy for earlier representations, branches, transformations, exclusions, compressions, unresolved relations, and superseded states to remain available for later examination and recontextualization.
 
 Losslessness is an operational target, not a certified absolute property.
 
@@ -287,7 +428,11 @@ The architecture attempts to preserve:
 - other represented results;
 - claims;
 - beliefs;
+- bases;
+- acceptance bases;
+- inquiry bases;
 - support relations;
+- support claims;
 - alternatives;
 - comparisons;
 - conclusions;
@@ -298,11 +443,52 @@ The architecture attempts to preserve:
 - branches;
 - residuals;
 - boundaries;
+- generation histories;
 - stopping and reopening conditions.
 
 Finite storage, finite computation, inaccessible observations, lossy encoding, forgotten context, and unidentified relations prevent the architecture from certifying perfect preservation.
 
 Detected loss remains represented as loss.
+
+Lossless Inquiry is not merely a requirement to keep records.
+
+Preservation matters because the informational significance of a represented object need not be fixed when that object is first recorded.
+
+A later distinction can expose a relation that was unavailable when an earlier observation, datum, hypothesis, branch, or conclusion was produced.
+
+Discarding an unresolved branch can therefore remove material from which later inquiry might have generated a new relation, hypothesis, test, comparison, or evaluator.
+
+The architecture consequently separates present epistemic support from future inquiry potential.
+
+It does not infer that every preserved branch deserves unlimited resources.
+
+Instead, resource allocation, retention, compression, stopping, and reopening remain represented operations subject to RTE.
+
+## Open inquiry
+
+Aperta Veritas distinguishes testing from the broader problem of inquiry.
+
+Testing can examine a represented hypothesis under represented distinctions, methods, and conditions.
+
+Testing does not by itself determine:
+
+```text
+which hypotheses should be generated
+which distinctions should be introduced
+which relations should be searched
+which observations should be pursued
+which tests should be invented
+which unresolved branches should be retained
+which stopped inquiries should be reopened
+```
+
+These are additional inquiry operations.
+
+A failure to establish a hypothesis can reduce or alter its represented support without establishing that the hypothesis is false, that no related hypothesis can succeed, or that continued inquiry has no value.
+
+Conversely, preserving a hypothesis for further inquiry does not establish that the hypothesis is true.
+
+This separation allows Aperta Veritas to preserve unresolved inquiry without converting persistence into evidence.
 
 ## Veritas Calculus
 
@@ -316,9 +502,13 @@ A Veritas Calculus representation can record:
 
 ```text
 claim
+basis
+acceptance basis
+inquiry basis
 distinction
 measurement
 support relation
+support claim
 comparison basis
 conclusion
 belief
@@ -335,8 +525,11 @@ For example:
 
 ```text
 measurement M
-supports conclusion A
-under method P
+is cited as basis B
+
+support claim S asserts:
+B bears on conclusion A
+under inference rule P
 and conditions C
 ```
 
@@ -349,21 +542,34 @@ conclusion A is true
 Likewise:
 
 ```text
-support relation R
-contributes to comparative judgment J
+agent accepts conclusion A
+because of authority B
 ```
 
 is different from:
 
 ```text
-support relation R is a measurement
+authority B supports the truth of conclusion A
+```
+
+And:
+
+```text
+hypothesis H remains under inquiry
+because unresolved discrepancy D remains represented
+```
+
+is different from:
+
+```text
+discrepancy D supports H as true
 ```
 
 The calculus preserves those differences.
 
 ## Boundary Testing
 
-A boundary is a limit on observation, testing, representation, comparison, revision, scope, action, or resource use.
+A boundary is a limit on observation, testing, representation, generation, comparison, revision, scope, action, or resource use.
 
 Boundary Testing identifies a represented boundary, applies tests across or against that limit where possible, and records what changes.
 
@@ -376,6 +582,10 @@ Pressure against a boundary does not establish disproof.
 Resistance to pressure does not establish proof.
 
 A claim about the function of a boundary remains a claim requiring represented support.
+
+A boundary can also restrict which distinctions, hypotheses, alternatives, evaluators, or successor states become generatable.
+
+The absence of candidates beyond a represented boundary does not establish that no such candidates exist.
 
 ## Stopping and reopening
 
@@ -394,11 +604,18 @@ A reopening condition can include:
 - another represented result;
 - a contradiction;
 - a new alternative;
-- a new support relation;
+- a new basis;
+- a new inquiry basis;
+- a new support relation or support claim;
 - a changed comparison basis;
 - a changed condition;
 - additional resources;
-- a revised method.
+- a revised method;
+- a newly generated hypothesis;
+- a new relation among previously represented records;
+- a revised evaluator.
+
+Reopening can therefore occur because new information was added or because a new distinction changed the represented relations among information already retained.
 
 This permits finite operation without representing termination as final truth.
 
@@ -408,8 +625,13 @@ The architecture preserves the following distinctions:
 
 ```text
 distinction != measurement
+basis != support
+acceptance_basis != support
+inquiry_basis != support
 support != measurement
+support_claim != truth
 conclusion != support
+conclusion != acceptance_basis
 confidence != support
 confidence != accuracy
 consensus != support
@@ -417,8 +639,14 @@ belief != truth
 fact != definitive_truth
 value != truth
 selection != improvement
+evaluation != generation
+evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
+failure_to_establish != disproof
+failure_to_establish != elimination
+current_support != future_inquiry_potential
+unranked != necessarily_incommensurable
 stopping != closure
 inactive != erased
 ```
@@ -437,13 +665,21 @@ Its distinctions determine what differences can become represented.
 
 Its operationalizations affect what measurements can be produced.
 
-Its support architecture determines which relations can contribute to conclusions.
+Its basis architecture determines which reasons, sources, conditions, rules, authorities, beliefs, or criteria become represented.
+
+Its support architecture determines which relations are claimed to bear on whether conclusions are true.
+
+Its inquiry architecture determines which unresolved objects remain candidates for further examination.
+
+Its generation architecture determines which distinctions, hypotheses, alternatives, tests, comparison bases, evaluators, and successor states can become represented.
 
 Its comparison architecture determines which differences can become comparative judgments.
 
 Its invariants can omit relevant relations.
 
 Its genealogy can lose information.
+
+Its preservation strategy can consume resources or privilege retained branches.
 
 Its implementation can diverge from its stated architecture.
 
@@ -453,4 +689,4 @@ RTE therefore applies to the architecture itself.
 
 The architecture cannot certify itself complete, neutral, lossless, value free, exhaustive, or finally accurate.
 
-No component is exempt from renewed distinction, observation, testing, comparison, criticism, or revision.
+No component is exempt from renewed distinction, observation, generation, testing, measurement, comparison, criticism, recontextualization, or revision.
