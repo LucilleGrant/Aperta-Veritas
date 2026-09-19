@@ -7,5 +7,8 @@ authors:
     given-names: "Lucille"
 year: 2026
 abstract: >-
-  A recursive, lossless process for exposing truth by examining representations, distinctions, values, evaluators, selections, transformations, and its own operations, with implications for recursive AI systems.
+  A recursive process for exposing truth by examining representations,
+  distinctions, values, evaluators, selections, transformations, and its own
+  operations, with implications for recursive AI systems.
 license: CC-BY-4.0
+repository-code: "https://github.com/LucilleGrant/Aperta-Veritas"
