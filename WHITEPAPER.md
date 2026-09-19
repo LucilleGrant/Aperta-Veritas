@@ -36,7 +36,7 @@ Aperta Veritas exposes these substitutions without presuming that any motive, in
 
 **Veritas is truth. RTE does not certify truth as an object possessed by the system. It identifies conclusions presently supported as true through represented observations, relations, methods, tests, and conditions. A conclusion can be better supported than another according to explicit measurement without establishing that the conclusion is identical with definitive truth.
 
-Truth is current rather than final. It is produced through comparison among conclusions under represented observations, relations, methods, tests, and conditions. A conclusion can be more accurate than another according to an explicit measurement without becoming absolutely accurate.
+RTE's conclusions are current rather than final. They are produced through comparison under represented observations, relations, methods, tests, and conditions. A conclusion can have greater measured support than another without establishing that it is absolutely accurate or identical with definitive truth.
 
 **Aperta means open or uncovered.**
 
