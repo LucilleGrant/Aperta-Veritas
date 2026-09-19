@@ -2,7 +2,7 @@
 
 Aperta Veritas is organized around Recursive Truth Exposure (RTE): the recursive examination of representations, their support, their genealogy, the selections that produced them, and the conditions under which they remain open to revision.
 
-The architecture preserves distinctions among truth, conclusions, support, accuracy, confidence, belief, value, selection, and closure rather than compressing them into a single epistemic state.
+The architecture preserves distinctions among truth, conclusions, support, accuracy, confidence, belief, value, selection, distinction, measurement, and closure rather than compressing them into a single epistemic state.
 
 ## Veritas
 
