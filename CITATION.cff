@@ -5,10 +5,16 @@ type: generic
 authors:
   - family-names: "Grant"
     given-names: "Lucille"
+version: "0.3.1-draft"
+date-released: 2026-09-19
 year: 2026
 abstract: >-
-  A recursive process for exposing truth by examining representations,
-  distinctions, values, evaluators, selections, transformations, and its own
-  operations, with implications for recursive AI systems.
+  A recursive inquiry framework for exposing how representations, conclusions,
+  support, beliefs, values, evaluators, measurements, selections, boundaries,
+  and revisions are produced and related. Recursive Truth Exposure identifies
+  conclusions presently best supported as true under represented observations,
+  relations, methods, measurements, and conditions without certifying identity
+  with definitive truth. The framework includes applications to epistemic
+  alignment and recursive AI systems.
 license: CC-BY-4.0
 repository-code: "https://github.com/LucilleGrant/Aperta-Veritas"
