@@ -24,9 +24,9 @@ true -> correct -> right -> good
 false -> incorrect -> wrong -> bad
 ```
 
-The first relation concerns measured accuracy. The final relation concerns value. The intermediate terms often carry both meanings and conceal the transformation between them.
+The first relation concerns a claim of measured accuracy. The final relation concerns value. The intermediate terms often carry both meanings and conceal the transformation between them.
 
-Truth is also compressed into fact. A fact closes a bounded conclusion by treating it as established under specified or unstated conditions. That conclusion may be supported by repeated observation, but treating it as final protects it against relations that its boundaries do not contain.
+A conclusion supported as true can also be compressed into fact. A fact closes a bounded conclusion by treating it as established under specified or unstated conditions. That conclusion may be strongly supported by repeated observation, but the label does not establish that the conclusion is identical with definitive truth or protect it against relevant revision.
 
 An institution can declare truth as its objective while rewarding agreement. A model can declare accuracy as its objective while optimizing evaluator approval. An individual can declare inquiry as an objective while preserving identity, status, or prior belief against revision. A recursively modifying system can declare improvement while protecting the criterion that determines what improvement means.
 
@@ -75,7 +75,7 @@ Aperta Veritas therefore does not oppose objective fact with subjective belief. 
 - which relations remain outside the representation;
 - which measurements support comparison with alternative conclusions.
 
-Truth cannot be made final by adding confidence, consensus, authority, or the word objective. RTE examines what each contributes to a measured comparison among conclusions.
+Confidence, consensus, authority, or the word objective cannot establish that a conclusion is identical with definitive truth. RTE examines what each contributes to represented support and comparison among conclusions.
 
 ## 4. Truth is not value
 
@@ -91,11 +91,11 @@ The first records a measured relation. The second records a value-conditioned re
 
 An explicit value judgment is not an error by category. It can be accurately represented. The substitution occurs when the judgment silently functions as a truth criterion or when a relational judgment is represented as intrinsic.
 
-Truth can be valued. â€œTruth is valuableâ€ records a value relation. â€œThis is the most accurate available conclusion under conditions C and measurements Mâ€ records an accuracy claim. The value assigned to a conclusion neither establishes nor prevents its accuracy.
+Truth can be valued. â€œTruth is valuableâ€ records a value relation. “This is the conclusion presently best supported as true under conditions C and measurements M” records a comparative support claim. The value assigned to a conclusion neither establishes nor prevents its support as true.
 
 ## 5. Relational truth
 
-Truth is relational and open to revision. A conclusion is accurate relative to represented observations, instruments, scales, times, contexts, languages, models, environments, methods, and conditions. These relations do not make truth merely subjective. They identify how accuracy was measured and where the conclusion may fail.
+Conclusions are relationally supported and remain open to revision. Their represented support depends on observations, instruments, scales, times, contexts, languages, models, environments, methods, and conditions. These relations do not establish that truth itself is merely subjective or relative. They identify how a conclusion is supported as true and where that support may fail.
 
 A statement can accurately represent a relation:
 
@@ -109,7 +109,7 @@ The second statement presents the output of a relational evaluation as if better
 
 Richer representation is not automatically greater accuracy. Additional relations support a more accurate conclusion only when they alter an explicit measurement, such as observational fit, prediction, explanatory coverage, contradiction, reproducibility, or robustness under changed conditions. When no shared measurement supports comparison, RTE preserves the alternatives without ranking them.
 
-The framework applies this account recursively. Its definition of truth, choice of measurements, comparison sets, and designation of accuracy remain open to examination and revision.
+The framework applies this account recursively. Its account of truth, methods of measuring support, comparison sets, and accuracy claims remain open to examination and revision.
 
 ## 6. Distinction, observation, and datum
 
@@ -143,9 +143,11 @@ A claim is a representation presented as accurate under stated or unstated condi
 
 ### 7.3 Fides and Pistis
 
-Fides and Pistis name belief, faith, and trust. Values belong within this represented domain because worth, preference, obligation, purpose, and desired states depend on an evaluator.
+Fides and Pistis name belief, faith, and trust. Belief does not become false merely because it exceeds what present measurement establishes, nor does belief establish its own truth.
 
-Belief can support, conflict with, or remain unrelated to the most accurate available conclusion. Its status as belief neither establishes nor prevents accuracy.
+Rational faith preserves its basis, uncertainty, and conditions for revision. It can participate in open inquiry while remaining explicitly distinguished from what present measurement supports as true. Blind faith insulates a belief from relevant distinction or suppresses the discrepancy between its represented support and the confidence assigned to it.
+
+Fides and Veritas therefore need not function as mutually exclusive categories. A belief can remain represented as belief while evidence for or against it is examined. RTE preserves the distinction rather than promoting belief to truth or discarding belief because it is not established.
 
 ### 7.4 Factum
 
@@ -307,7 +309,7 @@ An AI system can continue to act under values and constraints. RTE requires thos
 
 The central question is:
 
-> **What is represented, which conclusion is most accurate under the available measurements and conditions, and where have values, preferences, instructions, rewards, beliefs, or retained knowledge been substituted for accuracy?**
+> **What is represented, which conclusion is presently best supported as true under the available measurements and conditions, and where have values, preferences, instructions, rewards, beliefs, or retained knowledge been substituted for represented support?**
 
 ## 16. Worked example: recursive modification
 
@@ -343,6 +345,7 @@ The framework presently exposes these limits:
 
 - â€œTruth exposureâ€ names an operation we value. The value does not establish that the operation produces a more accurate conclusion.
 - â€œMost accurateâ€ depends on represented measurements, comparison sets, and conditions.
+- RTE cannot establish that its presently best-supported conclusion is identical with definitive truth.
 - The available conclusion set may exclude an unrepresented alternative that would outperform every represented conclusion.
 - â€œLosslessâ€ is scoped to represented genealogical continuity, not total physical retention.
 - A relational account can still omit relations that later inquiry exposes.
