@@ -125,7 +125,7 @@ Aperta Veritas applies RTE to itself.
 RTE cannot certify possession of truth. Certification would close a representation and call the closure truth. RTE can expose more of the relations between representations and what is observed, preserve the genealogy of correction, and prevent identified values from being silently substituted for truth.
 
 ## Repository
-
+- [RTE for RSI researchers](RTE_FOR_RSI.md)
 - [Whitepaper](WHITEPAPER.md)
 - [Operational system](OPERATIONAL_SYSTEM.md)
 - [Whitepaper audit](WHITEPAPER_AUDIT.md)
