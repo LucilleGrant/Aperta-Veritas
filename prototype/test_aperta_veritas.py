@@ -6,6 +6,7 @@ from pathlib import Path
 
 from aperta_veritas import (
     InquiryLedger,
+    allocator,
     evaluator,
     generator,
 )
@@ -137,6 +138,59 @@ class InquiryLedgerTests(unittest.TestCase):
         )
 
         return basis, support, claim_record
+
+    def allocation_fixture(self):
+        basis = self.basis(
+            "An unresolved physical branch can be examined.",
+            kind="inquiry condition",
+        )
+
+        inquiry = self.ledger.record_inquiry_basis(
+            state_id=self.origin.state_id,
+            basis_ids=(basis.basis_id,),
+            account=(
+                "Further examination could occur under the "
+                "represented unresolved condition."
+            ),
+            possible_tests=("repeat physical tosses",),
+        )
+
+        first = self.ledger.record_inquiry_operation(
+            account="Test the unresolved physical branch.",
+            target_state_ids=(self.origin.state_id,),
+            operation="repeat physical tosses",
+            inquiry_basis_ids=(inquiry.inquiry_basis_id,),
+            requirements=("coin",),
+            expected_outputs=("additional physical outcomes",),
+        )
+
+        second = self.ledger.record_inquiry_operation(
+            account="Inspect reporting exclusions.",
+            target_state_ids=(self.origin.state_id,),
+            operation="inspect excluded protocol states",
+            inquiry_basis_ids=(inquiry.inquiry_basis_id,),
+            requirements=("protocol record",),
+            expected_outputs=("represented exclusions",),
+        )
+
+        allocation_basis = self.ledger.record_allocation_basis(
+            account="Allocate limited test time.",
+            basis_ids=(basis.basis_id,),
+            criteria=(
+                "available test time",
+                "expected information gain",
+            ),
+            conditions=("one operation can be active",),
+            constraints=("finite test time",),
+        )
+
+        return (
+            basis,
+            inquiry,
+            first,
+            second,
+            allocation_basis,
+        )
 
     def test_selection_preserves_inactive_branch_and_evaluator(self):
         edge = self.branch()
@@ -351,8 +405,8 @@ class InquiryLedgerTests(unittest.TestCase):
             state_id=self.origin.state_id,
             basis_ids=(basis.basis_id,),
             account=(
-                "The unresolved observation warrants "
-                "continued examination."
+                "Further examination could occur because "
+                "the unresolved observation remains."
             ),
             possible_tests=("attempt stable edge landings",),
         )
@@ -832,7 +886,7 @@ class InquiryLedgerTests(unittest.TestCase):
             state_id=inactive.state_id,
             basis_ids=(basis.basis_id,),
             account=(
-                "The inactive branch remains worth examining "
+                "Further examination of the inactive branch could occur "
                 "because an unresolved observation remains."
             ),
             possible_tests=("repeat physical tosses",),
@@ -850,6 +904,356 @@ class InquiryLedgerTests(unittest.TestCase):
             len(self.ledger.support_relations),
             0,
         )
+
+    def test_inquiry_basis_does_not_create_priority_or_allocation(self):
+        basis = self.basis(
+            "An unresolved observation remains.",
+            kind="anomaly",
+        )
+
+        inquiry = self.ledger.record_inquiry_basis(
+            state_id=self.origin.state_id,
+            basis_ids=(basis.basis_id,),
+            account="Further examination could occur.",
+        )
+
+        self.assertIn(
+            inquiry.inquiry_basis_id,
+            self.ledger.inquiry_bases,
+        )
+        self.assertEqual(len(self.ledger.inquiry_priorities), 0)
+        self.assertEqual(len(self.ledger.resource_allocations), 0)
+
+    def test_inquiry_operation_does_not_create_priority_or_allocation(self):
+        _, _, first, _, _ = self.allocation_fixture()
+
+        self.assertIn(
+            first.inquiry_operation_id,
+            self.ledger.inquiry_operations,
+        )
+        self.assertEqual(len(self.ledger.inquiry_priorities), 0)
+        self.assertEqual(len(self.ledger.resource_allocations), 0)
+
+    def test_allocation_basis_does_not_create_support(self):
+        _, _, _, _, allocation_basis = self.allocation_fixture()
+
+        self.assertIn(
+            allocation_basis.allocation_basis_id,
+            self.ledger.allocation_bases,
+        )
+        self.assertEqual(len(self.ledger.support_relations), 0)
+        self.assertEqual(len(self.ledger.support_claims), 0)
+
+    def test_priority_does_not_allocate_resources(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        priority = self.ledger.record_inquiry_priority(
+            inquiry_operation_ids=(
+                first.inquiry_operation_id,
+                second.inquiry_operation_id,
+            ),
+            allocation_basis_id=allocation_basis.allocation_basis_id,
+            ordered_operation_ids=(
+                first.inquiry_operation_id,
+                second.inquiry_operation_id,
+            ),
+            account="Prefer the lower-cost represented test first.",
+        )
+
+        self.assertIn(
+            priority.inquiry_priority_id,
+            self.ledger.inquiry_priorities,
+        )
+        self.assertEqual(len(self.ledger.resource_allocations), 0)
+        self.assertEqual(len(self.ledger.activations), 0)
+
+    def test_resource_allocation_does_not_create_support(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        represented_allocator = allocator(
+            "Allocate finite test time.",
+            criteria=("available test time",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        allocation = self.ledger.allocate_resources(
+            inquiry_operation_ids=(
+                first.inquiry_operation_id,
+                second.inquiry_operation_id,
+            ),
+            allocator=represented_allocator,
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+            assigned_resources={
+                first.inquiry_operation_id: {
+                    "minutes": 10.0,
+                },
+            },
+            unallocated_operation_ids=(
+                second.inquiry_operation_id,
+            ),
+        )
+
+        self.assertIn(
+            allocation.resource_allocation_id,
+            self.ledger.resource_allocations,
+        )
+        self.assertEqual(len(self.ledger.support_relations), 0)
+        self.assertEqual(len(self.ledger.support_claims), 0)
+
+    def test_unallocated_operation_is_preserved_not_rejected(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        represented_allocator = allocator(
+            "Allocate one available test slot.",
+            criteria=("one available slot",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        allocation = self.ledger.allocate_resources(
+            inquiry_operation_ids=(
+                first.inquiry_operation_id,
+                second.inquiry_operation_id,
+            ),
+            allocator=represented_allocator,
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+            assigned_resources={
+                first.inquiry_operation_id: {
+                    "slots": 1.0,
+                },
+            },
+            unallocated_operation_ids=(
+                second.inquiry_operation_id,
+            ),
+        )
+
+        self.assertIn(
+            second.inquiry_operation_id,
+            allocation.unallocated_operation_ids,
+        )
+        self.assertIn(
+            second.inquiry_operation_id,
+            self.ledger.inquiry_operations,
+        )
+        self.assertFalse(
+            hasattr(allocation, "rejected_operation_ids")
+        )
+
+    def test_open_inquiry_is_distinct_from_active_inquiry(self):
+        _, inquiry, first, _, _ = self.allocation_fixture()
+
+        self.assertIn(
+            inquiry.inquiry_basis_id,
+            self.ledger.inquiry_bases,
+        )
+        self.assertIn(
+            first.inquiry_operation_id,
+            self.ledger.inquiry_operations,
+        )
+        self.assertEqual(len(self.ledger.activations), 0)
+
+    def test_activation_requires_represented_resource_allocation(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        represented_allocator = allocator(
+            "Allocate one operation.",
+            criteria=("available resource",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        allocation = self.ledger.allocate_resources(
+            inquiry_operation_ids=(
+                first.inquiry_operation_id,
+                second.inquiry_operation_id,
+            ),
+            allocator=represented_allocator,
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+            assigned_resources={
+                first.inquiry_operation_id: {
+                    "minutes": 5.0,
+                },
+            },
+            unallocated_operation_ids=(
+                second.inquiry_operation_id,
+            ),
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.activate_inquiry(
+                inquiry_operation_ids=(
+                    second.inquiry_operation_id,
+                ),
+                resource_allocation_id=(
+                    allocation.resource_allocation_id
+                ),
+                account=(
+                    "Attempt to activate an unallocated operation."
+                ),
+            )
+
+    def test_activation_does_not_create_support_or_evaluation(self):
+        _, _, first, _, allocation_basis = self.allocation_fixture()
+
+        represented_allocator = allocator(
+            "Allocate test time.",
+            criteria=("available test time",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        allocation = self.ledger.allocate_resources(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            allocator=represented_allocator,
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+            assigned_resources={
+                first.inquiry_operation_id: {
+                    "minutes": 5.0,
+                },
+            },
+        )
+
+        activation = self.ledger.activate_inquiry(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            resource_allocation_id=(
+                allocation.resource_allocation_id
+            ),
+            account="Begin the allocated inquiry operation.",
+        )
+
+        self.assertTrue(activation.active)
+        self.assertEqual(len(self.ledger.support_relations), 0)
+        self.assertEqual(len(self.ledger.support_claims), 0)
+        self.assertEqual(len(self.ledger.transitions), 0)
+
+    def test_deactivation_preserves_operation_and_reopening_conditions(
+        self,
+    ):
+        _, _, first, _, allocation_basis = self.allocation_fixture()
+
+        represented_allocator = allocator(
+            "Allocate test time.",
+            criteria=("available test time",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        allocation = self.ledger.allocate_resources(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            allocator=represented_allocator,
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+            assigned_resources={
+                first.inquiry_operation_id: {
+                    "minutes": 5.0,
+                },
+            },
+        )
+
+        self.ledger.activate_inquiry(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            resource_allocation_id=(
+                allocation.resource_allocation_id
+            ),
+            account="Begin inquiry.",
+        )
+
+        deactivation = self.ledger.deactivate_inquiry(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            resource_allocation_id=(
+                allocation.resource_allocation_id
+            ),
+            account="Current resource window ended.",
+            stopping_conditions=("test time exhausted",),
+            reopening_conditions=(
+                "new test time becomes available",
+            ),
+        )
+
+        self.assertFalse(deactivation.active)
+        self.assertIn(
+            first.inquiry_operation_id,
+            self.ledger.inquiry_operations,
+        )
+        self.assertIn(
+            "new test time becomes available",
+            deactivation.reopening_conditions,
+        )
+
+    def test_priority_requires_exact_operation_ordering(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        with self.assertRaises(ValueError):
+            self.ledger.record_inquiry_priority(
+                inquiry_operation_ids=(
+                    first.inquiry_operation_id,
+                    second.inquiry_operation_id,
+                ),
+                allocation_basis_id=(
+                    allocation_basis.allocation_basis_id
+                ),
+                ordered_operation_ids=(
+                    first.inquiry_operation_id,
+                ),
+                account=(
+                    "Incomplete ordering must not be accepted."
+                ),
+            )
+
+    def test_allocation_priority_must_match_operation_set(self):
+        _, _, first, second, allocation_basis = self.allocation_fixture()
+
+        priority = self.ledger.record_inquiry_priority(
+            inquiry_operation_ids=(first.inquiry_operation_id,),
+            allocation_basis_id=(
+                allocation_basis.allocation_basis_id
+            ),
+            ordered_operation_ids=(first.inquiry_operation_id,),
+            account="Priority for one represented operation.",
+        )
+
+        represented_allocator = allocator(
+            "Allocate across two operations.",
+            criteria=("available test time",),
+            allocation_basis_ids=(
+                allocation_basis.allocation_basis_id,
+            ),
+        )
+
+        with self.assertRaises(ValueError):
+            self.ledger.allocate_resources(
+                inquiry_operation_ids=(
+                    first.inquiry_operation_id,
+                    second.inquiry_operation_id,
+                ),
+                allocator=represented_allocator,
+                allocation_basis_ids=(
+                    allocation_basis.allocation_basis_id,
+                ),
+                assigned_resources={
+                    first.inquiry_operation_id: {
+                        "minutes": 5.0,
+                    },
+                },
+                inquiry_priority_id=(
+                    priority.inquiry_priority_id
+                ),
+            )
 
     def test_comparison_requires_explicit_basis(self):
         _, states = self.branch_states()
