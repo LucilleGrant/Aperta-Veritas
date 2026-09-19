@@ -134,7 +134,7 @@ RTE cannot certify possession of truth. Certification would close a representati
 - [Boundary Testing](BOUNDARY_TESTING.md)
 - [Implications for AI epistemic alignment](AI_ALIGNMENT.md)
 - [Worked example: the coin toss](COIN_TOSS.md)
-- [Glossary](docs/GLOSSARY.md)
+- [Glossary](GLOSSARY.md)
 - [Contributing](CONTRIBUTING.md)
 
 This repository records the current representation and its genealogy. No statement becomes truth because it appears here.
