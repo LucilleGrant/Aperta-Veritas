@@ -11,7 +11,7 @@ Aperta Veritas is a recursive process for exposing truth. Its governing operatio
 
 RTE begins from a structural limit in recursive self-improvement. Improvement is not an intrinsic property of change. It is a value judgment produced by an evaluator applying criteria to measured relations. A process that recursively optimizes for improvement inherits the limits of the evaluator, criterion, measurement, and represented objective. RTE replaces protected optimization with recursive exposure. It asks what is represented, how the present conclusion was produced, where relational conditions were compressed away, and how any designation of improvement entered the process.
 
-Truth is the most accurate conclusion currently available under represented observations, relations, methods, and conditions. It is not a value judgment, an objective fact, an inaccessible singular object, or a closed representation. Accuracy is comparative and measured. A conclusion can become more accurate without becoming 100 percent accurate or immune to revision. An agent can value, fear, seek, suppress, or ignore truth, but these relations do not determine which conclusion is most accurate.
+Truth is not the preferred result of RTE. RTE identifies the conclusion presently best supported as true under represented observations, relations, methods, and conditions. It does not establish that this conclusion is identical with definitive truth. Support is comparative and measured. A conclusion can become better supported without becoming 100 percent complete or immune to revision. An agent can value, fear, seek, suppress, or ignore truth, but these relations do not determine which conclusion is best supported as true.
 
 ## 1. The closure problem
 
@@ -34,7 +34,7 @@ Aperta Veritas exposes these substitutions without presuming that any motive, in
 
 ## 2. Veritas and Aperta
 
-**Veritas is truth: the most accurate available conclusion.**
+**Veritas is truth. RTE does not certify truth as an object possessed by the system. It identifies conclusions presently supported as true through represented observations, relations, methods, tests, and conditions. A conclusion can be better supported than another according to explicit measurement without establishing that the conclusion is identical with definitive truth.
 
 Truth is current rather than final. It is produced through comparison among conclusions under represented observations, relations, methods, tests, and conditions. A conclusion can be more accurate than another according to an explicit measurement without becoming absolutely accurate.
 
@@ -361,6 +361,6 @@ Recursive self-improvement recursively modifies a system according to criteria d
 
 Recursive Truth Exposure performs a different operation. It exposes the system, its representations, changes, evaluators, values, criteria, selections, boundaries, resource conditions, and stopping decisions. It then applies the same examination to the exposure process.
 
-Truth is not good or bad, approved or prohibited, victorious or defeated. Veritas is the most accurate conclusion currently available under represented observations, relations, methods, and conditions. It remains open because its accuracy is comparative, conditioned, and never certified as 100 percent complete.
+Truth is not good or bad, approved or prohibited, victorious or defeated. Veritas is truth. RTE does not certify possession of truth; it identifies conclusions presently best supported as true under represented observations, relations, methods, and conditions. Those conclusions remain open to revision because their support is comparative, conditioned, and incomplete.
 
-Aperta Veritas does not promise a final truth. It preserves the recursive process by which concealed relations can become represented, conclusions can be compared and revised, and no identified value judgment is permitted to function silently as accuracy.
+Aperta Veritas does not promise a final truth. It preserves the recursive process by which concealed relations can become represented, conclusions can be compared and revised, and identified value judgments remain represented rather than functioning silently as evidence that a conclusion is true.
