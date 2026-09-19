@@ -9,11 +9,11 @@ Draft 0.3.1, 2026
 
 Aperta Veritas is a recursive process for exposing truth claims and keeping inquiry open to distinctions, relations, hypotheses, tests, and alternatives that are not yet represented.
 
-Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, evaluators, criteria, transformations, selections, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
+Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, allocators, evaluators, criteria, transformations, selections, resource allocations, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
 
-Aperta Veritas begins from a distinction between **generation** and **evaluation**.
+Aperta Veritas begins from distinctions among **generation**, **allocation**, and **evaluation**.
 
-Testing can evaluate a represented hypothesis. An evaluator can compare represented successors. Neither operation by itself determines which hypotheses, distinctions, relations, tests, alternatives, or successor states become available for evaluation.
+Testing can evaluate a represented hypothesis. An evaluator can compare represented successors. Neither operation by itself determines which hypotheses, distinctions, relations, tests, alternatives, inquiry operations, or successor states become available for evaluation, nor which represented inquiry operations receive finite resources.
 
 This produces a structural problem shared by inquiry and recursive self-improvement:
 
@@ -29,13 +29,15 @@ A system can therefore become highly effective at evaluating its represented can
 
 Lossless Inquiry addresses this problem by preserving unresolved observations, branches, transformations, residuals, and prior states so later distinctions can recontextualize them. A representation that lacks present support for a particular conclusion can still have future inquiry potential. A later distinction can expose a relation that was not representable when the earlier record was produced.
 
+Convergent Inquiry addresses a related upstream question: what possible continuations of unresolved inquiry can be generated? Finite systems cannot examine every continuation, so Aperta Veritas separately represents the allocation basis, inquiry priority, resource allocation, and allocator by which some possible inquiries become active while others remain open but inactive.
+
 RTE does not promote unresolved possibilities to truth. It separates the basis for accepting a conclusion, the basis for continuing inquiry, and claims that represented relations support a conclusion as true.
 
 Truth is not the preferred result of RTE. Truth is what is true. RTE identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims. It cannot establish that a presently supported conclusion is identical with definitive truth.
 
 The same structure applies to recursive self-improvement. Evaluating candidate successors is not identical to generating successors. A recursive system whose generator and evaluator operate only within current distinctions can fail to produce an improvement requiring distinctions its present architecture does not represent.
 
-Aperta Veritas therefore places both generation and evaluation inside recursive inquiry.
+Aperta Veritas therefore places generation, allocation, and evaluation inside recursive inquiry.
 
 ## 1. The inquiry problem
 
@@ -77,10 +79,12 @@ A successor can be evaluated only after some process makes that successor repres
 
 A system can optimize selection among represented successors while failing to generate a successor requiring a distinction absent from its current generator or evaluator.
 
-This gives three operational separations:
+This gives a set of operational separations:
 
 ```text
 evaluation != generation
+generation != allocation
+allocation != evaluation
 evaluated_candidates != exhaustive_possibility_space
 absence_from_search != disproof
 ```
@@ -151,7 +155,7 @@ These can explain acceptance without establishing that the accepted conclusion i
 
 ### Inquiry basis
 
-An **inquiry basis** records why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+An **inquiry basis** is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
 Inquiry bases can include:
 
@@ -172,6 +176,8 @@ Inquiry bases can include:
 
 An inquiry basis is not epistemic support for a favored explanation.
 
+It also does not establish that an inquiry should receive priority or resources.
+
 This allows:
 
 ```text
@@ -179,16 +185,70 @@ weak or absent present support
 +
 represented inquiry basis
 ->
-continued inquiry
+possible continued inquiry
 ```
 
 without producing:
 
 ```text
-continued inquiry
+possible continued inquiry
 ->
 hypothesis is true
 ```
+
+or:
+
+```text
+possible continued inquiry
+->
+priority or resource allocation
+```
+
+### Inquiry generation, priority, and allocation
+
+An **inquiry operation** is a represented possible continuation of inquiry.
+
+Possible inquiry operations can include introducing or applying a distinction, generating a hypothesis, searching for a relation, changing an operationalization, making an observation, performing a test, producing a measurement, comparing alternatives, or recontextualizing retained records.
+
+**Convergent Inquiry** generates possible continuations of unresolved inquiry and examines those that become active under represented allocation.
+
+The term **convergent** does not assert that inquiry necessarily approaches a fixed limit, monotonically improves, or converges mathematically to truth. Any such convergence claim requires represented support.
+
+Finite inquiry requires allocation.
+
+An **allocation basis** represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+An **inquiry priority** is a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+A **resource allocation** is the represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+An **allocator** is the represented process or agent participating in prioritization and resource allocation.
+
+These relations remain distinct:
+
+```text
+inquiry_basis != inquiry_priority
+inquiry_priority != resource_allocation
+
+inquiry_basis != support
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+```
+
+No neutral allocator is assumed.
+
+Expected information gain, urgency, cost, tractability, novelty, anomaly density, external request, random sampling, safety constraints, available instruments, compute, time, policy, or other represented conditions can participate in allocation without becoming epistemic support for the proposition investigated.
+
+An inquiry can remain open while inactive or unallocated.
+
+```text
+open_inquiry != active_inquiry
+not_allocated != rejected
+inactive != erased
+```
+
+This permits finite attention without silently converting lack of attention into falsity, rejection, or closure.
 
 ### Support relation and support claim
 
@@ -233,6 +293,11 @@ RTE preserves, where represented:
 - bases;
 - acceptance bases;
 - inquiry bases;
+- inquiry operations;
+- allocation bases;
+- inquiry priorities;
+- resource allocations;
+- allocators;
 - support relations;
 - support claims;
 - alternatives;
@@ -267,7 +332,7 @@ The original representation remains preserved while the new relation is added to
 
 ## 5. Recursive Truth Exposure
 
-Recursive Truth Exposure examines how a representation came to be generated, accepted, treated as true, supported, compared, selected, retained, revised, or stopped.
+Recursive Truth Exposure examines how a representation came to be generated, accepted, treated as true, supported, prioritized, allocated, compared, selected, retained, revised, or stopped.
 
 For a represented inquiry state, RTE asks:
 
@@ -277,7 +342,7 @@ For a represented inquiry state, RTE asks:
 4. How were those distinctions operationalized?
 5. Which measurements or other represented results were produced?
 6. Which claims and conclusions were formed?
-7. Which bases contributed to acceptance, inquiry, evaluation, or support?
+7. Which bases contributed to acceptance, inquiry, evaluation, allocation, or support?
 8. Which support relations and support claims concern each conclusion?
 9. Why are those relations treated as relevant to whether the conclusion is true?
 10. Which alternatives are represented?
@@ -285,15 +350,19 @@ For a represented inquiry state, RTE asks:
 12. Which alternatives may not have become representable?
 13. What comparison basis supports any ranking among represented alternatives?
 14. Which methods and conditions affected the result?
-15. Which values, criteria, generators, and evaluators participated?
-16. Which transformations produced the current representation?
-17. Which branches became active, inactive, superseded, or unresolved?
-18. Which contradictions and residuals remain?
-19. Which boundaries and resources constrained inquiry or generation?
-20. What produced the stopping condition?
-21. What could reopen inquiry?
-22. Can a new distinction alter represented relations involving prior records?
-23. What happens when the same questions are applied to RTE itself?
+15. Which possible inquiry operations were generated?
+16. Which allocation bases and inquiry priorities participated?
+17. Which resources were available and how were they allocated?
+18. Which inquiries became active or remained inactive?
+19. Which values, criteria, generators, allocators, and evaluators participated?
+20. Which transformations produced the current representation?
+21. Which branches became active, inactive, superseded, or unresolved?
+22. Which contradictions and residuals remain?
+23. Which boundaries and resources constrained inquiry, generation, or allocation?
+24. What produced the stopping condition?
+25. What could reopen inquiry?
+26. Can a new distinction alter represented relations involving prior records?
+27. What happens when the same questions are applied to RTE itself?
 
 RTE does not require every inquiry to produce a single winner.
 
@@ -368,7 +437,7 @@ RTE preserves, where represented:
 - which transformations followed;
 - which relations remained unresolved or unrepresented.
 
-The selection of what to distinguish and observe can itself be conditioned by values, prior representations, resources, boundaries, generators, and evaluator structure.
+The selection of what to distinguish and observe can itself be conditioned by values, prior representations, resources, boundaries, generators, allocators, allocation bases, and evaluator structure.
 
 That genealogy does not establish that the resulting observation or measurement is false.
 
@@ -592,11 +661,11 @@ A system selects:
 
 RTE represents those selections and their operative values without reducing support to value.
 
-Attention allocation itself can therefore become an object of inquiry.
+Attention allocation itself can therefore become an object of inquiry. Priority and allocation do not become epistemic support merely because they determine what is examined.
 
-## 14. Generation and evaluation
+## 14. Generation, allocation, and evaluation
 
-A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, comparison bases, evaluators, or successor states become available.
+A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, inquiry operations, comparison bases, evaluators, allocators, or successor states become available.
 
 An **evaluator** examines represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
 
@@ -647,13 +716,17 @@ Did the evaluator constrain what the generator learned to produce?
 
 A generated candidate is not established as true or improved merely because it exists.
 
-Generation creates an object for inquiry.
+Generation creates an object for possible inquiry.
 
-Evaluation examines it.
+Allocation determines which represented inquiry operations receive resources.
+
+Activation identifies inquiry currently receiving resources for execution.
+
+Evaluation examines represented candidates or results.
 
 Selection acts upon represented relations.
 
-None of these operations is identical to truth.
+None of these operations is identical to truth or epistemic support.
 
 ## 15. Improvement
 
@@ -769,7 +842,7 @@ without satisfying the predecessor evaluator.
 
 Neither relation alone establishes evaluator-independent improvement.
 
-RTE therefore preserves both generator and evaluator genealogy.
+RTE therefore preserves generator, allocator, and evaluator genealogy.
 
 Where possible, it can expose cross-evaluations:
 
@@ -821,6 +894,11 @@ The system attempts to preserve:
 - bases;
 - acceptance bases;
 - inquiry bases;
+- inquiry operations;
+- allocation bases;
+- inquiry priorities;
+- resource allocations;
+- allocators;
 - support relations;
 - support claims;
 - alternatives;
@@ -878,9 +956,9 @@ current_support != future_inquiry_potential
 
 This does not imply that every branch deserves unlimited computation.
 
-Storage, computation, attention, activation, compression, and resource allocation remain represented operations.
+Storage, computation, attention, activation, compression, inquiry priority, allocation basis, and resource allocation remain represented operations.
 
-A branch can become inactive without being erased.
+A branch can become inactive or unallocated without being erased or rejected.
 
 Finite storage, finite computation, inaccessible observations, lossy encoding, forgotten context, and unidentified relations prevent certification of perfect preservation.
 
@@ -892,7 +970,7 @@ Unidentified loss remains possible.
 
 Optimization protects an objective long enough to move a system toward it.
 
-RTE does not grant the objective, generator, or evaluator permanent exemption from examination.
+RTE does not grant the objective, generator, allocator, or evaluator permanent exemption from examination.
 
 It can examine:
 
@@ -900,6 +978,11 @@ It can examine:
 objective
 generator
 candidate space
+inquiry operation
+allocation basis
+inquiry priority
+resource allocation
+allocator
 criterion
 evaluator
 distinction
@@ -922,6 +1005,7 @@ representation
 -> revision
 -> examination of revision
 -> examination of generator
+-> examination of allocator
 -> examination of evaluator
 -> examination of examination
 -> ...
@@ -937,9 +1021,11 @@ A finite implementation can stop operationally while preserving reopening condit
 
 Openness does not mean permanent indecision.
 
-It means conclusions, beliefs, methods, distinctions, measurements, bases, support claims, generators, evaluators, criteria, branches, and stopping conditions remain available for renewed examination when relevant distinctions arise.
+It means conclusions, beliefs, methods, distinctions, measurements, bases, support claims, generators, allocators, evaluators, criteria, branches, allocation decisions, and stopping conditions remain available for renewed examination when relevant distinctions arise.
 
 Operational stopping is not necessarily epistemic closure.
+
+Open inquiry is not identical to active inquiry. An inquiry can remain open while receiving no current resources.
 
 A finite system can stop computation, choose an action, publish a conclusion, allocate resources, or deactivate a branch while preserving conditions under which inquiry can resume.
 
@@ -949,7 +1035,7 @@ A stopped inquiry can reopen because of newly acquired information.
 
 It can also reopen because a new distinction changes the represented relations among information already retained.
 
-Aperta therefore applies both to conclusions and to the processes that generate, support, compare, retain, revise, stop, and reopen them.
+Aperta therefore applies both to conclusions and to the processes that generate, prioritize, allocate, support, compare, retain, revise, stop, and reopen them.
 
 ## 20. Veritas Calculus
 
@@ -1019,7 +1105,7 @@ Veritas Calculus keeps those relations available for recursive examination.
 
 ## 21. Boundary Testing
 
-A boundary is a limit on observation, testing, representation, generation, comparison, revision, scope, action, or resource use.
+A boundary is a limit on observation, testing, representation, generation, comparison, revision, scope, action, allocation, or resource use.
 
 Boundary Testing identifies the boundary, applies represented tests across or against it where possible, and records what changes.
 
@@ -1033,7 +1119,7 @@ Resistance does not establish proof.
 
 A description of what a boundary does is itself a claim requiring represented support.
 
-A boundary can also constrain what becomes generatable.
+A boundary can also constrain what becomes generatable, allocatable, or executable.
 
 If a representational boundary prevents a class of hypotheses from being expressed, their absence from the candidate set does not establish their absence from the relevant possibility space.
 
@@ -1053,15 +1139,20 @@ A minimal RTE cycle is:
 7. Separate acceptance bases, inquiry bases, support relations, and support claims.
 8. Identify the comparison basis for any comparative support or accuracy claim.
 9. Preserve contradictions, residuals, exclusions, and unresolved branches.
-10. Examine how represented hypotheses, alternatives, tests, or successors were generated.
-11. Generate new distinctions, relations, hypotheses, tests, comparison bases, or alternatives where represented operations permit.
-12. Re-examine retained records under newly represented distinctions and relations.
-13. Expose evaluators, criteria, values, selections, resources, and boundaries.
-14. Produce a current conclusion or preserve unresolved alternatives without ranking.
-15. Preserve the genealogy of the transition.
-16. Record the stopping condition.
-17. Record conditions under which inquiry can reopen.
-18. Apply the same process to the cycle itself.
+10. Examine how represented hypotheses, alternatives, tests, successors, and inquiry operations were generated.
+11. Generate possible inquiry operations, including new distinctions, relations, hypotheses, tests, comparison bases, or alternatives where represented operations permit.
+12. Represent the allocation basis for finite attention or resources.
+13. Represent inquiry priorities without converting priority into epistemic support.
+14. Record which resources are allocated and which inquiries become active or remain inactive.
+15. Execute active inquiry under represented methods, conditions, constraints, and resources.
+16. Re-examine retained records under newly represented distinctions and relations.
+17. Expose generators, allocators, evaluators, criteria, values, selections, resources, and boundaries.
+18. Produce a current conclusion or preserve unresolved alternatives without ranking.
+19. Preserve unallocated and inactive branches where retention permits.
+20. Preserve the genealogy of the transition.
+21. Record the stopping condition.
+22. Record conditions under which inquiry can reopen.
+23. Apply the same process to the cycle itself.
 ```
 
 The cycle does not require every iteration to change the conclusion.
@@ -1085,6 +1176,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -1097,6 +1193,10 @@ fact != definitive_truth
 value != truth
 selection != improvement
 evaluation != generation
+generation != allocation
+allocation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
@@ -1104,6 +1204,8 @@ failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
@@ -1122,19 +1224,23 @@ Its distinction between distinction and measurement is a claim.
 
 Its distinction between basis and support is a claim.
 
-Its distinction between acceptance basis, inquiry basis, and support is a claim.
+Its distinctions among acceptance basis, inquiry basis, inquiry priority, allocation basis, resource allocation, and support are claims.
 
-Its separation of generation and evaluation is a claim.
+Its separation of generation, allocation, and evaluation is a claim.
 
 Its account of support can omit legitimate epistemic relations.
 
-Its account of inquiry basis can preserve branches that do not justify their resource cost.
+Its account of inquiry basis can preserve branches that never receive resources or never become useful.
 
 Its comparison architecture can exclude relations that do not fit its present representation.
 
 Its distinctions determine what differences can become represented through measurement or other results.
 
-Its generator can fail to produce relevant alternatives.
+Its generator can fail to produce relevant alternatives or inquiry operations.
+
+Its allocator can systematically suppress useful inquiry.
+
+Its allocation basis can privilege criteria that later inquiry revises.
 
 Its evaluator can misidentify what governed a transition.
 
@@ -1152,7 +1258,7 @@ Its implementation can diverge from its stated semantics.
 
 RTE therefore applies to Aperta Veritas itself.
 
-It cannot establish that all relevant relations, distinctions, hypotheses, alternatives, generators, or tests have been represented.
+It cannot establish that all relevant relations, distinctions, hypotheses, alternatives, generators, allocators, inquiry operations, allocation bases, or tests have been represented.
 
 It cannot certify itself complete, neutral, value free, lossless, exhaustive, or finally accurate.
 
@@ -1175,7 +1281,9 @@ How are new distinctions generated?
 How are unresolved branches retained without promoting them to truth?
 How can later distinctions recontextualize prior states?
 How can a system search beyond candidate classes favored by its current evaluator?
-How can generator and evaluator change remain genealogically examinable?
+How are possible inquiry operations generated and allocated under finite resources?
+How can an allocator avoid silently converting present priorities into permanent elimination?
+How can generator, allocator, and evaluator change remain genealogically examinable?
 What must remain stable, if anything, for empirical improvement to remain distinguishable from self-confirmation?
 ```
 
@@ -1185,7 +1293,7 @@ It also does not assume that preservation alone solves candidate generation.
 
 One current hypothesis is that preserved genealogy combined with recursive generation of distinctions and recontextualization can expand the candidate space available to a recursively modifying system.
 
-A second current hypothesis is that sufficiently represented generator, evaluator, and transformation genealogy can keep predecessor and successor systems comparable under at least some changing evaluators.
+A second current hypothesis is that sufficiently represented generator, allocator, evaluator, and transformation genealogy can keep predecessor and successor systems comparable under at least some changing evaluators and allocation regimes.
 
 These hypotheses remain unestablished.
 
@@ -1195,7 +1303,7 @@ The framework therefore treats them as objects of inquiry rather than architectu
 
 A system capable only of evaluating represented candidates cannot evaluate an improvement that never becomes representable.
 
-A recursively modifying system governed by improvement remains conditioned by the generator, evaluator, distinctions, measurements, criteria, values, comparison sets, support claims, resource conditions, and boundaries through which candidate successors are generated and designated improved.
+A recursively modifying system governed by improvement remains conditioned by the generator, allocator, evaluator, distinctions, measurements, criteria, values, comparison sets, support claims, allocation bases, resource conditions, and boundaries through which candidate successors are generated, investigated, and designated improved.
 
 RTE places those structures inside recursive inquiry.
 
@@ -1205,7 +1313,7 @@ It does not require every generated candidate to be treated as useful.
 
 It does not require every revision to count as improvement under the prior evaluator.
 
-It requires the relations producing generation, acceptance, support, comparison, selection, preservation, and the designation of improvement to remain represented strongly enough to be examined and, where possible, recontextualized.
+It requires the relations producing generation, acceptance, inquiry priority, allocation, support, comparison, selection, preservation, and the designation of improvement to remain represented strongly enough to be examined and, where possible, recontextualized.
 
 This converts recursive self-improvement from:
 
@@ -1220,6 +1328,11 @@ into a broader problem:
 ```text
 represent the system
 represent the generator
+represent possible inquiry operations
+represent the allocation basis
+represent inquiry priority
+represent resource allocation
+represent the allocator
 represent the evaluator
 represent the distinctions
 represent the measurements
@@ -1234,16 +1347,22 @@ generate new candidates
 expose the relations recursively
 ```
 
-Aperta Veritas proposes that recursive improvement requires inquiry into both sides of the loop:
+Aperta Veritas proposes that recursive improvement requires inquiry into three coupled problems:
 
 ```text
 what becomes thinkable
+
+which represented possibilities receive finite inquiry
+
 and
-how what becomes thinkable is judged
+
+how represented candidates and results are judged
 ```
 
 The first is the problem of generation.
 
-The second is the problem of evaluation.
+The second is the problem of allocation.
 
-Lossless Inquiry connects them by preserving prior structure long enough for later distinctions to make new relations, hypotheses, tests, and successor states representable.
+The third is the problem of evaluation.
+
+Lossless Inquiry connects them by preserving prior structure and inactive branches long enough for later distinctions, allocation conditions, and recontextualization to make new relations, hypotheses, tests, inquiry operations, and successor states representable or examinable.
