@@ -494,6 +494,29 @@ This restoration:
 
 The restoration itself remains part of the genealogy.
 
+### Prototype semantic implementation follow-up
+
+Subsequent work completed the implementation pass identified earlier in this 0.3.1 genealogy.
+
+- Added independent immutable representation of distinctions and measurements.
+- Required measurements to reference represented distinctions.
+- Preserved operationalization with represented distinctions where applicable.
+- Removed the earlier requirement that every support relation contain a measurement.
+- Required support relations to state an explicit represented basis.
+- Preserved measurements referenced by support separately from the support relation itself.
+- Removed the earlier requirement that comparisons share a measurement.
+- Required comparisons to state an explicit represented comparison basis.
+- Preserved incomparable alternatives without manufacturing a ranking.
+- Extended recursive audit records to expose distinctions, measurements, support relations, comparisons, and comparison bases.
+- Revised the semantic test suite to replace the earlier mandatory-measurement assumptions.
+- Verified that the revised semantic test suite passes GitHub Actions.
+- Completed the consistency pass through `BOUNDARY_TESTING.md`, `prototype/README.md`, `prototype/aperta_veritas.py`, and `prototype/test_aperta_veritas.py` recorded earlier in this draft.
+- Updated `WHITEPAPER_AUDIT.md` to preserve the earlier implementation exposure as genealogy and record the subsequent implementation follow-up.
+- Retained endogenous generation and reactivation of inactive branches as unresolved implementation limitations.
+- Preserved the earlier 24-test baseline as implementation genealogy rather than current test status.
+
+This implementation follow-up demonstrates only the behaviors represented and exercised by the current prototype and tests. It does not establish truth, completeness, exhaustive representation, losslessness, neutrality, exhaustive possibility generation, or general recursive self-improvement.
+
 ---
 
 ## 0.3.0-draft, 2026-09-19
