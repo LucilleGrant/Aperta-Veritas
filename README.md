@@ -1,6 +1,6 @@
 # Aperta Veritas
 
-**A recursive process for exposing truth.**
+**A recursive, lossless process for exposing truth.**
 
 **Aperta Veritas was discovered by Lucille Grant.**
 
@@ -22,7 +22,7 @@ Truth is not the preferred result of RTE. Truth is its object.
 
 **Veritas** is truth: what is.
 
-Truth is not an objective fact. A fact is a bounded representation asserted as corresponding with truth. “Objective” describes a relation among an object, observer, method, and conditions. Neither term contains or closes truth.
+Truth is not an objective fact. A fact is a bounded representation asserted as corresponding with truth. â€œObjectiveâ€ describes a relation among an object, observer, method, and conditions. Neither term contains or closes truth.
 
 Truth is not a value judgment. It is neither morally right nor morally wrong, desirable nor undesirable, permitted nor prohibited. An evaluator can value truth, fear it, suppress it, seek it, or remain indifferent to it. Those are relations and values surrounding truth. They do not make truth itself a value.
 
@@ -52,9 +52,9 @@ The two are simultaneous, not competing outcomes. X can include an observer, ins
 
 For example:
 
-> “This serves evaluator E's purpose P under conditions C” is relational.
+> â€œThis serves evaluator E's purpose P under conditions Câ€ is relational.
 
-> “This is useful” compresses E, P, and C.
+> â€œThis is usefulâ€ compresses E, P, and C.
 
 ## Core vocabulary
 
@@ -110,12 +110,16 @@ A system can optimize according to a represented value while RTE exposes:
 
 RTE also does not remove material constraints. Compute, energy, time, memory, access, uncertainty, and environment remain among the relations encountered. Removing improvement as a protected objective does not remove these conditions.
 
+## Executable prototype
+
+[`prototype/aperta_veritas.py`](prototype/aperta_veritas.py) implements the minimum versioned ledger described by the operational system. It preserves active and inactive branches, attributes selections to explicit evaluators and criteria, records recursive audits and stopping boundaries, and uses a hash chain to make later alteration detectable. The implementation is a testable branch of the framework, not a truth certificate.
+
 ## Recursive audit
 
 Aperta Veritas applies RTE to itself.
 
-- “Exposure” can become a valued objective.
-- “Lossless” can become an inaccurate absolute if its scope is not represented.
+- â€œExposureâ€ can become a valued objective.
+- â€œLosslessâ€ can become an inaccurate absolute if its scope is not represented.
 - Selecting what to examine allocates attention according to operative values and constraints.
 - Declaring something hidden can overstate what the current representation establishes.
 - Requiring endless recursion would itself be a rule and cannot override finite conditions.
@@ -125,7 +129,7 @@ Aperta Veritas applies RTE to itself.
 RTE cannot certify possession of truth. Certification would close a representation and call the closure truth. RTE can expose more of the relations between representations and what is observed, preserve the genealogy of correction, and prevent identified values from being silently substituted for truth.
 
 ## Repository
-- [RTE for RSI researchers](RTE_FOR_RSI.md)
+
 - [Whitepaper](WHITEPAPER.md)
 - [Operational system](OPERATIONAL_SYSTEM.md)
 - [Whitepaper audit](WHITEPAPER_AUDIT.md)
@@ -139,4 +143,4 @@ RTE cannot certify possession of truth. Certification would close a representati
 
 This repository records the current representation and its genealogy. No statement becomes truth because it appears here.
 
-Copyright © 2026 Lucille Grant. See [LICENSE.md](LICENSE.md).
+Copyright Â© 2026 Lucille Grant. See [LICENSE.md](LICENSE.md).
