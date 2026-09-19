@@ -2,7 +2,7 @@
 
 Aperta Veritas is organized around Recursive Truth Exposure (RTE): the recursive examination of representations, their bases, support claims, genealogy, selections, inquiry paths, and the conditions under which they remain open to revision.
 
-The architecture preserves distinctions among truth, conclusions, bases, support, acceptance, inquiry, accuracy, confidence, belief, value, selection, distinction, measurement, generation, evaluation, and closure rather than compressing them into a single epistemic state.
+The architecture preserves distinctions among truth, conclusions, bases, support, acceptance, inquiry, accuracy, confidence, belief, value, selection, distinction, measurement, generation, inquiry priority, resource allocation, evaluation, and closure rather than compressing them into a single epistemic state.
 
 ## Veritas
 
@@ -87,15 +87,15 @@ Where no represented comparison basis supports ranking, alternatives remain repr
 
 Failure to represent a comparison basis does not establish that no such basis exists.
 
-## Inquiry basis
+## Inquiry basis, priority, and allocation
 
-An **inquiry basis** represents why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+An **inquiry basis** is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
-Inquiry basis is not identical to epistemic support.
+Inquiry basis is not identical to epistemic support, inquiry priority, or resource allocation.
 
 A proposition can have weak or absent present support while retaining an inquiry basis.
 
-Unresolved observations, unexplained discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, or the possibility of a discriminating test can provide a represented basis for continued examination without establishing the proposition as true.
+Unresolved observations, unexplained discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, or the possibility of a discriminating test can provide a represented basis for further examination without establishing the proposition as true.
 
 Likewise, strong present support for a conclusion does not establish that alternative inquiry should permanently stop.
 
@@ -105,13 +105,34 @@ The architecture therefore preserves:
 failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
+inquiry_basis != inquiry_priority
 ```
 
-A hypothesis does not need to be treated as true in order to remain represented and examinable.
+A hypothesis does not need to be treated as true, prioritized, or actively investigated in order to remain represented and examinable.
 
-Failure to produce present support is an epistemic result. It is not by itself a stopping rule.
+Failure to produce present support is an epistemic result. It is not by itself a stopping rule, rejection, or resource-allocation decision.
 
-Inquiry basis is itself represented and examinable. Continued inquiry consumes resources, can inherit values, can privilege particular search spaces, and can preserve unproductive branches. RTE therefore represents why inquiry continues, what resources it consumes, what alternatives receive or do not receive attention, and what stopping or reopening conditions are applied.
+An **inquiry priority** is a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+An **allocation basis** represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+A **resource allocation** is a represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+The architecture does not assume that priority and allocation are identical. A highly prioritized inquiry can remain inactive when required resources, methods, instruments, permissions, data, or dependencies are unavailable. A lower-priority inquiry can become active because it is presently executable.
+
+No allocation basis, inquiry priority, or resource allocation becomes epistemic support merely because it determines what receives attention.
+
+The architecture therefore preserves:
+
+```text
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
+not_allocated != rejected
+```
+
+Inquiry basis, inquiry priority, allocation basis, resource allocation, and the allocator itself remain represented and examinable. Finite resource allocation can inherit values, purposes, institutional constraints, incentives, search biases, or other dependencies without those dependencies becoming evidence for the proposition under investigation.
 
 ## Distinction and measurement
 
@@ -246,6 +267,8 @@ A system can be effective at testing a represented hypothesis while remaining in
 A system can likewise be effective at selecting among represented successor states while failing to generate a successor that changes the distinctions, evaluator, or search process under which successors become representable.
 
 Generation itself is not exempt from RTE. The architecture examines what produced candidates, what search space was available, what distinctions structured that space, what was excluded, what resources constrained generation, and which candidate classes may never have become represented.
+
+Generation does not determine allocation by itself. Candidate inquiry operations can be generated without becoming prioritized or active, and allocation does not establish that the allocated operation is epistemically superior.
 
 ## Recursive Truth Exposure
 
@@ -460,11 +483,11 @@ Discarding an unresolved branch can therefore remove material from which later i
 
 The architecture consequently separates present epistemic support from future inquiry potential.
 
-It does not infer that every preserved branch deserves unlimited resources.
+It does not infer that every preserved branch should be prioritized or allocated resources.
 
-Instead, resource allocation, retention, compression, stopping, and reopening remain represented operations subject to RTE.
+Instead, inquiry priority, allocation basis, resource allocation, retention, compression, stopping, and reopening remain represented operations subject to RTE.
 
-## Open inquiry
+## Convergent Inquiry and open inquiry
 
 Aperta Veritas distinguishes testing from the broader problem of inquiry.
 
@@ -484,11 +507,38 @@ which stopped inquiries should be reopened
 
 These are additional inquiry operations.
 
-A failure to establish a hypothesis can reduce or alter its represented support without establishing that the hypothesis is false, that no related hypothesis can succeed, or that continued inquiry has no value.
+**Convergent Inquiry** is the generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
 
-Conversely, preserving a hypothesis for further inquiry does not establish that the hypothesis is true.
+Convergent Inquiry does not establish that continued investigation supports a preferred conclusion, that an unresolved object should receive resources before another, or that every represented inquiry basis should remain operationally active.
 
-This separation allows Aperta Veritas to preserve unresolved inquiry without converting persistence into evidence.
+The term **convergent** does not assert that inquiry necessarily approaches a fixed limit, monotonically improves, or converges mathematically to truth. Any such convergence claim requires represented support.
+
+The architecture therefore separates:
+
+```text
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
+generation != allocation
+allocation != evaluation
+```
+
+An **open inquiry** permits relevant future examination or revision.
+
+An **active inquiry** is an inquiry currently receiving resources for examination.
+
+An inquiry can therefore remain open while operationally inactive.
+
+```text
+open_inquiry != active_inquiry
+not_allocated != rejected
+inactive != erased
+```
+
+A failure to establish a hypothesis can reduce or alter its represented support without establishing that the hypothesis is false, that no related hypothesis can succeed, or that continued inquiry has no basis.
+
+Conversely, preserving a hypothesis for further inquiry does not establish that the hypothesis is true, prioritized, or presently allocated resources.
+
+This separation allows Aperta Veritas to preserve unresolved inquiry without converting persistence into evidence or requiring unlimited active computation, observation, experimentation, or attention.
 
 ## Veritas Calculus
 
@@ -505,6 +555,9 @@ claim
 basis
 acceptance basis
 inquiry basis
+inquiry priority
+allocation basis
+resource allocation
 distinction
 measurement
 support relation
@@ -628,6 +681,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -640,6 +698,10 @@ fact != definitive_truth
 value != truth
 selection != improvement
 evaluation != generation
+generation != allocation
+allocation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
@@ -647,6 +709,8 @@ failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
@@ -669,9 +733,11 @@ Its basis architecture determines which reasons, sources, conditions, rules, aut
 
 Its support architecture determines which relations are claimed to bear on whether conclusions are true.
 
-Its inquiry architecture determines which unresolved objects remain candidates for further examination.
+Its inquiry architecture determines which unresolved objects retain bases for further examination, which possible inquiry operations become represented, and which remain open or active.
 
-Its generation architecture determines which distinctions, hypotheses, alternatives, tests, comparison bases, evaluators, and successor states can become represented.
+Its generation architecture determines which distinctions, hypotheses, alternatives, tests, comparison bases, evaluators, inquiry operations, and successor states can become represented.
+
+Its allocation architecture determines which possible inquiries are prioritized, which receive resources, which remain inactive, and which allocation bases govern those selections.
 
 Its comparison architecture determines which differences can become comparative judgments.
 
