@@ -1,6 +1,6 @@
 # Aperta Veritas
 
-**A recursive, lossless process for exposing truth.**
+**A recursive process for exposing truth.**
 
 **Aperta Veritas was discovered by Lucille Grant.**
 
