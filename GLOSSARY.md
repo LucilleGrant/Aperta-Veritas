@@ -16,6 +16,30 @@ RTE cannot certify absolute correspondence from an external position. It examine
 
 An accuracy claim therefore remains a claim whose bases, support claims, comparison basis, relevant measurements, conditions, and unresolved alternatives remain represented.
 
+## Active inquiry
+
+Inquiry currently receiving resources for examination.
+
+Active inquiry is distinct from open inquiry. An inquiry can remain open while inactive or unallocated.
+
+Activation does not establish that the proposition under examination is true, better supported, more important, or intrinsically more valuable than an inactive alternative.
+
+## Allocation basis
+
+Represented criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+An allocation basis can include expected information gain, urgency, cost, tractability, novelty, anomaly density, external request, random sampling, safety constraints, available instruments, available compute, available time, permission boundaries, or other represented criteria or conditions.
+
+An allocation basis does not become epistemic support merely because it governs attention or resources.
+
+## Allocator
+
+The represented process or agent participating in prioritization and resource allocation among possible inquiry operations.
+
+An allocator can inherit purposes, values, constraints, incentives, biases, resource limits, and search limitations.
+
+Aperta Veritas does not assume a neutral allocator. The allocator and the bases governing its operations remain open to Recursive Truth Exposure.
+
 ## Aperta
 
 Open or uncovered.
@@ -34,11 +58,11 @@ Amor is not a moral verdict and does not determine truth or accuracy by category
 
 ## Basis
 
-A represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other represented element associated with acceptance, evaluation, inquiry, or support.
+A represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other represented element associated with acceptance, evaluation, inquiry, allocation, or support.
 
-A basis does not become epistemic support merely because it contributes to acceptance, evaluation, inquiry, or selection.
+A basis does not become epistemic support merely because it contributes to acceptance, evaluation, inquiry, allocation, or selection.
 
-See Acceptance basis, Inquiry basis, Support relation, and Support claim.
+See Acceptance basis, Inquiry basis, Allocation basis, Support relation, and Support claim.
 
 ## Belief
 
@@ -58,9 +82,9 @@ Blind faith is defined by its relation to inquiry and revision, not by whether i
 
 ## Boundary
 
-A represented limit on contact, action, speech, observation, testing, measurement, representation, generation, comparison, revision, scope, or resource use.
+A represented limit on contact, action, speech, observation, testing, measurement, representation, generation, comparison, revision, scope, allocation, or resource use.
 
-A boundary may protect, confine, compress, allocate, conceal, filter, scaffold, restrict generation, or perform several functions simultaneously.
+A boundary may protect, confine, compress, allocate, conceal, filter, scaffold, restrict generation, restrict allocation, or perform several functions simultaneously.
 
 Its function is examined rather than assigned in advance.
 
@@ -70,7 +94,7 @@ The operation of locating a boundary, applying relevant distinctions or tests ac
 
 Crossing a boundary does not establish that the boundary was false or harmful. Preserving a boundary does not establish that it was true or beneficial.
 
-A boundary can affect which distinctions, hypotheses, tests, alternatives, evaluators, or successor states become representable. Absence beyond the represented boundary does not establish absence from the relevant possibility space.
+A boundary can affect which distinctions, hypotheses, tests, alternatives, inquiry operations, evaluators, allocations, or successor states become representable or executable. Absence beyond the represented boundary does not establish absence from the relevant possibility space.
 
 ## Claim
 
@@ -138,6 +162,18 @@ Convergence can contribute to represented support when a support claim connects 
 
 Agreement does not establish truth or accuracy by category alone because apparently independent routes can share dependencies, incentives, distinctions, sources, methods, or errors.
 
+Convergence is distinct from Convergent Inquiry. The name Convergent Inquiry does not assert that an inquiry necessarily converges mathematically or approaches truth as a fixed limit.
+
+## Convergent Inquiry
+
+The generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
+
+Convergent Inquiry does not establish that continued investigation supports a preferred conclusion, that an unresolved object should receive resources before another, or that every represented inquiry basis should remain operationally active.
+
+The term **convergent** does not assert that inquiry necessarily approaches a fixed limit, monotonically improves, or converges mathematically to truth. A claim that a particular inquiry process converges remains a claim requiring represented support.
+
+Convergent Inquiry can generate possible inquiry operations without determining which operations receive priority or resources.
+
 ## Datum
 
 A retained representation produced by observation.
@@ -158,11 +194,11 @@ A newly represented distinction can also expose relations among prior representa
 
 ## Evaluation
 
-The examination of represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, constraints, or evaluators.
+The examination of represented candidates or results under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, constraints, or evaluators.
 
-Evaluation is distinct from generation.
+Evaluation is distinct from generation and allocation.
 
-An evaluation can compare only candidates that have become represented to it. Successful evaluation therefore does not establish that its candidate set exhausts the relevant possibility space.
+An evaluation can examine only candidates or results that have become represented to it. Successful evaluation therefore does not establish that its candidate set exhausts the relevant possibility space.
 
 ## Evaluator
 
@@ -198,23 +234,23 @@ Fidelity can matter to later inquiry because a relation omitted during represent
 
 ## Game
 
-The evaluator, generator, value labels, dependencies, resource conditions, selections, exclusions, incentives, and protected states shaping transitions in an agent or system.
+The evaluator, generator, allocator, value labels, dependencies, resource conditions, selections, exclusions, incentives, and protected states shaping transitions in an agent or system.
 
 Identifying a game does not establish that its outputs are true or false.
 
 ## Generation
 
-The operation by which candidate distinctions, hypotheses, relations, models, tests, alternatives, comparison bases, evaluators, or successor states become represented.
+The operation by which candidate distinctions, hypotheses, relations, models, tests, alternatives, inquiry operations, comparison bases, evaluators, allocators, or successor states become represented.
 
-Generation is distinct from evaluation.
+Generation is distinct from evaluation and allocation.
 
-A generated candidate does not become true, supported, useful, or improved merely because it was generated.
+A generated candidate does not become true, supported, useful, improved, prioritized, or entitled to resources merely because it was generated.
 
-Generation itself has genealogy, including available inputs, distinctions structuring the search, methods, constraints, resources, exclusions, values, evaluators, and prior branches participating in generation.
+Generation itself has genealogy, including available inputs, distinctions structuring the search, methods, constraints, resources, exclusions, values, evaluators, allocation conditions, and prior branches participating in generation.
 
 ## Generator
 
-A represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, comparison bases, evaluators, or successor states become available.
+A represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, inquiry operations, comparison bases, evaluators, allocators, or successor states become available.
 
 A generator can constrain inquiry by determining which candidates become representable.
 
@@ -222,13 +258,31 @@ Its output is not assumed to exhaust the relevant possibility space.
 
 ## Inquiry basis
 
-A represented basis for retaining a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch as a candidate for further examination.
+A represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
 
 An inquiry basis can include unresolved observations, anomalies, discrepancies, conflicting measurements, missing distinctions, incomplete models, untested predictions, unexplored alternatives, contradictions, possible discriminating tests, newly available methods, additional resources, or relations exposed by later distinctions.
 
-Inquiry basis is distinct from epistemic support.
+Inquiry basis is distinct from epistemic support, inquiry priority, and resource allocation.
 
-A hypothesis can therefore have weak or absent present support while retaining a represented basis for continued examination.
+A hypothesis can therefore have weak or absent present support while retaining a represented basis under which further examination could occur.
+
+An inquiry basis does not establish that further examination should occur now.
+
+## Inquiry operation
+
+A represented possible continuation of inquiry.
+
+An inquiry operation can include introducing or applying a distinction, generating a hypothesis, searching for a relation, changing an operationalization, making an observation, performing a test, producing a measurement, comparing alternatives, recontextualizing retained records, or another represented operation capable of changing the inquiry state.
+
+Representing an inquiry operation does not establish that it should receive priority or resources.
+
+## Inquiry priority
+
+A represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+Inquiry priority is distinct from inquiry basis, epistemic support, and actual resource allocation.
+
+Prioritizing an inquiry does not establish that the proposition under investigation is more likely to be true.
 
 ## Knowledge
 
@@ -246,15 +300,17 @@ This definition concerns the represented relation among the agent, claim, and co
 
 ## Lossless Inquiry
 
-The preservation of enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, and superseded conclusions to remain available for later examination and recontextualization.
+The preservation of enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions to remain available for later examination and recontextualization.
 
 Lossless Inquiry is not merely archival.
 
-A later distinction, observation, measurement, relation, model, condition, comparison basis, or evaluator can alter the represented relations involving earlier records. Preserving those records can therefore enable hypotheses, tests, comparisons, support claims, or successor states that were not previously representable.
+A later distinction, observation, measurement, relation, model, condition, comparison basis, evaluator, or allocation condition can alter the represented relations involving earlier records. Preserving those records can therefore enable hypotheses, tests, comparisons, support claims, inquiry operations, or successor states that were not previously representable.
 
 Discarding an unresolved branch can remove material from which later inquiry might otherwise generate new relations or candidates.
 
 Lossless does not mean perfect, infinite, or total physical retention. Unidentified loss remains possible, and retention remains subject to represented resource constraints.
+
+Lossless Inquiry separates preservation from activation. A preserved branch need not receive current resources in order to remain available for later inquiry.
 
 ## Measurement
 
@@ -288,11 +344,13 @@ Aperta Veritas does not determine the function of observation by category in adv
 
 ## Open inquiry
 
-Inquiry that permits represented claims, conclusions, branches, distinctions, methods, support claims, comparison bases, and stopped states to remain available for relevant examination, generation, revision, or reopening.
+Inquiry that permits represented claims, conclusions, branches, distinctions, methods, support claims, comparison bases, stopped states, and possible inquiry operations to remain available for relevant examination, generation, revision, or reopening.
 
-Open inquiry distinguishes testing a represented hypothesis from generating hypotheses, distinctions, relations, tests, and alternatives.
+Open inquiry is distinct from active inquiry.
 
-Operational stopping does not by itself close inquiry.
+An open inquiry can receive no current resources while remaining available for later activation.
+
+Operational stopping, inactivity, or lack of allocation does not by itself close inquiry.
 
 ## Pistis
 
@@ -312,7 +370,7 @@ It is defined by its relation to inquiry and revision, not by whether its object
 
 ## Recontextualization
 
-A revision of represented relations involving an existing representation after a new distinction, observation, measurement, model, condition, comparison basis, evaluator, or other relation becomes represented.
+A revision of represented relations involving an existing representation after a new distinction, observation, measurement, model, condition, comparison basis, evaluator, allocation condition, or other relation becomes represented.
 
 Recontextualization does not require erasing or rewriting the earlier representation.
 
@@ -324,15 +382,15 @@ The quantity, diversity, or detail of relations included in a representation.
 
 Relational richness is not identical to accuracy or support.
 
-Added relations can participate in new support claims, measurements, comparisons, contradictions, tests, hypotheses, or generative operations. Their mere addition does not establish greater accuracy or stronger support.
+Added relations can participate in new support claims, measurements, comparisons, contradictions, tests, hypotheses, inquiry operations, or generative operations. Their mere addition does not establish greater accuracy or stronger support.
 
 ## Relevance
 
-A represented relation between a distinction, observation, measurement, datum, basis, support relation, support claim, conclusion, genealogy, inquiry path, generator, evaluator, or process and the inquiry under examination.
+A represented relation between a distinction, observation, measurement, datum, basis, support relation, support claim, conclusion, genealogy, inquiry path, generator, allocator, evaluator, or process and the inquiry under examination.
 
-A distinction or other represented relation can be relevant when incorporating it could alter a measurement, support claim, comparison, conclusion, condition, residual, generation process, inquiry basis, or other represented part of the inquiry.
+A distinction or other represented relation can be relevant when incorporating it could alter a measurement, support claim, comparison, conclusion, condition, residual, generation process, inquiry basis, inquiry operation, allocation, or other represented part of the inquiry.
 
-Relevance is not established merely because an evaluator declares information relevant or irrelevant.
+Relevance is not established merely because an evaluator or allocator declares information relevant or irrelevant.
 
 Claims of relevance and irrelevance remain open to Recursive Truth Exposure.
 
@@ -340,7 +398,7 @@ Claims of relevance and irrelevance remain open to Recursive Truth Exposure.
 
 The resumption of inquiry after an operational stopping condition.
 
-Reopening can result from new observations, contradictions, alternatives, distinctions, methods, measurements, bases, inquiry bases, support claims, resources, changed conditions, newly generated hypotheses, revised evaluators, changed comparison bases, or new relations among previously represented records.
+Reopening can result from new observations, contradictions, alternatives, distinctions, methods, measurements, bases, inquiry bases, support claims, resources, changed allocation bases, changed inquiry priorities, changed resource conditions, changed conditions, newly generated hypotheses or inquiry operations, revised evaluators, changed comparison bases, or new relations among previously represented records.
 
 Reopening does not imply that the earlier stopping condition was necessarily erroneous.
 
@@ -352,13 +410,23 @@ A residual is not presumed to be error or noise.
 
 A residual can provide an inquiry basis without thereby supporting any particular explanation as true.
 
+## Resource allocation
+
+The represented assignment of available resources to one or more inquiry operations under represented conditions.
+
+Resource allocation is distinct from inquiry priority and epistemic support.
+
+A highly prioritized inquiry can remain unallocated when required resources or dependencies are unavailable. A lower-priority inquiry can receive resources because it is presently executable.
+
+Failure to allocate resources does not establish rejection, falsity, irrelevance, or closure.
+
 ## Recursive Truth Exposure
 
 The governing operation of Aperta Veritas.
 
-RTE exposes a representation and the observations, distinctions, measurements, bases, acceptance bases, inquiry bases, support relations, support claims, transformations, beliefs, values, generators, evaluators, criteria, selections, conditions, boundaries, alternatives, and residuals involved in producing, accepting, supporting, evaluating, or retaining it.
+RTE exposes a representation and the observations, distinctions, measurements, bases, acceptance bases, inquiry bases, inquiry operations, allocation bases, inquiry priorities, resource allocations, support relations, support claims, transformations, beliefs, values, generators, allocators, evaluators, criteria, selections, conditions, boundaries, alternatives, and residuals involved in producing, accepting, supporting, prioritizing, allocating, evaluating, or retaining it.
 
-It examines how represented candidates were generated as well as how they were evaluated.
+It examines how represented candidates and inquiry operations were generated, how resources were allocated among them, and how represented candidates or results were evaluated.
 
 It then applies the same process to the exposure itself.
 
@@ -368,7 +436,7 @@ RTE identifies conclusions presently supported as true under represented conditi
 
 The represented epistemic relation by which one or more bases are claimed to bear on whether a conclusion should presently be treated as true under represented conditions.
 
-Support is distinct from basis, acceptance, inquiry basis, measurement, truth, confidence, consensus, authority, and value.
+Support is distinct from basis, acceptance, inquiry basis, inquiry priority, allocation basis, resource allocation, measurement, truth, confidence, consensus, authority, and value.
 
 The existence of represented support does not certify that the relation actually bears on truth. The support relation and the support claim remain open to RTE.
 
@@ -398,9 +466,9 @@ See Support and Support claim.
 
 The examination of a represented claim, hypothesis, or model through contact with observation, contradiction, consequence, comparison, or a competing representation under represented methods and conditions.
 
-Testing is distinct from generation.
+Testing is distinct from generation, allocation, and the broader process of inquiry.
 
-A test can alter represented support without determining what hypotheses, distinctions, relations, observations, or future tests should be generated next.
+A test can alter represented support without determining what hypotheses, distinctions, relations, observations, or future tests should be generated next or which possible inquiry operations should receive resources.
 
 Failure to establish a hypothesis through a test does not by itself establish disproof, elimination, or absence of future inquiry potential.
 
@@ -440,7 +508,7 @@ Its operation and genealogy remain represented. Its status as value does not est
 
 An operation that assigns worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or a desired state relative to an evaluator.
 
-Aperta Veritas records the evaluator, generator where relevant, criteria, distinctions, measurements, bases, support claims, comparison basis, conditions, exclusions, selected branch, inactive branches, residuals, and genealogy of the operation.
+Aperta Veritas records the evaluator, generator or allocator where relevant, criteria, distinctions, measurements, bases, support claims, comparison basis, allocation basis, conditions, exclusions, selected branch, inactive branches, residuals, and genealogy of the operation.
 
 A value judgment can itself be accurately represented without becoming a truth criterion.
 
@@ -456,7 +524,7 @@ Every claim concerning Veritas remains open to Recursive Truth Exposure.
 
 ## Veritas Calculus
 
-The explicit representation and analysis of relations involved in inquiry, including what an agent or system represents, distinguishes, observes, measures, generates, accepts, supports, compares, selects, preserves, excludes, recontextualizes, and revises, and which bases, values, evaluators, criteria, methods, conditions, boundaries, and residuals govern those operations.
+The explicit representation and analysis of relations involved in inquiry, including what an agent or system represents, distinguishes, observes, measures, generates, accepts, supports, compares, prioritizes, allocates, selects, preserves, excludes, recontextualizes, and revises, and which bases, values, generators, allocators, evaluators, criteria, methods, conditions, boundaries, and residuals govern those operations.
 
 Veritas Calculus is not a numerical formula that computes truth. Its function is to keep distinct relations available for Recursive Truth Exposure rather than silently compressing them into a single epistemic state.
 
@@ -467,6 +535,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -479,6 +552,10 @@ fact != definitive_truth
 value != truth
 selection != improvement
 evaluation != generation
+generation != allocation
+allocation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
@@ -486,6 +563,8 @@ failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
