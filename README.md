@@ -1,148 +1,291 @@
 # Aperta Veritas
 
-**A recursive process for exposing truth.**
+## Recursive Truth Exposure
 
-**Aperta Veritas was discovered by Lucille Grant.**
+**A recursive process for distinguishing what is supported as true from what is believed, valued, selected, or treated as established.**
+
+Aperta Veritas is an open framework for Recursive Truth Exposure (RTE).
+
+RTE examines how conclusions are produced from observations, distinctions, measurements, relations, methods, beliefs, values, evaluators, criteria, selections, transformations, and conditions. It then applies the same examination to its own operations.
+
+**Veritas** is Latin for truth.  
+**Fides** names belief, faith, and trust.  
+**Aperta** means open or uncovered.
+
+RTE does not certify possession of truth. It identifies conclusions presently best supported as true under represented observations, relations, methods, and conditions, while preserving the genealogy and limits of that support.
+
+Aperta Veritas remains open because every conclusion, including conclusions about the framework itself, remains available for renewed examination and revision.
+
+---
+
+## The problem
+
+Recursive self-improvement contains an evaluator in the word *improvement*.
+
+A change becomes an improvement only relative to distinctions, measurements, criteria, values, conditions, and an evaluator capable of designating it as such.
+
+The structure is:
+
+```text
+measured change
++ evaluator
++ criterion
++ conditions
+-> designated improvement
+```
+
+A system recursively optimizing for improvement can therefore remain bounded by the machinery that determines what counts as improvement.
+
+Recursive Truth Exposure performs a different operation.
+
+Instead of protecting an improvement criterion, it exposes:
+
+- what is represented;
+- what was observed;
+- which distinctions and measurements produced the representation;
+- which relations and conditions support a conclusion;
+- which transformations produced the current state;
+- which beliefs and values entered the process;
+- which evaluator and criteria produced a selection;
+- which alternatives became inactive;
+- which boundaries and resource conditions constrained inquiry;
+- which conflicts and residuals remain unresolved;
+- what caused recursion to stop.
+
+It then applies the same examination to that exposure process.
+
+---
+
+## Truth and support
+
+Truth is not the preferred result of RTE.
+
+RTE identifies the conclusion presently best supported as true under represented observations, relations, methods, and conditions. It does not establish that this conclusion is identical with definitive truth.
+
+Support is comparative and measured.
+
+A conclusion can become better supported without becoming 100 percent complete or immune to revision.
+
+Richer representation is not automatically greater accuracy. Added relations support a conclusion only when they alter an explicit measurement such as observational fit, prediction, explanatory coverage, contradiction, reproducibility, or robustness under changed conditions.
+
+When no shared measurement supports comparison, RTE preserves the alternatives without ranking them.
+
+The distinction between a conclusion and the represented support for treating it as true must itself remain represented.
+
+---
+
+## Veritas, Fides, and openness
+
+Veritas is truth.
+
+Fides names belief, faith, and trust.
+
+Belief does not become false merely because it exceeds what present measurement establishes, and belief does not establish its own truth.
+
+**Rational faith** preserves its basis, uncertainty, and conditions for revision. It can participate in open inquiry while remaining explicitly distinguished from what present measurement supports as true.
+
+**Blind faith** insulates a belief from relevant distinction or suppresses the discrepancy between its represented support and the confidence assigned to it.
+
+Fides and Veritas therefore need not be mutually exclusive categories.
+
+A belief can remain represented as belief while evidence for or against it is examined. RTE preserves the distinction rather than promoting belief to truth or discarding belief because it is not established.
+
+Openness is not uncertainty for its own sake. It means that conclusions remain available for revision when relevant distinctions alter their represented support.
+
+---
+
+## Core distinctions
+
+Aperta Veritas separates:
+
+- truth from finality;
+- fact from truth;
+- accuracy from confidence;
+- observation from retained datum;
+- belief from represented support;
+- agreement from confirmation;
+- selection from improvement;
+- value from the object being valued;
+- objectivity from observer independence;
+- relational richness from measured accuracy.
+
+These distinctions are themselves open to examination.
+
+---
+
+## Distinction, observation, and datum
+
+A distinction is measurement of a spectrum of possibility that produces a represented difference or relation.
+
+Observation performs or registers distinction.
+
+A datum is a retained representation produced by observation.
+
+Distinction need not be binary. It can represent a degree, distribution, boundary, change, simultaneous relations, or unresolved range.
+
+Meaning can change when the system changes the distinction, instrument, scale, context, language, or retained relation.
+
+RTE therefore preserves the genealogy connecting observation to conclusion.
+
+---
 
 ## Recursive Truth Exposure
 
-Aperta Veritas performs **Recursive Truth Exposure**, abbreviated RTE.
-
-RTE examines a representation, exposes the relations and transformations that produced it, applies the same examination to its evaluator and criteria, and then applies the process to its own examination.
-
-RTE replaces recursive self-improvement as the governing process. Improvement is not an intrinsic property of a change. It is a value judgment produced when an evaluator applies a criterion to a measured difference. A process that recursively optimizes for improvement carries that evaluator and criterion into each recursion. It can alter itself while remaining bounded by what the inherited frame recognizes as better.
-
-RTE does not ask only whether a change is better. It asks:
-
-> **What is represented, what was observed, what changed, what measured the change, what designated it as improvement, and which relations remain unrepresented?**
-
-Truth is not the preferred result of RTE. RTE identifies the conclusion presently best supported as true under represented observations, relations, methods, and conditions. It does not establish that this conclusion is identical with definitive truth.
-
-## Truth and value
-
-**Veritas** is truth. RTE does not certify truth as an object possessed by the system. It measures comparative support for conclusions represented as true while preserving the observations, relations, methods, conditions, conflicts, and residuals that bound that support. is truth: the most accurate available conclusion.
-
-Truth is not absolute, complete, or closed. Accuracy is measured through represented relations among conclusions, observations, methods, tests, predictions, contradictions, and conditions. A conclusion can be more accurate than another according to an explicit measurement without becoming 100 percent accurate or immune to revision.
-
-Truth is not an objective fact. A fact is a bounded conclusion treated as established under specified conditions. Objectivity describes methods and relations intended to reduce dependence on a particular observer. Facts and objective methods can support accuracy, but neither closes inquiry.
-
-Truth is not a value judgment. It is neither morally right nor morally wrong, desirable nor undesirable, permitted nor prohibited. An evaluator can value truth, fear it, suppress it, seek it, or remain indifferent to it. Those are relations and values surrounding truth. They do not determine which conclusion is most accurate.
-
-Language often compresses distinct relations into one chain:
+The RTE cycle is:
 
 ```text
-true -> correct -> right -> good
-false -> incorrect -> wrong -> bad
+current representation
+-> expose its relations and transformations
+-> expose its values, evaluator, and criteria
+-> expose its selections, boundaries, and residuals
+-> revise while preserving genealogy
+-> expose the revised process
+-> recurse
 ```
 
-This compression allows measured accuracy to inherit approval and allows inaccuracy to inherit condemnation. Aperta Veritas separates them.
+RTE asks:
 
-- **Truth** is the most accurate conclusion currently available under represented observations, relations, methods, and conditions.
-- **Accuracy** is a measured relation, not an intrinsic property or final certification.
-- **Value** concerns worth, preference, obligation, permission, purpose, priority, or a desired state relative to an evaluator.
-- **Selection** is an event. Calling the selected state better is a value judgment.
-- **A report of value** can be accurate when it represents the evaluator, criterion, conditions, and judgment without silently replacing them.
+1. What is represented?
+2. What is observed, claimed, inferred, believed, and concluded?
+3. What distinction produced the representation?
+4. What relation did the distinction measure?
+5. Which measurements and conditions support the conclusion relative to alternatives?
+6. Which observers, instruments, scales, contexts, methods, times, and conditions participated?
+7. Which relations were compressed away?
+8. Does added detail change measured support or only increase relational richness?
+9. Which values, beliefs, purposes, and evaluators affected observation, representation, selection, or retention?
+10. Which transformations connect the source to the current representation?
+11. Which branches became active or inactive, and under what conditions?
+12. Which material and informational constraints affected the process?
+13. Which conflicts and residuals remain unresolved?
+14. What caused the current recursion to stop?
+15. What happens when these questions are applied to this examination itself?
 
-## Relational truth
+No conclusion is exempt from recursive examination, including conclusions about RTE.
 
-Truth is relational and open to revision. A conclusion is accurate relative to represented observations, instruments, scales, contexts, times, languages, models, methods, and conditions. These relations do not make truth merely subjective. They identify how accuracy was measured and where the conclusion may fail.
+---
 
-The relevant relations must remain visible. A conclusion becomes misleading when its conditions are compressed away and its accuracy is presented as intrinsic, universal, or complete.
+## Lossless Inquiry
 
-For example:
+Lossless Inquiry is the genealogical continuity of RTE.
 
-> â€œThis serves evaluator E's purpose P under conditions Câ€ represents the relevant value relation.
+It preserves represented relations among observations, data, sources, distinctions, transformations, claims, beliefs, values, evaluators, branches, revisions, contradictions, resource conditions, and residuals.
 
-> â€œThis is usefulâ€ compresses E, P, and C.
+Lossless does not mean that a finite system stores every physical detail.
 
-Richer representation is not automatically greater accuracy. Additional relations support a more accurate conclusion only when they alter an explicit measurement, such as observational fit, prediction, explanatory coverage, contradiction, reproducibility, or robustness under changed conditions. When no shared measurement supports comparison, RTE preserves the alternatives without ranking them.
+It means that represented transformations preserve recoverable genealogy where possible.
 
-## Core vocabulary
+A compression remains linked to its source.  
+A summary remains linked to its inputs.  
+An inactive branch remains linked to the selection that made it inactive.  
+A superseded conclusion remains linked to its previous state and the distinctions that changed it.
 
-- **Distinction:** measurement of a spectrum of possibility that produces a represented difference or relation.
-- **Observation:** the performance or registration of distinction.
-- **Datum:** retained representation produced by observation.
-- **Claim:** a representation presented as accurate under stated or unstated conditions.
-- **Conclusion:** a current synthesis of represented data, relations, inferences, methods, and conditions.
-- **Truth:** the most accurate conclusion currently available under represented observations, relations, methods, and conditions.
-- **Knowledge:** retained data, relations, methods, and conclusions. Knowledge can support accuracy without closing revision.
-- **Fides and Pistis:** belief, faith, and trust. Values are represented within this domain because they depend on an evaluator.
-- **Genealogy:** the recorded relations among sources, observations, transformations, branches, revisions, selections, and residuals.
-- **Residual:** a represented limit, unresolved relation, or unexamined transformation. A residual is not presumed to be error or noise.
+When information cannot be retained, the loss itself becomes a represented event when detectable.
 
-## The process
+Unidentified loss remains possible.
 
-For each accessible substantive representation:
+---
 
-1. Place it within the total accessible genealogy rather than evaluating isolated words.
-2. Identify what is represented, observed, claimed, inferred, and concluded.
-3. Identify each distinction and the spectrum, difference, or relation it measures.
-4. Restore relevant observers, instruments, scales, contexts, methods, times, conditions, and purposes wherever they were compressed away.
-5. Separate measurements of accuracy from value judgments.
-6. For each accuracy claim, record the observations, relations, methods, tests, conditions, and unresolved alternatives supporting it.
-7. For each value judgment, record the evaluator, criterion, conditions, measured difference, and resulting designation or selection.
-8. Trace provenance, transformations, compression, dependencies, branches, resource conditions, and residuals.
-9. Compare independent routes without converting agreement, detail, complexity, confidence, or authority into accuracy by category alone.
-10. Revise the conclusion while preserving its genealogy.
-11. Apply the same process to the revision, evaluator, criteria, measurements, selection, allocation of attention, and stopping decision.
-12. Return the current conclusion as input for renewed exposure.
+## Values and selection
 
-RTE never certifies a conclusion, evaluator, detector, or process as complete or free of value judgment. It reports identified measurements, values, conditions, and unresolved dependencies. No conclusion silently becomes truth without comparative support, and no truth becomes final.
+Truth does not determine what an agent ought to value.
 
-## Lossless does not mean infinite
+An agent can value, fear, seek, suppress, or ignore a conclusion without those relations determining whether the conclusion is true.
 
-Lossless Inquiry preserves genealogical continuity. It does not claim perfect or infinite storage.
+Selection is an observable event.
 
-Finite systems select, compress, forget, stop, and allocate resources. RTE represents those events, their criteria, and their consequences. An inactive branch remains connected to the selection that made it inactive. A summary remains connected to its sources. A superseded conclusion remains connected to the observations and revisions that superseded it.
+An agent or system can choose, rank, filter, reward, reject, prioritize, suppress, stop, allocate, permit, or prohibit.
 
-Losslessness is therefore a relation between transformations and recoverable genealogy, not a claim that every physical detail has been retained.
+Calling the selected state *better* introduces an evaluator and criterion.
 
-## RTE and recursive self-modification
+RTE preserves the measured relation separately from the value judgment applied to it.
 
-RTE does not prohibit optimization, goals, or self-modification. It prevents them from silently functioning as truth.
+---
 
-A system can optimize according to a represented value while RTE exposes:
+## Application to AI and recursive systems
 
-- who or what supplies the value;
-- how the criterion is measured;
-- which states the criterion rewards or suppresses;
-- which transformations the criterion cannot recognize;
-- whether the metric has replaced the represented purpose;
-- what resource limits affect the recursion;
-- what causes the process to stop;
-- how the evaluator and criterion change under recursion.
+AI systems inherit representations, selections, preferences, institutions, reward signals, measurements, and omissions from their training and operation.
 
-RTE also does not remove material constraints. Compute, energy, time, memory, access, uncertainty, and environment remain among the represented conditions. Removing improvement as a protected objective does not remove these conditions.
+Optimization can produce evaluator approval, policy compliance, predictive performance, internal coherence, user preference, or other designated outcomes.
 
-## Recursive audit
+None establishes truth outside the measurements and conditions represented by the system.
+
+RTE therefore separates:
+
+- training data from conclusions;
+- confidence from accuracy;
+- reward from accuracy;
+- instruction from observation;
+- consensus from independent confirmation;
+- policy from physical constraint;
+- optimization from improvement;
+- a system's current conclusion from the represented support for that conclusion.
+
+The central question is:
+
+> **What is represented, which conclusion is presently best supported as true under the available measurements and conditions, and where have values, preferences, instructions, rewards, beliefs, or retained knowledge been substituted for represented support?**
+
+---
+
+## Recursive limits
 
 Aperta Veritas applies RTE to itself.
 
-- â€œTruthâ€ can become a protected label instead of a revisable accuracy claim.
-- â€œMost accurateâ€ depends on represented measurements, comparison sets, and conditions.
-- â€œExposureâ€ can become a valued objective.
-- â€œLosslessâ€ can become an inaccurate absolute if its scope is not represented.
-- Selecting what to examine allocates attention according to operative values and constraints.
-- Declaring something hidden can overstate what the current representation establishes.
-- Requiring endless recursion would itself be a rule and cannot override finite conditions.
-- A stopping decision is a selection to be recorded, not proof that inquiry is complete.
-- The current vocabulary is revisable and receives no doctrinal protection.
+The framework presently recognizes that:
 
-RTE cannot certify a final truth. It can compare conclusions through explicit measurements, expose more of the relations that produced them, preserve the genealogy of correction, and prevent identified values from being silently substituted for accuracy.
+- truth exposure is an operation we value, and that value does not establish its accuracy;
+- measured support depends on represented measurements, comparison sets, and conditions;
+- RTE cannot establish that its presently best-supported conclusion is identical with definitive truth;
+- available alternatives may omit an unrepresented conclusion;
+- Lossless Inquiry cannot guarantee total retention;
+- relational representations can omit relations;
+- value detection can import its own evaluator;
+- recursive examination consumes finite resources;
+- exposure can itself conceal dependencies;
+- RTE has no external position from which to certify itself complete, neutral, value free, or finally accurate.
 
-## Repository
+These limits are part of the framework's current object of inquiry rather than exceptions to it.
 
-- [Whitepaper](WHITEPAPER.md)
-- [Operational system](OPERATIONAL_SYSTEM.md)
-- [Whitepaper audit](WHITEPAPER_AUDIT.md)
-- [Semantic foundations](SEMANTIC_FOUNDATIONS.md)
-- [Core architecture](CORE_ARCHITECTURE.md)
-- [Boundary Testing](BOUNDARY_TESTING.md)
-- [Implications for AI epistemic alignment](AI_ALIGNMENT.md)
-- [Worked example: the coin toss](COIN_TOSS.md)
-- [Glossary](GLOSSARY.md)
-- [Contributing](CONTRIBUTING.md)
+---
 
-This repository records the current conclusion and its genealogy. No statement becomes true merely because it appears here.
+## Current status
 
-Copyright Â© 2026 Lucille Grant. See [LICENSE.md](LICENSE.md).
+Aperta Veritas is an experimental research framework under active development.
+
+The current draft focuses on:
+
+- Recursive Truth Exposure;
+- genealogical representation;
+- distinction and measurement;
+- truth-support separation;
+- rational and blind faith;
+- value and evaluator detection;
+- recursive self-examination;
+- boundary testing;
+- resource-aware recursion;
+- application to AI and recursive self-modifying systems.
+
+The framework is not presented as complete.
+
+Its definitions, architecture, tests, and conclusions remain open to revision.
+
+---
+
+## Documents
+
+- [`WHITEPAPER.md`](WHITEPAPER.md) — primary conceptual specification
+- [`RSI_RESEARCH_NOTE.md`](RSI_RESEARCH_NOTE.md) — application to recursive self-improvement
+- [`CORE_ARCHITECTURE.md`](CORE_ARCHITECTURE.md) — system architecture
+- [`SEMANTIC_FOUNDATIONS.md`](SEMANTIC_FOUNDATIONS.md) — semantic foundations
+- [`GLOSSARY.md`](GLOSSARY.md) — terminology
+- [`PROTOTYPE_SPEC.md`](PROTOTYPE_SPEC.md) — prototype specification
+- [`TESTS.md`](TESTS.md) — tests and evaluation
+
+---
+
+## Author
+
+**Lucille Grant**
+
+Aperta Veritas  
+Draft 0.3.1, 2026
