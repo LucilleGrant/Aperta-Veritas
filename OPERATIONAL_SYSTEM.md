@@ -1,6 +1,6 @@
 # Operational System
 
-Aperta Veritas is the recursive, lossless process of exposing truth. Its governing operation is Recursive Truth Exposure. It receives observations, data, claims, beliefs, values, models, contradictions, and anomalies. It produces representations connected to provenance, residuals, branches, transformations, and genealogy.
+Aperta Veritas is a recursive process for exposing truth. Its governing operation is Recursive Truth Exposure. It receives observations, data, claims, beliefs, values, models, contradictions, and anomalies. It produces representations connected to provenance, residuals, branches, transformations, and genealogy.
 
 ## Veritas
 
