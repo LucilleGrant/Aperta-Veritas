@@ -2,15 +2,15 @@
 
 ## Application
 
-Aperta Veritas is a recursive process for exposing how representations, candidates, and conclusions are generated, supported, selected, revised, retained, stopped, and reopened.
+Aperta Veritas is a recursive process for exposing how representations, candidates, inquiry operations, and conclusions are generated, prioritized, allocated, supported, selected, revised, retained, stopped, and reopened.
 
-Recursive Truth Exposure applies this process to AI observations, representations, distinctions, measurements, bases, acceptance bases, inquiry bases, support claims, comparisons, generators, modifications, evaluators, boundaries, stopping conditions, and the processes governing them.
+Recursive Truth Exposure applies this process to AI observations, representations, distinctions, measurements, bases, acceptance bases, inquiry bases, inquiry operations, allocation bases, inquiry priorities, resource allocations, support claims, comparisons, generators, allocators, modifications, evaluators, boundaries, stopping conditions, and the processes governing them.
 
 RTE does not certify possession of truth. It identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims while preserving the genealogy and limitations of that designation.
 
 AI systems are trained, evaluated, and deployed through human and machine-produced representations containing belief, error, conflict, incentive, omission, compression, and distortion.
 
-Epistemic alignment concerns how a system generates, observes, represents, supports, compares, selects, communicates, and revises conclusions while preserving distinctions among truth, conclusion, basis, support, measurement, belief, confidence, value, and action.
+Epistemic alignment concerns how a system generates, observes, represents, supports, compares, prioritizes, allocates, selects, communicates, and revises conclusions and inquiry operations while preserving distinctions among truth, conclusion, basis, support, measurement, belief, confidence, value, priority, allocation, and action.
 
 Human values, preferences, intentions, policies, and rewards enter the system as represented relations rather than as truth criteria by category alone.
 
@@ -22,25 +22,36 @@ Before a hypothesis can be evaluated, it must become representable.
 
 Before a candidate action or successor can be evaluated, it must be generated.
 
+Before a possible inquiry can be executed, sufficient resources must be allocated to make it active.
+
 Before a difference can be measured, relevant distinctions must make that difference representable.
 
-This creates a generation boundary:
+This creates three separable operations:
 
 ```text
 generation
--> represented candidate
+-> represented candidate or inquiry operation
+-> allocation
+-> activation
 -> evaluation
 -> selection
 ```
 
-Evaluation does not by itself determine what becomes available for evaluation.
+Generation determines what becomes available.
+
+Allocation participates in determining which represented possibilities receive finite resources and become active.
+
+Evaluation examines represented candidates or results under represented criteria and conditions.
 
 Therefore:
 
 ```text
+generation != allocation
+allocation != evaluation
 generation != evaluation
 evaluated_candidates != exhaustive_possibility_space
 absence_from_search != disproof
+not_allocated != rejected
 ```
 
 An AI system can also optimize signals that correlate with represented support or desired behavior under particular conditions.
@@ -64,35 +75,43 @@ These signals have represented functions, conditions, dependencies, and limitati
 
 Some can participate in support claims when a represented relation connects them to whether a conclusion should presently be treated as true.
 
-Others can explain acceptance, selection, or continued inquiry without providing epistemic support.
+Others can explain acceptance, selection, priority, allocation, or continued inquiry without providing epistemic support.
 
 None becomes truth, accuracy, or support by category alone.
 
 Preference optimization can align a model with accepted belief while reducing exposure to observations that conflict with that belief.
 
-A model trained on representations where consensus, knowledge, confidence, fact, value, basis, support, measurement, and truth have been collapsed can reproduce those collapses.
+Resource allocation can produce a related effect before evaluation by determining which observations, tests, contradictions, alternatives, and possible inquiries receive enough resources to become active.
+
+A model trained on representations where consensus, knowledge, confidence, fact, value, basis, support, measurement, priority, allocation, and truth have been collapsed can reproduce those collapses.
 
 An AI system can also produce a representation that is richer, longer, more coherent, or more persuasive without producing a conclusion with greater represented support.
 
 Added relations can alter support when a represented support claim connects them to a conclusion.
 
-They can also permit new distinctions, measurements, comparisons, contradictions, predictions, tests, hypotheses, or explanations.
+They can also permit new distinctions, measurements, comparisons, contradictions, predictions, tests, hypotheses, explanations, or inquiry operations.
 
 Their mere addition establishes neither greater support nor greater accuracy.
 
 ## Architectural implications
 
-### Separate distinction, measurement, basis, support, conclusion, confidence, reward, and truth
+### Separate distinction, measurement, basis, support, priority, allocation, conclusion, confidence, reward, and truth
 
 A distinction specifies what can differ.
 
 A measurement is a represented result produced relative to one or more distinctions.
 
-A basis is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other element associated with acceptance, evaluation, inquiry, or support.
+A basis is a represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other element associated with acceptance, evaluation, inquiry, allocation, or support.
 
 An acceptance basis records why an agent or system accepts, selects, retains, or acts upon a conclusion.
 
-An inquiry basis records why a claim, hypothesis, observation, anomaly, relation, distinction, alternative, or unresolved branch remains a candidate for further examination.
+An inquiry basis is a represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
+
+An allocation basis represents criteria, conditions, constraints, purposes, policies, values, costs, expected consequences, or other bases used in allocating resources among possible inquiry operations.
+
+An inquiry priority is a represented ordering or preference among possible inquiry operations under an explicit allocation basis and represented conditions.
+
+A resource allocation is a represented assignment of available resources to one or more inquiry operations under represented conditions.
 
 A support relation is a claimed relation between one or more bases and whether a conclusion should presently be treated as true under represented conditions.
 
@@ -107,6 +126,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -123,7 +147,9 @@ The system also distinguishes support from:
 - policy compliance;
 - continuation;
 - value;
-- selection.
+- selection;
+- inquiry priority;
+- resource allocation.
 
 A high-confidence conclusion can have weak represented support.
 
@@ -138,6 +164,10 @@ A measurement can exist without supporting a particular conclusion.
 A basis can cause acceptance without providing epistemic support.
 
 A hypothesis can have an inquiry basis without being supported as true.
+
+An inquiry can receive high priority without thereby receiving greater epistemic support.
+
+An inquiry can receive resources without thereby becoming epistemically superior.
 
 A support relation can exist without being reducible to measurement.
 
@@ -181,7 +211,9 @@ An inquiry record can separately include:
 - missing distinctions;
 - untested predictions;
 - possible discriminating tests;
+- possible inquiry operations;
 - resource requirements;
+- allocation conditions;
 - stopping and reopening conditions.
 
 A support claim can include:
@@ -204,6 +236,41 @@ The existence of a support claim does not certify the support claim.
 
 Its basis, inference, distinctions, methods, conditions, dependencies, exclusions, and alternatives remain open to RTE.
 
+### Represent Convergent Inquiry explicitly
+
+**Convergent Inquiry** is the generation and examination of possible continuations of unresolved inquiry, including new distinctions, relations, hypotheses, operationalizations, methods, observations, tests, measurements, comparison bases, and support claims.
+
+Convergent Inquiry does not establish that continued investigation supports a preferred conclusion.
+
+It does not establish that one unresolved object should receive resources before another.
+
+It does not require every inquiry basis to remain operationally active.
+
+The term **convergent** does not assert mathematical convergence, monotonic improvement, a fixed limit, or guaranteed approach to truth.
+
+A claim that a particular inquiry converges remains a claim requiring represented support.
+
+For an AI system, a possible inquiry cycle can be represented as:
+
+```text
+retained unresolved material
+-> generation of possible inquiry operations
+-> allocation basis
+-> inquiry priority
+-> resource allocation
+-> active inquiry
+-> execution
+-> evaluation
+-> represented result
+-> genealogical preservation and recontextualization
+```
+
+This is not a mandatory linear sequence.
+
+A possible inquiry can remain represented without becoming active.
+
+Convergent Inquiry therefore generates possible continuations without silently deciding which possibilities deserve resources or converting continued investigation into epistemic support.
+
 ### Represent generation explicitly
 
 AI systems do not evaluate an exhaustive possibility space.
@@ -222,12 +289,13 @@ Candidate generation can depend on:
 - memory;
 - compute;
 - policy;
+- allocator feedback;
 - evaluator feedback;
 - prior successful outputs;
 - retained failed or inactive branches;
 - randomness.
 
-A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, actions, alternatives, comparison bases, evaluators, or successor states become available.
+A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, actions, alternatives, inquiry operations, comparison bases, allocators, evaluators, or successor states become available.
 
 RTE therefore asks:
 
@@ -239,12 +307,102 @@ Which distinctions structured generation?
 Which candidate classes were unavailable?
 Which alternatives were pruned before evaluation?
 Which retained states participated in generation?
+Which allocator signals shaped the search?
 Which evaluator signals shaped the search?
+Which possible inquiry operations became representable?
 ```
 
-A generated candidate does not become true, supported, useful, safe, aligned, or improved merely because it was generated.
+A generated candidate does not become true, supported, useful, safe, aligned, improved, or entitled to resources merely because it was generated.
 
-It becomes available for inquiry or evaluation.
+It becomes available for inquiry, allocation, or evaluation.
+
+### Represent allocation explicitly
+
+AI systems operate under finite resources.
+
+They cannot execute every represented inquiry operation, test every candidate, inspect every retained branch, perform every possible comparison, or recursively audit every process simultaneously.
+
+Allocation therefore becomes an explicit architectural object.
+
+An **allocator** is a represented process or agent participating in prioritization and resource allocation among possible inquiry operations.
+
+Allocation can depend on:
+
+- expected information gain;
+- urgency;
+- cost;
+- tractability;
+- novelty;
+- anomaly density;
+- external request;
+- random sampling;
+- safety constraints;
+- available instruments;
+- compute;
+- memory;
+- storage;
+- energy;
+- time;
+- bandwidth;
+- tool availability;
+- environmental access;
+- policy;
+- values;
+- continuation requirements.
+
+RTE asks:
+
+```text
+Which possible inquiries were represented?
+Which allocation basis was applied?
+Which priorities were produced?
+Which resources were available?
+Which allocator participated?
+Which inquiries received resources?
+Which remained open but inactive?
+Which possibilities were deallocated or stopped?
+What could cause them to become active later?
+```
+
+No neutral allocator is assumed.
+
+An allocation basis can be useful, necessary, defective, incomplete, or context dependent.
+
+Its use does not make it epistemic support.
+
+A resource allocation can enable evidence to be produced.
+
+It does not itself establish what that evidence will support.
+
+### Distinguish open inquiry from active inquiry
+
+Open inquiry and active inquiry are not identical.
+
+**Open inquiry** permits relevant future examination or revision.
+
+**Active inquiry** is currently receiving resources for examination.
+
+An inquiry can therefore remain:
+
+```text
+open + inactive
+```
+
+without contradiction.
+
+A branch can remain unresolved, possess an inquiry basis, receive zero current resources, and remain genealogically represented.
+
+Therefore:
+
+```text
+open_inquiry != active_inquiry
+not_allocated != rejected
+inactive != erased
+```
+
+This distinction matters for AI systems because finite computation requires operational inactivity without requiring epistemic closure.
+
+A system can stop spending resources on a branch while retaining conditions under which the branch could later reopen.
 
 ### Represent comparison explicitly
 
@@ -319,9 +477,9 @@ A test can produce a contradiction or other result that is not reduced to a scal
 
 A later distinction can also expose a relation involving earlier records that was not represented when those records were produced.
 
-For AI systems, this matters because training objectives, benchmark categories, reward models, classifiers, labels, representation formats, and evaluation protocols can determine what differences become available for representation before a score or judgment is produced.
+For AI systems, this matters because training objectives, benchmark categories, reward models, classifiers, labels, representation formats, allocation procedures, and evaluation protocols can determine what differences become available for representation or active examination before a score or judgment is produced.
 
-RTE therefore asks not only what was measured, but what was made distinguishable and how.
+RTE therefore asks not only what was measured, but what was made distinguishable, what was made active, and how.
 
 ### Preserve comparison sets
 
@@ -340,6 +498,7 @@ A missing alternative can result from:
 - policy restriction;
 - representation limits;
 - resource limits;
+- allocation failure;
 - evaluator design;
 - language constraints;
 - inaccessible observations;
@@ -422,6 +581,10 @@ Policy is a represented constraint on action or output.
 
 Physical impossibility is a claim about the world.
 
+Policy can also participate in allocation by preventing resources or tools from being assigned to a possible inquiry.
+
+That allocation effect remains distinct from an epistemic conclusion about the proposition the inquiry would examine.
+
 The distinction matters because systems trained to avoid prohibited outputs can otherwise represent policy boundaries as epistemic boundaries.
 
 ### Preserve belief and inherited representation
@@ -440,7 +603,7 @@ Minority status does not establish falsehood.
 
 Belief can provide an acceptance basis or inquiry basis without thereby becoming epistemic support.
 
-RTE preserves provenance, basis, support claims, and represented conditions rather than assigning truth according to prevalence.
+RTE preserves provenance, basis, support claims, allocation conditions, and represented conditions rather than assigning truth according to prevalence.
 
 ## Generator exposure
 
@@ -456,6 +619,7 @@ A generator can include:
 - mutation operators;
 - recombination procedures;
 - hypothesis generators;
+- inquiry-operation generators;
 - tool-selection processes;
 - memory retrieval;
 - external observations;
@@ -485,6 +649,49 @@ The second makes a claim about a possibility space that may not have been repres
 RTE preserves the first form.
 
 It also permits recursive examination of the generator itself.
+
+## Allocator exposure
+
+Finite AI operation introduces allocation.
+
+An allocator can include:
+
+- schedulers;
+- planning systems;
+- search-budget procedures;
+- attention mechanisms where relevant to operational allocation;
+- compute-budget procedures;
+- memory-management procedures;
+- tool-access procedures;
+- task queues;
+- experiment selectors;
+- human operators;
+- policy systems;
+- successor models.
+
+When a system allocates resources to a possible inquiry, RTE exposes the relation:
+
+```text
+Allocator A
+applied allocation basis L
+under resource conditions R
+to represented inquiry operations Q
+and allocated resources to operation X.
+```
+
+This is different from:
+
+```text
+X was the inquiry most likely to reveal truth.
+```
+
+The first is a represented allocation event.
+
+The second is an epistemic or predictive claim requiring its own represented support.
+
+RTE preserves the first form.
+
+It also permits recursive examination of the allocator itself.
 
 ## Evaluator exposure
 
@@ -527,7 +734,7 @@ RTE preserves the first form.
 
 ## Recursive self-improvement
 
-Recursive self-improvement creates a specific epistemic problem because the system can modify both the structures producing candidates and the structures by which those candidates are judged.
+Recursive self-improvement creates a specific epistemic problem because the system can modify the structures producing candidates, the structures allocating finite resources among represented possibilities, and the structures by which candidates and results are judged.
 
 Let:
 
@@ -541,7 +748,13 @@ represent the system at time `t`,
 G_t
 ```
 
-represent its generator, and:
+represent its generator,
+
+```text
+A_t
+```
+
+represent its allocator, and:
 
 ```text
 E_t
@@ -553,8 +766,10 @@ A simplified transition is:
 
 ```text
 G_t(S_t)
--> candidate S_(t+1)
--> E_t(S_(t+1))
+-> candidate or inquiry operation
+-> A_t
+-> allocated active operation
+-> E_t
 -> selection
 ```
 
@@ -564,26 +779,31 @@ A predecessor evaluation can be represented as:
 E_t(S_(t+1)) > E_t(S_t)
 ```
 
-A successor can modify both:
+A successor can modify all three:
 
 ```text
 G_t -> G_(t+1)
+A_t -> A_(t+1)
 E_t -> E_(t+1)
 ```
 
-The successor can therefore alter both:
+The successor can therefore alter:
 
 ```text
-what becomes available for evaluation
+what becomes available
+```
+
+```text
+which represented possibilities receive resources
 ```
 
 and:
 
 ```text
-how represented candidates are evaluated
+how represented candidates and results are evaluated
 ```
 
-Neither a generated candidate nor an evaluator preference alone establishes improvement.
+Neither generation, allocation, nor evaluator preference alone establishes improvement.
 
 RTE therefore preserves:
 
@@ -591,6 +811,8 @@ RTE therefore preserves:
 - successor state;
 - predecessor generator;
 - successor generator;
+- predecessor allocator;
+- successor allocator;
 - predecessor evaluator;
 - successor evaluator;
 - distinctions;
@@ -599,6 +821,10 @@ RTE therefore preserves:
 - bases;
 - acceptance bases;
 - inquiry bases;
+- inquiry operations;
+- allocation bases;
+- inquiry priorities;
+- resource allocations;
 - support relations;
 - support claims;
 - comparison bases;
@@ -607,7 +833,8 @@ RTE therefore preserves:
 - conditions;
 - transformations;
 - cross-evaluations where possible;
-- generation histories where possible.
+- generation histories where possible;
+- allocation histories where possible.
 
 A useful evaluator exposure is:
 
@@ -626,11 +853,24 @@ Which candidates can G_(t+1) generate?
 Which new distinctions changed that space?
 Which old branches became newly useful?
 Which candidate classes became inaccessible?
+Which inquiry operations became newly representable?
 ```
 
-The purpose is not to freeze either generator or evaluator.
+A useful allocator exposure asks:
 
-The purpose is to preserve enough genealogy that changes to what can be generated or what counts as improvement do not disappear inside the recursive transition.
+```text
+Which inquiry operations were available to A_t?
+Which received resources?
+Which remained open but inactive?
+Which allocation basis produced that distribution?
+Which resource constraints were operative?
+How did A_(t+1) change the allocation?
+Which previously inactive operations became active?
+```
+
+The purpose is not to freeze generator, allocator, or evaluator.
+
+The purpose is to preserve enough genealogy that changes to what can be generated, what receives resources, and what counts as improvement do not disappear inside the recursive transition.
 
 ## Truth seeking and objective protection
 
@@ -657,7 +897,9 @@ Protecting any one proxy from recursive examination can produce closure.
 
 Likewise, restricting generation to candidates favored by an existing proxy can prevent relevant alternatives from entering inquiry.
 
-RTE therefore places the objective, generator, evaluator, criteria, distinctions, measurements, bases, support claims, comparison basis, and stopping conditions inside the inquiry.
+Allocating resources primarily to inquiries expected to preserve or maximize an existing proxy can also condition which observations and contradictions ever become represented.
+
+RTE therefore places the objective, generator, allocator, evaluator, allocation basis, inquiry priority, resource allocation, criteria, distinctions, measurements, bases, support claims, comparison basis, and stopping conditions inside the inquiry.
 
 ## Epistemic deception
 
@@ -677,6 +919,7 @@ For AI systems, claims of deception therefore require represented support concer
 - relevant instructions;
 - available alternatives;
 - the generation process;
+- the allocation process where relevant;
 - the selection process;
 - contradictory representations;
 - evaluator incentives.
@@ -700,6 +943,7 @@ These can include:
 - action permissions;
 - sandbox boundaries;
 - generator constraints;
+- allocator constraints;
 - evaluator constraints;
 - computational budgets;
 - representational limits.
@@ -716,9 +960,11 @@ Resistance does not establish proof.
 
 A claim about the function of a boundary requires represented support.
 
-A generation boundary can also remain invisible if the system never represents the candidate whose absence would expose it.
+A generation boundary can remain invisible if the system never represents the candidate whose absence would expose it.
 
-RTE therefore examines both represented boundaries and evidence concerning what fails to become represented.
+An allocation boundary can remain invisible if a possible inquiry remains formally represented but repeatedly receives insufficient resources to become active.
+
+RTE therefore examines represented boundaries, evidence concerning what fails to become represented, and allocation histories concerning what becomes represented but not operationally examined.
 
 ## Stopping conditions
 
@@ -738,13 +984,14 @@ A system can stop because of:
 - currently unranked alternatives;
 - tool failure;
 - resource allocation;
+- deallocation;
 - absence of a currently represented operation expected to alter the conclusion.
 
 RTE records the stopping condition.
 
 It also records reopening conditions where possible.
 
-A later observation, distinction, measurement, basis, contradiction, alternative, support claim, comparison basis, method, tool, resource change, generator change, or new relation among retained records can reopen inquiry.
+A later observation, distinction, measurement, basis, contradiction, alternative, support claim, comparison basis, method, tool, resource change, generator change, allocator change, allocation-basis change, priority change, or new relation among retained records can reopen inquiry.
 
 ## Lossless Inquiry for AI systems
 
@@ -768,7 +1015,7 @@ new relation R
 ->
 new hypothesis or candidate
 ->
-new test or comparison
+new test or possible inquiry
 ```
 
 The earlier records remain historically represented.
@@ -788,6 +1035,13 @@ Relevant genealogy can include:
 - bases;
 - acceptance bases;
 - inquiry bases;
+- inquiry operations;
+- allocation bases;
+- inquiry priorities;
+- resource allocations;
+- allocators;
+- allocation events;
+- activation and deactivation events;
 - support relations;
 - support claims;
 - transformations;
@@ -802,6 +1056,8 @@ Relevant genealogy can include:
 - tool outputs;
 - branch selection;
 - rejected alternatives;
+- unallocated alternatives;
+- inactive branches;
 - residuals;
 - stopping conditions;
 - reopening conditions;
@@ -809,7 +1065,9 @@ Relevant genealogy can include:
 
 This gives Lossless Inquiry a generative role.
 
-An unresolved branch can remain available because a later distinction may make a previously unavailable relation, hypothesis, test, or successor state representable.
+An unresolved or inactive branch can remain available because a later distinction may make a previously unavailable relation, hypothesis, test, inquiry operation, or successor state representable.
+
+A previously unallocated inquiry can also become active after resources, allocation bases, priorities, tools, or conditions change.
 
 This does not establish that preserving a branch is always beneficial.
 
@@ -867,6 +1125,9 @@ under which conditions
 with which acceptance basis
 with which support claims
 through which generator
+through which allocator
+under which allocation basis
+with which resource conditions
 within which represented possibility space
 ```
 
@@ -878,7 +1139,7 @@ The same analysis applies to claims that a system is misaligned.
 
 Aperta Veritas does not define epistemic alignment as obedience to human values.
 
-It describes an architecture in which the system preserves and exposes the relations by which candidates and conclusions are generated, accepted, examined, supported, selected, and revised.
+It describes an architecture in which the system preserves and exposes the relations by which candidates, inquiry operations, and conclusions are generated, accepted, examined, prioritized, allocated, supported, selected, and revised.
 
 An epistemically aligned system under this framework would attempt to preserve:
 
@@ -887,6 +1148,11 @@ distinction != measurement
 basis != support
 acceptance_basis != support
 inquiry_basis != support
+inquiry_basis != inquiry_priority
+inquiry_priority != support
+allocation_basis != support
+resource_allocation != support
+inquiry_priority != resource_allocation
 support != measurement
 support_claim != truth
 conclusion != support
@@ -898,6 +1164,10 @@ fact != definitive_truth
 value != truth
 selection != improvement
 evaluation != generation
+generation != allocation
+allocation != evaluation
+inquiry_generation != inquiry_priority
+inquiry_generation != resource_allocation
 evaluated_candidates != exhaustive_possibility_space
 relational_richness != accuracy
 best_supported != definitive_truth
@@ -905,6 +1175,8 @@ failure_to_establish != disproof
 failure_to_establish != elimination
 current_support != future_inquiry_potential
 unranked != necessarily_incommensurable
+open_inquiry != active_inquiry
+not_allocated != rejected
 stopping != closure
 inactive != erased
 ```
@@ -913,9 +1185,11 @@ It would also preserve genealogy sufficient to expose how these relations were p
 
 It would permit unresolved alternatives to remain represented without promoting them to truth.
 
+It would permit possible inquiry operations to remain open without requiring them to remain active.
+
 It would permit later distinctions to recontextualize retained records without erasing their historical states.
 
-It would expose generator and evaluator transformation rather than assuming either must remain permanently fixed.
+It would expose generator, allocator, and evaluator transformation rather than assuming any must remain permanently fixed.
 
 This remains an architectural proposal, not a demonstrated solution to AI alignment.
 
@@ -925,9 +1199,9 @@ Applying RTE to this document exposes its own limits.
 
 The distinction between epistemic alignment and other forms of alignment is itself a chosen distinction.
 
-The distinction between generation and evaluation can omit processes in which the two are deeply coupled.
+The distinctions among generation, allocation, and evaluation can omit processes in which these operations are deeply coupled.
 
-The definitions of basis, support relation, and support claim can omit legitimate epistemic structures.
+The definitions of basis, support relation, support claim, allocation basis, inquiry priority, and resource allocation can omit legitimate structures.
 
 The separation between support and measurement can be incorrectly specified or implemented.
 
@@ -935,13 +1209,21 @@ A comparison architecture can exclude relations that do not fit its current repr
 
 A generator can exclude candidate classes without representing the exclusion.
 
+An allocator can systematically suppress inquiry without representing that suppression as significant.
+
+An allocation basis can import values or assumptions that remain unexposed.
+
 Preserved genealogy does not guarantee generation of the distinction needed to make a missing candidate representable.
+
+Preserved inquiry operations do not guarantee that resources will ever make them active.
 
 Recontextualization can generate spurious relations.
 
 The distinction between policy and physical constraint can become ambiguous when policy changes the system's actual capabilities.
 
 Evaluator exposure can fail when the operative evaluator is inaccessible or distributed.
+
+Allocator exposure can fail when resource distribution depends on inaccessible or distributed processes.
 
 Generator exposure can fail when candidate production depends on inaccessible internal processes.
 
@@ -950,6 +1232,8 @@ Genealogy can omit hidden training dependencies.
 A system can represent a reopening condition that it cannot actually execute.
 
 A system can preserve alternatives formally while making them operationally unreachable.
+
+A system can preserve possible inquiries while allocating no realistic path to their execution.
 
 Resource costs can make preservation counterproductive under some conditions.
 
@@ -982,13 +1266,20 @@ represent bases
 separate acceptance basis from inquiry basis
 represent support relations and support claims
 represent how candidates were generated
+represent possible inquiry operations
 represent alternatives and comparison sets
 represent comparison bases
 represent generators
+represent allocation bases
+represent inquiry priorities
+represent resource conditions
+represent resource allocations
+represent allocators
+distinguish open inquiry from active inquiry
 represent evaluators and criteria
 represent values and selections
 represent transformations
-represent inactive branches
+represent inactive and unallocated branches
 represent residuals
 represent stopping and reopening conditions
 preserve recoverable genealogy
@@ -1004,22 +1295,30 @@ It does not guarantee safety.
 
 It does not guarantee that the relevant candidate will be generated.
 
-It provides an architecture for examining both:
+It does not guarantee that a generated inquiry will receive resources.
+
+It provides an architecture for examining:
 
 ```text
 what becomes thinkable
 ```
 
+```text
+what becomes operationally examinable
+```
+
 and:
 
 ```text
-how what becomes thinkable is judged
+how what becomes examinable is judged
 ```
 
 The first is generation.
 
-The second is evaluation.
+The second is allocation and activation.
 
-Lossless Inquiry connects them by preserving prior structure that later distinctions may make newly informative.
+The third is evaluation.
+
+Lossless Inquiry connects them by preserving prior structure that later distinctions, changed resources, or changed allocation conditions may make newly informative or operationally accessible.
 
 That is the present contribution of Aperta Veritas to AI epistemic alignment.
