@@ -2,9 +2,9 @@
 
 Aperta Veritas © 2026 Lucille Grant
 
-Except where otherwise noted, the written and visual content in this repository is licensed under the Creative Commons Attribution 4.0 International License.
+Except where otherwise noted, the written documentation and visual content in this repository are licensed under the Creative Commons Attribution 4.0 International License.
 
-You are free to share and adapt the material for any purpose, including commercially, provided that you give appropriate credit to Lucille Grant, provide a link to the license, and indicate whether changes were made. Attribution must not suggest endorsement by the author.
+You are free to share and adapt this material for any purpose, including commercially, provided that you give appropriate credit to Lucille Grant, provide a link to the license, and indicate whether changes were made. Attribution must not suggest endorsement by the author.
 
 License summary:
 
@@ -14,4 +14,8 @@ Legal code:
 
 https://creativecommons.org/licenses/by/4.0/legalcode
 
-Software source code added to this repository is not covered by this license unless explicitly stated. Any software license will be identified separately.
+## Software
+
+Software source code in this repository is not licensed under CC BY 4.0 unless explicitly stated.
+
+Software may be distributed under a separate license identified with the relevant source code or elsewhere in the repository. In the absence of an explicit software license, no software license is granted by this document.
