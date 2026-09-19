@@ -100,17 +100,25 @@ Truth is not established by value.
 
 Calling a conclusion desirable does not establish that it is true, and calling it undesirable does not establish that it is false. A value report can itself be accurately represented when it preserves the evaluator, criterion, conditions, and judgment rather than compressing them into an intrinsic property of the object.
 
-Measurements and inquiry also contain selections. A system selects what to observe, which alternatives to compare, which dimensions to measure, how to allocate resources, and when to stop.
+Distinction, measurement, and inquiry also contain selections. A system selects what to distinguish, what to observe, which alternatives to compare, how distinctions are operationalized, how to allocate resources, and when to stop.
 
 RTE represents those selections and their operative values without reducing represented support to value.
 
 ## Distinction and relevance
 
-A **distinction** is measurement of a spectrum of possibility that produces a represented difference or relation.
+## Distinction, measurement, and relevance
 
-A distinction can represent a degree, distribution, boundary, change, simultaneous relations, or unresolved range. It need not be binary.
+A **distinction** specifies a variable, category, relation, boundary, or other basis by which possibilities can differ.
 
-A distinction is relevant to a conclusion when incorporating it can alter a represented relation involved in that conclusion or its support, including observational fit, prediction, explanatory coverage, contradiction, reproducibility, genealogy, conditions, uncertainty, or another represented measurement.
+A distinction defines what can be differentiated. It may specify degrees, distributions, boundaries, changes, simultaneous relations, or unresolved ranges. It need not be binary.
+
+A **measurement** is a represented result produced relative to one or more distinctions.
+
+A measurement therefore depends on the distinctions applied, how they are operationalized, the object or process examined, the method of application, and the conditions under which the result is produced.
+
+Measurements may be quantitative, qualitative, categorical, relational, comparative, bounded, or unresolved. Different distinctions can produce different measurements of the same object without those measurements necessarily conflicting.
+
+A distinction is relevant to a conclusion when applying it could produce or alter a represented measurement or relation involved in that conclusion or its support, including observational fit, prediction, explanatory coverage, contradiction, reproducibility, genealogy, conditions, or uncertainty.
 
 Relevance is therefore itself a represented relation. It is not established merely because an evaluator declares information relevant or irrelevant.
 
@@ -132,7 +140,7 @@ Aperta therefore applies both to conclusions and to the processes that produce, 
 
 Aperta Veritas applies these semantics recursively.
 
-Its definitions of truth, support, accuracy, belief, relevance, value, openness, and closure remain subject to the same examination applied to other representations.
+Its definitions of truth, support, accuracy, belief, distinction, measurement, relevance, value, openness, and closure remain subject to the same examination applied to other representations.
 
 RTE cannot establish that its presently best-supported conclusion is identical with definitive truth.
 
