@@ -735,6 +735,7 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 
 ## Documents
 
+- [`RESEARCH_BRIEF.md`](RESEARCH_BRIEF.md) - concise introduction for researchers and engineers
 - [`WHITEPAPER.md`](WHITEPAPER.md) - primary conceptual specification
 - [`SEMANTIC_FOUNDATIONS.md`](SEMANTIC_FOUNDATIONS.md) - semantic foundations
 - [`GLOSSARY.md`](GLOSSARY.md) - terminology
