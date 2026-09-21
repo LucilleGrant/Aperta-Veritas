@@ -72,7 +72,7 @@ Belief does not become false merely because it exceeds what present support esta
 
 Belief can contribute to an acceptance basis or inquiry basis, participate in a support claim, conflict with represented support, anticipate later support, or remain unrelated to conclusions presently supported as true.
 
-See Fides, Pistis, Rational faith, and Blind faith.
+See Fides, Rational faith, and Blind faith.
 
 ## Blind faith
 
@@ -222,7 +222,7 @@ The Latin word for belief, faith, or trust.
 
 Fides does not establish or negate the truth of its object. Its acceptance basis, inquiry basis where applicable, confidence, relation to represented support, and response to relevant distinction remain available to Recursive Truth Exposure.
 
-See Rational faith, Blind faith, and Pistis.
+See Rational faith and Blind faith.
 
 ## Fidelity
 
@@ -351,14 +351,6 @@ Open inquiry is distinct from active inquiry.
 An open inquiry can receive no current resources while remaining available for later activation.
 
 Operational stopping, inactivity, or lack of allocation does not by itself close inquiry.
-
-## Pistis
-
-The Greek word for belief, faith, or trust.
-
-Pistis does not establish or negate the truth of its object. Its acceptance basis, inquiry basis where applicable, confidence, relation to represented support, and response to relevant distinction remain available to Recursive Truth Exposure.
-
-See Fides, Rational faith, and Blind faith.
 
 ## Rational faith
 

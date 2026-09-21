@@ -228,9 +228,9 @@ A **conclusion** is a current synthesis of represented data, relations, inferenc
 
 A conclusion is not identical with the basis for accepting it or the support claims concerning it. RTE preserves these separately.
 
-## Fides and Pistis
+## Fides
 
-**Fides** is Latin for belief, faith, or trust. **Pistis** is the Greek counterpart.
+**Fides** is Latin for belief, faith, or trust.
 
 Belief does not become false merely because it exceeds what present support establishes, nor does belief establish its own truth.
 

@@ -1079,7 +1079,7 @@ Recontextualization can generate unsupported relations.
 
 Compression or deletion can sometimes improve resource allocation.
 
-Those relations remain part of inquiry rather than being decided by the word *lossless* alone.
+Those relations remain part of inquiry rather than being decided by the name *Open Genealogy* alone.
 
 Perfect preservation cannot be certified.
 

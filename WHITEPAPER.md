@@ -579,11 +579,9 @@ this is a fact
 
 therefore remains a claim with provenance, acceptance basis, support claims, conditions, and unresolved residuals.
 
-## 11. Fides and Pistis
+## 11. Fides
 
 **Fides** is Latin for belief, faith, or trust.
-
-**Pistis** is the Greek counterpart.
 
 Belief does not become false merely because it exceeds what present support establishes.
 
@@ -1252,7 +1250,7 @@ Its genealogy can fail to preserve relations needed for later recontextualizatio
 
 Its recontextualization process can introduce unsupported relations.
 
-Its lossless target can fail.
+Its attempt to keep genealogy available can fail.
 
 Its stopping conditions can become closure in practice.
 
@@ -1262,7 +1260,7 @@ RTE therefore applies to Aperta Veritas itself.
 
 It cannot establish that all relevant relations, distinctions, hypotheses, alternatives, generators, allocators, inquiry operations, allocation bases, or tests have been represented.
 
-It cannot certify itself complete, neutral, value free, lossless, exhaustive, or finally accurate.
+It cannot certify itself complete, neutral, value free, totally retentive, exhaustive, or finally accurate.
 
 It cannot establish that its presently supported conclusion is identical with definitive truth.
 

@@ -692,7 +692,7 @@ The framework presently recognizes that:
 - value detection can import its own evaluator;
 - recursive examination consumes finite resources;
 - exposure can itself conceal dependencies;
-- RTE has no external position from which to certify itself complete, neutral, value free, exhaustive, lossless, or finally accurate.
+- RTE has no external position from which to certify itself complete, neutral, value free, exhaustive, totally retentive, or finally accurate.
 
 These limits are part of the framework's current object of inquiry rather than exceptions to it.
 

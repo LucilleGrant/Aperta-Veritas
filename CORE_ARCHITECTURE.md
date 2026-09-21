@@ -753,6 +753,6 @@ Its stopping conditions can become closure in practice.
 
 RTE therefore applies to the architecture itself.
 
-The architecture cannot certify itself complete, neutral, lossless, value free, exhaustive, or finally accurate.
+The architecture cannot certify itself complete, neutral, totally retentive, value free, exhaustive, or finally accurate.
 
 No component is exempt from renewed distinction, observation, generation, testing, measurement, comparison, criticism, recontextualization, or revision.

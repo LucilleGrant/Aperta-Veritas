@@ -25,6 +25,13 @@ retention != refinement
 - Updated current normative documents and prototype documentation.
 - Left earlier changelog entries and preserved audit sections unchanged as historical genealogy.
 
+### Legacy vocabulary correction
+
+- Removed **Pistis** from the current normative framework after the prior adoption of **Fides** for belief, faith, and trust.
+- Retained Fides as the active term without treating its Greek counterpart as a second framework category.
+- Removed remaining current uses of *lossless* that survived the Open Genealogy correction.
+- Left historical uses of Pistis and lossless terminology unchanged in the changelog and preserved audit material.
+
 ### External review and initial truth revision
 
 - Applied Recursive Truth Exposure to an external review by Lyra Veritas while preserving the reviewer's model, architecture, inferences, framing, and limitations inside the genealogy.
