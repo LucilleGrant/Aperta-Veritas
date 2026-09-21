@@ -20,7 +20,7 @@ Aperta Veritas is an experimental approach to representing and testing these pro
 
 Its central proposal is not that every component should change, nor that revision is intrinsically beneficial. It is that generators, allocators, evaluators, criteria, distinctions, measurements, bases, support claims, comparison bases, comparison sets, inquiry operations, inquiry priorities, resource allocations, selection operations, retained branches, transformations, and designations of improvement can remain represented within the same recursive inquiry process as the system being modified.
 
-Lossless Inquiry adds a further hypothesis: unresolved, inactive, and unallocated representations can retain future inquiry potential because later distinctions may expose relations that were not representable when those records were produced.
+Open Genealogy adds a further hypothesis: unresolved, inactive, and unallocated representations can retain future inquiry potential because later distinctions may expose relations that were not representable when those records were produced.
 
 Convergent Inquiry generates and examines possible continuations of unresolved inquiry. It does not establish which continuation should receive resources, and the term *convergent* does not imply guaranteed mathematical convergence or approach to truth.
 
@@ -1071,7 +1071,7 @@ Deleting an inactive branch can reduce storage cost while eliminating material t
 
 Preserving every branch can consume resources that prevent useful search elsewhere.
 
-Lossless Inquiry therefore does not make preservation free or automatically preferable.
+Open Genealogy therefore does not make retention free or automatically preferable.
 
 The resource relation and allocation decision remain represented.
 

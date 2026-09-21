@@ -16,7 +16,7 @@ A recursively modifying system can therefore remain bounded by what its generato
 
 Recursive Truth Exposure, abbreviated RTE, places the system, generator, candidate space, inquiry operations, allocator, allocation bases, inquiry priorities, resource allocations, modifications, evaluator, criteria, distinctions, measurements, bases, support claims, comparison bases, comparison sets, selections, inactive branches, resource conditions, stopping decisions, and reopening conditions inside the recursion.
 
-Lossless Inquiry preserves unresolved branches and prior states because their informational significance need not remain fixed. Later distinctions can expose new relations among retained records and make new hypotheses, tests, comparisons, inquiry operations, allocators, evaluators, or successor states representable.
+Open Genealogy keeps unresolved branches and prior states available because their informational significance need not remain fixed. Later distinctions can expose new relations among retained records and make new hypotheses, tests, comparisons, inquiry operations, allocators, evaluators, or successor states representable.
 
 Convergent Inquiry generates and examines possible continuations of unresolved inquiry. It does not establish which continuation should receive resources, and the term *convergent* does not imply guaranteed mathematical convergence or approach to truth.
 
@@ -1183,7 +1183,7 @@ inactive != erased
 
 Aggressive pruning can convert temporary selection or allocation into irreversible loss of future generative material.
 
-Lossless Inquiry therefore attempts to preserve enough branch genealogy for prior alternatives to remain recoverable or reconstructable where possible.
+Open Genealogy therefore retains enough represented branch genealogy for prior alternatives to remain recoverable or reconstructable where possible.
 
 ## 20. Recontextualization
 
@@ -1239,7 +1239,7 @@ A branch that was previously unresolved can contain a component that becomes use
 - changed resource conditions;
 - recombination with another branch.
 
-Lossless Inquiry is therefore not only a mechanism for reconstructing past decisions.
+Open Genealogy is therefore not only a mechanism for reconstructing past decisions.
 
 It preserves material whose future generative or inquiry significance may not yet be represented.
 

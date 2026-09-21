@@ -217,6 +217,8 @@ A branch can remain open while receiving no current resources.
 open_inquiry != active_inquiry
 not_allocated != rejected
 inactive != erased
+open_genealogy != losslessness
+retention != refinement
 ```
 
 Aperta Veritas does not assume a neutral allocator.
@@ -448,9 +450,9 @@ No conclusion is exempt from recursive examination, including conclusions about 
 
 ---
 
-## Lossless Inquiry
+## Open Genealogy
 
-Lossless Inquiry preserves enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions to remain available for later examination and recontextualization.
+Open Genealogy keeps represented relations available so prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions can participate in later examination and recontextualization.
 
 It is not merely archival.
 
@@ -478,7 +480,7 @@ Its historical state and the later recontextualization remain distinguishable in
 
 This matters because discarding an unresolved branch can remove material from which later inquiry might otherwise generate a new relation, hypothesis, test, comparison, evaluator, inquiry operation, or successor state.
 
-Lossless Inquiry therefore preserves recoverable relations among:
+Open Genealogy therefore identifies and retains recoverable relations among:
 
 - observations;
 - data;
@@ -514,7 +516,7 @@ Lossless Inquiry therefore preserves recoverable relations among:
 - reopening conditions;
 - residuals.
 
-Lossless does not mean that a finite system stores every physical detail.
+Open Genealogy does not imply that a finite system stores every physical detail.
 
 A compression remains linked to its source where possible.
 
@@ -683,7 +685,7 @@ The framework presently recognizes that:
 - allocation bases can privilege criteria later inquiry revises;
 - support relations can omit relevant evidence or dependencies;
 - RTE cannot establish that its presently supported conclusion is identical with definitive truth;
-- Lossless Inquiry cannot guarantee total retention;
+- Open Genealogy cannot guarantee total retention;
 - preserved branches can consume resources without becoming useful;
 - relational representations can omit relations;
 - recontextualization can introduce unsupported relations;

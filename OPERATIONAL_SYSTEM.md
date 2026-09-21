@@ -735,13 +735,13 @@ This permits later examination of whether the declared basis for selection corre
 
 It also permits a nonselected or unallocated branch to become relevant under a later distinction, relation, condition, evaluator, inquiry basis, allocation basis, or resource condition.
 
-## Lossless Inquiry
+## Open Genealogy
 
-Lossless Inquiry preserves enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions to remain available for later examination and recontextualization.
+Open Genealogy keeps represented relations available so prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions can participate in later examination and recontextualization.
 
-Losslessness is an operational target rather than a certified absolute property.
+Availability is represented and conditioned rather than certified as an absolute property.
 
-Lossless Inquiry is not merely archival.
+Open Genealogy is not merely archival.
 
 The informational significance of a represented object need not be fixed when the object is first recorded.
 

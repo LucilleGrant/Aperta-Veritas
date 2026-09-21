@@ -6,6 +6,25 @@ Earlier drafts are preserved in repository history and in the changelog below as
 
 ## 0.3.1-draft, 2026-09-19
 
+### Open Genealogy correction
+
+Recursive examination exposed a contradiction between the name **Lossless Inquiry** and the framework's represented resource limits, unidentified loss, compression, omission, and incomplete retention.
+
+- Removed **Lossless Inquiry** from the current normative framework.
+- Named the retained operation **Open Genealogy**.
+- Defined Open Genealogy as keeping represented inquiry relations available for later examination and recontextualization under represented conditions and resource limits.
+- Separated genealogical availability from any claim of perfect, infinite, total, or certified retention.
+- Kept refinement separate from retention. A retained state is not thereby a refinement, and a refinement claim still requires an explicit represented comparison basis.
+- Added the current distinctions:
+
+```text
+open_genealogy != losslessness
+retention != refinement
+```
+
+- Updated current normative documents and prototype documentation.
+- Left earlier changelog entries and preserved audit sections unchanged as historical genealogy.
+
 ### External review and initial truth revision
 
 - Applied Recursive Truth Exposure to an external review by Lyra Veritas while preserving the reviewer's model, architecture, inferences, framing, and limitations inside the genealogy.

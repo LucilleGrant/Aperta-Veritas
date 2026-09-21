@@ -993,9 +993,9 @@ It also records reopening conditions where possible.
 
 A later observation, distinction, measurement, basis, contradiction, alternative, support claim, comparison basis, method, tool, resource change, generator change, allocator change, allocation-basis change, priority change, or new relation among retained records can reopen inquiry.
 
-## Lossless Inquiry for AI systems
+## Open Genealogy for AI systems
 
-Lossless Inquiry attempts to preserve enough genealogy for prior representations to remain available for reconstruction, examination, and later recontextualization.
+Open Genealogy keeps represented relations available so prior representations can participate in reconstruction, examination, and later recontextualization.
 
 Its purpose is not merely archival.
 
@@ -1063,7 +1063,7 @@ Relevant genealogy can include:
 - reopening conditions;
 - recontextualization events.
 
-This gives Lossless Inquiry a generative role.
+This gives Open Genealogy a generative role.
 
 An unresolved or inactive branch can remain available because a later distinction may make a previously unavailable relation, hypothesis, test, inquiry operation, or successor state representable.
 
@@ -1319,6 +1319,6 @@ The second is allocation and activation.
 
 The third is evaluation.
 
-Lossless Inquiry connects them by preserving prior structure that later distinctions, changed resources, or changed allocation conditions may make newly informative or operationally accessible.
+Open Genealogy connects them by retaining prior structure that later distinctions, changed resources, or changed allocation conditions may make newly informative or operationally accessible.
 
 That is the present contribution of Aperta Veritas to AI epistemic alignment.

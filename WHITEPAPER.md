@@ -27,7 +27,7 @@ operates only after a candidate exists.
 
 A system can therefore become highly effective at evaluating its represented candidates while remaining unable to discover an alternative requiring distinctions absent from its current representation.
 
-Lossless Inquiry addresses this problem by preserving unresolved observations, branches, transformations, residuals, and prior states so later distinctions can recontextualize them. A representation that lacks present support for a particular conclusion can still have future inquiry potential. A later distinction can expose a relation that was not representable when the earlier record was produced.
+Open Genealogy addresses this problem by keeping unresolved observations, branches, transformations, residuals, and prior states available so later distinctions can recontextualize them. A representation that lacks present support for a particular conclusion can still have future inquiry potential. A later distinction can expose a relation that was not representable when the earlier record was produced.
 
 Convergent Inquiry addresses a related upstream question: what possible continuations of unresolved inquiry can be generated? Finite systems cannot examine every continuation, so Aperta Veritas separately represents the allocation basis, inquiry priority, resource allocation, and allocator by which some possible inquiries become active while others remain open but inactive.
 
@@ -87,6 +87,8 @@ generation != allocation
 allocation != evaluation
 evaluated_candidates != exhaustive_possibility_space
 absence_from_search != disproof
+open_genealogy != losslessness
+retention != refinement
 ```
 
 Aperta Veritas places this upstream problem inside inquiry.
@@ -875,11 +877,11 @@ The purpose is not to prohibit generator or evaluator change.
 
 The purpose is to expose the conditions under which successors become representable and the conditions under which they are subsequently called improvements.
 
-## 17. Lossless Inquiry
+## 17. Open Genealogy
 
-Lossless Inquiry preserves enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, and superseded conclusions to remain available for later examination and recontextualization.
+Open Genealogy keeps represented relations available so prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, and superseded conclusions can participate in later examination and recontextualization.
 
-Losslessness is an operational target, not a certified absolute property.
+Availability is represented and conditioned, not certified as an absolute property.
 
 The system attempts to preserve:
 
@@ -1365,4 +1367,4 @@ The second is the problem of allocation.
 
 The third is the problem of evaluation.
 
-Lossless Inquiry connects them by preserving prior structure and inactive branches long enough for later distinctions, allocation conditions, and recontextualization to make new relations, hypotheses, tests, inquiry operations, and successor states representable or examinable.
+Open Genealogy connects them by retaining prior structure and inactive branches long enough for later distinctions, allocation conditions, and recontextualization to make new relations, hypotheses, tests, inquiry operations, and successor states representable or examinable.

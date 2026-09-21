@@ -435,11 +435,11 @@ Blind faith insulates belief from relevant distinction or suppresses discrepancy
 
 Neither category establishes whether the proposition itself is true.
 
-## Lossless Inquiry
+## Open Genealogy
 
-Lossless Inquiry is the architectural requirement that inquiry preserve enough genealogy for earlier representations, branches, transformations, exclusions, compressions, unresolved relations, and superseded states to remain available for later examination and recontextualization.
+Open Genealogy is the architectural requirement that inquiry keep represented relations available so earlier representations, branches, transformations, exclusions, compressions, unresolved relations, and superseded states can participate in later examination and recontextualization.
 
-Losslessness is an operational target, not a certified absolute property.
+Availability is represented and conditioned, not certified as an absolute property.
 
 The architecture attempts to preserve:
 
@@ -473,7 +473,7 @@ Finite storage, finite computation, inaccessible observations, lossy encoding, f
 
 Detected loss remains represented as loss.
 
-Lossless Inquiry is not merely a requirement to keep records.
+Open Genealogy is not merely a requirement to keep records.
 
 Preservation matters because the informational significance of a represented object need not be fixed when that object is first recorded.
 

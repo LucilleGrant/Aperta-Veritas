@@ -2,7 +2,7 @@
 
 This directory contains the minimum executable Aperta Veritas ledger described in [`../OPERATIONAL_SYSTEM.md`](../OPERATIONAL_SYSTEM.md).
 
-The prototype tests whether core RTE, Convergent Inquiry, and Lossless Inquiry operations can be represented computationally rather than merely stated conceptually.
+The prototype tests whether core RTE, Convergent Inquiry, and Open Genealogy operations can be represented computationally rather than merely stated conceptually.
 
 ## Current executable contract
 
@@ -82,7 +82,7 @@ The prototype should demonstrate that:
 
 The hash chain is tamper-evident, not physically immutable.
 
-The prototype does not certify truth, losslessness, neutrality, completeness, exhaustive representation, exhaustive candidate generation, exhaustive inquiry generation, exhaustive possibility generation, optimal allocation, or exhaustive evaluation.
+The prototype does not certify truth, total retention, neutrality, completeness, exhaustive representation, exhaustive candidate generation, exhaustive inquiry generation, exhaustive possibility generation, optimal allocation, or exhaustive evaluation.
 
 It does not assume that:
 
@@ -635,11 +635,11 @@ This does not establish that unrecorded information was preserved.
 
 It also does not establish that the represented genealogy is complete.
 
-## Lossless Inquiry
+## Open Genealogy
 
-In this prototype, lossless inquiry does not mean that every possible fact, state, candidate, inquiry operation, allocation, or relation is represented.
+In this prototype, Open Genealogy does not imply that every possible fact, state, candidate, inquiry operation, allocation, or relation is represented.
 
-It means that represented inquiry structure is preserved strongly enough that later inquiry can inspect prior states, branches, distinctions, bases, support claims, generation events, inquiry operations, allocation bases, priorities, resource allocations, activation events, selections, and recontextualizations rather than requiring the current state to replace its genealogy.
+It means that represented inquiry structure remains available so later inquiry can inspect prior states, branches, distinctions, bases, support claims, generation events, inquiry operations, allocation bases, priorities, resource allocations, activation events, selections, and recontextualizations rather than requiring the current state to replace its genealogy.
 
 This matters because a branch that lacks current support can still possess an inquiry basis.
 
@@ -758,7 +758,7 @@ The test suite should be run after the current source, test, and documentation r
 
 A passing suite demonstrates only the implemented behaviors exercised by those tests.
 
-It does not establish truth, completeness, exhaustive representation, losslessness, neutrality, exhaustive candidate generation, exhaustive inquiry generation, exhaustive possibility generation, optimal allocation, or correctness outside the tested conditions.
+It does not establish truth, completeness, exhaustive representation, total retention, neutrality, exhaustive candidate generation, exhaustive inquiry generation, exhaustive possibility generation, optimal allocation, or correctness outside the tested conditions.
 
 The earlier 24-test baseline and subsequent prototype test states remain part of the implementation genealogy rather than descriptions of the current revision.
 

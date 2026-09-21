@@ -298,19 +298,19 @@ A representation presented as accurate by an agent that represents it as inaccur
 
 This definition concerns the represented relation among the agent, claim, and contradiction. It does not presume access to an agent's unrepresented internal state.
 
-## Lossless Inquiry
+## Open Genealogy
 
-The preservation of enough represented genealogy for prior observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions to remain available for later examination and recontextualization.
+The represented availability of prior inquiry relations for later examination and recontextualization, including observations, states, branches, transformations, exclusions, compressions, unresolved relations, unallocated inquiry operations, and superseded conclusions.
 
-Lossless Inquiry is not merely archival.
+Open Genealogy is not merely archival.
 
 A later distinction, observation, measurement, relation, model, condition, comparison basis, evaluator, or allocation condition can alter the represented relations involving earlier records. Preserving those records can therefore enable hypotheses, tests, comparisons, support claims, inquiry operations, or successor states that were not previously representable.
 
 Discarding an unresolved branch can remove material from which later inquiry might otherwise generate new relations or candidates.
 
-Lossless does not mean perfect, infinite, or total physical retention. Unidentified loss remains possible, and retention remains subject to represented resource constraints.
+Open Genealogy does not imply perfect, infinite, or total physical retention. Unidentified loss remains possible, and availability remains subject to represented resource constraints.
 
-Lossless Inquiry separates preservation from activation. A preserved branch need not receive current resources in order to remain available for later inquiry.
+Open Genealogy separates retention from activation. A retained branch need not receive current resources in order to remain available for later inquiry.
 
 ## Measurement
 
