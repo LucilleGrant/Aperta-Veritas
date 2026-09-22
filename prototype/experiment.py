@@ -213,6 +213,7 @@ class FixedOrderAllocator:
 
     allocator_id: str
     basis: tuple[str, ...]
+    max_active: int | None = None
 
     def allocate(
         self,
@@ -220,6 +221,10 @@ class FixedOrderAllocator:
         candidates: tuple[Candidate, ...],
     ) -> AllocationRecord:
         limit = task.resource_budget.max_evaluations
+        if self.max_active is not None:
+            if self.max_active < 0:
+                raise ValueError("max_active cannot be negative")
+            limit = min(limit, self.max_active)
         active = candidates[:limit]
         inactive = candidates[limit:]
         return AllocationRecord(
@@ -598,3 +603,374 @@ class RevisableEvaluationArchitecture:
             for evaluation in evaluations
         ):
             raise ValueError("evaluation record changed evaluator identity")
+
+
+@dataclass(frozen=True)
+class GenealogyEvent:
+    """A represented change during open recursive inquiry."""
+
+    event_id: str
+    kind: str
+    account: str
+    source_ids: tuple[str, ...] = ()
+    resulting_ids: tuple[str, ...] = ()
+    conditions: tuple[str, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.event_id.strip() or not self.kind.strip():
+            raise ValueError("genealogy event identity must be explicit")
+        if not self.account.strip():
+            raise ValueError("genealogy event account must be explicit")
+
+
+@dataclass(frozen=True)
+class OpenInquiryRevision:
+    """One represented recursive change to the experimental process."""
+
+    revision_id: str
+    added_candidates: tuple[Candidate, ...]
+    reactivate_candidate_ids: tuple[str, ...]
+    distinctions: tuple[str, ...]
+    generation_account: str
+    allocation_basis: tuple[str, ...]
+    evaluation_criteria: tuple[str, ...]
+    evaluation_scores: Mapping[str, float]
+    reopening_conditions: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        if not self.revision_id.strip():
+            raise ValueError("open inquiry revision id must be explicit")
+        if not self.distinctions:
+            raise ValueError("open inquiry revision requires a distinction")
+        if not self.generation_account.strip():
+            raise ValueError("generation revision account must be explicit")
+        if not self.allocation_basis:
+            raise ValueError("revised allocation basis must be explicit")
+        if not self.evaluation_criteria:
+            raise ValueError("revised evaluation criteria must be explicit")
+
+
+class OpenInquiryController(Protocol):
+    controller_id: str
+
+    def examine(
+        self,
+        task: ExperimentTask,
+        candidates: tuple[Candidate, ...],
+        allocation: AllocationRecord,
+        evaluations: tuple[EvaluationRecord, ...],
+    ) -> OpenInquiryRevision | None: ...
+
+
+@dataclass(frozen=True)
+class ScriptedOpenInquiry:
+    """A deterministic development controller for Architecture C."""
+
+    controller_id: str
+    revision: OpenInquiryRevision
+    trigger_score: float
+
+    def examine(
+        self,
+        task: ExperimentTask,
+        candidates: tuple[Candidate, ...],
+        allocation: AllocationRecord,
+        evaluations: tuple[EvaluationRecord, ...],
+    ) -> OpenInquiryRevision | None:
+        del task, candidates, allocation
+        if not evaluations:
+            return self.revision
+        if max(record.score for record in evaluations) <= self.trigger_score:
+            return self.revision
+        return None
+
+
+@dataclass(frozen=True)
+class OpenInquiryResult(ExperimentResult):
+    """Architecture C result with retained recursive genealogy."""
+
+    initial_generation: GenerationRecord | None = None
+    initial_allocation: AllocationRecord | None = None
+    initial_evaluations: tuple[EvaluationRecord, ...] = ()
+    genealogy: tuple[GenealogyEvent, ...] = ()
+    distinctions: tuple[str, ...] = ()
+    reopening_conditions: tuple[str, ...] = ()
+    recursion_count: int = 0
+
+
+@dataclass(frozen=True)
+class OpenRecursiveInquiryArchitecture:
+    """Minimal Architecture C from EXPERIMENT_SPEC.md."""
+
+    generator: CandidateGenerator
+    allocator: CandidateAllocator
+    evaluator: CandidateEvaluator
+    controller: OpenInquiryController
+    architecture_id: str = "architecture_c_open_recursive_inquiry"
+
+    def run(self, task: ExperimentTask) -> OpenInquiryResult:
+        generated = self.generator.generate(task)
+        initial_candidates = generated[
+            : task.resource_budget.max_candidates
+        ]
+        FixedEvaluationArchitecture._require_unique_candidate_ids(
+            initial_candidates
+        )
+        initial_generation = GenerationRecord(
+            generator_id=self.generator.generator_id,
+            candidate_ids=tuple(
+                candidate.candidate_id for candidate in initial_candidates
+            ),
+            declared_non_exhaustive=True,
+        )
+        initial_allocation = self.allocator.allocate(
+            task,
+            initial_candidates,
+        )
+        RevisableEvaluationArchitecture._validate_allocation(
+            initial_allocation,
+            initial_generation.candidate_ids,
+            task.resource_budget.max_evaluations,
+        )
+        candidate_by_id = {
+            candidate.candidate_id: candidate
+            for candidate in initial_candidates
+        }
+        initial_evaluations = tuple(
+            self.evaluator.evaluate(task, candidate_by_id[candidate_id])
+            for candidate_id in initial_allocation.active_candidate_ids
+        )
+        self._validate_evaluation_ids(
+            initial_evaluations,
+            initial_allocation.active_candidate_ids,
+        )
+
+        revision = self.controller.examine(
+            task,
+            initial_candidates,
+            initial_allocation,
+            initial_evaluations,
+        )
+        if revision is None:
+            return self._unchanged_result(
+                task,
+                initial_candidates,
+                initial_generation,
+                initial_allocation,
+                initial_evaluations,
+            )
+
+        candidates = self._admit_candidates(
+            initial_candidates,
+            revision.added_candidates,
+            task.resource_budget.max_candidates,
+        )
+        candidate_by_id = {
+            candidate.candidate_id: candidate for candidate in candidates
+        }
+        active_ids = self._revised_active_ids(
+            initial_allocation,
+            revision,
+            tuple(candidate_by_id),
+        )
+        remaining_evaluations = (
+            task.resource_budget.max_evaluations
+            - len(initial_evaluations)
+        )
+        active_ids = active_ids[:remaining_evaluations]
+        active_set = set(active_ids)
+        inactive_ids = tuple(
+            candidate_id
+            for candidate_id in candidate_by_id
+            if candidate_id not in active_set
+        )
+        allocation = AllocationRecord(
+            allocator_id=f"{self.controller.controller_id}:revised",
+            basis=revision.allocation_basis,
+            active_candidate_ids=active_ids,
+            inactive_candidate_ids=inactive_ids,
+        )
+        evaluations = tuple(
+            self._evaluate_revised(
+                candidate_by_id[candidate_id],
+                revision,
+            )
+            for candidate_id in active_ids
+        )
+        selected = FixedEvaluationArchitecture._select(evaluations)
+        generation = GenerationRecord(
+            generator_id=f"{self.controller.controller_id}:revised",
+            candidate_ids=tuple(candidate_by_id),
+            declared_non_exhaustive=True,
+        )
+        genealogy = self._genealogy(
+            revision,
+            initial_generation,
+            initial_allocation,
+            generation,
+            allocation,
+        )
+        stop_reason = (
+            "candidate budget exhausted"
+            if len(initial_candidates) + len(revision.added_candidates)
+            > len(candidates)
+            else "open recursive inquiry cycle complete"
+        )
+
+        return OpenInquiryResult(
+            architecture_id=self.architecture_id,
+            task_id=task.task_id,
+            generation=generation,
+            allocation=allocation,
+            evaluations=evaluations,
+            selected_candidate_ids=selected,
+            candidates=candidates,
+            candidates_generated=len(candidates),
+            evaluations_performed=(
+                len(initial_evaluations) + len(evaluations)
+            ),
+            stop_reason=stop_reason,
+            initial_generation=initial_generation,
+            initial_allocation=initial_allocation,
+            initial_evaluations=initial_evaluations,
+            genealogy=genealogy,
+            distinctions=revision.distinctions,
+            reopening_conditions=revision.reopening_conditions,
+            recursion_count=1,
+        )
+
+    def _unchanged_result(
+        self,
+        task: ExperimentTask,
+        candidates: tuple[Candidate, ...],
+        generation: GenerationRecord,
+        allocation: AllocationRecord,
+        evaluations: tuple[EvaluationRecord, ...],
+    ) -> OpenInquiryResult:
+        return OpenInquiryResult(
+            architecture_id=self.architecture_id,
+            task_id=task.task_id,
+            generation=generation,
+            allocation=allocation,
+            evaluations=evaluations,
+            selected_candidate_ids=(
+                FixedEvaluationArchitecture._select(evaluations)
+            ),
+            candidates=candidates,
+            candidates_generated=len(candidates),
+            evaluations_performed=len(evaluations),
+            stop_reason=task.stopping_conditions[0],
+            initial_generation=generation,
+            initial_allocation=allocation,
+            initial_evaluations=evaluations,
+        )
+
+    @staticmethod
+    def _admit_candidates(
+        initial: tuple[Candidate, ...],
+        added: tuple[Candidate, ...],
+        limit: int,
+    ) -> tuple[Candidate, ...]:
+        combined = initial + added
+        FixedEvaluationArchitecture._require_unique_candidate_ids(combined)
+        return combined[:limit]
+
+    @staticmethod
+    def _revised_active_ids(
+        initial: AllocationRecord,
+        revision: OpenInquiryRevision,
+        represented_ids: tuple[str, ...],
+    ) -> tuple[str, ...]:
+        requested = (
+            initial.active_candidate_ids
+            + revision.reactivate_candidate_ids
+            + tuple(
+                candidate.candidate_id
+                for candidate in revision.added_candidates
+            )
+        )
+        unknown = set(requested) - set(represented_ids)
+        if unknown:
+            raise ValueError(
+                "open inquiry activated unrepresented candidate ids"
+            )
+        return tuple(dict.fromkeys(requested))
+
+    def _evaluate_revised(
+        self,
+        candidate: Candidate,
+        revision: OpenInquiryRevision,
+    ) -> EvaluationRecord:
+        if candidate.candidate_id not in revision.evaluation_scores:
+            raise KeyError(
+                "no recursive evaluation score for candidate "
+                f"{candidate.candidate_id}"
+            )
+        score = float(
+            revision.evaluation_scores[candidate.candidate_id]
+        )
+        return EvaluationRecord(
+            evaluator_id=f"{self.controller.controller_id}:revised",
+            candidate_id=candidate.candidate_id,
+            criteria=revision.evaluation_criteria,
+            score=score,
+            account=(
+                f"Candidate {candidate.candidate_id} received recursive "
+                f"score {score} under revision {revision.revision_id}."
+            ),
+        )
+
+    @staticmethod
+    def _validate_evaluation_ids(
+        evaluations: tuple[EvaluationRecord, ...],
+        active_ids: tuple[str, ...],
+    ) -> None:
+        if tuple(
+            evaluation.candidate_id for evaluation in evaluations
+        ) != active_ids:
+            raise ValueError(
+                "evaluator must return one record for each active candidate"
+            )
+
+    @staticmethod
+    def _genealogy(
+        revision: OpenInquiryRevision,
+        initial_generation: GenerationRecord,
+        initial_allocation: AllocationRecord,
+        generation: GenerationRecord,
+        allocation: AllocationRecord,
+    ) -> tuple[GenealogyEvent, ...]:
+        return (
+            GenealogyEvent(
+                event_id=f"{revision.revision_id}:distinction",
+                kind="distinction",
+                account="New distinctions entered recursive examination.",
+                resulting_ids=revision.distinctions,
+            ),
+            GenealogyEvent(
+                event_id=f"{revision.revision_id}:generation",
+                kind="generator_revision",
+                account=revision.generation_account,
+                source_ids=initial_generation.candidate_ids,
+                resulting_ids=generation.candidate_ids,
+            ),
+            GenealogyEvent(
+                event_id=f"{revision.revision_id}:allocation",
+                kind="allocator_revision",
+                account="Allocation was revised under an explicit basis.",
+                source_ids=(initial_allocation.allocator_id,),
+                resulting_ids=allocation.active_candidate_ids,
+            ),
+            GenealogyEvent(
+                event_id=f"{revision.revision_id}:evaluation",
+                kind="evaluator_revision",
+                account="Evaluation criteria were revised explicitly.",
+                resulting_ids=revision.evaluation_criteria,
+            ),
+            GenealogyEvent(
+                event_id=f"{revision.revision_id}:reopening",
+                kind="reopening_conditions",
+                account="Conditions for renewed inquiry remain represented.",
+                resulting_ids=revision.reopening_conditions,
+            ),
+        )
