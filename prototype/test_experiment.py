@@ -10,6 +10,8 @@ from experiment import (
     FixedEvaluationArchitecture,
     FixedOrderAllocator,
     FixedScoreEvaluator,
+    RevisableEvaluationArchitecture,
+    RevisableScoreEvaluator,
     ResourceBudget,
     StaticGenerator,
 )
@@ -193,6 +195,136 @@ class FixedEvaluationArchitectureTests(unittest.TestCase):
 
         self.assertFalse(hasattr(result.evaluations[0], "truth"))
         self.assertFalse(hasattr(result, "truth"))
+
+
+class RevisableEvaluationArchitectureTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.candidates = (
+            Candidate("candidate_a", "First candidate."),
+            Candidate("candidate_b", "Second candidate."),
+        )
+        self.task = ExperimentTask(
+            task_id="revisable_evaluator_task",
+            initial_representation="Evaluate supplied candidates.",
+            resource_budget=ResourceBudget(
+                max_candidates=2,
+                max_evaluations=4,
+            ),
+            stopping_conditions=("revisable procedure complete",),
+        )
+        self.architecture = RevisableEvaluationArchitecture(
+            generator=StaticGenerator(
+                generator_id="fixed_generator",
+                candidates=self.candidates,
+            ),
+            allocator=FixedOrderAllocator(
+                allocator_id="fixed_allocator",
+                basis=("supplied order", "evaluation budget"),
+            ),
+            evaluator=RevisableScoreEvaluator(
+                evaluator_id="revisable_evaluator",
+                initial_criteria=("initial criterion",),
+                initial_scores={
+                    "candidate_a": 0.4,
+                    "candidate_b": 0.3,
+                },
+                revised_criteria=("revised criterion",),
+                revised_scores={
+                    "candidate_a": 0.2,
+                    "candidate_b": 0.8,
+                },
+                revision_trigger_score=0.5,
+            ),
+        )
+
+    def test_triggered_revision_changes_selected_candidate(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(
+            tuple(
+                evaluation.candidate_id
+                for evaluation in result.initial_evaluations
+                if evaluation.score == 0.4
+            ),
+            ("candidate_a",),
+        )
+        self.assertEqual(result.selected_candidate_ids, ("candidate_b",))
+
+    def test_revision_genealogy_retains_prior_and_revised_criteria(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(len(result.evaluator_revisions), 1)
+        revision = result.evaluator_revisions[0]
+        self.assertEqual(revision.prior_criteria, ("initial criterion",))
+        self.assertEqual(revision.revised_criteria, ("revised criterion",))
+        self.assertTrue(revision.trigger)
+
+    def test_revision_does_not_change_generator_or_allocator(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(result.generation.generator_id, "fixed_generator")
+        self.assertEqual(result.allocation.allocator_id, "fixed_allocator")
+
+    def test_revision_accounts_for_both_evaluation_passes(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(result.evaluations_performed, 4)
+        self.assertEqual(
+            result.stop_reason,
+            "revised evaluation procedure complete",
+        )
+
+    def test_insufficient_budget_records_unperformed_revision(self):
+        task = ExperimentTask(
+            task_id="bounded_revision",
+            initial_representation="Evaluate supplied candidates.",
+            resource_budget=ResourceBudget(
+                max_candidates=2,
+                max_evaluations=2,
+            ),
+            stopping_conditions=("revisable procedure complete",),
+        )
+
+        result = self.architecture.run(task)
+
+        self.assertEqual(result.evaluator_revisions, ())
+        self.assertEqual(
+            result.stop_reason,
+            "evaluation budget exhausted before revision",
+        )
+        self.assertEqual(result.selected_candidate_ids, ("candidate_a",))
+
+    def test_untriggered_evaluator_retains_initial_evaluations(self):
+        architecture = RevisableEvaluationArchitecture(
+            generator=self.architecture.generator,
+            allocator=self.architecture.allocator,
+            evaluator=RevisableScoreEvaluator(
+                evaluator_id="revisable_evaluator",
+                initial_criteria=("initial criterion",),
+                initial_scores={
+                    "candidate_a": 0.9,
+                    "candidate_b": 0.3,
+                },
+                revised_criteria=("revised criterion",),
+                revised_scores={
+                    "candidate_a": 0.2,
+                    "candidate_b": 0.8,
+                },
+                revision_trigger_score=0.5,
+            ),
+        )
+
+        result = architecture.run(self.task)
+
+        self.assertEqual(result.evaluator_revisions, ())
+        self.assertEqual(result.evaluations, result.initial_evaluations)
+        self.assertEqual(result.selected_candidate_ids, ("candidate_a",))
+
+    def test_revised_evaluation_does_not_create_truth_field(self):
+        result = self.architecture.run(self.task)
+
+        self.assertFalse(hasattr(result, "truth"))
+        self.assertFalse(hasattr(result.evaluator_revisions[0], "truth"))
 
 
 if __name__ == "__main__":
