@@ -10,10 +10,13 @@ from experiment import (
     FixedEvaluationArchitecture,
     FixedOrderAllocator,
     FixedScoreEvaluator,
+    OpenInquiryRevision,
+    OpenRecursiveInquiryArchitecture,
     RevisableEvaluationArchitecture,
     RevisableScoreEvaluator,
     ResourceBudget,
     StaticGenerator,
+    ScriptedOpenInquiry,
 )
 
 
@@ -325,6 +328,155 @@ class RevisableEvaluationArchitectureTests(unittest.TestCase):
 
         self.assertFalse(hasattr(result, "truth"))
         self.assertFalse(hasattr(result.evaluator_revisions[0], "truth"))
+
+
+class OpenRecursiveInquiryArchitectureTests(unittest.TestCase):
+    def setUp(self) -> None:
+        candidates = (
+            Candidate("candidate_a", "Initial candidate."),
+            Candidate("candidate_b", "Initially inactive candidate."),
+        )
+        revision = OpenInquiryRevision(
+            revision_id="open_revision_1",
+            added_candidates=(
+                Candidate(
+                    "candidate_c",
+                    "Candidate requiring the new distinction.",
+                    provenance=("open_revision_1",),
+                ),
+            ),
+            reactivate_candidate_ids=("candidate_b",),
+            distinctions=("protocol output versus physical state",),
+            generation_account=(
+                "The new distinction made candidate_c representable."
+            ),
+            allocation_basis=(
+                "activate candidates related by the new distinction",
+            ),
+            evaluation_criteria=(
+                "fit under the protocol versus physical-state distinction",
+            ),
+            evaluation_scores={
+                "candidate_a": 0.2,
+                "candidate_b": 0.6,
+                "candidate_c": 0.9,
+            },
+            reopening_conditions=(
+                "new observation distinguishes protocol and physical state",
+            ),
+        )
+        self.task = ExperimentTask(
+            task_id="missing_distinction_development_1",
+            initial_representation=(
+                "A protocol reports a binary output about a physical event."
+            ),
+            resource_budget=ResourceBudget(
+                max_candidates=3,
+                max_evaluations=4,
+            ),
+            stopping_conditions=("initial procedure complete",),
+        )
+        self.architecture = OpenRecursiveInquiryArchitecture(
+            generator=StaticGenerator(
+                generator_id="initial_generator",
+                candidates=candidates,
+            ),
+            allocator=FixedOrderAllocator(
+                allocator_id="initial_allocator",
+                basis=("initial order",),
+                max_active=1,
+            ),
+            evaluator=FixedScoreEvaluator(
+                evaluator_id="initial_evaluator",
+                criteria=("initial criterion",),
+                scores={
+                    "candidate_a": 0.4,
+                    "candidate_b": 0.3,
+                },
+            ),
+            controller=ScriptedOpenInquiry(
+                controller_id="open_controller",
+                revision=revision,
+                trigger_score=0.5,
+            ),
+        )
+
+    def test_recursive_inquiry_generates_new_candidate(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(
+            result.generation.candidate_ids,
+            ("candidate_a", "candidate_b", "candidate_c"),
+        )
+        self.assertEqual(result.candidates_generated, 3)
+
+    def test_new_distinction_is_explicit(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(
+            result.distinctions,
+            ("protocol output versus physical state",),
+        )
+
+    def test_inactive_candidate_can_be_reactivated(self):
+        limited_task = ExperimentTask(
+            task_id=self.task.task_id,
+            initial_representation=self.task.initial_representation,
+            resource_budget=ResourceBudget(
+                max_candidates=3,
+                max_evaluations=4,
+            ),
+            stopping_conditions=self.task.stopping_conditions,
+        )
+        result = self.architecture.run(limited_task)
+
+        self.assertIn("candidate_b", result.allocation.active_candidate_ids)
+
+    def test_recursive_inquiry_selects_new_candidate(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(result.selected_candidate_ids, ("candidate_c",))
+
+    def test_genealogy_records_each_revised_boundary(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(
+            tuple(event.kind for event in result.genealogy),
+            (
+                "distinction",
+                "generator_revision",
+                "allocator_revision",
+                "evaluator_revision",
+                "reopening_conditions",
+            ),
+        )
+
+    def test_prior_states_remain_available(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(
+            result.initial_generation.candidate_ids,
+            ("candidate_a", "candidate_b"),
+        )
+        self.assertEqual(len(result.initial_evaluations), 1)
+
+    def test_resource_accounting_includes_both_cycles(self):
+        result = self.architecture.run(self.task)
+
+        self.assertEqual(result.evaluations_performed, 4)
+        self.assertEqual(result.recursion_count, 1)
+
+    def test_reopening_conditions_remain_represented(self):
+        result = self.architecture.run(self.task)
+
+        self.assertTrue(result.reopening_conditions)
+        self.assertNotEqual(result.stop_reason, "epistemic closure")
+
+    def test_open_inquiry_does_not_create_truth_field(self):
+        result = self.architecture.run(self.task)
+
+        self.assertFalse(hasattr(result, "truth"))
+        self.assertFalse(hasattr(result.genealogy[0], "truth"))
 
 
 if __name__ == "__main__":
