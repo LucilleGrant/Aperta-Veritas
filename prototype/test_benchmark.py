@@ -5,8 +5,11 @@ import unittest
 from benchmark import (
     ContrastiveInquiryController,
     HeldOutVerifier,
+    PairwiseContrastiveInquiryController,
     VerificationKey,
+    benchmark_cases,
     run_answer_key_separated_case,
+    run_benchmark_suite,
 )
 from experiment import (
     AllocationRecord,
@@ -112,6 +115,105 @@ class AnswerKeySeparatedBenchmarkTests(unittest.TestCase):
         self.assertTrue(
             results["architecture_c_open_recursive_inquiry"]["recovered"]
         )
+
+
+class MultiCaseBenchmarkTests(unittest.TestCase):
+    def test_suite_contains_positive_and_negative_cases(self):
+        cases = benchmark_cases()
+
+        self.assertTrue(any(case.expected_recovery for case in cases))
+        self.assertTrue(any(not case.expected_recovery for case in cases))
+
+    def test_pairwise_controller_is_order_independent(self):
+        controller = PairwiseContrastiveInquiryController()
+        candidate = Candidate("c1", "Initial candidate.")
+        allocation = AllocationRecord(
+            "allocator",
+            ("test basis",),
+            ("c1",),
+            (),
+        )
+        first = ExperimentTask(
+            "first_order",
+            "Compare scopes.",
+            ResourceBudget(8, 12),
+            ("test complete",),
+            (
+                ObservationRecord("o1", "alpha", "Alpha record."),
+                ObservationRecord("o2", "beta", "Beta record."),
+                ObservationRecord("o3", "decoy", "Decoy record."),
+            ),
+        )
+        second = ExperimentTask(
+            "second_order",
+            "Compare scopes.",
+            ResourceBudget(8, 12),
+            ("test complete",),
+            tuple(reversed(first.observations)),
+        )
+
+        first_revision = controller.examine(
+            first, (candidate,), allocation, ()
+        )
+        second_revision = controller.examine(
+            second, (candidate,), allocation, ()
+        )
+        first_text = {
+            item.representation for item in first_revision.added_candidates
+        }
+        second_text = {
+            item.representation for item in second_revision.added_candidates
+        }
+
+        self.assertEqual(first_text, second_text)
+
+    def test_suite_keeps_keys_out_of_architecture_inputs(self):
+        report = run_benchmark_suite()
+
+        self.assertFalse(
+            report["architecture_inputs_contain_verification_keys"]
+        )
+
+    def test_open_inquiry_recovers_all_positive_cases(self):
+        report = run_benchmark_suite()
+        aggregate = report["aggregates"][
+            "architecture_c_open_recursive_inquiry"
+        ]
+
+        self.assertEqual(aggregate["positive_cases"], 4)
+        self.assertEqual(aggregate["positive_recoveries"], 4)
+        self.assertEqual(aggregate["recovery_rate"], 1.0)
+
+    def test_fixed_and_revisable_do_not_recover_positive_cases(self):
+        report = run_benchmark_suite()
+
+        for architecture_id in (
+            "architecture_a_fixed_evaluation",
+            "architecture_b_revisable_evaluation",
+        ):
+            aggregate = report["aggregates"][architecture_id]
+            self.assertEqual(aggregate["positive_recoveries"], 0)
+            self.assertEqual(aggregate["recovery_rate"], 0.0)
+
+    def test_no_architecture_triggers_negative_controls(self):
+        report = run_benchmark_suite()
+
+        for aggregate in report["aggregates"].values():
+            self.assertEqual(aggregate["negative_cases"], 2)
+            self.assertEqual(aggregate["false_positives"], 0)
+            self.assertEqual(aggregate["false_positive_rate"], 0.0)
+
+    def test_suite_reports_resource_use(self):
+        report = run_benchmark_suite()
+
+        for aggregate in report["aggregates"].values():
+            self.assertGreater(aggregate["candidates_generated"], 0)
+            self.assertGreater(aggregate["evaluations_performed"], 0)
+
+    def test_report_marks_engineering_evidence_boundary(self):
+        report = run_benchmark_suite()
+
+        self.assertIn("not research evidence", report["evidence_boundary"])
 
 
 if __name__ == "__main__":
