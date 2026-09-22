@@ -7,6 +7,24 @@ from typing import Mapping, Protocol
 
 
 @dataclass(frozen=True)
+class ObservationRecord:
+    """A public benchmark observation available to every architecture."""
+
+    observation_id: str
+    scope: str
+    account: str
+    relation: str = ""
+
+    def __post_init__(self) -> None:
+        if not self.observation_id.strip():
+            raise ValueError("observation_id must be explicit")
+        if not self.scope.strip():
+            raise ValueError("observation scope must be explicit")
+        if not self.account.strip():
+            raise ValueError("observation account must be explicit")
+
+
+@dataclass(frozen=True)
 class ResourceBudget:
     """Declared limits shared by a matched experimental run."""
 
@@ -28,6 +46,7 @@ class ExperimentTask:
     initial_representation: str
     resource_budget: ResourceBudget
     stopping_conditions: tuple[str, ...]
+    observations: tuple[ObservationRecord, ...] = ()
 
     def __post_init__(self) -> None:
         if not self.task_id.strip():
