@@ -4,6 +4,29 @@ This directory contains the minimum executable Aperta Veritas ledger described i
 
 The prototype tests whether core RTE, Convergent Inquiry, and Open Genealogy operations can be represented computationally rather than merely stated conceptually.
 
+## Comparative experiment layer
+
+The prototype now also contains the executable comparison specified in [`../EXPERIMENT_SPEC.md`](../EXPERIMENT_SPEC.md):
+
+- [`experiment.py`](experiment.py) implements the shared task and resource interface, Architecture A with fixed evaluation, Architecture B with revisable evaluation, and Architecture C with one bounded cycle of open recursive inquiry;
+- [`development_task.py`](development_task.py) runs the first scripted matched development task and labels its output as an engineering check rather than research evidence;
+- [`benchmark.py`](benchmark.py) separates shared public observations from a held-out verification key and applies the verifier only after all architecture runs complete;
+- [`test_experiment.py`](test_experiment.py), [`test_development_task.py`](test_development_task.py), and [`test_benchmark.py`](test_benchmark.py) test the comparative architecture, matched task, and answer-key boundary.
+
+Run the complete suite from the repository root:
+
+```text
+python -m unittest discover -s prototype -p 'test_*.py'
+```
+
+Run the answer-key-separated development case:
+
+```text
+PYTHONPATH=prototype python -c 'import json; from benchmark import run_answer_key_separated_case; print(json.dumps(run_answer_key_separated_case(), indent=2, sort_keys=True))'
+```
+
+The current answer-key-separated case is still a development benchmark. Its generator is a bounded contrastive rule over public observation scopes, not a general distinction-discovery system.
+
 ## Current executable contract
 
 The architecture requires that the implementation be capable of representing the following separately:
@@ -722,7 +745,7 @@ The implementation now:
 - preserves open but inactive inquiry possibilities;
 - maintains a tamper-evident hash chain over recorded genealogy.
 
-The revised semantic test suite tests these separations adversarially, including:
+The current 108-test suite tests these separations and the comparative experiment layer, including:
 
 - basis without support;
 - acceptance without support;

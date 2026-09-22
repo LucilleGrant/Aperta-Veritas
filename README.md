@@ -749,6 +749,12 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 - [`prototype/README.md`](prototype/README.md) - executable prototype overview
 - [`prototype/aperta_veritas.py`](prototype/aperta_veritas.py) - current executable inquiry ledger
 - [`prototype/test_aperta_veritas.py`](prototype/test_aperta_veritas.py) - executable semantic and structural tests
+- [`prototype/experiment.py`](prototype/experiment.py) - comparative Architecture A, B, and C implementation
+- [`prototype/development_task.py`](prototype/development_task.py) - first matched scripted development task
+- [`prototype/benchmark.py`](prototype/benchmark.py) - answer-key-separated development benchmark and verifier
+- [`prototype/test_experiment.py`](prototype/test_experiment.py) - comparative architecture tests
+- [`prototype/test_development_task.py`](prototype/test_development_task.py) - matched development-task tests
+- [`prototype/test_benchmark.py`](prototype/test_benchmark.py) - held-out verification-boundary tests
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) - contribution and revision protocol
 - [`CHANGELOG.md`](CHANGELOG.md) - conceptual, semantic, structural, and implementation genealogy
 - [`CITATION.cff`](CITATION.cff) - citation metadata

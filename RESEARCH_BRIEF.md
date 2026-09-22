@@ -202,7 +202,7 @@ Both hypotheses are testable and remain open to rejection or revision.
 
 ## Current implementation
 
-The repository includes a Python inquiry ledger and an adversarial semantic test suite.
+The repository includes a Python inquiry ledger, three comparative reference architectures, matched development tasks, a held-out verifier, and an adversarial semantic and structural test suite.
 
 The prototype currently represents:
 
@@ -218,7 +218,16 @@ The prototype currently represents:
 - stopping and reopening conditions;
 - a tamper-evident genealogy.
 
-The current suite contains **71 passing tests**. Those tests establish only the encoded behaviors under tested conditions. They do not establish that the system has complete information, generates every relevant alternative, allocates resources optimally, or identifies definitive truth.
+The comparative layer currently implements:
+
+- fixed generation, allocation, and evaluation;
+- fixed generation and allocation with evaluator revision;
+- one bounded cycle of open recursive inquiry across generation, allocation, and evaluation;
+- explicit resource ceilings and stopping records;
+- retained initial and revised states;
+- answer-key separation between public architecture inputs and held-out verification.
+
+The current suite contains **108 passing tests**. Those tests establish only the encoded behaviors under tested conditions. The present answer-key-separated benchmark remains a development check using a bounded rule-based controller. Neither the tests nor the development result establish that the system has complete information, autonomously generates arbitrary relevant alternatives, allocates resources optimally, or identifies definitive truth.
 
 ## Proposed research program
 
