@@ -30,9 +30,9 @@ The current implementation is a bounded research prototype, not a demonstration 
 
 Consider a simplified self-improvement loop:
 
-\[
+$$
 S_t \rightarrow G_t(S_t) \rightarrow C_t \rightarrow A_t(C_t) \rightarrow E_t(C_t) \rightarrow S_{t+1}
-\]
+$$
 
 where:
 
@@ -47,25 +47,25 @@ This loop contains at least three distinct problems.
 
 First:
 
-\[
+$$
 G_t(S_t) \rightarrow C_t
-\]
+$$
 
 determines which candidates become available.
 
 Second:
 
-\[
+$$
 A_t(C_t)
-\]
+$$
 
 participates in determining which represented possibilities receive resources and become active.
 
 Third:
 
-\[
+$$
 E_t(C_t)
-\]
+$$
 
 determines how represented candidates or results are evaluated.
 
@@ -79,23 +79,23 @@ A system also cannot evaluate a difference requiring a distinction it cannot rep
 
 Therefore:
 
-\[
+$$
 \text{generation} \neq \text{allocation}
-\]
+$$
 
-\[
+$$
 \text{allocation} \neq \text{evaluation}
-\]
+$$
 
-\[
+$$
 \text{generation} \neq \text{evaluation}
-\]
+$$
 
 and:
 
-\[
+$$
 \text{evaluated candidates} \neq \text{exhaustive possibility space}
-\]
+$$
 
 The allocator and evaluator introduce additional recursive problems.
 
@@ -157,9 +157,9 @@ It may establish only that the current generative process did not produce the al
 
 This gives:
 
-\[
+$$
 \text{absence from search} \neq \text{disproof}
-\]
+$$
 
 The same structure appears in inquiry more generally.
 
@@ -213,21 +213,21 @@ possible inquiry operations
 
 These relations remain separate:
 
-\[
+$$
 \text{inquiry basis} \neq \text{inquiry priority}
-\]
+$$
 
-\[
+$$
 \text{inquiry priority} \neq \text{resource allocation}
-\]
+$$
 
-\[
+$$
 \text{allocation basis} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{resource allocation} \neq \text{support}
-\]
+$$
 
 A generated possibility can remain unallocated.
 
@@ -237,17 +237,17 @@ An inactive branch can remain genealogically represented.
 
 Therefore:
 
-\[
+$$
 \text{open inquiry} \neq \text{active inquiry}
-\]
+$$
 
-\[
+$$
 \text{not allocated} \neq \text{rejected}
-\]
+$$
 
-\[
+$$
 \text{inactive} \neq \text{erased}
-\]
+$$
 
 No neutral allocator is assumed.
 
@@ -269,23 +269,23 @@ It does not establish that a presently supported conclusion is identical with de
 
 Applied to recursive self-improvement:
 
-\[
+$$
 \text{generated successor} \neq \text{improved successor}
-\]
+$$
 
-\[
+$$
 \text{allocated successor} \neq \text{improved successor}
-\]
+$$
 
-\[
+$$
 \text{selected successor} \neq \text{improved successor}
-\]
+$$
 
 and:
 
-\[
+$$
 \text{higher evaluator score} \neq \text{improvement}
-\]
+$$
 
 unless a represented comparison basis supports that relation under stated conditions.
 
@@ -297,9 +297,9 @@ A refinement is a revision for which greater accuracy or support is established 
 
 Therefore:
 
-\[
+$$
 \text{revision} \neq \text{refinement}
-\]
+$$
 
 A system changing itself does not establish that it has improved itself.
 
@@ -370,33 +370,33 @@ A **support claim** asserts that such a relation bears on whether the conclusion
 
 Therefore:
 
-\[
+$$
 \text{basis} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{acceptance basis} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{inquiry basis} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{inquiry basis} \neq \text{inquiry priority}
-\]
+$$
 
-\[
+$$
 \text{allocation basis} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{resource allocation} \neq \text{support}
-\]
+$$
 
-\[
+$$
 \text{support claim} \neq \text{truth}
-\]
+$$
 
 The existence of a support claim does not certify that the represented relation actually supports truth.
 
@@ -469,15 +469,15 @@ None defines improvement or truth by category alone.
 
 A conventional improvement experiment can compare:
 
-\[
+$$
 E(S_t)
-\]
+$$
 
 with:
 
-\[
+$$
 E(S_{t+1})
-\]
+$$
 
 and retain \(S_{t+1}\) when the latter receives the preferred evaluation.
 
@@ -487,15 +487,15 @@ It does not establish improvement independently of the evaluator, criteria, dist
 
 A recursively revisable system must also be capable of representing:
 
-\[
+$$
 E_t \rightarrow E_{t+1}
-\]
+$$
 
 The resulting expression:
 
-\[
+$$
 E_{t+1}(S_{t+1}) > E_t(S_t)
-\]
+$$
 
 does not by itself establish improvement because both the evaluated object and the evaluation process have changed.
 
@@ -550,9 +550,9 @@ It does not establish epistemic superiority.
 
 A recursively revisable system must therefore also be capable of representing:
 
-\[
+$$
 A_t \rightarrow A_{t+1}
-\]
+$$
 
 The successor allocator can alter:
 
@@ -589,9 +589,9 @@ A measurement is a represented result produced relative to one or more distincti
 
 Therefore:
 
-\[
+$$
 \text{distinction} \neq \text{measurement}
-\]
+$$
 
 A measurement depends on the distinction applied, its operationalization, the object or process examined, the method, and the conditions under which the result was produced.
 
@@ -617,15 +617,15 @@ Support claims can involve observations, tests, predictions, contradictions, log
 
 Therefore:
 
-\[
+$$
 \text{support} \neq \text{measurement}
-\]
+$$
 
 and:
 
-\[
+$$
 \text{conclusion} \neq \text{support}
-\]
+$$
 
 This matters for RSI because an evaluator can change not only what is measured, but the relation by which represented results are claimed to bear on a designation of improvement.
 
@@ -686,49 +686,49 @@ A useful test is to preserve both predecessor and successor evaluators.
 
 Let:
 
-\[
+$$
 E_t
-\]
+$$
 
 be the predecessor evaluator and:
 
-\[
+$$
 E_{t+1}
-\]
+$$
 
 the successor evaluator.
 
 Then compare:
 
-\[
+$$
 E_t(S_t)
-\]
+$$
 
-\[
+$$
 E_t(S_{t+1})
-\]
+$$
 
-\[
+$$
 E_{t+1}(S_t)
-\]
+$$
 
-\[
+$$
 E_{t+1}(S_{t+1})
-\]
+$$
 
 This produces four represented evaluation relations.
 
 Suppose:
 
-\[
+$$
 E_t(S_t) > E_t(S_{t+1})
-\]
+$$
 
 while:
 
-\[
+$$
 E_{t+1}(S_{t+1}) > E_{t+1}(S_t)
-\]
+$$
 
 The successor is preferred only after the evaluator changes.
 
@@ -754,9 +754,9 @@ Failure to perform it is not equivalent to rejection of the comparison.
 
 A generator can change recursively:
 
-\[
+$$
 G_t \rightarrow G_{t+1}
-\]
+$$
 
 The transformation can alter:
 
@@ -807,9 +807,9 @@ It makes the boundary explicit.
 
 An allocator can change recursively:
 
-\[
+$$
 A_t \rightarrow A_{t+1}
-\]
+$$
 
 The transformation can alter:
 
@@ -951,9 +951,9 @@ The fact of selection does not establish improvement.
 
 Therefore:
 
-\[
+$$
 \text{selection} \neq \text{improvement}
-\]
+$$
 
 Generation, allocation, evaluation, selection, and designation of improvement remain separate represented relations.
 
@@ -996,29 +996,29 @@ An unresolved branch can therefore retain an inquiry basis even when present epi
 
 This gives:
 
-\[
+$$
 \text{failure to establish} \neq \text{disproof}
-\]
+$$
 
-\[
+$$
 \text{failure to establish} \neq \text{elimination}
-\]
+$$
 
-\[
+$$
 \text{current support} \neq \text{future inquiry potential}
-\]
+$$
 
-\[
+$$
 \text{open inquiry} \neq \text{active inquiry}
-\]
+$$
 
-\[
+$$
 \text{not allocated} \neq \text{rejected}
-\]
+$$
 
-\[
+$$
 \text{inactive} \neq \text{erased}
-\]
+$$
 
 Preserving branch genealogy prevents temporary selection or allocation from automatically becoming historical erasure.
 
@@ -1421,65 +1421,65 @@ Those selections do not establish their own correctness.
 
 The distinction:
 
-\[
+$$
 \text{generation} \neq \text{allocation}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{allocation} \neq \text{evaluation}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{generation} \neq \text{evaluation}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{basis} \neq \text{support}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{inquiry basis} \neq \text{inquiry priority}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{resource allocation} \neq \text{support}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{support} \neq \text{measurement}
-\]
+$$
 
 is itself a claim.
 
 The distinction:
 
-\[
+$$
 \text{distinction} \neq \text{measurement}
-\]
+$$
 
 is itself a claim.
 
