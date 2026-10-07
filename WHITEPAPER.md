@@ -355,17 +355,17 @@ Aperta Veritas calls this risk **representation contamination**. Contamination i
 Therefore:
 
 ```text
-+object != representation
-+represented_source != interpretation
-+observation != inference
-+inference != assumption
-+provenance != support
-+coherence != provenance
-+plausibility != provenance
-+representation_integrity != exhaustive_retention
-+```
-+
-+Integrity is relational and claim-relative. A summary can retain sufficient integrity for one purpose while omitting structure needed for another. A source-faithful representation can preserve a false source claim. A true conclusion can be reached through a genealogy that does not justify treating it as supported.
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+provenance != support
+coherence != provenance
+plausibility != provenance
+representation_integrity != exhaustive_retention
+```
+
+Integrity is relational and claim-relative. A summary can retain sufficient integrity for one purpose while omitting structure needed for another. A source-faithful representation can preserve a false source claim. A true conclusion can be reached through a genealogy that does not justify treating it as supported.
 +
 +Recursive inference makes the problem more difficult because derived representations become inputs to later inquiry. An interpretation can become a premise; the premise can become background context; the context can later be recalled as though it belonged to the source.
 +
