@@ -27,6 +27,24 @@ PYTHONPATH=prototype python -c 'import json; from benchmark import run_answer_ke
 
 The current answer-key-separated case is still a development benchmark. Its generator is a bounded contrastive rule over public observation scopes, not a general distinction-discovery system.
 
+## Evaluator self-confirmation development case
+
+[`evaluator_self_confirmation.py`](evaluator_self_confirmation.py) constructs one bounded rank-reversal case. A proposed successor replaces the predecessor criterion with a successor-defined approval criterion and becomes preferred under the revised evaluator.
+
+The comparison records three outcomes:
+
+- fixed evaluation retains the incumbent under the predecessor criterion;
+- revisable evaluation accepts the successor under the revised criterion;
+- open cross-evaluation preserves both rankings, exposes their reversal, and withholds the improvement designation as unresolved.
+
+A held-out outcome verifier is applied only after those decisions are recorded. It is not available to any architecture during selection. The case does not establish that the predecessor evaluator is correct, that every rank reversal is self-confirmation, or that cross-evaluation solves the evaluator-boundary problem.
+
+Run the case from the repository root:
+
+```text
+python prototype/evaluator_self_confirmation.py
+```
+
 ## Current executable contract
 
 The architecture requires that the implementation be capable of representing the following separately:
