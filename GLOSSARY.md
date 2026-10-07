@@ -56,6 +56,10 @@ In Aperta Veritas, Amor names relational pressure toward contact, cooperation, i
 
 Amor is not a moral verdict and does not determine truth or accuracy by category alone.
 
+## Assumption
+
+A proposition or condition admitted for the purpose of inquiry without being established by the represented support available in that inquiry. An assumption can be useful without becoming observation, support, or truth.
+
 ## Basis
 
 A represented reason, source, condition, relation, measurement, belief, rule, authority, criterion, or other represented element associated with acceptance, evaluation, inquiry, allocation, or support.
@@ -256,6 +260,14 @@ A generator can constrain inquiry by determining which candidates become represe
 
 Its output is not assumed to exhaust the relevant possibility space.
 
+## Inference
+
+A transformation that derives a proposition or relation from represented premises under an explicit or implicit rule, model, method, or pattern. An inference remains distinguishable from observation and from the premises it transforms.
+
+## Interpretation
+
+A proposed account of what represented material means or how its elements relate. Interpretation can be necessary for use without becoming identical to represented source material.
+
 ## Inquiry basis
 
 A represented basis under which further examination of a claim, hypothesis, observation, anomaly, relation, distinction, alternative, unresolved branch, or other represented object could occur.
@@ -352,6 +364,10 @@ An open inquiry can receive no current resources while remaining available for l
 
 Operational stopping, inactivity, or lack of allocation does not by itself close inquiry.
 
+## Provenance
+
+The represented origin and transformation history of a datum, claim, representation, or inquiry state. Provenance can expose how a state was produced without certifying the truth or completeness of that state.
+
 ## Rational faith
 
 Belief, faith, or trust that preserves its basis, uncertainty, represented support, and conditions for revision.
@@ -359,6 +375,10 @@ Belief, faith, or trust that preserves its basis, uncertainty, represented suppo
 Rational faith can exceed what present support establishes while remaining open to relevant distinction.
 
 It is defined by its relation to inquiry and revision, not by whether its object is ultimately true or false.
+
+## Recoverability
+
+The represented capacity to retrieve or reconstruct material and enough of its genealogy for a specified inquiry purpose. Recoverability is not identical to active propagation, storage, completeness, or truth.
 
 ## Recontextualization
 
@@ -401,6 +421,18 @@ A represented limit, unresolved relation, known exclusion, uncertainty, inactive
 A residual is not presumed to be error or noise.
 
 A residual can provide an inquiry basis without thereby supporting any particular explanation as true.
+
+## Representation
+
+A retained state that stands in one or more specified or inferred relations to an object, process, event, source, prior state, or other represented material. A representation is not automatically identical to its object.
+
+## Representation contamination
+
+A failure mode in which introduced interpretation, inference, assumption, evaluation, or other transformed material becomes indistinguishable from the source-relative representation it changed. Contamination is not identical to falsity.
+
+## Representation integrity
+
+The degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it. Integrity is relational, claim-relative, and distinct from truth, support, coherence, and exhaustive retention.
 
 ## Resource allocation
 
@@ -471,6 +503,10 @@ Fear, dread, apprehension, alarm, or anxiety.
 In Aperta Veritas, Timor names relational pressure toward separation, control, scarcity, conditionality, defense, prohibition, and preservation of boundaries.
 
 Timor is not a moral verdict and does not determine truth or accuracy by category alone.
+
+## Transformation
+
+A represented operation or change connecting one state to another. Interpretation, inference, compression, summarization, translation, classification, selection, and evaluation can all be transformations. Recording a transformation does not establish that it preserved meaning or improved inquiry.
 
 ## Truth
 
