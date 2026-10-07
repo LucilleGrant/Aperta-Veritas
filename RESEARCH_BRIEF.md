@@ -231,7 +231,7 @@ The comparative layer currently implements:
 - retained initial and revised states;
 - answer-key separation between public architecture inputs and held-out verification.
 
-The current suite contains **116 passing tests**. Those tests establish only the encoded behaviors under tested conditions. The present answer-key-separated benchmark remains a development check using a bounded rule-based controller. Neither the tests nor the development result establish that the system has complete information, autonomously generates arbitrary relevant alternatives, allocates resources optimally, or identifies definitive truth.
+The current suite contains **124 passing tests**. Those tests establish only the encoded behaviors under tested conditions. The present answer-key-separated benchmark remains a development check using a bounded rule-based controller. Neither the tests nor the development result establish that the system has complete information, autonomously generates arbitrary relevant alternatives, allocates resources optimally, or identifies definitive truth.
 
 ## Proposed research program
 
