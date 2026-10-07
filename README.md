@@ -14,7 +14,7 @@ The current repository contains:
 - fixed-evaluator, revisable-evaluator, and open-recursive reference architectures;
 - a deterministic, answer-key-separated development benchmark;
 - explicit resource accounting, stopping conditions, and retained genealogy;
-- **116 passing tests** in the current GitHub Actions suite.
+- **124 passing tests** in the current GitHub Actions suite.
 
 The tests establish encoded behavior under constructed conditions. The benchmark uses a bounded rule-based controller. Neither establishes autonomous recursive self-improvement, general distinction discovery, improved frontier-model capability, optimal compute allocation, or truth certification.
 
@@ -813,9 +813,11 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 - [`prototype/experiment.py`](prototype/experiment.py) - comparative Architecture A, B, and C implementation
 - [`prototype/development_task.py`](prototype/development_task.py) - first matched scripted development task
 - [`prototype/benchmark.py`](prototype/benchmark.py) - answer-key-separated development benchmark and verifier
+- [`prototype/evaluator_self_confirmation.py`](prototype/evaluator_self_confirmation.py) - constructed evaluator self-confirmation and cross-evaluation case
 - [`prototype/test_experiment.py`](prototype/test_experiment.py) - comparative architecture tests
 - [`prototype/test_development_task.py`](prototype/test_development_task.py) - matched development-task tests
 - [`prototype/test_benchmark.py`](prototype/test_benchmark.py) - held-out verification-boundary tests
+- [`prototype/test_evaluator_self_confirmation.py`](prototype/test_evaluator_self_confirmation.py) - evaluator rank-reversal and evidence-boundary tests
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) - contribution and revision protocol
 - [`CHANGELOG.md`](CHANGELOG.md) - conceptual, semantic, structural, and implementation genealogy
 - [`CITATION.cff`](CITATION.cff) - citation metadata
