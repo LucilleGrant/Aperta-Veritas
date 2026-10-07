@@ -33,7 +33,13 @@ An inquiry state contains, where represented:
 - **object:** the event, relation, system, or question under inquiry;
 - **observation:** represented contact with the object;
 - **datum:** information retained from an observation, source, instrument, or prior representation;
+- **represented source:** material retained from a source or parent state under represented acquisition conditions;
 - **provenance:** the origin and transformation history of each datum and representation;
+- **interpretation:** a proposed account of what represented material means or how its elements relate;
+- **inference:** a represented transformation deriving a proposition or relation from represented premises under a rule, model, method, or pattern;
+- **assumption:** a proposition or condition admitted for inquiry without being established by the represented support available in that inquiry;
+- **transformation role:** the represented role of a change, such as interpretation, inference, compression, translation, classification, evaluation, or selection;
+- **recoverability status:** whether material is active, inactive but genealogically recoverable for a specified purpose, or unrecoverable under the represented state;
 - **distinction:** a specification of a variable, category, relation, boundary, or other basis by which possibilities can differ;
 - **measurement:** a represented result produced relative to one or more distinctions, methods, and conditions;
 - **claim:** a representation presented as accurate or true under stated or unstated conditions;
@@ -115,6 +121,12 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+represented_source != interpretation
+observation != inference
+inference != assumption
+plausibility != provenance
+preserved != active
+recoverable != complete
 ```
 
 These invariants prevent distinct relations from being silently compressed into one another. They remain represented claims within the system and remain open to recursive examination.
@@ -918,7 +930,8 @@ It can include:
 - values and evaluators;
 - generators and generation histories;
 - allocators and allocation histories;
-- provenance and transformations;
+- represented sources, provenance, transformation roles, interpretations, inferences, and assumptions;
+- active, inactive-but-recoverable, and unrecoverable statuses where relevant;
 - open, active, inactive, and unallocated branches;
 - contradictions and residuals;
 - boundaries;
@@ -927,7 +940,7 @@ It can include:
 
 The output does not contain a truth certificate.
 
-The output does not establish that all relevant alternatives, distinctions, observations, relations, measurements, bases, support claims, generators, inquiry operations, allocation bases, or candidate states have been represented.
+The output does not establish that all relevant alternatives, distinctions, observations, relations, measurements, bases, support claims, generators, inquiry operations, allocation bases, transformations, provenance dependencies, or candidate states have been represented.
 
 The output remains available as input to renewed RTE.
 
