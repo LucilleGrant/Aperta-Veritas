@@ -3,13 +3,15 @@
 ## Recursive Truth Exposure
 
 Lucille Grant  
-Draft 0.3.1, 2026
+Draft 0.4.0, 2026
 
 ## Abstract
 
 Aperta Veritas is a recursive process for exposing truth claims and keeping inquiry open to distinctions, relations, hypotheses, tests, and alternatives that are not yet represented.
 
 Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, allocators, evaluators, criteria, transformations, selections, resource allocations, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
+
+The current formulation also examines representation integrity under recursive inference: whether source-relative material remains distinguishable from interpretations, inferences, assumptions, evaluations, compressions, and other transformations required to produce later states.
 
 Aperta Veritas begins from distinctions among **generation**, **allocation**, and **evaluation**.
 
@@ -1253,6 +1255,15 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+provenance != support
+plausibility != provenance
+preserved != active
+recoverable != complete
+representation_integrity != exhaustive_retention
 ```
 
 These invariants are safeguards against silent semantic compression.
@@ -1293,6 +1304,8 @@ Its preservation strategy can lose information.
 
 Its genealogy can fail to preserve relations needed for later recontextualization.
 
+Its provenance roles can misclassify interpretation, inference, assumption, or evaluation as source-relative material.
+
 Its recontextualization process can introduce unsupported relations.
 
 Its attempt to keep genealogy available can fail.
@@ -1311,9 +1324,17 @@ It cannot establish that its presently supported conclusion is identical with de
 
 No conclusion about the process is exempt from the process by which conclusions are examined and revised.
 
-## 25. Current research question
+## 25. Current research questions
 
-The immediate application to recursive self-improvement is now broader than evaluator stability alone.
+The general research question is:
+
+> Under incomplete representation and finite resources, how can inquiry preserve or expose enough source-relative and transformational genealogy to detect consequential representation drift while still permitting useful inference, compression, and revision?
+
+This includes questions about claim-relative provenance sufficiency, recovery of inactive genealogy, role classification, independent routes, blind qualification, and the cost of maintaining examinable transformation histories.
+
+These questions precede any particular application.
+
+The application to recursive self-improvement is broader than evaluator stability alone.
 
 The central research question is:
 
@@ -1345,6 +1366,22 @@ These hypotheses remain unestablished.
 The framework therefore treats them as objects of inquiry rather than architectural axioms.
 
 ## 26. Current claim
+
+Inquiry operates on represented states. Observation, interpretation, inference, assumption, evaluation, and conclusion can contribute differently to those states. When the transformations among them are concealed or destroyed, a later representation can remain coherent while losing the ability to distinguish source-relative material from introduced structure.
+
+Aperta Veritas therefore proposes an open, revisable architecture that:
+
+- distinguishes present support from truth, acceptance, confidence, value, priority, and allocation;
+- distinguishes observation and represented source material from interpretation, inference, and assumption;
+- exposes generation, allocation, and evaluation as separate but coupled operations;
+- preserves active and inactive-but-recoverable genealogy where resources permit;
+- records detected loss without treating unidentified loss as impossible;
+- permits new distinctions to recontextualize retained states without rewriting their historical content;
+- applies the same examination to its own representations, transformations, and integrity claims.
+
+This architecture can make omissions, transformations, and boundary conditions more examinable. It does not certify truth, completeness, neutrality, total retention, correct role classification, optimal allocation, or representation integrity.
+
+### Recursive systems application
 
 A system capable only of evaluating represented candidates cannot evaluate an improvement that never becomes representable.
 
