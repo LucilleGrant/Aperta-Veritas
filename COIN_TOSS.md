@@ -35,3 +35,4 @@ physical state
 → measurement
 → record
 → reported result
+```
