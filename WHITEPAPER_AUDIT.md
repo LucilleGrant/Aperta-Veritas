@@ -8,6 +8,75 @@ The object of this audit is the draft whitepaper `WHITEPAPER.md` and the reposit
 
 The document represents Aperta Veritas through stated semantics and operations. The representation remains connected to examination, implementation, criticism, revision, and genealogy.
 
+## Draft 0.4.0 RTE audit
+
+Draft 0.4.0 was produced through a repository-wide reconciliation against later project work on representation integrity, recursive inference, provenance roles, and recoverability.
+
+### Review input and scope
+
+The review input consisted of the existing repository, its preserved audit and changelog, and later project conversations. Those conversations are treated as development inputs, not as authority. Proposed additions were compared against the existing architecture before inclusion.
+
+The governing question was whether the repository remained the most accurate current representation of Aperta Veritas rather than whether it served a particular application, employer, funder, or audience.
+
+### First exposure: transformation represented without sufficient role distinction
+
+Draft 0.3.1 represented transformations and provenance but did not provide a canonical distinction among represented source material, interpretation, inference, assumption, evaluation, and conclusion.
+
+This allowed the architecture to record that a transformation occurred without adequately specifying the epistemic role of what the transformation introduced.
+
+The correction adds explicit provenance roles while preserving that role labels can themselves be wrong and remain open to RTE.
+
+### Second exposure: preservation compressed into propagation
+
+Later development exposed a possible ambiguity between retaining material genealogically and keeping it active in subsequent reasoning.
+
+Draft 0.4.0 distinguishes:
+
+```text
+active
+inactive but genealogically recoverable
+unrecoverable under the represented state
+```
+
+This does not claim that storage guarantees recoverability, that recoverability guarantees completeness, or that every retained item should receive resources.
+
+### Third exposure: recursive inference can conceal transformation
+
+Derived representations can become inputs to later reasoning. An interpretation can become a premise, then background context, then material treated as though it belonged to the source.
+
+The correction defines representation integrity relationally as the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+
+It does not identify representation integrity with truth, support, coherence, plausibility, source fidelity, or exhaustive retention.
+
+### Application-boundary decision
+
+The later manifestation proposition remains outside the foundations of canonical AV. It is retained in the representation-integrity document as an object of inquiry and as context for an illustrative Gemini case.
+
+The audit found no represented basis for treating manifestation as quantum mechanics, consciousness-caused wavefunction collapse, or a physical mechanism established by AV. Structural similarity in language concerning probability, distinction, and measurement does not establish shared mechanism or ontology.
+
+### Evidence-status correction
+
+The Gemini exchange is classified as an illustrative case, not empirical validation of a general model failure. The document records what the case can illustrate and the additional corpus, controls, coding, reliability procedures, and replication needed for stronger claims.
+
+### Application separation
+
+AI and recursive self-improvement documents remain applications of the general framework. Representation integrity is stated generally before its AI application. No capability, alignment, safety, hallucination-prevention, or truth-certification claim is inferred from the new architecture.
+
+### Formatting correction
+
+The repository-wide formatting pass identified and repaired an unclosed code fence in `COIN_TOSS.md`. The whitepaper integration was also checked for introduced diff-marker artifacts before finalization.
+
+### Current residuals
+
+- The prototype does not yet implement complete first-class role labels for every interpretation, inference, and assumption described by the 0.4.0 specification.
+- Claim-relative sufficiency of provenance remains under-specified and requires operational tests.
+- Provenance records can produce genealogical theater without preserving the relations relevant to a claim.
+- Recoverability depends on purpose, representation, tools, permissions, and resources; it is not a binary property established by storage alone.
+- The frequency and practical importance of representation contamination remain empirical questions.
+- Manifestation remains an external application or object of inquiry unless later work establishes a canonical role.
+
+These residuals remain open rather than being converted into claims of completion.
+
 ## Draft 0.3.1 RTE audit
 
 Draft 0.3.1 was produced through recursive examination after external review exposed a conflict in the framework's account of truth.
