@@ -294,6 +294,11 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+represented_source != interpretation
+observation != inference
+inference != assumption
+plausibility != provenance
+preserved != active
 ```
 
 These distinctions are themselves open to examination.
@@ -569,6 +574,32 @@ Genealogy preserves both the historical representation and its later recontextua
 
 ---
 
+## Representation integrity
+
+Representation changes through interpretation, inference, assumption, compression, translation, evaluation, and selection. These transformations are necessary to inquiry, but they should not silently become indistinguishable from the represented material they transform.
+
+Aperta Veritas treats **representation integrity** as the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+
+A useful genealogy is:
+
+```text
+A [represented source state]
+-> R1 [interpretation, inference, assumption, or other transformation]
+-> B [derived representation]
+-> R2 [further transformation]
+-> C [later derived representation]
+```
+
+The objective is not to prevent inference. It is to keep sufficient provenance for later inquiry to distinguish what was represented from what was introduced, transformed, or concluded.
+
+Representation integrity is not identical to truth, completeness, or exhaustive retention. A source-faithful representation can preserve a false source claim, and a true conclusion can be reached through an inadequately represented genealogy.
+
+Preservation also does not require active propagation. Material can be active, inactive but genealogically recoverable, or unrecoverable under the represented state. These statuses remain distinct where relevant.
+
+See [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md) for the extended formulation, failure modes, operational record, limits, and illustrative case study.
+
+---
+
 ## Values and selection
 
 Truth does not determine what an agent ought to value.
@@ -708,6 +739,9 @@ The current draft focuses on:
 - Convergent Inquiry;
 - open generative inquiry;
 - genealogical representation;
+- representation integrity under recursive inference;
+- explicit interpretation, inference, assumption, and transformation roles;
+- active, inactive-but-recoverable, and unrecoverable states;
 - recontextualization;
 - distinction and measurement;
 - basis and support separation;
@@ -741,6 +775,7 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 - [`SEMANTIC_FOUNDATIONS.md`](SEMANTIC_FOUNDATIONS.md) - semantic foundations
 - [`GLOSSARY.md`](GLOSSARY.md) - terminology
 - [`CORE_ARCHITECTURE.md`](CORE_ARCHITECTURE.md) - system architecture
+- [`Representation-Integrity-Under-Recursive-Inference.md`](Representation-Integrity-Under-Recursive-Inference.md) - provenance and integrity across recursive transformations
 - [`OPERATIONAL_SYSTEM.md`](OPERATIONAL_SYSTEM.md) - operational RTE process
 - [`AI_ALIGNMENT.md`](AI_ALIGNMENT.md) - implications for AI epistemic alignment
 - [`BOUNDARY_TESTING.md`](BOUNDARY_TESTING.md) - boundary testing procedure
@@ -766,4 +801,4 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 **Lucille Grant**
 
 Aperta Veritas  
-Draft 0.3.1, 2026
+Draft 0.4.0, 2026

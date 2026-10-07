@@ -359,6 +359,50 @@ A new representation is therefore not necessarily a mere addition to an unchange
 
 Inquiry changes the represented environment in which subsequent inquiry occurs.
 
+## Representation integrity
+
+The architecture distinguishes a represented source or parent state from the transformations that produce later states.
+
+Relevant transformation roles can include:
+
+- interpretation;
+- inference;
+- assumption;
+- compression;
+- translation;
+- classification;
+- evaluation;
+- selection;
+- conclusion.
+
+A generalized transformation genealogy can be represented as:
+
+```text
+A [represented source or parent state]
+-> R1 [represented transformation and role]
+-> B [derived state]
+-> R2 [represented transformation and role]
+-> C [later derived state]
+```
+
+The architecture resists compressing this to `A -> C` where the missing transformations matter to the claim under examination.
+
+**Representation integrity** is the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+
+Integrity is not identical to truth, support, completeness, coherence, plausibility, or exhaustive retention. It is claim-relative and resource-bounded.
+
+The architecture distinguishes:
+
+```text
+active
+inactive but genealogically recoverable
+unrecoverable under the represented state
+```
+
+Preservation does not require universal active propagation. Inactive material can remain recoverable for reopening or recontextualization. When relevant genealogy is destroyed, never represented, or presently inaccessible, the loss or limit remains represented where detectable.
+
+Interpretations, inferences, assumptions, and integrity judgments remain objects of RTE. Their labels do not certify that their roles were classified correctly.
+
 ## Evaluator
 
 An evaluator contains or applies the structures by which representations are compared, selected, ranked, retained, rejected, or acted upon.
@@ -713,6 +757,12 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+represented_source != interpretation
+observation != inference
+inference != assumption
+plausibility != provenance
+preserved != active
+recoverable != complete
 ```
 
 These are architectural safeguards against silent compression.
@@ -744,6 +794,10 @@ Its comparison architecture determines which differences can become comparative 
 Its invariants can omit relevant relations.
 
 Its genealogy can lose information.
+
+Its provenance roles can be misclassified.
+
+Its integrity records can create an appearance of rigor without preserving the relations relevant to a claim.
 
 Its preservation strategy can consume resources or privilege retained branches.
 

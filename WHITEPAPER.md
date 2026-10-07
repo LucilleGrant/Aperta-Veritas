@@ -3,13 +3,15 @@
 ## Recursive Truth Exposure
 
 Lucille Grant  
-Draft 0.3.1, 2026
+Draft 0.4.0, 2026
 
 ## Abstract
 
 Aperta Veritas is a recursive process for exposing truth claims and keeping inquiry open to distinctions, relations, hypotheses, tests, and alternatives that are not yet represented.
 
 Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, allocators, evaluators, criteria, transformations, selections, resource allocations, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
+
+The current formulation also examines representation integrity under recursive inference: whether source-relative material remains distinguishable from interpretations, inferences, assumptions, evaluations, compressions, and other transformations required to produce later states.
 
 Aperta Veritas begins from distinctions among **generation**, **allocation**, and **evaluation**.
 
@@ -331,6 +333,51 @@ Genealogy is not merely historical documentation.
 An earlier representation can acquire new significance when a later distinction exposes a relation that was not previously represented.
 
 The original representation remains preserved while the new relation is added to its genealogy.
+
+## 4.1 Representation integrity under recursive inference
+
+Reasoning transforms representations. Interpretation, inference, assumption, compression, translation, classification, evaluation, and selection can all connect one represented state to another.
+
+A useful genealogy is:
+
+```text
+A [represented source or parent state]
+-> R1 [interpretation, inference, assumption, or other transformation]
+-> B [derived representation]
+-> R2 [further transformation]
+-> C [later derived representation]
+```
+
+When `R1` and `R2` disappear, the record can collapse to `A -> C`, or `C` can be treated as though it were directly represented. The later state can remain coherent while introduced relations or assumptions become indistinguishable from the material they transformed.
+
+Aperta Veritas calls this risk **representation contamination**. Contamination is not identical to falsity. An introduced inference can be true and still be misrepresented as source-given. A marked inference can be false while preserving the distinction between source and derivation.
+
+**Representation integrity** is the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+
+Therefore:
+
+```text
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+provenance != support
+coherence != provenance
+plausibility != provenance
+representation_integrity != exhaustive_retention
+```
+
+Integrity is relational and claim-relative. A summary can retain sufficient integrity for one purpose while omitting structure needed for another. A source-faithful representation can preserve a false source claim. A true conclusion can be reached through a genealogy that does not justify treating it as supported.
+
+Recursive inference makes the problem more difficult because derived representations become inputs to later inquiry. An interpretation can become a premise; the premise can become background context; the context can later be recalled as though it belonged to the source.
+
+The objective is not to prevent inference. It is to preserve or expose sufficient provenance for later inquiry to distinguish what was represented from what was introduced, transformed, evaluated, or concluded.
+
+Open Genealogy does not require universal active propagation. It distinguishes material that is active, inactive but genealogically recoverable, and unrecoverable under the represented state. When relevant genealogy is destroyed, never represented, or presently inaccessible, the loss or limit remains represented where detectable.
+
+RTE applies to integrity records themselves. A transformation can be mislabeled. Provenance can be fabricated or incomplete. A long chain can create genealogical theater without preserving the relations relevant to a claim.
+
+The extended formulation, tests, limits, and illustrative case are specified in [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
 
 ## 5. Recursive Truth Exposure
 
@@ -1208,6 +1255,15 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+provenance != support
+plausibility != provenance
+preserved != active
+recoverable != complete
+representation_integrity != exhaustive_retention
 ```
 
 These invariants are safeguards against silent semantic compression.
@@ -1248,6 +1304,8 @@ Its preservation strategy can lose information.
 
 Its genealogy can fail to preserve relations needed for later recontextualization.
 
+Its provenance roles can misclassify interpretation, inference, assumption, or evaluation as source-relative material.
+
 Its recontextualization process can introduce unsupported relations.
 
 Its attempt to keep genealogy available can fail.
@@ -1266,9 +1324,17 @@ It cannot establish that its presently supported conclusion is identical with de
 
 No conclusion about the process is exempt from the process by which conclusions are examined and revised.
 
-## 25. Current research question
+## 25. Current research questions
 
-The immediate application to recursive self-improvement is now broader than evaluator stability alone.
+The general research question is:
+
+> Under incomplete representation and finite resources, how can inquiry preserve or expose enough source-relative and transformational genealogy to detect consequential representation drift while still permitting useful inference, compression, and revision?
+
+This includes questions about claim-relative provenance sufficiency, recovery of inactive genealogy, role classification, independent routes, blind qualification, and the cost of maintaining examinable transformation histories.
+
+These questions precede any particular application.
+
+The application to recursive self-improvement is broader than evaluator stability alone.
 
 The central research question is:
 
@@ -1300,6 +1366,22 @@ These hypotheses remain unestablished.
 The framework therefore treats them as objects of inquiry rather than architectural axioms.
 
 ## 26. Current claim
+
+Inquiry operates on represented states. Observation, interpretation, inference, assumption, evaluation, and conclusion can contribute differently to those states. When the transformations among them are concealed or destroyed, a later representation can remain coherent while losing the ability to distinguish source-relative material from introduced structure.
+
+Aperta Veritas therefore proposes an open, revisable architecture that:
+
+- distinguishes present support from truth, acceptance, confidence, value, priority, and allocation;
+- distinguishes observation and represented source material from interpretation, inference, and assumption;
+- exposes generation, allocation, and evaluation as separate but coupled operations;
+- preserves active and inactive-but-recoverable genealogy where resources permit;
+- records detected loss without treating unidentified loss as impossible;
+- permits new distinctions to recontextualize retained states without rewriting their historical content;
+- applies the same examination to its own representations, transformations, and integrity claims.
+
+This architecture can make omissions, transformations, and boundary conditions more examinable. It does not certify truth, completeness, neutrality, total retention, correct role classification, optimal allocation, or representation integrity.
+
+### Recursive systems application
 
 A system capable only of evaluating represented candidates cannot evaluate an improvement that never becomes representable.
 
@@ -1339,6 +1421,8 @@ represent the measurements
 represent the bases
 represent the support claims
 represent the comparison basis
+represent the source-relative state
+represent interpretations, inferences, assumptions, and transformation roles
 represent the transformation
 preserve unresolved genealogy
 permit new distinctions

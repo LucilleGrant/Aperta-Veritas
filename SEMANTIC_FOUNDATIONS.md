@@ -192,6 +192,40 @@ A newly represented relation does not automatically become epistemic support. It
 
 This gives genealogical preservation an operational role: material that cannot presently resolve an inquiry can remain available for later distinctions that make new examination possible.
 
+## Representation, interpretation, inference, and assumption
+
+A **representation** is a retained state that stands in one or more specified or inferred relations to an object, process, event, source, prior state, or other represented material.
+
+The represented object is the object as available through that representation. It is not automatically identical to the object independently of the representation.
+
+An **interpretation** is a proposed account of what represented material means or how its elements relate.
+
+An **inference** is a transformation that derives a proposition or relation from represented premises under an explicit or implicit rule, model, method, or pattern.
+
+An **assumption** is a proposition or condition admitted for the purpose of inquiry without being established by the represented support available in that inquiry.
+
+A **transformation** is a represented operation or change connecting one state to another. Interpretation, inference, compression, summarization, translation, classification, selection, and evaluation can all be transformations.
+
+These roles can change across inquiries. A proposition supplied as source material in one inquiry can be treated as an assumption, hypothesis, or test object in another.
+
+Therefore:
+
+```text
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+assumption != conclusion
+provenance != support
+plausibility != provenance
+```
+
+Preserving these distinctions does not establish that the source is true, that the inference is valid, or that the role labels are correct. It makes those questions available for examination.
+
+**Representation integrity** is the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it. It is not identical to exhaustive retention.
+
+See [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
+
 ## Accuracy
 
 Accuracy describes correspondence with what is true.
@@ -337,6 +371,12 @@ open_inquiry != active_inquiry
 not_allocated != rejected
 stopping != closure
 inactive != erased
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+plausibility != provenance
+preserved != active
 ```
 
 These distinctions are not protected from examination. They remain represented claims inside Aperta Veritas and are themselves subject to Recursive Truth Exposure.

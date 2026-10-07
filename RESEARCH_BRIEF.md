@@ -1,9 +1,9 @@
 # Aperta Veritas: Research Brief
 
-**A recursive system for distinguishing truth from belief**
+**A recursive framework for exposing how conclusions are represented, supported, transformed, and revised**
 
 Lucille Grant  
-Draft 0.3.1, 2026
+Draft 0.4.0, 2026
 
 ## One-minute summary
 
@@ -27,7 +27,9 @@ Aperta Veritas makes these upstream boundaries explicit, records their genealogy
 
 For each conclusion or system transition, Aperta Veritas can represent:
 
+- what was supplied or retained from a source;
 - what was observed;
+- what was interpreted, inferred, assumed, or otherwise introduced through transformation;
 - which distinctions made differences representable;
 - how measurements were produced;
 - which bases affected acceptance or continued inquiry;
@@ -40,7 +42,7 @@ For each conclusion or system transition, Aperta Veritas can represent:
 - which branches remained unresolved, inactive, superseded, or unrepresented;
 - what stopped the inquiry and what could reopen it.
 
-The resulting structure is an **Open Genealogy** rather than a sequence of overwritten answers. Earlier observations, rejected candidates, unresolved branches, transformations, and allocation decisions remain linked to later revisions.
+The resulting structure is an **Open Genealogy** rather than a sequence of overwritten answers. It supports a representation-integrity question: can later inquiry still distinguish source-relative material from the interpretations, inferences, assumptions, evaluations, and compressions that produced the current state? Earlier observations, rejected candidates, unresolved branches, transformations, and allocation decisions remain linked to later revisions.
 
 A later distinction can therefore expose a new relation among earlier records without rewriting their historical states:
 
@@ -217,6 +219,8 @@ The prototype currently represents:
 - recontextualization of retained records;
 - stopping and reopening conditions;
 - a tamper-evident genealogy.
+
+The canonical documentation also specifies representation integrity under recursive inference. The current executable ledger records transformations and genealogy, but it does not yet provide complete first-class role labeling for every interpretation, inference, and assumption described by that specification.
 
 The comparative layer currently implements:
 

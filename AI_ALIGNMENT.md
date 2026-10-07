@@ -605,6 +605,20 @@ Belief can provide an acceptance basis or inquiry basis without thereby becoming
 
 RTE preserves provenance, basis, support claims, allocation conditions, and represented conditions rather than assigning truth according to prevalence.
 
+## Representation integrity under recursive inference
+
+AI systems can place source-grounded restatement, interpretation, retrieved background information, analogy, generated completion, assumption, evaluation, and conclusion in the same fluent output.
+
+Plausibility is useful, but it is not provenance.
+
+When generated output becomes input to later reasoning, unmarked additions can be inherited as though they belonged to the source. This is not identical to ordinary hallucination: a proposition can be plausible or true while still being introduced without adequate provenance.
+
+Aperta Veritas therefore suggests preserving source-relative states separately from generated transformations; representing interpretation, inference, assumption, compression, translation, evaluation, and selection roles where consequential; and retaining parent-child links sufficient for later examination.
+
+These measures do not guarantee integrity. A model can misclassify its own inference, a provenance system can omit a dependency, and a complete-looking chain can still preserve the wrong relations.
+
+The general account precedes this AI application and is specified in [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
+
 ## Generator exposure
 
 AI generation introduces a generator.
@@ -1278,8 +1292,10 @@ represent allocators
 distinguish open inquiry from active inquiry
 represent evaluators and criteria
 represent values and selections
+represent source-relative states
+represent interpretation, inference, assumption, and transformation roles
 represent transformations
-represent inactive and unallocated branches
+represent inactive, recoverable, unrecoverable, and unallocated states where relevant
 represent residuals
 represent stopping and reopening conditions
 preserve recoverable genealogy
