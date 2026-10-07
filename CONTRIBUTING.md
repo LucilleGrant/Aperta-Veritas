@@ -150,6 +150,27 @@ A contribution can remain open to examination without receiving current priority
 
 A contribution can also be accepted for implementation without its acceptance basis becoming epistemic support for every claim it contains.
 
+## Representation and inference provenance
+
+Contributions that transform represented material should distinguish, where relevant:
+
+- represented source or parent state;
+- observation or retained datum;
+- interpretation;
+- inference;
+- assumption;
+- evaluation;
+- conclusion;
+- compression, translation, classification, or other transformation;
+- detected omission or loss;
+- active, inactive-but-recoverable, or unrecoverable status.
+
+Inference is permitted and often necessary. Do not present introduced material as though it were contained in the source.
+
+A source-faithful representation does not certify the source as true. A plausible or true inference does not make the inference source-given. Provenance does not become support merely because it is recorded.
+
+Where a contribution makes a representation-integrity claim, state the source-relative basis, the transformations preserved, the claim for which those distinctions are sufficient, and known limits. See [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
+
 ## Comparative claims
 
 Claims that one representation, method, generator, allocator, evaluator, implementation, or conclusion is more accurate, better supported, more efficient, or otherwise preferable should identify the basis of comparison and the conditions under which the comparison is made.
