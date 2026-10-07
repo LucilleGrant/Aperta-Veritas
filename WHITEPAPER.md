@@ -332,7 +332,52 @@ An earlier representation can acquire new significance when a later distinction 
 
 The original representation remains preserved while the new relation is added to its genealogy.
 
-## 5. Recursive Truth Exposure
+## 4.1 Representation integrity under recursive inference
+
+Reasoning transforms representations. Interpretation, inference, assumption, compression, translation, classification, evaluation, and selection can all connect one represented state to another.
+
+A useful genealogy is:
+
+```text
+A [represented source or parent state]
+-> R1 [interpretation, inference, assumption, or other transformation]
+-> B [derived representation]
+-> R2 [further transformation]
+-> C [later derived representation]
+```
+
+When `R1` and `R2` disappear, the record can collapse to `A -> C`, or `C` can be treated as though it were directly represented. The later state can remain coherent while introduced relations or assumptions become indistinguishable from the material they transformed.
+
+Aperta Veritas calls this risk **representation contamination**. Contamination is not identical to falsity. An introduced inference can be true and still be misrepresented as source-given. A marked inference can be false while preserving the distinction between source and derivation.
+
+**Representation integrity** is the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+
+Therefore:
+
+```text
++object != representation
++represented_source != interpretation
++observation != inference
++inference != assumption
++provenance != support
++coherence != provenance
++plausibility != provenance
++representation_integrity != exhaustive_retention
++```
++
++Integrity is relational and claim-relative. A summary can retain sufficient integrity for one purpose while omitting structure needed for another. A source-faithful representation can preserve a false source claim. A true conclusion can be reached through a genealogy that does not justify treating it as supported.
++
++Recursive inference makes the problem more difficult because derived representations become inputs to later inquiry. An interpretation can become a premise; the premise can become background context; the context can later be recalled as though it belonged to the source.
++
++The objective is not to prevent inference. It is to preserve or expose sufficient provenance for later inquiry to distinguish what was represented from what was introduced, transformed, evaluated, or concluded.
++
++Open Genealogy does not require universal active propagation. It distinguishes material that is active, inactive but genealogically recoverable, and unrecoverable under the represented state. When relevant genealogy is destroyed, never represented, or presently inaccessible, the loss or limit remains represented where detectable.
++
++RTE applies to integrity records themselves. A transformation can be mislabeled. Provenance can be fabricated or incomplete. A long chain can create genealogical theater without preserving the relations relevant to a claim.
++
++The extended formulation, tests, limits, and illustrative case are specified in [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
++
++## 5. Recursive Truth Exposure
 
 Recursive Truth Exposure examines how a representation came to be generated, accepted, treated as true, supported, prioritized, allocated, compared, selected, retained, revised, or stopped.
 
@@ -1339,6 +1384,8 @@ represent the measurements
 represent the bases
 represent the support claims
 represent the comparison basis
+represent the source-relative state
+represent interpretations, inferences, assumptions, and transformation roles
 represent the transformation
 preserve unresolved genealogy
 permit new distinctions
