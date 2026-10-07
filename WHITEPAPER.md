@@ -186,7 +186,7 @@ This allows:
 
 ```text
 weak or absent present support
-
++
 represented inquiry basis
 ->
 possible continued inquiry
@@ -521,7 +521,7 @@ Instead:
 
 ```text
 prior representation
-
++
 new distinction
 ->
 new represented relation
@@ -906,13 +906,13 @@ It also examines the generation path:
 
 ```text
 available state
-
++
 represented distinctions
-
++
 retained genealogy
-
++
 generation method
-
++
 resource conditions
 ->
 candidate successor
@@ -973,7 +973,7 @@ This gives a recursive pattern:
 
 ```text
 retained representation R
-
++
 new distinction D
 ->
 new relations involving R
