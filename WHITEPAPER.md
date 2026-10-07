@@ -184,7 +184,7 @@ This allows:
 
 ```text
 weak or absent present support
-+
+
 represented inquiry basis
 ->
 possible continued inquiry
@@ -366,18 +366,18 @@ representation_integrity != exhaustive_retention
 ```
 
 Integrity is relational and claim-relative. A summary can retain sufficient integrity for one purpose while omitting structure needed for another. A source-faithful representation can preserve a false source claim. A true conclusion can be reached through a genealogy that does not justify treating it as supported.
-+
-+Recursive inference makes the problem more difficult because derived representations become inputs to later inquiry. An interpretation can become a premise; the premise can become background context; the context can later be recalled as though it belonged to the source.
-+
-+The objective is not to prevent inference. It is to preserve or expose sufficient provenance for later inquiry to distinguish what was represented from what was introduced, transformed, evaluated, or concluded.
-+
-+Open Genealogy does not require universal active propagation. It distinguishes material that is active, inactive but genealogically recoverable, and unrecoverable under the represented state. When relevant genealogy is destroyed, never represented, or presently inaccessible, the loss or limit remains represented where detectable.
-+
-+RTE applies to integrity records themselves. A transformation can be mislabeled. Provenance can be fabricated or incomplete. A long chain can create genealogical theater without preserving the relations relevant to a claim.
-+
-+The extended formulation, tests, limits, and illustrative case are specified in [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
-+
-+## 5. Recursive Truth Exposure
+
+Recursive inference makes the problem more difficult because derived representations become inputs to later inquiry. An interpretation can become a premise; the premise can become background context; the context can later be recalled as though it belonged to the source.
+
+The objective is not to prevent inference. It is to preserve or expose sufficient provenance for later inquiry to distinguish what was represented from what was introduced, transformed, evaluated, or concluded.
+
+Open Genealogy does not require universal active propagation. It distinguishes material that is active, inactive but genealogically recoverable, and unrecoverable under the represented state. When relevant genealogy is destroyed, never represented, or presently inaccessible, the loss or limit remains represented where detectable.
+
+RTE applies to integrity records themselves. A transformation can be mislabeled. Provenance can be fabricated or incomplete. A long chain can create genealogical theater without preserving the relations relevant to a claim.
+
+The extended formulation, tests, limits, and illustrative case are specified in [Representation Integrity Under Recursive Inference](Representation-Integrity-Under-Recursive-Inference.md).
+
+## 5. Recursive Truth Exposure
 
 Recursive Truth Exposure examines how a representation came to be generated, accepted, treated as true, supported, prioritized, allocated, compared, selected, retained, revised, or stopped.
 
@@ -519,7 +519,7 @@ Instead:
 
 ```text
 prior representation
-+
+
 new distinction
 ->
 new represented relation
@@ -904,13 +904,13 @@ It also examines the generation path:
 
 ```text
 available state
-+
+
 represented distinctions
-+
+
 retained genealogy
-+
+
 generation method
-+
+
 resource conditions
 ->
 candidate successor
@@ -971,7 +971,7 @@ This gives a recursive pattern:
 
 ```text
 retained representation R
-+
+
 new distinction D
 ->
 new relations involving R
