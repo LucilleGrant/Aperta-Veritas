@@ -4,6 +4,46 @@ All notable conceptual, semantic, structural, and implementation changes are rec
 
 Earlier drafts are preserved in repository history and in the changelog below as genealogy. Later revisions do not retroactively make earlier formulations consistent with the current framework.
 
+## 0.4.0-draft, 2026-10-07
+
+### Canonical representation-integrity update
+
+- Added `Representation-Integrity-Under-Recursive-Inference.md` as the general specification for source-relative representation, transformation roles, recursive inference, representation contamination, integrity tests, and limits.
+- Defined representation integrity as the degree to which a representation preserves or exposes the source-relative and transformational distinctions required for the claims made from it.
+- Distinguished represented source material, observation, interpretation, inference, assumption, evaluation, conclusion, and transformation.
+- Clarified that contamination is not identical to falsity and that provenance is not identical to support.
+- Added semantic and architectural invariants separating source from interpretation, observation from inference, inference from assumption, plausibility from provenance, and preservation from active propagation.
+- Distinguished active material, inactive but genealogically recoverable material, and material unrecoverable under the represented state.
+- Clarified that recoverability is purpose-relative and does not certify completeness.
+- Extended RTE, Convergent Inquiry, and Open Genealogy to expose recursive transformations without claiming an external evaluator or truth certificate.
+- Added failure modes including provenance collapse, inference laundering, assumption inheritance, evaluator importation, completion drift, compression drift, analogy-to-identity collapse, reconstruction leakage, and genealogical deletion.
+- Added operational provenance fields and contributor requirements.
+- Added source-relative reconstruction, replay, counterfactual removal, alternative interpretation, compression comparison, blind qualification, independent-route, and adversarial-provenance tests as proposed procedures.
+- Applied the general account to human inquiry before treating language models as a visible application.
+- Added the Gemini manifestation exchange as an illustrative case while explicitly withholding general empirical claims.
+- Kept manifestation outside the foundations of canonical AV pending a represented basis for inclusion.
+- Rejected imported quantum-mechanical, consciousness-collapse, and metaphysical-mechanism claims as unsupported by the supplied proposition or AV architecture.
+- Propagated the new terminology through the README, semantic foundations, glossary, core architecture, operational system, whitepaper, research brief, AI application, contribution protocol, and audit.
+- Recorded that the prototype does not yet implement every provenance role specified by the conceptual architecture.
+- Repaired the unclosed code fence in `COIN_TOSS.md` and corrected formatting introduced during whitepaper integration.
+
+### Current 0.4.0 semantic invariants
+
+The prior 0.3.1 invariants remain in force. Draft 0.4.0 adds:
+
+```text
+object != representation
+represented_source != interpretation
+observation != inference
+inference != assumption
+provenance != support
+coherence != provenance
+plausibility != provenance
+preserved != active
+recoverable != complete
+representation_integrity != exhaustive_retention
+```
+
 ## 0.3.1-draft, 2026-09-19
 
 ### Open Genealogy correction
