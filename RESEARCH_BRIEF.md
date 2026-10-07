@@ -1,9 +1,9 @@
 # Aperta Veritas: Research Brief
 
-**A recursive system for distinguishing truth from belief**
+**A recursive framework for exposing how conclusions are represented, supported, transformed, and revised**
 
 Lucille Grant  
-Draft 0.3.1, 2026
+Draft 0.4.0, 2026
 
 ## One-minute summary
 
