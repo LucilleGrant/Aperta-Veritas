@@ -4,12 +4,11 @@
 
 **A recursive process for distinguishing what is supported as true from what is believed, valued, selected, retained for inquiry, prioritized, allocated, or treated as established.**
 
-Aperta Veritas is an open framework for Recursive Truth Exposure (RTE).
+Aperta Veritas is an open framework for inquiry governed by Recursive Truth Exposure (RTE).
 
 RTE examines how conclusions, candidate explanations, and possible inquiry operations are generated from observations, distinctions, measurements, bases, support claims, methods, beliefs, values, generators, allocators, evaluators, criteria, selections, transformations, resource conditions, and represented constraints. It examines how finite resources are allocated among possible inquiries, then applies the same examination to its own operations.
 
 **Veritas** is Latin for truth.  
-**Fides** names belief, faith, and trust.  
 **Aperta** means open or uncovered.
 
 RTE does not certify possession of truth. It identifies conclusions presently supported as true under represented observations, relations, methods, measurements where applicable, conditions, and support claims, while preserving the genealogy and limits of that support.
