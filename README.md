@@ -1,10 +1,14 @@
 # Aperta Veritas
 
-## Recursive Truth Exposure
+## An open framework for inquiry
 
 **A recursive process for distinguishing what is supported as true from what is believed, valued, selected, retained for inquiry, prioritized, allocated, or treated as established.**
 
-Aperta Veritas is an open framework for Recursive Truth Exposure (RTE).
+Aperta Veritas is an open framework for representing and examining the total inquiry process: how possibilities, distinctions, observations, measurements, interpretations, conclusions, inquiry operations, resource allocations, evaluations, selections, stopping conditions, and revisions are produced and related.
+
+Recursive Truth Exposure (RTE) is AV's governing recursive operation. It is not the whole framework. Convergent Inquiry concerns the generation and examination of possible continuations of inquiry; Open Genealogy keeps represented inquiry relations available for later examination and recontextualization; and the remaining architecture represents measurement, support, allocation, evaluation, stopping, and reopening.
+
+Problem solving is an application of this general inquiry framework. AI alignment, recursive systems, and recursive self-improvement are more specialized applications rather than definitions of AV.
 
 RTE examines how conclusions, candidate explanations, and possible inquiry operations are generated from observations, distinctions, measurements, bases, support claims, methods, beliefs, values, generators, allocators, evaluators, criteria, selections, transformations, resource conditions, and represented constraints. It examines how finite resources are allocated among possible inquiries, then applies the same examination to its own operations.
 
@@ -348,7 +352,9 @@ A **generator** is a represented process by which candidate distinctions, hypoth
 
 An **allocator** is a represented process or agent participating in prioritization and resource allocation among possible inquiry operations.
 
-An **evaluator** examines represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
+An **evaluator** is the represented value-judgment structure or operation by which candidates or results are compared, ranked, selected, retained, rejected, allocated, permitted, prohibited, or acted upon. Its represented components can include distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
+
+A declared evaluator is not automatically the operative evaluator. RTE can compare declared criteria with selections and transitions, generate candidate accounts of implicit criteria, and preserve the evidence, alternatives, and uncertainty attached to those accounts. An inferred operative evaluator remains a revisable hypothesis rather than a certified motive.
 
 Generation, allocation, and evaluation remain separate.
 
@@ -610,7 +616,7 @@ Selection is an observable event.
 
 An agent or system can choose, rank, filter, reward, reject, prioritize, suppress, stop, allocate, permit, prohibit, activate, or deactivate.
 
-Calling the selected state *better* introduces an evaluator, criterion, and comparison basis.
+Calling the selected state *better* introduces an evaluator/value judgment with a criterion and comparison basis.
 
 RTE preserves represented measurements, bases, support claims, comparison bases, generation histories, allocation histories, and value judgments as distinct relations rather than compressing them into the selection.
 
@@ -731,7 +737,7 @@ These limits are part of the framework's current object of inquiry rather than e
 
 ## Current status
 
-Aperta Veritas is an experimental research framework under active development.
+Aperta Veritas is an experimental inquiry framework under active development.
 
 The current draft focuses on:
 
@@ -759,7 +765,8 @@ The current draft focuses on:
 - boundary testing;
 - stopping and reopening;
 - resource-aware recursion;
-- application to AI and recursive self-modifying systems.
+- application to problem solving;
+- specialized application to AI and recursive self-modifying systems.
 
 The framework is not presented as complete.
 
@@ -789,7 +796,7 @@ Its definitions, architecture, tests, and conclusions remain open to revision.
 - [`prototype/benchmark.py`](prototype/benchmark.py) - answer-key-separated development benchmark and verifier
 - [`prototype/test_experiment.py`](prototype/test_experiment.py) - comparative architecture tests
 - [`prototype/test_development_task.py`](prototype/test_development_task.py) - matched development-task tests
-- [`prototype/test_benchmark.py`](prototype/test_benchmark.py) - held-out verification-boundary tests
+- [`prototype/test_benchmark.py`](prototype/test_benchmark.py) - runtime answer-key-boundary tests
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) - contribution and revision protocol
 - [`CHANGELOG.md`](CHANGELOG.md) - conceptual, semantic, structural, and implementation genealogy
 - [`CITATION.cff`](CITATION.cff) - citation metadata

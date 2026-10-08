@@ -1,4 +1,4 @@
-"""Tests for answer-key separation and held-out verification."""
+"""Tests for runtime answer-key separation in the development benchmark."""
 
 import unittest
 

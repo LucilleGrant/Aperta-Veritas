@@ -1,6 +1,8 @@
 # Core Architecture
 
-Aperta Veritas is organized around Recursive Truth Exposure (RTE): the recursive examination of representations, their bases, support claims, genealogy, selections, inquiry paths, and the conditions under which they remain open to revision.
+Aperta Veritas is the containing framework for representing and examining inquiry. Recursive Truth Exposure (RTE) is its governing recursive operation: the recursive examination of representations, their bases, support claims, genealogy, selections, inquiry paths, and the conditions under which they remain open to revision.
+
+Convergent Inquiry, Open Genealogy, representation integrity, and the represented operations of distinction, measurement, generation, allocation, evaluation, stopping, and reopening remain distinguishable within AV. Problem solving is an application of this architecture. AI alignment, recursive systems, and recursive self-improvement are specialized applications.
 
 The architecture preserves distinctions among truth, conclusions, bases, support, acceptance, inquiry, accuracy, confidence, belief, value, selection, distinction, measurement, generation, inquiry priority, resource allocation, evaluation, and closure rather than compressing them into a single epistemic state.
 
@@ -405,7 +407,7 @@ Interpretations, inferences, assumptions, and integrity judgments remain objects
 
 ## Evaluator
 
-An evaluator contains or applies the structures by which representations are compared, selected, ranked, retained, rejected, or acted upon.
+An evaluator is the represented value-judgment structure or operation by which representations are compared, selected, ranked, retained, rejected, allocated, permitted, prohibited, or acted upon.
 
 These can include:
 
@@ -423,6 +425,8 @@ These can include:
 - resource conditions;
 - stopping conditions.
 
+The evaluator is not separate from the value judgment it performs. Its criteria, values, distinctions, comparison bases, conditions, and exclusions are represented components of that judgment.
+
 An evaluator does not establish truth by performing selection.
 
 Selection records what the system did.
@@ -435,7 +439,9 @@ The architecture therefore preserves:
 selection != improvement
 ```
 
-and asks which evaluator, criteria, values, distinctions, bases, support claims, measurements, comparison basis, and conditions produced the selection.
+and asks which evaluator/value judgment, criteria, distinctions, bases, support claims, measurements, comparison basis, and conditions produced the selection.
+
+The declared evaluator can differ from the value judgment operative in the transition. The architecture therefore permits candidate operative evaluators and implicit criteria to be inferred from selections, allocations, stopping events, and counterfactual tests. These accounts remain revisable inferences with represented evidence, alternatives, provenance, and residual uncertainty; they do not certify hidden motives.
 
 An evaluator also does not establish that the candidates presented to it exhaust the relevant possibility space.
 

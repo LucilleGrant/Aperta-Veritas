@@ -198,7 +198,7 @@ A newly represented distinction can also expose relations among prior representa
 
 ## Evaluation
 
-The examination of represented candidates or results under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, constraints, or evaluators.
+The application of a represented evaluator/value judgment to represented candidates or results under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
 
 Evaluation is distinct from generation and allocation.
 
@@ -206,9 +206,11 @@ An evaluation can examine only candidates or results that have become represente
 
 ## Evaluator
 
-The represented structures by which candidates, claims, conclusions, states, or alternatives are compared, selected, ranked, retained, rejected, or acted upon.
+The represented value-judgment structure or operation by which candidates, claims, conclusions, states, inquiry operations, or alternatives are compared, selected, ranked, retained, rejected, allocated, permitted, prohibited, or acted upon.
 
-An evaluator can include distinctions, criteria, values, measurements, bases, support claims, comparison bases, constraints, resource conditions, and stopping conditions.
+An evaluator can include distinctions, criteria, values, measurements, bases, support claims, comparison bases, constraints, resource conditions, and stopping conditions. These are components of the value judgment rather than an evaluator separate from the judgment it performs.
+
+A **declared evaluator** is the represented account supplied by an agent or system. An **operative evaluator** is a candidate account of the value judgment that actually governed a transition. Operative evaluators and implicit criteria can be inferred from selections, allocations, stopping events, and counterfactual tests, but such inferences remain revisable hypotheses with represented evidence, alternatives, and uncertainty.
 
 An evaluator does not establish truth by performing selection, nor does it establish that the candidates presented to it were exhaustive.
 
@@ -526,7 +528,7 @@ A claim of incommensurability is itself a claim requiring represented support.
 
 ## Value
 
-A represented relation of worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or desired state relative to an evaluator.
+A represented relation of worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or desired state operating within an evaluator/value judgment.
 
 A value can govern attention, generation, selection, retention, action, distinction, measurement, comparison, resource allocation, inquiry, and revision.
 
@@ -534,9 +536,9 @@ Its operation and genealogy remain represented. Its status as value does not est
 
 ## Value judgment
 
-An operation that assigns worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or a desired state relative to an evaluator.
+The evaluative operation that assigns worth, preference, obligation, permission, prohibition, purpose, priority, protection, rejection, or a desired state. In AV, an evaluator is the represented structure or operation of this judgment, not an independent entity standing outside it.
 
-Aperta Veritas records the evaluator, generator or allocator where relevant, criteria, distinctions, measurements, bases, support claims, comparison basis, allocation basis, conditions, exclusions, selected branch, inactive branches, residuals, and genealogy of the operation.
+Aperta Veritas records the declared and candidate operative evaluator/value judgment, generator or allocator where relevant, criteria, distinctions, measurements, bases, support claims, comparison basis, allocation basis, conditions, exclusions, selected branch, inactive branches, residuals, and genealogy of the operation.
 
 A value judgment can itself be accurately represented without becoming a truth criterion.
 

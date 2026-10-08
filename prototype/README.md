@@ -10,7 +10,7 @@ The prototype now also contains the executable comparison specified in [`../EXPE
 
 - [`experiment.py`](experiment.py) implements the shared task and resource interface, Architecture A with fixed evaluation, Architecture B with revisable evaluation, and Architecture C with one bounded cycle of open recursive inquiry;
 - [`development_task.py`](development_task.py) runs the first scripted matched development task and labels its output as an engineering check rather than research evidence;
-- [`benchmark.py`](benchmark.py) separates shared public observations from a held-out verification key and applies the verifier only after all architecture runs complete;
+- [`benchmark.py`](benchmark.py) separates shared public observations from a runtime-withheld development verification key and applies the verifier only after all architecture runs complete;
 - [`test_experiment.py`](test_experiment.py), [`test_development_task.py`](test_development_task.py), and [`test_benchmark.py`](test_benchmark.py) test the comparative architecture, matched task, and answer-key boundary.
 
 Run the complete suite from the repository root:
@@ -25,7 +25,9 @@ Run the answer-key-separated development case:
 PYTHONPATH=prototype python -c 'import json; from benchmark import run_answer_key_separated_case; print(json.dumps(run_answer_key_separated_case(), indent=2, sort_keys=True))'
 ```
 
-The current answer-key-separated case is still a development benchmark. Its generator is a bounded contrastive rule over public observation scopes, not a general distinction-discovery system.
+The current answer-key-separated case is a constructed development benchmark. Its generator is a bounded contrastive rule over public observation scopes, and its lexical verifier checks terms also emitted by that rule. It tests encoded plumbing and answer-key separation, not general distinction discovery or comparative architectural performance.
+
+The ledger currently records explicitly supplied evaluators and criteria. It does not yet infer candidate operative evaluators or implicit criteria from observed selections, allocations, or stopping events; that remains an implementation gap rather than an encoded capability.
 
 ## Current executable contract
 
@@ -745,7 +747,7 @@ The implementation now:
 - preserves open but inactive inquiry possibilities;
 - maintains a tamper-evident hash chain over recorded genealogy.
 
-The current 108-test suite tests these separations and the comparative experiment layer, including:
+The test suite tests these separations and the comparative experiment layer. Any reported count should be tied to the exact commit and reproduced run. Covered behaviors include:
 
 - basis without support;
 - acceptance without support;

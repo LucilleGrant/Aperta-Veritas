@@ -1,5 +1,7 @@
 # Aperta Veritas and Generative Inquiry in Recursive Self-Improvement
 
+This research note addresses a specialized recursive-self-improvement application of Aperta Veritas. AV is the general inquiry framework; problem solving is an application of that framework; RSI is a narrower application rather than AV's defining purpose.
+
 **Lucille Grant**
 
 ## Abstract

@@ -234,7 +234,7 @@ class HeldOutVerifier:
 
 
 def run_answer_key_separated_case() -> dict[str, Any]:
-    """Run A, B, and C before applying a held-out verification key."""
+    """Run A, B, and C before applying a runtime-withheld development key."""
 
     task = ExperimentTask(
         task_id="held_out_boundary_development_1",
@@ -337,7 +337,7 @@ def run_answer_key_separated_case() -> dict[str, Any]:
 
 @dataclass(frozen=True)
 class BenchmarkCase:
-    """One public task paired with a held-out verifier key."""
+    """One public task paired with a runtime-withheld development key."""
 
     task: ExperimentTask
     candidates: tuple[Candidate, ...]
@@ -481,7 +481,7 @@ def _architectures_for_case(
 
 
 def run_benchmark_suite() -> dict[str, Any]:
-    """Run the preregistered engineering suite and aggregate outcomes."""
+    """Run the constructed development suite and aggregate outcomes."""
 
     verifier = HeldOutVerifier()
     case_reports: list[dict[str, Any]] = []

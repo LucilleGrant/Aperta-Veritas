@@ -1,8 +1,8 @@
 # Operational System
 
-Aperta Veritas is a recursive process for exposing how representations and conclusions are generated, accepted, supported, prioritized, allocated, selected, revised, retained, recontextualized, and reopened.
+Aperta Veritas is the containing framework for representing and examining how inquiry states, operations, representations, and conclusions are generated, accepted, supported, prioritized, allocated, evaluated, selected, revised, retained, recontextualized, stopped, and reopened.
 
-Its governing operation is Recursive Truth Exposure (RTE).
+Its governing recursive operation is Recursive Truth Exposure (RTE). RTE is not the whole framework. Problem solving is an application of AV; AI alignment, recursive systems, and recursive self-improvement are specialized applications.
 
 RTE receives observations, data, claims, beliefs, values, models, contradictions, anomalies, bases, alternatives, and prior inquiry states. It can generate distinctions, hypotheses, relations, tests, alternatives, comparison bases, inquiry operations, and other candidate representations. It produces current inquiry states connected to represented acceptance bases, inquiry bases, allocation bases, inquiry priorities, resource allocations, support claims, measurements, provenance, alternatives, residuals, branches, transformations, conditions, and genealogy.
 
@@ -556,9 +556,9 @@ Failure to execute also does not establish that the proposition is false or that
 
 ## Evaluation
 
-Evaluation examines represented candidates or results under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, constraints, or evaluators.
+Evaluation applies a represented evaluator/value judgment to candidates or results under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
 
-An evaluator can use measurements, support claims, criteria, values, constraints, and comparison sets to produce a judgment or selection.
+An evaluator is the represented structure or operation of that value judgment. It can use measurements, support claims, criteria, values, constraints, and comparison sets to produce a selection or other transition.
 
 The judgment is not identical to the relations from which it was produced.
 
@@ -582,7 +582,9 @@ Evaluation operates on represented candidates or results.
 
 Successful evaluation therefore does not establish that the candidate set was exhaustive or that an absent candidate could not outperform represented candidates under some later represented basis.
 
-RTE applies the same examination to the evaluator, criteria, distinctions, measurements, bases, support claims, comparison bases, values, allocation history, and candidate-generation process involved in the judgment.
+RTE applies the same examination to the evaluator/value judgment, criteria, distinctions, measurements, bases, support claims, comparison bases, allocation history, and candidate-generation process involved in the judgment.
+
+The system records declared evaluators and criteria separately from candidate accounts of the operative evaluator and implicit criteria inferred from observed transitions. An inferred account must preserve its evidence, provenance, alternative explanations, counterfactual tests, confidence where represented, and residual uncertainty. It does not certify an inaccessible motive.
 
 ## Recursive Truth Exposure
 

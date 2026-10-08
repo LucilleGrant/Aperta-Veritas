@@ -1,5 +1,7 @@
 # Recursive Truth Exposure: Generation, Allocation, and Evaluation in Recursive Self-Improvement
 
+This document describes a specialized recursive-self-improvement application of Aperta Veritas. AV is the general inquiry framework; problem solving is an application of that framework; RSI is a narrower application rather than AV's defining purpose.
+
 ## Abstract
 
 Recursive self-improvement describes a system that generates modifications, allocates finite resources among possible operations, evaluates candidate successor states, selects among them, and recursively modifies itself.

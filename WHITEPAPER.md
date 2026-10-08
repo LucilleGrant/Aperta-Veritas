@@ -1,15 +1,17 @@
 # Aperta Veritas
 
-## Recursive Truth Exposure
+## An open framework for inquiry
 
 Lucille Grant  
 Draft 0.4.0, 2026
 
 ## Abstract
 
-Aperta Veritas is a recursive process for exposing truth claims and keeping inquiry open to distinctions, relations, hypotheses, tests, and alternatives that are not yet represented.
+Aperta Veritas is an open framework for representing and examining the total inquiry process, including how truth claims, distinctions, relations, hypotheses, tests, alternatives, inquiry operations, allocations, evaluations, selections, stopping conditions, and revisions are produced and related.
 
-Its governing operation is Recursive Truth Exposure, abbreviated RTE. RTE examines representations, observations, distinctions, measurements, bases, acceptance, inquiry, support claims, values, generators, allocators, evaluators, criteria, transformations, selections, resource allocations, residuals, stopping conditions, and reopening conditions. It then applies the same examination to its own operations.
+Its governing recursive operation is Recursive Truth Exposure, abbreviated RTE. RTE is not the entirety of AV. Convergent Inquiry concerns possible continuations of inquiry; Open Genealogy keeps represented inquiry relations available for later examination and recontextualization; and the remaining architecture represents measurement, support, generation, allocation, evaluation, stopping, and reopening.
+
+Problem solving is an application of this general inquiry framework. AI alignment, recursive systems, and recursive self-improvement are specialized applications rather than definitions of AV.
 
 The current formulation also examines representation integrity under recursive inference: whether source-relative material remains distinguishable from interpretations, inferences, assumptions, evaluations, compressions, and other transformations required to produce later states.
 
@@ -680,7 +682,7 @@ When confidence changes, RTE asks which acceptance basis, observation, measureme
 
 ## 13. Value
 
-A value judgment represents worth, preference, obligation, permission, prohibition, purpose, priority, rejection, protection, or a desired state relative to an evaluator.
+A value judgment represents worth, preference, obligation, permission, prohibition, purpose, priority, rejection, protection, or a desired state. The represented structure or operation performing that judgment is the evaluator; AV does not treat the evaluator and value judgment as independent conceptual entities.
 
 Truth is not established by value.
 
@@ -688,7 +690,7 @@ Calling a conclusion desirable does not establish that it is true.
 
 Calling it undesirable does not establish that it is false.
 
-A value report can itself be accurately represented when it preserves the evaluator, criterion, conditions, and judgment rather than compressing them into an intrinsic property of the object.
+A value report can itself be accurately represented when it preserves the evaluator/value judgment, criterion, and conditions rather than compressing them into an intrinsic property of the object.
 
 Inquiry contains selections.
 
@@ -714,7 +716,9 @@ Attention allocation itself can therefore become an object of inquiry. Priority 
 
 A **generator** is a represented process by which candidate distinctions, hypotheses, relations, models, tests, alternatives, inquiry operations, comparison bases, evaluators, allocators, or successor states become available.
 
-An **evaluator** examines represented candidates under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
+An **evaluator** is the represented value-judgment structure or operation by which candidates are compared, ranked, selected, retained, rejected, allocated, permitted, prohibited, or acted upon under represented distinctions, criteria, methods, support claims, comparison bases, conditions, values, and constraints.
+
+The declared evaluator and criteria can differ from the value judgment operative in observed selections or transitions. RTE can generate candidate accounts of implicit criteria from those operations. Such accounts remain revisable inferences with represented evidence, alternatives, counterfactual tests, and uncertainty rather than certified motives.
 
 These are different operations:
 

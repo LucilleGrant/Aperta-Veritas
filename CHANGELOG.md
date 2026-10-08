@@ -4,6 +4,17 @@ All notable conceptual, semantic, structural, and implementation changes are rec
 
 Earlier drafts are preserved in repository history and in the changelog below as genealogy. Later revisions do not retroactively make earlier formulations consistent with the current framework.
 
+## Unreleased canonical consistency correction
+
+- Clarified that Aperta Veritas is the containing inquiry framework and Recursive Truth Exposure is its governing recursive operation rather than the whole framework.
+- Located problem solving as an application of AV and AI alignment, recursive systems, and recursive self-improvement as specialized applications.
+- Defined the evaluator as the represented value-judgment structure or operation rather than an entity conceptually separate from its judgment.
+- Distinguished declared evaluators and criteria from candidate operative evaluators and implicit criteria inferred from selections or transitions.
+- Required inferred evaluator accounts to retain evidence, alternatives, counterfactual tests, provenance, and residual uncertainty rather than certifying hidden motives.
+- Reclassified the current answer-key-separated benchmark as a constructed development and engineering check rather than comparative experimental evidence.
+- Removed unsupported preregistration language from the executable benchmark and removed an unverified fixed test count from current-facing documentation.
+- Deferred Floptometry, further multi-agent work, manifestation semantics, benchmark redesign, and evaluator-identification implementation to separate research and implementation work.
+
 ## 0.4.0-draft, 2026-10-07
 
 ### Canonical representation-integrity update

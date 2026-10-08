@@ -9,6 +9,8 @@ Draft 0.3.1, 2026
 
 This document specifies a proposed comparative experiment. It does not report results.
 
+The repository's current answer-key-separated benchmark is a constructed development and engineering check. It is not the sequestered held-out evaluation specified below, and its outcomes are not comparative experimental evidence for AV. A task is described as preregistered or held out only when the task, architecture, measurement code, exclusions, and analysis plan were frozen through a represented process before the relevant results were observed.
+
 The experiment tests whether representing and recursively examining generation, allocation, evaluation, Open Genealogy, and reopening conditions exposes relevant candidates or errors that remain unavailable to narrower recursive architectures.
 
 The current prototype and its tests establish encoded behavior under tested conditions. They do not establish the research hypotheses tested here.

@@ -9,13 +9,13 @@ version: "0.4.0-draft"
 date-released: 2026-10-07
 year: 2026
 abstract: >-
-  A recursive inquiry framework for exposing how representations, conclusions,
-  support, beliefs, values, evaluators, measurements, interpretations, inferences,
-  assumptions, transformations, selections, boundaries, and revisions are produced and related. Recursive Truth Exposure identifies
-  conclusions presently best supported as true under represented observations,
-  relations, methods, measurements, and conditions without certifying identity
-  with definitive truth. The framework includes applications to epistemic
-  representation integrity under recursive inference, epistemic alignment, and
-  recursive AI systems.
+  An open framework for representing and examining the total inquiry process,
+  including how distinctions, observations, measurements, interpretations,
+  conclusions, inquiry operations, allocations, evaluator/value judgments,
+  selections, boundaries, stopping conditions, and revisions are produced and
+  related. Recursive Truth Exposure is the framework's governing recursive
+  operation. Problem solving is an application of the framework; representation
+  integrity, epistemic alignment, recursive systems, and recursive
+  self-improvement are specialized applications and research areas.
 license: CC-BY-4.0
 repository-code: "https://github.com/LucilleGrant/Aperta-Veritas"

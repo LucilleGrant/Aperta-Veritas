@@ -2,6 +2,8 @@
 
 ## Application
 
+This document describes a specialized application of the general Aperta Veritas inquiry framework. AV is not defined by AI alignment, and the application does not determine the framework's foundations.
+
 Aperta Veritas is a recursive process for exposing how representations, candidates, inquiry operations, and conclusions are generated, prioritized, allocated, supported, selected, revised, retained, stopped, and reopened.
 
 Recursive Truth Exposure applies this process to AI observations, representations, distinctions, measurements, bases, acceptance bases, inquiry bases, inquiry operations, allocation bases, inquiry priorities, resource allocations, support claims, comparisons, generators, allocators, modifications, evaluators, boundaries, stopping conditions, and the processes governing them.

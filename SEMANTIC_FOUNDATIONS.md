@@ -1,5 +1,7 @@
 # Semantic Foundations
 
+Aperta Veritas is the containing framework for inquiry. Recursive Truth Exposure is its governing recursive operation; Convergent Inquiry, Open Genealogy, representation integrity, and the represented operations of measurement, generation, allocation, evaluation, stopping, and reopening remain distinguishable within that framework. Problem solving is an application of this architecture, while AI alignment and recursive self-improvement are specialized applications.
+
 Truth, fact, knowledge, belief, data, confidence, accuracy, support, acceptance, inquiry, and value are routinely compressed into a single epistemic hierarchy. This compression can allow consensus, authority, institutional acceptance, confidence, belief, approval, or persistence to function as substitutes for represented support.
 
 Aperta Veritas separates these terms before applying Recursive Truth Exposure.
@@ -302,11 +304,13 @@ When confidence changes, RTE asks what observation, measurement, inference, beli
 
 ## Value
 
-A **value judgment** represents worth, preference, obligation, permission, prohibition, purpose, priority, rejection, protection, or a desired state relative to an evaluator.
+A **value judgment** represents worth, preference, obligation, permission, prohibition, purpose, priority, rejection, protection, or a desired state. The represented structure or operation performing that judgment is the **evaluator**; AV does not treat the evaluator and its value judgment as independent conceptual entities.
 
 Truth is not established by value.
 
-Calling a conclusion desirable does not establish that it is true, and calling it undesirable does not establish that it is false. A value report can itself be accurately represented when it preserves the evaluator, criterion, conditions, and judgment rather than compressing them into an intrinsic property of the object.
+Calling a conclusion desirable does not establish that it is true, and calling it undesirable does not establish that it is false. A value report can itself be accurately represented when it preserves the evaluator/value judgment, criterion, and conditions rather than compressing them into an intrinsic property of the object.
+
+The declared evaluator and criteria can differ from the value judgment operative in observed selections or transitions. RTE can generate candidate accounts of implicit criteria from those operations. Such accounts remain inferences with represented evidence, alternatives, counterfactual tests, and uncertainty; they do not certify hidden motives.
 
 Distinction, measurement, inquiry, comparison, and resource allocation also contain selections. A system selects what to distinguish, what to observe, which alternatives to compare, how distinctions are operationalized, which possible inquiries receive active examination, how resources are allocated, and when to stop.
 

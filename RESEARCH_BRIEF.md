@@ -7,9 +7,11 @@ Draft 0.4.0, 2026
 
 ## One-minute summary
 
-Aperta Veritas is an experimental system for examining how conclusions become represented, supported, selected, revised, or excluded.
+Aperta Veritas is an experimental framework for representing and examining the total inquiry process: how possibilities, distinctions, observations, conclusions, inquiry operations, allocations, evaluations, selections, stopping conditions, and revisions are produced and related.
 
-Its governing operation is **Recursive Truth Exposure (RTE)**. RTE exposes the observations, distinctions, measurements, assumptions, support claims, values, candidate generators, resource allocators, evaluators, and stopping conditions involved in an inquiry. It then applies the same examination to its own process.
+Its governing recursive operation is **Recursive Truth Exposure (RTE)**. RTE exposes the observations, distinctions, measurements, assumptions, support claims, candidate generators, resource allocators, evaluator/value judgments, and stopping conditions involved in an inquiry. It then applies the same examination to its own process. RTE is not the entirety of AV: Convergent Inquiry, Open Genealogy, representation integrity, and the remaining inquiry architecture retain distinct functions.
+
+Problem solving is an application of the general framework. AI alignment, recursive systems, and recursive self-improvement are specialized applications.
 
 The central structural claim is simple:
 
@@ -204,7 +206,7 @@ Both hypotheses are testable and remain open to rejection or revision.
 
 ## Current implementation
 
-The repository includes a Python inquiry ledger, three comparative reference architectures, matched development tasks, a held-out verifier, and an adversarial semantic and structural test suite.
+The repository includes a Python inquiry ledger, three comparative reference architectures, matched development tasks, an answer-key-separated development verifier, and a semantic and structural test suite.
 
 The prototype currently represents:
 
@@ -229,9 +231,9 @@ The comparative layer currently implements:
 - one bounded cycle of open recursive inquiry across generation, allocation, and evaluation;
 - explicit resource ceilings and stopping records;
 - retained initial and revised states;
-- answer-key separation between public architecture inputs and held-out verification.
+- runtime answer-key separation between public architecture inputs and development verification.
 
-The current suite contains **108 passing tests**. Those tests establish only the encoded behaviors under tested conditions. The present answer-key-separated benchmark remains a development check using a bounded rule-based controller. Neither the tests nor the development result establish that the system has complete information, autonomously generates arbitrary relevant alternatives, allocates resources optimally, or identifies definitive truth.
+The suite tests encoded behaviors under specified conditions. The exact passing-test count should be reported only with the commit and reproduced run that produced it. The present answer-key-separated benchmark remains a development check using a bounded rule-based controller. Neither the tests nor the development result establishes comparative architectural performance, general distinction discovery, complete information, autonomous generation of arbitrary relevant alternatives, optimal allocation, or definitive truth.
 
 ## Proposed research program
 

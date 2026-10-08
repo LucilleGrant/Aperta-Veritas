@@ -8,6 +8,20 @@ The object of this audit is the draft whitepaper `WHITEPAPER.md` and the reposit
 
 The document represents Aperta Veritas through stated semantics and operations. The representation remains connected to examination, implementation, criticism, revision, and genealogy.
 
+## Focused canonical consistency audit
+
+A later review exposed three cross-document compressions without requiring a replacement of the established architecture.
+
+First, several introductions allowed Recursive Truth Exposure or the recursive-self-improvement application to stand in for Aperta Veritas as a whole. The correction represents AV as the containing inquiry framework, RTE as its governing recursive operation, problem solving as an application, and AI alignment and recursive self-improvement as specialized applications.
+
+Second, the terminology represented a value judgment as occurring relative to an evaluator, leaving the evaluator and the judgment conceptually separable. The correction defines an evaluator as the represented value-judgment structure or operation. Criteria, values, distinctions, comparison bases, conditions, and exclusions are components of that judgment.
+
+Third, the architecture strongly preferred explicit evaluator attribution but did not state clearly that a declared evaluator can differ from the value judgment operative in observed selections. The correction permits candidate operative evaluators and implicit criteria to be inferred from transitions while retaining their status as revisable hypotheses with evidence, alternatives, counterfactual tests, provenance, and residual uncertainty. This does not certify inaccessible motives.
+
+The same audit reclassified the current answer-key-separated benchmark as a constructed development and engineering check. Its controller emits vocabulary checked by its lexical verifier, and the other reference architectures do not receive the same generator. The fixture can test encoded plumbing and runtime answer-key separation; it does not constitute comparative experimental evidence, general distinction discovery, or a preregistered held-out result.
+
+Floptometry, additional multi-agent work, and a canonical definition of manifestation remain deferred. Accuracy and efficiency remain separate dimensions, agent-to-agent communication is not required by the proposed representation work, and manifestation remains outside AV's foundations pending resolution of its measurement semantics.
+
 ## Draft 0.4.0 RTE audit
 
 Draft 0.4.0 was produced through a repository-wide reconciliation against later project work on representation integrity, recursive inference, provenance roles, and recoverability.
