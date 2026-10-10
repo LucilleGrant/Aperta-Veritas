@@ -268,4 +268,4 @@ Useful contributions include:
 
 Start with the [whitepaper](WHITEPAPER.md), the [RSI research note](RSI_RESEARCH_NOTE.md), the [AI alignment application](AI_ALIGNMENT.md), or the [executable prototype](prototype/README.md).
 
-Aperta Veritas was discovered by **Lucille Grant** and is released under **CC BY 4.0**.
+Aperta Veritas was developed by **Lucille Grant**. The written documentation and visual content are licensed under **CC BY 4.0**. The software does not yet have a separate open-source license.

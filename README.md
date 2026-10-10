@@ -1,5 +1,31 @@
 # Aperta Veritas
 
+## Research snapshot
+
+Aperta Veritas is an experimental framework and Python prototype for studying a specific evaluator-boundary problem in recursive systems:
+
+> When a system can change how candidate successors are generated, funded, and evaluated, how can we distinguish an empirically useful change from evaluator self-confirmation or a relocated fixed boundary?
+
+The working hypothesis is that explicit genealogy, retained predecessor states, recursive examination of generators and evaluators, and later or withheld measurements may help expose false improvements. This is a hypothesis to test, not a claimed solution to recursive self-improvement or AI alignment.
+
+The current repository contains:
+
+- a bounded inquiry ledger;
+- fixed-evaluator, revisable-evaluator, and open-recursive reference architectures;
+- a deterministic, answer-key-separated development benchmark;
+- explicit resource accounting, stopping conditions, and retained genealogy;
+- **116 passing tests** in the current GitHub Actions suite.
+
+The tests establish encoded behavior under constructed conditions. The benchmark uses a bounded rule-based controller. Neither establishes autonomous recursive self-improvement, general distinction discovery, improved frontier-model capability, optimal compute allocation, or truth certification.
+
+Run the complete test suite:
+
+```text
+python -m unittest discover -s prototype -p "test_*.py"
+```
+
+Start with the [research brief](RESEARCH_BRIEF.md), [experiment specification](EXPERIMENT_SPEC.md), [recursive-self-improvement note](RTE_FOR_RSI.md), or [prototype guide](prototype/README.md).
+
 ## Recursive Truth Exposure
 
 **A recursive process for distinguishing what is supported as true from what is believed, valued, selected, retained for inquiry, prioritized, allocated, or treated as established.**
