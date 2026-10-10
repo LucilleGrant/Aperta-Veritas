@@ -745,7 +745,7 @@ The implementation now:
 - preserves open but inactive inquiry possibilities;
 - maintains a tamper-evident hash chain over recorded genealogy.
 
-The current 108-test suite tests these separations and the comparative experiment layer, including:
+The current 116-test suite tests these separations and the comparative experiment layer, including:
 
 - basis without support;
 - acceptance without support;
